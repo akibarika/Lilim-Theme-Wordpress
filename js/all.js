@@ -25,10 +25,6 @@ $post.imagesLoaded( function() {
 	  	  "gutter":20
 		});
 });
-
-		
-
-
 	$(function() {
 	    var $elem = $('#page-wrap');
 	    $('.tool-up').fadeIn('slow');
