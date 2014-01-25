@@ -1,0 +1,25 @@
+/*
+Theme Name: Lilim V2
+Theme URI: http://moe.akibarika.org
+Author: Rika Akiba
+Author URI: http://moe.akibarika.org
+Description: AkibaRika site theme. 
+Version: 2.3.3
+License: CC BY-NC-SA 3.0
+*/
+
+
+/*global setting*/
+@font-face {
+    font-family: "Dosis";
+    font-style: normal;
+    font-weight: 200;
+    src: local("Dosis ExtraLight"), local("Dosis-ExtraLight"), url("http://themes.googleusercontent.com/static/fonts/dosis/v1/zuuDDmIlQfJeEM3Uf6kkpvesZW2xOQ-xsNqO47m55DA.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Lato Regular'), local('Lato-Regular'), url(http://themes.googleusercontent.com/static/fonts/lato/v6/9k-RPmcnxYEPm8CNFsH2gg.woff) format('woff');
+}
