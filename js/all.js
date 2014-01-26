@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	jQuery(function() {
-		$('#search #s').focus(function() {
+		$('.search-text .text').focus(function() {
 			if ($(this).val() == '找东西？') {
 				$(this).val('')
 			}
@@ -10,21 +10,20 @@ $(document).ready(function(){
 			}
 		})
 	});
-	
 
 	$('.item').stop().fadeTo(100,1,function(){
 		$('.item').addClass('stop');
 	});
 
-var $post = $('#post'); 
-$post.imagesLoaded( function() {
-  $post.masonry({
-	  	  itemSelector: '.item',
-	  	  columnWidth: '.item',
-	  	  transitionDuration: 0,
-	  	  "gutter":20
-		});
-});
+	var $post = $('#post'); 
+	$post.imagesLoaded( function() {
+	  $post.masonry({
+		  	  itemSelector: '.item',
+		  	  columnWidth: '.item',
+		  	  transitionDuration: 0,
+		  	  "gutter":20
+			});
+	});
 	$(function() {
 	    var $elem = $('#page-wrap');
 	    $('.tool-up').fadeIn('slow');
@@ -52,84 +51,61 @@ $post.imagesLoaded( function() {
 	        }
 	    ); 	 	    	 	      
 	 });
- 	
-	
-	
-	$(window).scroll(function() {
-		if ($(window).scrollTop() > 58) {
-			$("#content").css("top", "50px");
-			$("#fixed_menu").removeClass('none');
-			$("#menu").addClass('none');
-			$("#left-sidebar").css({
-				"position": "fixed",
-				"top": "50px"
-			});
-			$("#right-sidebar").css({
-				"position": "fixed",
-				"top": "50px"
-			});
-			$("#mini-search").removeClass('none');						
-		} else {
-			$("#content").css("top", "0px");
-			$("#fixed_menu").addClass('none');
-			$("#menu").removeClass('none');
-			$("#left-sidebar").css({
-				"position": "absolute",
-				"top": "0px"
-			});		
-			$("#right-sidebar").css({
-				"position": "absolute",
-				"top": "0px"
-			});	
-			$("#mini-search").addClass('none');	
-		}
-	});	
-	var cd_more = 0;
-	$("#more").click(function() {
-		if (cd_more == 0) {
-			$("#left-sidebar").animate({
-				left: '0px'
-			}, 200);
-			cd_more = 1
-		} else {
-			$("#left-sidebar").animate({
-				left: '-250px'
-			}, 200);
-			cd_more = 0
-		}
-	});
-	$("#more_more").click(function() {
-		if (cd_more == 0) {
-			$("#left-sidebar").animate({
-				left: '0px'
-			}, 200);
-			cd_more = 1
-		} else {
-			$("#left-sidebar").animate({
-				left: '-250px'
-			}, 200);
-			cd_more = 0
-		}
-	});	
-	var cd_tool = 0;
-	$("#tool").click(function() {
-		if (cd_tool == 0) {
-			$("#right-sidebar").animate({
-				right: '0px'
-			}, 200);
-			cd_tool = 1
-		} else {
-			$("#right-sidebar").animate({
-				right: '-250px'
-			}, 200);
-			cd_tool = 0
-		}
-	});
-	$("#right-sidebar .closer").click(function() {
-		$("#right-sidebar").animate({
-			right: '-250px'
-		}, 200);
-		cd_tool = 0
+    $('nav.search .dropdown').click(function() {
+
+        var type = $(this).data('filter');
+
+        if ($(this).hasClass('active')) {
+
+            $(this).removeClass('active');
+            $('.filters').removeClass('open');
+
+            $('.filters').slideToggle('slow');
+            setTimeout(function() {
+                $('.filters .filter').hide();
+            }, 500);
+
+        } else {
+
+            $('nav.search .dropdown').removeClass('active');
+            $(this).addClass('active');
+
+            if ($('.filters').hasClass('open')) {
+
+                $('.filters .filter').hide();
+                $('.filters .filter.' + type).fadeIn();
+
+            } else {
+
+                $('.filters').addClass('open');
+                $('.filters .filter.' + type).fadeIn();
+                $('.filters').slideToggle('slow');
+
+            }
+
+        }
+
+    });	 
+	 $(window).scroll(function() {
+
+        var scrollTop = $(window).scrollTop();
+
+        if (scrollTop > 48) {
+            $('body').addClass('header-fixed');
+            $('.main').addClass('white-bg');
+        } else {
+            $('body').removeClass('header-fixed');
+            $('.main').removeClass('white-bg');
+        }
+
+    });
+            
+	$("#menu-mobile .bt-menu").click(function() {
+	if ($("#menu-mobile").hasClass('open')) {
+	    $("#menu-mobile").removeClass('open');
+	} else {
+	    $("#menu-mobile").addClass('open');
+	}
 	});
 	var wrap = 960;
 	var a = 60;
@@ -141,7 +117,12 @@ $post.imagesLoaded( function() {
 	$(".right-toolbar").css({
 		right:loli,
 		opacity:1
-	});
+	});	
+	$('.wrapper-menu').css('height', $(window).height() + 'px');
+	var count = $("ul#1st-menu li").size();
+	var hentai = 100 / count;
+	$("ul#1st-menu li").css('width', hentai +'%');
+	
 })
 function grin(tag) {
 	var myField;

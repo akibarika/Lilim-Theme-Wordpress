@@ -1,13 +1,7 @@
 <?php /* 
 	  	Template Name: Links(友情链接) 
 	  */ ?>
-<?php get_header(); ?>
-				<ul>
-					<li><a href="#"><i class="icon-archive icon-3x"></i><span>Archive</span></a></li>
-					<li><a href="http://moe.akibarika.org/wp-admin/"><i class="icon-dashboard icon-3x"></i><span>Backyard</span></a></li>
-					<li><a class="closer"><i class="icon-remove-sign"></i> Close</a></li>				
-				</ul>								
-			</aside>			
+<?php get_header(); ?>		
 			<div id="page-wrap">
 					<?php while ( have_posts() ) : the_post(); ?>
 					<div class="bookmarks">

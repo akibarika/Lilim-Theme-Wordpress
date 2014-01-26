@@ -1,14 +1,4 @@
-<?php get_header(); ?>	
-				<ul>
-					<li><?php next_posts_link('<i class="fa-chevron-right fa-3x"></i><span class="pagenav">下一页</span>', 0); ?></li>
-					<li><?php previous_posts_link('<i class="fa-chevron-left fa-3x"></i><span class="pagenav">上一页</span>', 0); ?></li>
-				</ul>	
-				<ul>
-					<li><a href="#"><i class="fa-archive fa-3x"></i><span>Archive</span></a></li>
-					<li><a href="http://moe.akibarika.org/wp-admin/"><i class="fa-dashboard fa-3x"></i><span>Backyard</span></a></li>
-					<li><a class="closer"><i class="fa-remove-sign"></i> Close</a></li>				
-				</ul>								
-			</aside>			
+<?php get_header(); ?>			
 			<section id="post">
 				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 				<article class="item show-up">

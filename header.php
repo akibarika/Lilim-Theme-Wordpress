@@ -26,37 +26,10 @@
 		<?php wp_head(); ?> 
 	</head>
 	<body>
-		<header class="transition">
-			<a id="logo" href="http://moe.akibarika.org">
-				Akiba
-				<span>Rika</span>
-			</a>
-			<nav id="header-cate" class="transition">
-				<ul>
-					<li><a href="https://twitter.com/Akiba_Rika" target="_blank"><i class="fa-twitter fa-3x"></i></a></li>
-					<li><a href="http://weibo.com/rikatan" target="_blank"><i class="fa-weibo fa-3x"></i></a></li>
-					<li><a href="http://www.flickr.com/photos/akibarika/" target="_blank"><i class="fa-flickr fa-3x"></i></a></li>
-					<li><a href="https://plus.google.com/u/0/103659577793041448146" target="_blank"><i class="fa-google-plus-square fa-3x"></i></a></li>
-					<li><a href="http://instagram.com/akibarika" target="_blank"><i class="fa-instagram fa-3x"></i></a></li>
-					<li><a href="https://foursquare.com/akiba_rika" target="_blank"><i class="fa-foursquare fa-3x"></i></a></li>
-				</ul>	
-			</nav>
-		</header>
-		<nav id="menu" class="clearfix transition">
-			<a id="more" class="left"><i class="fa-bars fa-2x"></i> Page</a>
-			<?php  wp_nav_menu( array( 'theme_location' => 'menu' ,'container'=>'','menu_id'=>'1st-menu') ); ?>
-			<div id="search">
-				<?php get_search_form(); ?>
-			</div>			
-		</nav>
-		<nav id="fixed_menu" class="clearfix transition none">
-			<a id="more_more" class="left"><i class="fa-bars fa-2x"></i> Page</a>
-			<?php  wp_nav_menu( array( 'theme_location' => 'menu' ,'container'=>'','menu_id'=>'2nd-menu') ); ?>
-			<a id="tool" class="right"><i class="fa-gears fa-2x"></i> Tool</a>		
-		</nav>	
-		<section id="content" class="clearfix">
-			<aside id="left-sidebar">
-				<ul>
+		<div id="menu-mobile">
+			<span class="bt-menu">Menu</span>
+			<div class="wrapper-menu">
+				<ul class="menu right">
 					<li>
 						<a href="http://moe.akibarika.org/"><i class="fa-home fa-2x"></i><span>Home</span></a>
 					</li>				
@@ -70,10 +43,70 @@
 						<a href="#"><i class="fa-comment fa-2x"></i><span>Contact</span></a>
 					</li>
 				</ul>
-			</aside>
-			<aside id="right-sidebar">
-				<div id="mini-search">
-					<form method="get" action="<?php bloginfo ('url');?>" role="search">
-						<input placeholder="//search" type="text" name="s" id="mini-s" class="text"  x-webkit-speech />
-					</form>
-				</div>		
+				<div class="search-text">
+		            <span>SEARCH</span>
+		            <?php get_search_form(); ?>
+		        </div>
+		        <li class="others dropdown">
+	
+		        </li>
+			</div>
+
+		</div>
+		<header id="header">
+			<nav class="top">
+				<h1 class="hitokoto"><script src="http://api.hitokoto.us/rand?encode=js&charset=utf-8" ></script><script>hitokoto()</script></h1>
+				<ul class="right">
+					<li class="login">
+						<?php
+						if ( is_user_logged_in() ) {
+							echo '御主人様お帰り';  
+							?><a href="<?php echo wp_logout_url(); ?>" title="Logout">Logout</a><?php  
+						} else {
+						    echo 'お前、誰？';
+						    ?><a href="<?php echo wp_login_url(); ?>" title="Login">Login</a><?php
+						}
+						?>	
+					</li>			
+					<li class="social">
+						<a href="https://twitter.com/Akiba_Rika" target="_blank"><i class="fa-twitter fa-2x"></i></a>
+						<a href="http://weibo.com/rikatan" target="_blank"><i class="fa-weibo fa-2x"></i></a>
+						<a href="http://www.flickr.com/photos/akibarika/" target="_blank"><i class="fa-flickr fa-2x"></i></a>
+						<a href="https://plus.google.com/u/0/103659577793041448146" target="_blank"><i class="fa-google-plus-square fa-2x"></i></a>
+						<a href="http://instagram.com/akibarika" target="_blank"><i class="fa-instagram fa-2x"></i></a>
+						<a href="https://foursquare.com/akiba_rika" target="_blank"><i class="fa-foursquare fa-2x"></i></a>						
+					</li>
+				</ul>
+			</nav>
+			<nav class="main">
+		        <a id="logo" href="http://moe.akibarika.org">
+					Akiba<span>Rika</span>
+				</a>
+			</nav>
+			<nav class="search">
+				<div class="right">
+					<ul class="menu2 menu-responsive">
+						<li>
+							<em>View By</em>
+						</li>
+						<li class="dropdown" data-filter="categories">
+							<span>Category</span>
+						</li>		
+						<li class="dropdown" data-filter="tags">
+							<span>Tag</span>
+						</li>										
+					</ul>
+
+				</div>
+			</nav>
+			<nav class="filters">
+				<div class="inner">
+					<div class="filter list-tags categories">
+						<?php  wp_nav_menu( array( 'theme_location' => 'menu' ,'container'=>'','menu_id'=>'1st-menu') ); ?>
+					</div>
+					<div class="filter list-tags tags">
+						<?php wp_tag_cloud('smallest=13&largest=13&number=50&format=list&unit=px');?>
+					</div>
+				</div>
+			</nav>
+		</header>
