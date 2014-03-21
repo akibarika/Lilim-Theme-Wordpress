@@ -1,11 +1,8 @@
 			<footer class="clearfix">
 				<section id="footer">
-					<p>Since 2008 <a href="http://moe.akibarika.org/">@Akiba_Rika</a> - All rights reserved. Theme <span>Lilim</span> coded by Rika.</p>
+					<p>Since 2008 <a href="http://moe.akibarika.org/">@Akiba_Rika/Himeka</a> - All rights reserved. Made with <span class="heart">&#60;3</span> in Theme <span>Lilim</span>.</p>
 				</section>
-			</footer>
-		</section>
-
-
+			</footer>		
 	</body>
 
 </html>

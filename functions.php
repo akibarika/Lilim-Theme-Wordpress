@@ -146,7 +146,7 @@ function otakism_comment($comment, $args, $depth) {
 	   $commentcount = $cpp * $page;
 	}
 ?>
-   <li <?php comment_class(); ?><?php if( $depth > 1){ echo 'style="margin-left:35px;"';} ?> id="comment-<?php comment_ID() ?>" >
+   <li <?php comment_class(); ?><?php if( $depth > 1){ echo ' style="margin-left:35px;"';} ?> id="comment-<?php comment_ID() ?>" >
 		<div id="comment-<?php comment_ID(); ?>" class="comment-body clearfix">
 			<div class="comment-avatar left"><a href="<?php comment_author_url(); ?>"><?php echo get_avatar( $comment, $size = '50'); ?></a></div>
 			<div class="comment-content left">

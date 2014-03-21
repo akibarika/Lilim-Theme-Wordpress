@@ -25,9 +25,9 @@
 							</div>
 							<div class="excerpt">
 								<?php if(has_excerpt()) : ?>
-									<p><?php the_excerpt(); ?></p>
+									<?php the_excerpt(); ?>
 								<?php else : ?>
-									<p><?php echo cut_str(strip_tags(apply_filters('the_content',$post->post_content)),180); ?></p>
+									<?php echo cut_str(strip_tags(apply_filters('the_content',$post->post_content)),180); ?>
 								<?php endif; ?>	
 							</div>
 							<div class="post-meta left">

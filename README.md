@@ -1,4 +1,5 @@
 Lilim Theme
+
 ========
 
 This is AkibaRika.org Blog Theme.
@@ -6,7 +7,6 @@ This is AkibaRika.org Blog Theme.
 There still are serval issues and bugs that need to be solved.
 
 You may **COPY** this theme for your own purpose, but please remind yourself of following the CC BY-NC-SA 3.0.
-
 
 ChangeLog
 ---
@@ -32,4 +32,4 @@ Version 2.0
 *don't remember*
  - Changing index.php from block layout to grid layout
  - Masonry in use
- - Code Optimization 
+ - Code Optimization  
