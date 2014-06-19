@@ -11,7 +11,7 @@
 		<meta name="keywords" content="奥克兰,新西兰,动漫,秋庭里香,AkibaRika,扫图">
 		<meta name="author" content="Rika Akiba">
 		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-		<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/all.js"></script>
+		<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/all.js?ver=1.0"></script>
 		<script src="<?php bloginfo('template_url'); ?>/comments-ajax.js" type="text/javascript"></script>
 		<!-- style file -->
 		<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/style.css">

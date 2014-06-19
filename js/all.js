@@ -36,33 +36,32 @@ $(document).ready(function(){
 		  	  "gutter":20
 			});
 	});
-	$(function() {
-	    var $elem = $('#page-wrap');
-	    $('.tool-up').fadeIn('slow');
-	    $('.tool-down').fadeIn('slow'); 
-	    $(window).bind('scrollstart', function(){
-	        $('.tool-up,.tool-down,.tool-comment').stop().animate({'opacity':'0.2'});
-	    });
-	    $(window).bind('scrollstop', function(){
-	        $('.tool-up,.tool-down,tool-comment').stop().animate({'opacity':'1'});
-	    });
+    // go down and up change
+    var arrivedAtBottom = false;
+    
+    $(window).scroll(function(event){
+		event.stopPropagation();
+	    arrivedAtBottom = $(window).scrollTop() >= $(document).height() - $(window).height();
+	    
+	    if(arrivedAtBottom){
+		    $('.tool-goto').removeClass("tool-down fa-angle-down");
+		    $('.tool-goto').addClass("tool-up fa-angle-up");
+	    }else{
+		    $('.tool-goto').removeClass("tool-up fa-angle-up");
+		    $('.tool-goto').addClass("tool-down fa-angle-down");	    
+	    }
+    });	
+    $('.right-toolbar').on("click",".tool-up",function(){
+	    $('html, body').animate({scrollTop: 0}, 500);
+    });
+    $('.right-toolbar').on("click",".tool-down",function(){
+	    $('html, body').animate({scrollTop: $('#page-wrap').height()},500);
+    });    
+    $('.fa-comment-o').click(function () {
+        $('html, body').animate({scrollTop:$('#comments').position().top}, 500);
+    }); 	 	    	 	      
+	 
 
-	    $('.tool-down').click(
-	        function (e) {
-	            $('html, body').animate({scrollTop: $elem.height()}, 800);
-	        }
-	    );
-	    $('.tool-up').click(
-	        function (e) {
-	            $('html, body').animate({scrollTop: '0px'}, 800);
-	        }
-	    ); 
-	    $('.tool-comment').click(
-	        function (e) {
-	            $('html, body').animate({scrollTop:$('#comments').position().top}, 800);
-	        }
-	    ); 	 	    	 	      
-	 });
     $('nav.search .dropdown').click(function() {
 
         var type = $(this).data('filter');
@@ -98,6 +97,8 @@ $(document).ready(function(){
         }
 
     });	 
+
+    
 	 $(window).scroll(function() {
 
         var scrollTop = $(window).scrollTop();
@@ -120,6 +121,7 @@ $(document).ready(function(){
         }
 
     });
+    
             
 	$("#menu-mobile .bt-menu").click(function() {
 	if ($("#menu-mobile").hasClass('open')) {
@@ -143,6 +145,8 @@ $(document).ready(function(){
 	var count = $("ul#1st-menu li").size();
 	var hentai = 100 / count;
 	$("ul#1st-menu li").css('width', hentai +'%');
+	
+	
 	
 })
 function grin(tag) {

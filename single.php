@@ -1,13 +1,13 @@
 <?php get_header(); ?>	
 			<div id="page-wrap">		
 				<div class="right-toolbar">
-					<div class="tool-icon tool-up fa-angle-up fa-3x">
+					<div class="tool-icon fa-share-alt fa-3x">
 						
 					</div>
-					<div class="tool-icon tool-comment fa-comment-o fa-3x">
+					<div class="tool-icon fa-comment-o fa-3x">
 						
 					</div>
-					<div class="tool-icon tool-down fa-angle-down fa-3x">
+					<div class="tool-icon tool-goto tool-down fa-angle-down fa-3x">
 					</div>
 				</div>
 				<section id="single" class="wrap-single">
