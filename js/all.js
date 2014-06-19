@@ -58,9 +58,11 @@ $(document).ready(function(){
 	    $('html, body').animate({scrollTop: $('#page-wrap').height()},500);
     });    
     $('.fa-comment-o').click(function () {
-        $('html, body').animate({scrollTop:$('#comments').position().top}, 500);
+        $('html, body').animate({scrollTop:$('#respond').position().top}, 500);
     }); 	 	    	 	      
-	 
+    $('.fa-share-alt').click(function () {
+        $('html, body').animate({scrollTop:$('.WPSNS_main').position().top}, 500);
+    }); 	 
 
     $('nav.search .dropdown').click(function() {
 

@@ -3,6 +3,10 @@
 	  */ ?>
 <?php get_header(); ?>		
 			<div id="page-wrap">
+				<div class="right-toolbar">
+					<span class="hint--left" data-hint="分享"><div class="tool-icon fa-share-alt fa-3x"></div></span>
+					<span class="hint--left" data-hint="滚动"><div class="tool-icon tool-goto tool-down fa-angle-down fa-3x"></div></span>
+				</div>			
 				<section id="single" class="wrap-pixiv">
 					<div id="pixiv">
 

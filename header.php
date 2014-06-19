@@ -15,6 +15,8 @@
 		<script src="<?php bloginfo('template_url'); ?>/comments-ajax.js" type="text/javascript"></script>
 		<!-- style file -->
 		<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/style.css">
+		<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/hint.min.css">
+		<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/component.css">
 		<link rel="stylesheet/less" type="text/css" href="<?php bloginfo('template_directory'); ?>/main_styling.less">
 		<script src="<?php bloginfo('template_directory'); ?>/js/less.min.js" type="text/javascript"> </script>
 		<script src="<?php bloginfo('template_directory'); ?>/js/masonry.min.js"></script>

@@ -1,14 +1,9 @@
 <?php get_header(); ?>	
 			<div id="page-wrap">		
 				<div class="right-toolbar">
-					<div class="tool-icon fa-share-alt fa-3x">
-						
-					</div>
-					<div class="tool-icon fa-comment-o fa-3x">
-						
-					</div>
-					<div class="tool-icon tool-goto tool-down fa-angle-down fa-3x">
-					</div>
+					<span class="hint--left" data-hint="分享"><div class="tool-icon fa-share-alt fa-3x"></div></span>
+					<span class="hint--left" data-hint="回复"><div class="tool-icon fa-comment-o fa-3x"></div></span>
+					<span class="hint--left" data-hint="滚动"><div class="tool-icon tool-goto tool-down fa-angle-down fa-3x"></div></span>
 				</div>
 				<section id="single" class="wrap-single">
 					<?php while ( have_posts() ) : the_post(); ?>
@@ -32,6 +27,7 @@
 							<div class="meta">
 							</div>
 						</div>
+						<?php echo wp_sns_share();?>
 					</article>
 					<?php comments_template(); ?>
 					<?php endwhile; ?>
