@@ -797,6 +797,11 @@ body.header-fixed {
 		  padding-left: 10px;
 	  }
   }
+  .page{
+	  .WPSNS_main{
+		  border-top: 1px solid #dddddd;
+	  }
+   }  
 }
 
 #mini-s {
@@ -1514,14 +1519,38 @@ textarea#comment:focus {
 			font-weight: bold;			
 		}
 		a.user{
+			display: block;
 			margin: 0 10px;
-			color: #ba89b6;
-			&:hover{
-				text-decoration: underline;
+			height: 32px;
+			transition: @trans;
+			img{
+				display: inline-block;
+				height: 32px;
+				width: 32px;
+				border-radius: 3px;
+				position: relative; 
+				left: 0; 
+				transition: @trans;		
 			}
-		}
-		p{
-			display: none;
+			span.user_name{
+				opacity: 0;
+				display: inline-block;
+				margin: 0 0 5px 5px;
+				vertical-align: middle;
+				font-size: 15px;
+				color: #986794;
+				transition: @trans;	
+			}
+			&:hover{
+				img{
+					text-align: justify;
+					left: -10px;
+				}
+				span.user_name{
+					opacity: 1;
+				}
+			}
+			
 		}		
 	}
 

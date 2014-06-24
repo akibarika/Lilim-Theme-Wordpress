@@ -7,11 +7,11 @@
 					<span class="hint--left" data-hint="分享"><div class="tool-icon fa-share-alt fa-3x"></div></span>
 					<span class="hint--left" data-hint="滚动"><div class="tool-icon tool-goto tool-down fa-angle-down fa-3x"></div></span>
 				</div>			
-				<section id="single" class="wrap-pixiv">
+				<section id="single" class="wrap-pixiv page">
 					<div id="pixiv">
 
 					<?php
-					$rss = simplexml_load_file('http://www.feed43.com/5103823232446385.xml');
+					$rss = simplexml_load_file('http://paid.feed43.com/pixiv_daily.xml');
 					?>
 					
 					<h1 class="ribbon">
@@ -35,7 +35,8 @@
 					        
 					}  
 					
-					?>  
+					?> 
+					<?php echo wp_sns_share();?> 
 					</div>
 				</section>			
 			</div>
