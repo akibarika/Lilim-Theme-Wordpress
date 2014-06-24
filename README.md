@@ -11,6 +11,13 @@ You may **COPY** this theme for your own purpose, but please remind yourself of 
 ChangeLog
 ---
 
+Version 2.6
+
+*23-Jun-2014*
+
+ - Fixed the display of PIXIV RANKINK
+ - Added the right toolbar
+
 Version 2.5
 
 *27-Jan-2014*
