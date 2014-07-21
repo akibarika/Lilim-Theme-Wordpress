@@ -21,6 +21,7 @@
 		<script src="<?php bloginfo('template_directory'); ?>/js/masonry.min.js"></script>
 		<script src="<?php bloginfo('template_directory'); ?>/js/imagesloaded.pkgd.min.js"></script>		
 		<link href="<?php bloginfo('template_url'); ?>/css/font-awesome.css" rel="stylesheet">
+        <link href='http://fonts.googleapis.com/css?family=Raleway:400,700,600,500,800,900,300,200,100' rel='stylesheet' type='text/css'>
 		<link rel="Shortcut Icon" href="<?php bloginfo('template_url'); ?>/favicon.ico"> 
 		<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php bloginfo('rss2_url'); ?>" />
 		<link rel="alternate" type="application/rss+xml" title="RSS 1.0" href="<?php bloginfo('rss_url'); ?>" />
