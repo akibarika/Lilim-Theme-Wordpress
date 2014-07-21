@@ -858,7 +858,81 @@ body.header-fixed {
   margin: 0px 0px 30px 25px;
   width: 440px;
   height: auto;
-  .here-is-title{
+  &.kanban {
+    backface-visibility: hidden;
+    color: #666;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 40px;
+    text-transform: uppercase;
+    &:hover {
+      &::before {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+      }
+      &::after {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+      }
+      h2, p {
+        opacity: 1;
+        -webkit-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+      }
+    }
+    &::before,
+    &::after {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      bottom: 30px;
+      left: 30px;
+      content: '';
+      opacity: 0;
+      -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+      transition: opacity 0.35s, transform 0.35s;
+      pointer-events: none;
+    }
+    &::before{
+      border-top: 1px solid #666;
+      border-bottom: 1px solid #666;
+      -webkit-transform: scale(0,1);
+      transform: scale(0,1);
+    }
+    &::after {
+      border-right: 1px solid #666;
+      border-left: 1px solid #666;
+      -webkit-transform: scale(1,0);
+      transform: scale(1,0);
+    }
+    h2 {
+      font-weight: 300;
+      padding-top: 10%;
+      -webkit-transition: -webkit-transform 0.35s;
+      transition: transform 0.35s;
+      -webkit-transform: translate3d(0,-20px,0);
+      transform: translate3d(0,-20px,0);
+      text-align: center;
+      span {
+        font-weight: 800;
+      }
+    }
+    p {
+      color: #808285;
+      font-size: 68.5%;
+      letter-spacing: 1px;
+      padding: 20px 34px;
+      opacity: 0;
+      -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+      transition: opacity 0.35s, transform 0.35s;
+      -webkit-transform: translate3d(0,20px,0);
+      transform: translate3d(0,20px,0);
+      text-align: center;
+    }
+  }
+  .here-is-title {
     .post-title {
     	color: #666 !important;
       font-weight:normal;

@@ -1,7 +1,7 @@
 <?php get_header(); ?>			
 			<section id="post">
 				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-				<article class="item show-up">
+				<article id="post-<?php the_ID(); ?>" class="item show-up">
 					<div class="warp-content clearfix">
 						<div class="pic left">
 							<?php if ( has_post_thumbnail() ) { ?>
