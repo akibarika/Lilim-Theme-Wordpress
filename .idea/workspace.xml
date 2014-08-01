@@ -3,8 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="7d791155-9d7d-41ac-bcf2-f512b6e24593" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/no-picture.jpg" afterPath="$PROJECT_DIR$/images/no-picture.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/category.php" afterPath="$PROJECT_DIR$/category.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main_styling.less" afterPath="$PROJECT_DIR$/main_styling.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style.css" afterPath="$PROJECT_DIR$/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Lilim-Theme-Version-2.iws" />
@@ -28,10 +30,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="category.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/category.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="63" column="22" selection-start="3151" selection-end="3151" vertical-scroll-proportion="-31.076923" vertical-offset="263" max-vertical-offset="1411">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="main_styling.less" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main_styling.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1257" column="33" selection-start="29391" selection-end="29391" vertical-scroll-proportion="0.7921279" vertical-offset="20725" max-vertical-offset="35326">
+            <state line="1064" column="49" selection-start="23797" selection-end="23797" vertical-scroll-proportion="0.86223865" vertical-offset="17387" max-vertical-offset="35428">
               <folding />
             </state>
           </provider>
@@ -40,7 +51,7 @@
       <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="59" selection-start="2769" selection-end="2769" vertical-scroll-proportion="-13.290909" vertical-offset="34" max-vertical-offset="1173">
+            <state line="3" column="0" selection-start="117" selection-end="2889" vertical-scroll-proportion="-0.92727274" vertical-offset="0" max-vertical-offset="1173">
               <folding>
                 <marker date="1406913157737" expanded="true" signature="2965:3069" placeholder="..." />
                 <marker date="1406913157737" expanded="true" signature="3006:3069" placeholder="..." />
@@ -54,6 +65,15 @@
         <entry file="file://$PROJECT_DIR$/header.php">
           <provider selected="true" editor-type-id="text-editor">
             <state line="51" column="38" selection-start="3419" selection-end="3419" vertical-scroll-proportion="-20.153847" vertical-offset="343" max-vertical-offset="2482">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="12" selection-start="164" selection-end="164" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="527">
               <folding />
             </state>
           </provider>
@@ -81,10 +101,11 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/category.php" />
         <option value="$PROJECT_DIR$/header.php" />
         <option value="$PROJECT_DIR$/single.php" />
         <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/style.css" />
+        <option value="$PROJECT_DIR$/category.php" />
         <option value="$PROJECT_DIR$/main_styling.less" />
       </list>
     </option>
@@ -189,7 +210,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -439,23 +460,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="868">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/single.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="23" column="46" selection-start="992" selection-end="992" vertical-scroll-proportion="0.46437055" vertical-offset="0" max-vertical-offset="842">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/category.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="57" selection-start="324" selection-end="324" vertical-scroll-proportion="0.121140145" vertical-offset="102" max-vertical-offset="1258">
           <folding />
         </state>
       </provider>
@@ -505,9 +512,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="12" selection-start="164" selection-end="164" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="527">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="59" selection-start="2769" selection-end="2769" vertical-scroll-proportion="-13.290909" vertical-offset="34" max-vertical-offset="1173">
+        <state line="3" column="0" selection-start="117" selection-end="2889" vertical-scroll-proportion="-0.92727274" vertical-offset="0" max-vertical-offset="1173">
           <folding>
             <marker date="1406913157737" expanded="true" signature="2965:3069" placeholder="..." />
             <marker date="1406913157737" expanded="true" signature="3006:3069" placeholder="..." />
@@ -516,9 +530,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/category.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="63" column="22" selection-start="3151" selection-end="3151" vertical-scroll-proportion="-31.076923" vertical-offset="263" max-vertical-offset="1411">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main_styling.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1257" column="33" selection-start="29391" selection-end="29391" vertical-scroll-proportion="0.7921279" vertical-offset="20725" max-vertical-offset="35326">
+        <state line="1064" column="49" selection-start="23797" selection-end="23797" vertical-scroll-proportion="0.86223865" vertical-offset="17387" max-vertical-offset="35428">
           <folding />
         </state>
       </provider>

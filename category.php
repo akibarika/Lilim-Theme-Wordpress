@@ -15,44 +15,53 @@ get_header(); ?>
             </div>
         </article>
         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-        <article id="post-<?php the_ID(); ?>" class="item show-up">
-            <div class="warp-content clearfix">
-                <div class="pic left">
-                    <?php if ( has_post_thumbnail() ) { ?>
-                        <a class="entry-image" href="<?php the_permalink() ?>" title="永久链接：<?php the_title(); ?>">
-                            <span class="entry-image-overlay"></span>
+            <article id="post-<?php the_ID(); ?>" class="item show-up">
+                <div class="wrap-content clearfix">
+                    <div class="heading">
+                        <a href="<?php the_permalink(); ?>"><?php echo get_avatar( 'lxclxc89816@gmail.com', 46 ); ?></a>
+                        <div class="post-title">
+                            <div class="title-wrap">
+                                <div class="title">
+                                    <a href="<?php the_permalink() ?>" title="永久链接：<?php the_title(); ?>"><?php the_title(); ?></a>
+                                </div>
+                                <time>
+                                    <?php the_time('F j, Y') ?>
+                                </time>
+                            </div>
+                        </div>
+                        <div class="tag">
+                            <?php the_tags('<ul><li><div class="tag-bar"></div>','</li><li><div class="tag-bar"></div>','</li></ul>'); ?>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <div class="excerpt">
+                            <?php if(has_excerpt()) : ?>
+                                <?php the_excerpt(); ?>
+                            <?php else : ?>
+                                <?php echo cut_str(strip_tags(apply_filters('the_content',$post->post_content)),180); ?>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                    <div class="post-thumb">
+                        <?php if ( has_post_thumbnail() ) { ?>
                             <?php if ( has_post_thumbnail() ){ the_post_thumbnail('home-thumbnail', array('class'=>'thumb')); } ?>
-                        </a>
-                    <?php } else { ?>
-                        <a class="entry-image" href="<?php the_permalink() ?>" title="永久链接：<?php the_title(); ?>">
-                            <span class="entry-image-overlay"></span>
+                        <?php } else { ?>
                             <img src="<?php bloginfo( 'template_url' ); ?>/images/no-picture.jpg" class="thumb"/>
-                        </a>
-                    <?php } ?>
+                        <?php } ?>
+                    </div>
+                    <div class="post-meta">
+                        <div class="post-comment">
+                            <?php comments_popup_link( ' 0', ' 1', ' %', 'fa-share'); ?>
+                        </div>
+                        <div class="post-read">
+                            <a class="read-more fa-plus-square-o" href="<?php the_permalink(); ?>"> <span>More</span></a>
+                        </div>
+                        <div class="post-cat">
+                            <i class="fa fa-book"></i> <?php the_category(' '); ?>
+                        </div>
+                    </div>
                 </div>
-                <div class="post-content left">
-                    <div class="here-is-title">
-                        <div class="title-bar"></div>
-                        <h2 class="post-title">
-                            <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
-                        </h2>
-                    </div>
-                    <div class="excerpt">
-                        <?php if(has_excerpt()) : ?>
-                            <?php the_excerpt(); ?>
-                        <?php else : ?>
-                            <?php echo cut_str(strip_tags(apply_filters('the_content',$post->post_content)),180); ?>
-                        <?php endif; ?>
-                    </div>
-                    <div class="post-meta left">
-                        <?php comments_popup_link('暂无吐槽', '被吐槽1次', '被吐槽%次'); ?> |
-                        <time><?php the_time('m/d') ?></time> |
-                        <?php the_category('、') ?>
-                    </div>
-                    <a class="read-more right" href="<?php the_permalink(); ?>">Read More</a>
-                </div>
-            </div>
-        </article>
+            </article>
         <?php endwhile; ?>
         <?php else : ?>
             <article class="item i-404">
