@@ -11,6 +11,14 @@ You may **COPY** this theme for your own purpose, but please remind yourself of 
 ChangeLog
 ---
 
+Version 2.7
+
+*02-Ayg-2014*
+
+ - Google+ style index
+ - Added category.php
+ - Style sheets code optimization
+
 Version 2.6
 
 *23-Jun-2014*

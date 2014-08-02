@@ -43,7 +43,7 @@
                                 <a class="read-more fa-plus-square-o" href="<?php the_permalink(); ?>"> <span>More</span></a>
                             </div>
                             <div class="post-cat">
-                                <i class="fa fa-book"></i> <?php the_category(' '); ?>
+                                <i class="fa-folder-open"></i> <?php the_category(' '); ?>
                             </div>
                         </div>
 					</div>
@@ -51,7 +51,7 @@
 				<?php endwhile; ?>
 				<?php else : ?>
 				<article class="item i-404">
-					<div class="warp-content clearfix">
+					<div class="wrap-content clearfix">
 						<div class="not-found">
 							<img src="<?php bloginfo('template_directory'); ?>/images/404-not-found.jpg" />
 						</div>

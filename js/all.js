@@ -10,7 +10,8 @@ $(document).ready(function(){
 			}
 		})
 	});
-	$('.bt-search').click(function() {
+	$('.bt-search').click(function(event) {
+        event.stopPropagation();
         if ($(this).hasClass('active')) {
             $(this).removeClass('active');
             $('nav.search').removeClass('open');
@@ -26,7 +27,6 @@ $(document).ready(function(){
 	$('.item').stop().fadeTo(100,1,function(){
 		$('.item').addClass('stop');
 	});
-
 	var $post = $('#post'); 
 	$post.imagesLoaded( function() {
 	  $post.masonry({
@@ -38,11 +38,9 @@ $(document).ready(function(){
 	});
     // go down and up change
     var arrivedAtBottom = false;
-    
     $(window).scroll(function(event){
 		event.stopPropagation();
 	    arrivedAtBottom = $(window).scrollTop() >= $(document).height() - $(window).height();
-	    
 	    if(arrivedAtBottom){
 		    $('.tool-goto').removeClass("tool-down fa-angle-down");
 		    $('.tool-goto').addClass("tool-up fa-angle-up");
@@ -62,49 +60,32 @@ $(document).ready(function(){
     }); 	 	    	 	      
     $('.fa-share-alt').click(function () {
         $('html, body').animate({scrollTop:$('.WPSNS_main').position().top}, 500);
-    }); 	 
-
+    });
     $('nav.search .dropdown').click(function() {
-
         var type = $(this).data('filter');
-
         if ($(this).hasClass('active')) {
-
             $(this).removeClass('active');
             $('.filters').removeClass('open');
-
             $('.filters').slideToggle('slow');
             setTimeout(function() {
                 $('.filters .filter').hide();
             }, 500);
-
         } else {
-
             $('nav.search .dropdown').removeClass('active');
             $(this).addClass('active');
-
             if ($('.filters').hasClass('open')) {
-
                 $('.filters .filter').hide();
                 $('.filters .filter.' + type).fadeIn();
-
             } else {
-
                 $('.filters').addClass('open');
                 $('.filters .filter.' + type).fadeIn();
                 $('.filters').slideToggle('slow');
-
             }
-
         }
-
-    });	 
-
-    
-	 $(window).scroll(function() {
-
+    });
+	 $(window).scroll(function(event) {
+        event.stopPropagation();
         var scrollTop = $(window).scrollTop();
-
         if (scrollTop > 48) {
         	$('nav.search').removeClass('open');
             $('.bt-search').removeClass('active');
@@ -123,15 +104,25 @@ $(document).ready(function(){
         }
 
     });
-    
-            
-	$("#menu-mobile .bt-menu").click(function() {
-	if ($("#menu-mobile").hasClass('open')) {
-	    $("#menu-mobile").removeClass('open');
-	} else {
-	    $("#menu-mobile").addClass('open');
-	}
+	$("#menu-mobile .bt-menu").click(function(event) {
+        event.stopPropagation();
+        if ($("#menu-mobile").hasClass('open')) {
+            $("#menu-mobile").removeClass('open');
+        } else {
+            $("#menu-mobile").addClass('open');
+        }
 	});
+    $('.tag ul > li:first-child').mouseenter(function(event) {
+        event.stopPropagation();
+        $(this).parents('ul').addClass('show');
+    });
+    $('.tag ul > li').click(function(event) {
+        event.stopPropagation();
+    });
+    $('.tag ul').mouseleave(function(event) {
+        event.stopPropagation();
+        $(this).removeClass('show');
+    });
 	var wrap = 960;
 	var a = 60;
 	var b = 20;
@@ -147,9 +138,7 @@ $(document).ready(function(){
 	var count = $("ul#1st-menu li").size();
 	var hentai = 100 / count;
 	$("ul#1st-menu li").css('width', hentai +'%');
-	
-	
-	
+
 })
 function grin(tag) {
 	var myField;

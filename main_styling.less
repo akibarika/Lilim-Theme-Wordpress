@@ -44,7 +44,7 @@
 body {
   background:none repeat scroll 0 0 #eeeeee;
   color:#333333;
-  font-family: "Lato","Helvetica Neue",Helvetica,"Hiragino Sans GB","Hiragino Sans GB W3","Microsoft YaHei",sans-serif;
+  font-family: "Raleway","Helvetica Neue",Helvetica,"Hiragino Sans GB","Hiragino Sans GB W3","Microsoft YaHei",sans-serif;
   font-size:12px;
   position:relative;
   margin:0 auto;
@@ -1085,13 +1085,58 @@ nav.filters {
             position: absolute;
             right: 0;
             top: 0;
-            &:hover {
+            &.show {
               li {
                 background-color: #f5f5f5;
+                &:hover {
+                  box-shadow: 0 0 20px rgba(0,0,0,.2);
+                  background-color: #404040;
+                  max-width: 360px;
+                }
                 a {
                   color: #999;
                   opacity: 1;
                   visibility: visible;
+                }
+                &:first-child {
+                  &:hover {
+                    box-shadow: 0 0 20px rgba(0,0,0,.2);
+                    background-color: #404040;
+                    max-width: 360px;
+                    a {
+                      color: #fff;
+                    }
+                  }
+                }
+                &:nth-child(odd) {
+                  &:hover {
+                    cursor: pointer;
+                    display: block;
+                    white-space: nowrap;
+                    .tag-bar {
+                      background-color: #404040;
+                    }
+                    a {
+                      color: #fff;
+                      opacity: 1;
+                      visibility: visible;
+                    }
+                  }
+                }
+                &:nth-child(even) {
+                  &:hover {
+                    cursor: pointer;
+                    display: block;
+                    white-space: nowrap;
+                    .tag-bar {
+                      background-color: #404040;
+                    }
+                    a {
+                      color: #fff;
+                      opacity: 1;
+                      visibility: visible;
+                    }
+                  }
                 }
               }
             }
@@ -1101,11 +1146,6 @@ nav.filters {
               line-height: 26px;
               word-wrap: normal;
               .transition(all,.3s,ease);
-              &:hover {
-                box-shadow: 0 0 20px rgba(0,0,0,.2);
-                background-color: #404040;
-                max-width: 360px;
-              }
               .tag-bar {
                 float: right;
                 height: 26px;
@@ -1114,8 +1154,6 @@ nav.filters {
                 width: 0;
               }
               a {
-                -webkit-transition: opacity .218s ease,max-width .218s step-end,visibility .218s step-end;
-                transition: opacity .218s ease,max-width .218s step-end,visibility .218s step-end;
                 color: #999;
                 display: block;
                 float: right;
@@ -1126,19 +1164,12 @@ nav.filters {
                 white-space: nowrap;
                 opacity: 0;
                 visibility: hidden;
+                .transition(all,.3s,ease-in-out);
               }
               &:first-child {
                 background-color: #f5f5f5;
                 float: right;
                 max-width: 360px;
-                &:hover {
-                  box-shadow: 0 0 20px rgba(0,0,0,.2);
-                  background-color: #404040;
-                  max-width: 360px;
-                  a {
-                    color: #fff;
-                  }
-                }
                 .tag-bar {
                   background-color: #404040 !important;
                 }
@@ -1147,40 +1178,14 @@ nav.filters {
                   visibility: visible;
                 }
               }
-              &:nth-child(odd) {
-                .tag-bar {
-                  background-color: #737373;
-                }
-                &:hover {
-                  cursor: pointer;
-                  display: block;
-                  white-space: nowrap;
-                  .tag-bar {
-                    background-color: #404040;
-                  }
-                  a {
-                    color: #fff;
-                    opacity: 1;
-                    visibility: visible;
-                  }
-                }
-              }
               &:nth-child(even) {
                 .tag-bar {
                   background-color: #aaa;
                 }
-                &:hover {
-                  cursor: pointer;
-                  display: block;
-                  white-space: nowrap;
-                  .tag-bar {
-                    background-color: #404040;
-                  }
-                  a {
-                    color: #fff;
-                    opacity: 1;
-                    visibility: visible;
-                  }
+              }
+              &:nth-child(odd) {
+                .tag-bar {
+                  background-color: #737373;
                 }
               }
             }
@@ -1239,6 +1244,9 @@ nav.filters {
           width: auto;
           background-image: none;
           -webkit-appearance: none;
+          i {
+            color: #262626;
+          }
           &:hover {
             -webkit-box-shadow:0 1px 0 rgba(0,0,0,.1);
             box-shadow:0 1px 0 rgba(0,0,0,.1);
@@ -1250,9 +1258,8 @@ nav.filters {
             font-size: 14px;
             font-weight: bold;
             opacity: .7;
-
             span {
-              font-family: "Lato","Helvetica Neue",Helvetica,"Hiragino Sans GB","Hiragino Sans GB W3","Microsoft YaHei",sans-serif;
+              font-family: "Raleway","Helvetica Neue",Helvetica,"Hiragino Sans GB","Hiragino Sans GB W3","Microsoft YaHei",sans-serif;
             }
           }
         }
