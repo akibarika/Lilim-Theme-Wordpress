@@ -16,7 +16,7 @@ Version 2.7
 *02-Ayg-2014*
 
  - Google+ style index
- - Added category.php
+ - Added category.php and tag.php
  - Style sheets code optimization
 
 Version 2.6

@@ -2,16 +2,16 @@
 /**
  * Created by PhpStorm.
  * User: Akiba
- * Date: 14-7-21
- * Time: 下午8:58
- * A Category Template
+ * Date: 14-8-2
+ * Time: 下午9:28
+ * A Tag Template
  */
 get_header(); ?>
     <section id="post">
         <article id="cat-<?php the_category_ID(); ?> " class="item show-up kanban">
             <div class="in-cat">
-                <h2>这里是<span><?php single_cat_title(); ?></span></h2>
-                <?php echo category_description($category_id); ?>
+                <h2>Tag:<span> <?php single_tag_title(); ?></span></h2>
+                <?php echo tag_description( $tag_id ); ?>
             </div>
         </article>
         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
