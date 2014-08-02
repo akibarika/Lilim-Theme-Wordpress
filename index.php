@@ -40,7 +40,7 @@
                                 <?php comments_popup_link( ' 0', ' 1', ' %', 'fa-share'); ?>
                             </div>
                             <div class="post-read">
-                                <a class="read-more fa-plus-square-o" href="<?php the_permalink(); ?>"> <span>More</span></a>
+                                <a class="read-more fa-plus-square-o" href="<?php the_permalink(); ?>" title="继续阅读：<?php the_title(); ?>"><span>More</span></a>
                             </div>
                             <div class="post-cat">
                                 <i class="fa-folder-open"></i> <?php the_category(' '); ?>
