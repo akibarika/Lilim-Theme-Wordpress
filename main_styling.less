@@ -1057,7 +1057,7 @@ nav.filters {
           .title-wrap {
             .title {
               border: 0 none;
-              font-size: 14px;
+              font-size: 15px;
               font-weight: normal;
               margin: 0;
               unicode-bidi: normal;
@@ -1086,6 +1086,7 @@ nav.filters {
             right: 0;
             top: 0;
             &.show {
+              z-index: 12;
               li {
                 background-color: #f5f5f5;
                 &:hover {
@@ -1195,7 +1196,9 @@ nav.filters {
       .post-content {
         margin: 0;
         padding: 0 20px 15px;
+        position: relative;
         text-overflow: ellipsis;
+        z-index: 11;
         .excerpt {
           color: #808285;
           font-size: 13px;
@@ -1457,7 +1460,7 @@ nav.filters {
       }
     }
     .author_info {
-      height:29px;
+      height:auto;
       background-color:#eaeaea;
       -webkit-border-bottom-right-radius:5px;
       -moz-border-radius-bottomright:5px;

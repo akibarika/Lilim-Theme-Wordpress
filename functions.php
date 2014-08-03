@@ -39,6 +39,7 @@ function comment_mail_notify($comment_id) {
 }
 add_action('comment_post', 'comment_mail_notify');
 // -- END ----------------------------------------
+//adding category css support
 
 /* wpbeginner_numeric_posts_nav  */
 function wpbeginner_numeric_posts_nav() {
