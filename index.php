@@ -4,7 +4,10 @@
 				<article id="post-<?php the_ID(); ?>" class="item show-up">
 					<div class="wrap-content clearfix">
                         <div class="heading">
-                            <a href="<?php the_permalink(); ?>"><?php echo get_avatar( 'lxclxc89816@gmail.com', 46 ); ?></a>
+                            <div class="avatar-icon">
+                                <a href="<?php the_permalink(); ?>" title="永久链接：<?php the_title(); ?>"><?php echo get_avatar( 'lxclxc89816@gmail.com', 46 ); ?></a>
+                                <span class="back"><a href="<?php the_permalink() ?>" title="永久链接：<?php the_title(); ?>">更多</a></span>
+                            </div>
                             <div class="post-title">
                                 <div class="title-wrap">
                                     <div class="title">

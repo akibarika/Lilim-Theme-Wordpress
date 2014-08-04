@@ -1044,11 +1044,61 @@ nav.filters {
         margin-bottom: 20px;
         padding: 0 20px;
         position: relative;
-        .avatar {
-          border-radius: 50%;
+        .avatar-icon {
+          position: relative;
           float: left;
           margin: 20px 15px 0 0;
           padding: 0;
+          height: 46px;
+          width: 46px;
+          &:hover {
+            .back {
+              -moz-transform: rotateY(0deg);
+              -webkit-transform: rotateY(0deg);
+              -o-transform: rotateY(0deg);
+              transform: rotateY(0deg);
+
+            }
+            .avatar {
+              -moz-transform: rotateY(180deg);
+              -webkit-transform: rotateY(180deg);
+              -o-transform: rotateY(180deg);
+              transform: rotateY(180deg);
+            }
+          }
+          .avatar,
+          .back {
+            backface-visibility: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+          .back {
+            width: 100%;
+            height: 100%;
+            -moz-transform: rotateY(180deg);
+            -webkit-transform: rotateY(180deg);
+            -o-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+            .transition(all,.8s,ease-in-out);
+            a {
+              background-color: #986794;
+              border-radius: 100%;
+              color: #fff;
+              display: block;
+              height: 100%;
+              line-height: 46px;
+              text-align: center;
+              text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
+              vertical-align: middle;
+              width: 100%;
+              .transition(all,.3s,ease);
+            }
+          }
+          .avatar {
+            border-radius: 50%;
+            .transition(all,.8s,ease-in-out);
+          }
         }
         .post-title {
           margin: 0 0 15px 61px;
@@ -1350,6 +1400,13 @@ nav.filters {
             border-radius:65px;
             width:50px;
             height:50px;
+            .transition(all,.8s,ease-in-out);
+            &:hover {
+              -moz-transform: rotateY(180deg);
+              -webkit-transform: rotateY(180deg);
+              -o-transform: rotateY(180deg);
+              transform: rotateY(180deg);
+            }
           }
         }
       }
