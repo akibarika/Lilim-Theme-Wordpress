@@ -94,7 +94,7 @@
                     <a class="read-more fa-plus-square-o" href="<?php the_permalink(); ?>" title="继续阅读：<?php the_title(); ?>"> <span>更多</span></a>
                 </div>
                 <div class="post-link">
-                    <a href="<?php echo $url ?>"class="fa-link"> 外部链接</a>
+                    <a href="<?php echo $url ?>"class="fa-link" target="_blank"> 外部链接</a>
                 </div>
             </div>
         </div>
@@ -134,7 +134,7 @@
             </div>
             <div class="post-quote">
                 <p><?php echo $quote ?></p>
-                <span><a href="<?php echo $source ?>">来源</a></span>
+                <span><a href="<?php echo $source ?>" target="_blank">来源</a></span>
             </div>
             <div class="post-meta">
                 <div class="post-comment">

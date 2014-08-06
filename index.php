@@ -1,6 +1,8 @@
 <?php get_header(); ?>			
 			<section id="post">
-				<?php if (have_posts()) : while (have_posts()) : the_post();
+				<?php if (have_posts()) : 
+				while (have_posts()) : 
+					the_post();
                     get_template_part('content');
 				endwhile;else : ?>
 				<article class="item i-404">
