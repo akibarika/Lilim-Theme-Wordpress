@@ -965,6 +965,7 @@ nav.filters {
     }
     &.kanban {
       backface-visibility: hidden;
+      -webkit-backface-visibility:hidden;
       color: #666;
       cursor: pointer;
       font-size: 20px;
@@ -1040,6 +1041,45 @@ nav.filters {
     .wrap-content {
       height:auto;
       z-index:10;
+      &.format-link {
+        .post-thumb {
+          border-top: 1px solid #e5e5e5;
+        }
+      }
+      &.format-quote {
+        .post-quote {
+          border: 1px solid rgba(0, 0, 0, 0.05);
+          margin: 0 5px 15px;
+          padding: 0 15px 0 15px;
+          position: relative;
+          text-overflow: ellipsis;
+          z-index: 11;
+          p {
+            font-size: 16px;
+            margin-bottom: 0px;
+            max-height: 157px;
+          }
+          span {
+            display: block;
+            text-align: right;
+            padding-top: 9px;
+            margin-bottom: 16px;
+            a {
+              color: #999;
+              display: block;
+              font-size: 12px;
+              line-height: 1.4;
+              overflow: hidden;
+              padding-top: 1px;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+      }
       p {
         display:block;
         margin:1em 0;
@@ -1074,6 +1114,7 @@ nav.filters {
           .avatar,
           .back {
             backface-visibility: hidden;
+            -webkit-backface-visibility:hidden;
             position: absolute;
             top: 0;
             left: 0;
@@ -1265,7 +1306,6 @@ nav.filters {
         }
       }
       .post-thumb {
-        background: none repeat scroll 0 0 #eee;
         margin: 5px auto 15px;
         overflow: hidden;
         width: 430px;
@@ -1281,9 +1321,19 @@ nav.filters {
         overflow: hidden;
         margin: 20px 0 0 0;
         padding: 0 0 20px 12px;
+        .post-link {
+          float: right;
+          margin-right: 8px;
+        }
         .post-comment,
         .post-read,
         .post-cat {
+          float: left;
+        }
+        .post-comment,
+        .post-read,
+        .post-cat,
+        .post-link{
           -webkit-border-radius: 3px;
           border-radius: 3px;
           -webkit-box-shadow: 0 1px 0 rgba(0,0,0,.05);
@@ -1293,7 +1343,6 @@ nav.filters {
           background-color: #fff;
           border: 1px solid #d9d9d9;
           cursor: pointer;
-          float: left;
           height: 28px;
           line-height: 28px;
           margin-left: 8px;
@@ -1306,8 +1355,8 @@ nav.filters {
             color: #262626;
           }
           &:hover {
-            -webkit-box-shadow:0 1px 0 rgba(0,0,0,.1);
-            box-shadow:0 1px 0 rgba(0,0,0,.1);
+            -webkit-box-shadow:0 2px 0 rgba(0,0,0,.1);
+            box-shadow:0 2px 0 rgba(0,0,0,.1);
             border-color: #bfbfbf;
           }
           a {
