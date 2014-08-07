@@ -10,57 +10,23 @@ $(document).ready(function(){
 			}
 		})
 	});
-	$('.bt-search').click(function(event) {
-        event.stopPropagation();
-        if ($(this).hasClass('active')) {
-            $(this).removeClass('active');
-            $('nav.search').removeClass('open');
-            $('nav.search .dropdown').removeClass('active');
-		    $('nav.search, .filters').removeClass('open');
-		    $('.filters, .filters .filter').hide();
-        } else {
-            $(this).addClass('active');
-            $('nav.search').addClass('open');
-            $('nav .search-text input[type="text"]').focus();
-        }
-    });	
-	$('.item').stop().fadeTo(100,1,function(){
-		$('.item').addClass('stop');
-	});
-	var $post = $('#post'); 
-	$post.imagesLoaded( function() {
-	  $post.masonry({
-		  	  itemSelector: '.item',
-		  	  columnWidth: '.item',
-		  	  transitionDuration: 0,
-		  	  "gutter":20
-			});
-	});
-    // go down and up change
-    var arrivedAtBottom = false;
-    $(window).scroll(function(event){
-		event.stopPropagation();
-	    arrivedAtBottom = $(window).scrollTop() >= $(document).height() - $(window).height();
-	    if(arrivedAtBottom){
-		    $('.tool-goto').removeClass("tool-down fa-angle-down");
-		    $('.tool-goto').addClass("tool-up fa-angle-up");
-	    }else{
-		    $('.tool-goto').removeClass("tool-up fa-angle-up");
-		    $('.tool-goto').addClass("tool-down fa-angle-down");	    
-	    }
-    });	
-    $('.right-toolbar').on("click",".tool-up",function(){
-	    $('html, body').animate({scrollTop: 0}, 500);
-    });
-    $('.right-toolbar').on("click",".tool-down",function(){
-	    $('html, body').animate({scrollTop: $('#page-wrap').height()},500);
-    });    
-    $('.fa-comment-o').click(function () {
-        $('html, body').animate({scrollTop:$('#respond').position().top}, 500);
-    }); 	 	    	 	      
-    $('.fa-share-alt').click(function () {
-        $('html, body').animate({scrollTop:$('.WPSNS_main').position().top}, 500);
-    });
+    //Initial
+    function stop(items){
+        items.addClass('stop');
+    }
+    function initial (parent,items) {
+        stop(items);
+        parent.imagesLoaded( function() {
+            parent.masonry({
+                itemSelector: '.item',
+                columnWidth: '.item',
+                transitionDuration: 0,
+                "gutter":20
+            });
+        });
+    }
+    initial($('#post'), $('#post .item'))
+
     $('nav.search .dropdown').click(function() {
         var type = $(this).data('filter');
         if ($(this).hasClass('active')) {
@@ -83,27 +49,41 @@ $(document).ready(function(){
             }
         }
     });
-	 $(window).scroll(function(event) {
+    $('.bt-search').click(function(event) {
+        event.stopPropagation();
+        if ($(this).hasClass('active')) {
+            $(this).removeClass('active');
+            $('nav.search').removeClass('open');
+            $('nav.search .dropdown').removeClass('active');
+            $('nav.search, .filters').removeClass('open');
+            $('.filters, .filters .filter').hide();
+        } else {
+            $(this).addClass('active');
+            $('nav.search').addClass('open');
+            $('nav .search-text input[type="text"]').focus();
+        }
+    });
+    $(window).scroll(function(event) {
         event.stopPropagation();
         var scrollTop = $(window).scrollTop();
         if (scrollTop > 48) {
-        	$('nav.search').removeClass('open');
+            $('nav.search').removeClass('open');
             $('.bt-search').removeClass('active');
             $('body').addClass('header-fixed');
             $('.main').addClass('white-bg');
             $('nav.search .dropdown').removeClass('active');
-		    $('nav.search, .filters').removeClass('open');
-		    $('.filters, .filters .filter').hide();
+            $('nav.search, .filters').removeClass('open');
+            $('.filters, .filters .filter').hide();
         } else {
             if ($('nav.search').hasClass('visible')) {
                 $('nav.search').addClass('open');
                 $('.bt-search').addClass('active');
-            }        
+            }
             $('body').removeClass('header-fixed');
             $('.main').removeClass('white-bg');
         }
-
     });
+    //Display the moblie menu
 	$("#menu-mobile .bt-menu").click(function(event) {
         event.stopPropagation();
         if ($("#menu-mobile").hasClass('open')) {
@@ -112,6 +92,7 @@ $(document).ready(function(){
             $("#menu-mobile").addClass('open');
         }
 	});
+    //Article tag
     $('.tag ul > li:first-child').mouseenter(function(event) {
         event.stopPropagation();
         $(this).parents('ul').addClass('show');
@@ -123,6 +104,7 @@ $(document).ready(function(){
         event.stopPropagation();
         $(this).removeClass('show');
     });
+    //Place the right tool-bar
 	var wrap = 960;
 	var a = 60;
 	var b = 20;
@@ -138,32 +120,31 @@ $(document).ready(function(){
 	var count = $("ul#1st-menu li").size();
 	var hentai = 100 / count;
 	$("ul#1st-menu li").css('width', hentai +'%');
+    // Go down and up change
+    var arrivedAtBottom = false;
+    $(window).scroll(function(event){
+        event.stopPropagation();
+        arrivedAtBottom = $(window).scrollTop() >= $(document).height() - $(window).height();
+        if(arrivedAtBottom){
+            $('.tool-goto').removeClass("tool-down fa-angle-down");
+            $('.tool-goto').addClass("tool-up fa-angle-up");
+        }else{
+            $('.tool-goto').removeClass("tool-up fa-angle-up");
+            $('.tool-goto').addClass("tool-down fa-angle-down");
+        }
+    });
+    $('.right-toolbar').on("click",".tool-up",function(){
+        $('html, body').animate({scrollTop: 0}, 500);
+    });
+    $('.right-toolbar').on("click",".tool-down",function(){
+        $('html, body').animate({scrollTop: $('#page-wrap').height()},500);
+    });
+    $('.fa-comment-o').click(function () {
+        $('html, body').animate({scrollTop:$('#respond').position().top}, 500);
+    });
+    $('.fa-share-alt').click(function () {
+        $('html, body').animate({scrollTop:$('.WPSNS_main').position().top}, 500);
+    });
 
 })
-function grin(tag) {
-	var myField;
-	tag = ' ' + tag + ' ';
-	if (document.getElementById('comment') && document.getElementById('comment').type == 'textarea') {
-		myField = document.getElementById('comment')
-	} else {
-		return false
-	}
-	if (document.selection) {
-		myField.focus();
-		sel = document.selection.createRange();
-		sel.text = tag;
-		myField.focus()
-	} else if (myField.selectionStart || myField.selectionStart == '0') {
-		var startPos = myField.selectionStart;
-		var endPos = myField.selectionEnd;
-		var cursorPos = endPos;
-		myField.value = myField.value.substring(0, startPos) + tag + myField.value.substring(endPos, myField.value.length);
-		cursorPos += tag.length;
-		myField.focus();
-		myField.selectionStart = cursorPos;
-		myField.selectionEnd = cursorPos
-	} else {
-		myField.value += tag;
-		myField.focus()
-	}
-}
+function grin(tag){var myField;tag=' '+tag+' ';if(document.getElementById('comment')&&document.getElementById('comment').type=='textarea'){myField=document.getElementById('comment')}else{return false}if(document.selection){myField.focus();sel=document.selection.createRange();sel.text=tag;myField.focus()}else if(myField.selectionStart||myField.selectionStart=='0'){var startPos=myField.selectionStart;var endPos=myField.selectionEnd;var cursorPos=endPos;myField.value=myField.value.substring(0,startPos)+tag+myField.value.substring(endPos,myField.value.length);cursorPos+=tag.length;myField.focus();myField.selectionStart=cursorPos;myField.selectionEnd=cursorPos}else{myField.value+=tag;myField.focus()}}

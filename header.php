@@ -10,25 +10,21 @@
 		<meta name="description" content="这里是里香奇奇怪怪的部落格">
 		<meta name="keywords" content="奥克兰,新西兰,动漫,秋庭里香,AkibaRika,扫图">
 		<meta name="author" content="Rika Akiba">
-		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-		<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/all.js?ver=1.0"></script>
-		<script src="<?php bloginfo('template_url'); ?>/comments-ajax.js" type="text/javascript"></script>
 		<!-- style file -->
 		<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/style.css">
 		<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/hint.min.css">
 		<link rel="stylesheet/less" type="text/css" href="<?php bloginfo('template_directory'); ?>/main_styling.less">
-		<script src="<?php bloginfo('template_directory'); ?>/js/less.min.js" type="text/javascript"> </script>
-		<script src="<?php bloginfo('template_directory'); ?>/js/masonry.min.js"></script>
-		<script src="<?php bloginfo('template_directory'); ?>/js/imagesloaded.pkgd.min.js"></script>		
-		<link href="<?php bloginfo('template_url'); ?>/css/font-awesome.css" rel="stylesheet">
-		<link rel="Shortcut Icon" href="<?php bloginfo('template_url'); ?>/favicon.ico"> 
+		<link href="<?php bloginfo('template_directory'); ?>/css/font-awesome.css" rel="stylesheet">
+        <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+        <script src="<?php bloginfo('template_directory'); ?>/js/less.min.js" type="text/javascript"></script>
+		<link rel="Shortcut Icon" href="<?php bloginfo('template_directory'); ?>/favicon.ico">
 		<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php bloginfo('rss2_url'); ?>" />
 		<link rel="alternate" type="application/rss+xml" title="RSS 1.0" href="<?php bloginfo('rss_url'); ?>" />
 		<link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="<?php bloginfo('atom_url'); ?>" />
 		<?php wp_head(); ?> 
 	</head>
 	<body>
-		<div id="menu-mobile">
+		<section id="menu-mobile">
 			<span class="bt-menu">Menu</span>
 			<div class="wrapper-menu">
 				<ul class="menu right">
@@ -56,8 +52,7 @@
 	
 		        </li>
 			</div>
-
-		</div>
+		</section>
 		<header id="header">
 			<nav class="top">
 				<h1 class="hitokoto"><script src="http://api.hitokoto.us/rand?encode=js&charset=utf-8" ></script><script>hitokoto()</script></h1>
@@ -121,7 +116,6 @@
 					<div class="search-text">
 			            <?php get_search_form(); ?>
 					</div>
-
 				</div>
 			</nav>
 			<nav class="filters">

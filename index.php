@@ -1,4 +1,5 @@
-<?php get_header(); ?>			
+<?php get_header(); ?>
+        <div class="container">
 			<section id="post">
 				<?php if (have_posts()) : 
 				while (have_posts()) : 
@@ -15,4 +16,5 @@
 				<?php endif; ?>  
 			</section>
 			<?php wpbeginner_numeric_posts_nav(); ?>
+        </div>
 <?php get_footer(); ?>

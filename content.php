@@ -12,7 +12,7 @@
             <div class="heading">
                 <div class="avatar-icon">
                     <a href="<?php the_permalink(); ?>" title="永久链接：<?php the_title(); ?>"><?php echo get_avatar( 'lxclxc89816@gmail.com', 46 ); ?></a>
-                    <span class="back"><a href="<?php the_permalink() ?>" title="永久链接：<?php the_title(); ?>">更多</a></span>
+                    <span class="back"><a href="<?php the_permalink() ?>" title="永久链接：<?php the_title(); ?>">吐槽</a></span>
                 </div>
                 <div class="post-title">
                     <div class="title-wrap">
@@ -54,7 +54,7 @@
             <div class="heading">
                 <div class="avatar-icon">
                     <a href="<?php the_permalink(); ?>" title="永久链接：<?php the_title(); ?>"><?php echo get_avatar( 'lxclxc89816@gmail.com', 46 ); ?></a>
-                    <span class="back"><a href="<?php the_permalink() ?>" title="永久链接：<?php the_title(); ?>">更多</a></span>
+                    <span class="back"><a href="<?php the_permalink() ?>" title="永久链接：<?php the_title(); ?>">趣链</a></span>
                 </div>
                 <div class="post-title">
                     <div class="title-wrap">
@@ -107,7 +107,7 @@
             <div class="heading">
                 <div class="avatar-icon">
                     <a href="<?php the_permalink(); ?>" title="永久链接：<?php the_title(); ?>"><?php echo get_avatar( 'lxclxc89816@gmail.com', 46 ); ?></a>
-                    <span class="back"><a href="<?php the_permalink() ?>" title="永久链接：<?php the_title(); ?>">更多</a></span>
+                    <span class="back"><a href="<?php the_permalink() ?>" title="永久链接：<?php the_title(); ?>">趣闻</a></span>
                 </div>
                 <div class="post-title">
                     <div class="title-wrap">
