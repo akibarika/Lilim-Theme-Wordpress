@@ -7,6 +7,7 @@
  * A Tag Template
  */
 get_header(); ?>
+<div class="container">
     <section id="post">
         <article id="cat-<?php the_category_ID(); ?> " class="item show-up kanban">
             <div class="in-cat">
@@ -76,6 +77,7 @@ get_header(); ?>
             </article>
         <?php endif; ?>
     </section>
-<?php wpbeginner_numeric_posts_nav(); ?>
+    <?php wpbeginner_numeric_posts_nav(); ?>
+</div>
 
 <?php get_footer(); ?>

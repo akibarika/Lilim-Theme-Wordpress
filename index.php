@@ -1,7 +1,8 @@
 <?php get_header(); ?>
         <div class="container">
 			<section id="post">
-				<?php if (have_posts()) : 
+                <div class="pageload-overlay"></div>
+				<?php if (have_posts()) :
 				while (have_posts()) : 
 					the_post();
                     get_template_part('content');
