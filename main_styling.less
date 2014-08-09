@@ -994,17 +994,13 @@ nav.filters {
       border-style: solid;
       border-width: 0 1px 2px;
       float:left;
-      margin: 0px 0px 30px 25px;
+      margin: 0px 10px 30px;
       width: 440px;
       height: auto;
       .transition(opacity,.3s,ease-in-out);
       &.right {
         clear: right;
         float: right;
-      }
-      &::before {
-        content: "";
-        display: table;
       }
       &::after {
         clear: both;
@@ -1109,9 +1105,40 @@ nav.filters {
       .wrap-content {
         height:auto;
         z-index:10;
+        &.format-status {
+          .heading {
+            .avatar-icon {
+              .status {
+                background-position: 0 -138px;
+              }
+              .back {
+                a {
+                  background-color: #f4606c;
+                }
+              }
+            }
+          }
+        }
+        &.format-gallery {
+          .heading {
+            .avatar-icon {
+              .gallery {
+                background-position: 0 -184px;
+              }
+              .back {
+                a {
+                  background-color: #a0eee1;
+                }
+              }
+            }
+          }
+        }
         &.format-aside {
           .heading {
             .avatar-icon {
+              .aside {
+                background-position: 0 -276px;
+              }
               .back {
                 a {
                   background-color: #dcad9e;
@@ -1123,6 +1150,9 @@ nav.filters {
         &.format-link {
           .heading {
             .avatar-icon {
+              .link {
+                background-position: 0 -92px;
+              }
               .back {
                 a {
                   background-color: #d1ba74;
@@ -1137,6 +1167,9 @@ nav.filters {
         &.format-quote {
           .heading {
             .avatar-icon {
+              .quote {
+                background-position: 0 -46px;
+              }
               .back {
                 a {
                   background-color: #19caad;
@@ -1193,6 +1226,14 @@ nav.filters {
             padding: 0;
             height: 46px;
             width: 46px;
+            .front {
+              background-image: url("images/icons_rika.png");
+              width: 100%;
+              height: 100%;
+              display: inline-block;
+              text-indent: -9999px;
+              .transition(all,.8s,ease-in-out);
+            }
             &:hover {
               .back {
                 -moz-transform: rotateY(0deg);
@@ -1201,7 +1242,8 @@ nav.filters {
                 transform: rotateY(0deg);
 
               }
-              .avatar {
+              .avatar,
+              .front {
                 -moz-transform: rotateY(180deg);
                 -webkit-transform: rotateY(180deg);
                 -o-transform: rotateY(180deg);
@@ -1209,6 +1251,7 @@ nav.filters {
               }
             }
             .avatar,
+            .front,
             .back {
               backface-visibility: hidden;
               -webkit-backface-visibility:hidden;
@@ -1966,7 +2009,7 @@ footer {
       height: auto;
       width: 740px;
       .item {
-        margin: 0 0 20px;
+        margin: 0 4px 20px;
         width: 360px;
         .wrap-content {
           .heading {
@@ -2188,6 +2231,9 @@ footer {
         margin: 0 0 20px;
         width: 300px;
         .wrap-content {
+          .post-cat {
+            display: none;
+          }
           .heading {
             .post-title {
               .title-wrap {
