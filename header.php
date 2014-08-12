@@ -37,10 +37,13 @@
 					<li>
 						<a href="/links"><i class="fa-link fa-2x"></i><span>Links</span></a>
 					</li>
+                    <li>
+                        <a href="/works/"><i class="fa-code fa-2x"></i><span>My Works</span></a>
+                    </li>
 					<li>
 						<a href="/pixiv-daily-ranking/"><i class="fa-bookmark fa-2x"></i><span>Pixiv Ranking</span></a>
-					</li>					
-					<li>
+					</li>
+                    <li>
 						<a href="#"><i class="fa-comment fa-2x"></i><span>Contact</span></a>
 					</li>
 				</ul>
@@ -92,9 +95,12 @@
 					<li>
 						<a href="/links"><span>Links</span></a>
 					</li>
+                    <li>
+                        <a href="/works/"><span>Works</span></a>
+                    </li>
 					<li>
 						<a href="/pixiv-daily-ranking/"><span>Pixiv Ranking</span></a>
-					</li>	
+					</li>
 					<li class="search">
 			            <span class="bt-search"><i class="fa-search fa-2x"></i></span>
 			        </li>			
