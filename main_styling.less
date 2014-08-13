@@ -791,6 +791,13 @@ nav.filters {
               min-height: 200px;
               padding: 0 14px 0 0;
               width: 280px;
+              &:hover {
+                .wrap {
+                  .work-info {
+                    border-bottom: 1px solid #606060;
+                  }
+                }
+              }
               .wrap {
                 width: 100%;
                 .work-thumb {
@@ -901,6 +908,7 @@ nav.filters {
                   margin-top: 10px;
                   padding: 5px 20px 10px;
                   text-align: center;
+                  .transition(border-bottom-color,.3s,ease);
                   .work-title {
                     margin-bottom: 10px;
                     span {
