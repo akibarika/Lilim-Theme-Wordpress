@@ -17,6 +17,8 @@ Version 2.7
 
  - Google+ style index
  - Added category.php and tag.php
+ - Theme is supporting post type
+ - Added my work page
  - Style sheets code optimization
 
 Version 2.6
