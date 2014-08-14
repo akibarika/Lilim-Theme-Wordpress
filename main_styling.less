@@ -1355,6 +1355,37 @@ nav.filters {
                 }
               }
             }
+            .tag {
+               ul {
+                 &.show {
+                   li {
+                     &:hover {
+                       background-color: #742E34;
+                       .tag-bar {
+                         background-color: #742E34;
+                       }
+                     }
+                   }
+                 }
+                 li{
+                   &:nth-child(even) {
+                     .tag-bar {
+                       background-color: #DA5661;
+                     }
+                   }
+                   &:nth-child(odd) {
+                     .tag-bar {
+                       background-color: #DA5661;
+                     }
+                   }
+                   &:first-child {
+                     .tag-bar {
+                       background-color: #742E34 !important;
+                     }
+                   }
+                 }
+               }
+            }
           }
         }
         &.format-gallery {
