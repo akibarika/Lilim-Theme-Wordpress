@@ -16,7 +16,7 @@
 		<link rel="stylesheet/less" type="text/css" href="<?php bloginfo('template_directory'); ?>/main_styling.less">
 		<link href="<?php bloginfo('template_directory'); ?>/css/font-awesome.css" rel="stylesheet">
         <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-        <script src="<?php bloginfo('template_directory'); ?>/js/less.min.js" type="text/javascript"></script>
+        <script src="<?php bloginfo('template_directory'); ?>/js/less.min.js?ver=1.7.4" type="text/javascript"></script>
 		<link rel="Shortcut Icon" href="<?php bloginfo('template_directory'); ?>/favicon.ico">
 		<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php bloginfo('rss2_url'); ?>" />
 		<link rel="alternate" type="application/rss+xml" title="RSS 1.0" href="<?php bloginfo('rss_url'); ?>" />
