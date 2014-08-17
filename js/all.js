@@ -45,16 +45,15 @@ $(document).ready(function(){
         $('html,body').animate({scrollTop: 0}, 300);
         $('.item').addClass('fading');
         $.ajax({
-            url:pageurl,
-            success: function(data) {
-                var html = $.parseHTML(data);
-                $("#post").html($("#post",html).html());
-                $(".navigation").html($(".navigation",html).html());
-                var imgload = imagesLoaded( $('#post') );
-                imgload.on('done', function(){
-                    initial($('#post .item'));
-                });
-            }
+            url:pageurl
+        }).done(function(data){
+            var html = $.parseHTML(data);
+            $("#post").html($("#post",html).html());
+            $(".navigation").html($(".navigation",html).html());
+            var imgload = imagesLoaded( $('#post') );
+            imgload.on('done', function(){
+                initial($('#post .item'));
+            });
         });
     }
     //Article tag
