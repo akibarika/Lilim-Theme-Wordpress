@@ -31,7 +31,7 @@
                         }
 					}
 					?> 
-<!--					--><?php //echo wp_sns_share();?><!-- -->
+					<?php echo wp_sns_share();?>
 					</div>
 				</section>			
 			</div>
