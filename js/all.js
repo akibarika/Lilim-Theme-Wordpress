@@ -95,7 +95,7 @@ $(document).ready(function(){
         }
     });
 
-    $(".navigation").on("click","a",function(event){
+    jQuery(document).on("click",".navigation a",function(event){
         event.preventDefault();
         var currentLink = $(this).attr("href");
         turnpage(currentLink);
@@ -103,7 +103,7 @@ $(document).ready(function(){
         currentState = window.location.href;
     });
 
-    $('nav.search .dropdown').click(function() {
+    jQuery(document).on("click","nav.search .dropdown",function(){
         var type = $(this).data('filter');
         if ($(this).hasClass('active')) {
             $(this).removeClass('active');
@@ -125,7 +125,7 @@ $(document).ready(function(){
             }
         }
     });
-    $('.bt-search').click(function(event) {
+    jQuery(document).on("click",".bt-search",function(event){
         event.stopPropagation();
         if ($(this).hasClass('active')) {
             $(this).removeClass('active');
@@ -160,7 +160,7 @@ $(document).ready(function(){
         }
     });
     //Display the moblie menu
-	$("#menu-mobile .bt-menu").click(function(event) {
+    jQuery(document).on("click","#menu-mobile .bt-menu",function(event){
         event.stopPropagation();
         if ($("#menu-mobile").hasClass('open')) {
             $("#menu-mobile").removeClass('open');
@@ -182,16 +182,16 @@ $(document).ready(function(){
             $('.tool-goto').addClass("tool-down fa-angle-down");
         }
     });
-    $('.right-toolbar').on("click",".tool-up",function(){
+    jQuery(document).on("click",".right-toolbar .tool-up",function(){
         $('html, body').animate({scrollTop: 0}, 500);
     });
-    $('.right-toolbar').on("click",".tool-down",function(){
+    jQuery(document).on("click",".right-toolbar .tool-down",function(){
         $('html, body').animate({scrollTop: $('#page-wrap').height()},500);
     });
-    $('.fa-comment-o').click(function () {
+    jQuery(document).on("click",".right-toolbar .fa-comment-o",function(){
         $('html, body').animate({scrollTop:$('#respond').position().top}, 500);
     });
-    $('.fa-share-alt').click(function () {
+    jQuery(document).on("click",".right-toolbar .fa-share-alt",function(){
         $('html, body').animate({scrollTop:$('.WPSNS_main').position().top}, 500);
     });
 
