@@ -3,6 +3,8 @@
 					<p>Since 2008 <a href="http://moe.akibarika.org/">@Akiba_Rika/Himeka</a> - All rights reserved. Made with <span class="heart">&#60;3</span> in Theme <span>Lilim</span>.</p>
 				</section>
 			</footer>
+<!--            js files-->
+            <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/jquery.min.js?ver=1.11.1"></script>
             <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/imagesloaded.pkgd.min.js?ver=3.1.8"></script>
             <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/all.js?ver=1.1"></script>
             <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/comments-ajax.js"></script>
