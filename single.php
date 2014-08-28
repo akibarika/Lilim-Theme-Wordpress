@@ -27,7 +27,7 @@
 							<div class="meta">
 							</div>
 						</div>
-						<?php echo wp_sns_share();?>
+<!--						--><?php //echo wp_sns_share();?>
 					</article>
 					<?php comments_template(); ?>
 					<?php endwhile; ?>

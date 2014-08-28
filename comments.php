@@ -7,7 +7,7 @@
         <ol class="commentlist"><?php wp_list_comments('type=comment&callback=otakism_comment&max_depth=10000'); ?></ol>
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) { ?>
 			<div class="pagination">	
-    	    	<div class="clearfix"><?php paginate_comments_links(); ?></div>
+    	    	<div class="clearfix"><?php paginate_comments_links( array('prev_text' => '&laquo;', 'next_text' => '&raquo;') ); ?></div>
             </div>
 		<?php } ?>
     <?php else : ?>

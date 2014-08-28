@@ -1931,6 +1931,41 @@ nav.filters {
 #comments {
   width:100%;
   padding:20px 0 0 0;
+  .pagination {
+    display: block;
+    height: 40px;
+    margin: 50px 0 20px;
+    position: relative;
+    a,
+    span {
+      -moz-user-select: none;
+      user-select: none;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 9px;
+      color: #666;
+      cursor: pointer;
+      display: block;
+      float: left;
+      font-size: 12px;
+      height: 36px;
+      line-height: 36px;
+      margin-right: 10px;
+      padding: 0 15px;
+      vertical-align: middle;
+      width: auto;
+      .transition(all,.2s,ease);
+      &.dots {
+        cursor: default;
+      }
+      &.current {
+        border-color: #986794;
+      }
+      &:hover {
+        border-color: #986794;
+      }
+    }
+  }
   .commentscount h3 {
     font-size:20px;
     span {
@@ -2067,7 +2102,6 @@ nav.filters {
         line-height:29px;
         vertical-align:middle;
         padding-left:32px;
-        background:url(images/sprite.png) no-repeat 4px 5px;
         text-shadow:none;
       }
       .user_logout {
@@ -2114,7 +2148,6 @@ nav.filters {
         border:none;
         padding:0 10px 0 30px;
         margin:0;
-        background:url(images/sprite.png) no-repeat;
       }
       #author {
         background-position:4px 4px;
