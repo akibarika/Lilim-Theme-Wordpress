@@ -103,7 +103,7 @@ pre {
  white-space: -o-pre-wrap;
  word-wrap: break-word;
 }
-[class^="fa-"]{
+[class^="icon-"]{
   .transition(all,.3s,ease-in-out);
 }
 .clearfix {
@@ -125,24 +125,25 @@ pre {
 .right {
   float:right;
 }
-.fa-twitter:hover {
+.icon-twitter:hover {
   color:#00a0d1;
 }
-.fa-weibo:hover {
+.icon-weibo:hover {
   color:#eb182c;
 }
-.fa-flickr:hover {
+.icon-flickr:hover {
   color:#ff0084;
 }
-.fa-google-plus-square:hover {
+.icon-googleplus:hover {
   color:#db4a39;
 }
-.fa-instagram:hover {
+.icon-instagram:hover {
   color:#634d40;
 }
-.fa-foursquare:hover {
+.icon-foursquare:hover {
   color:#25a0ca;
 }
+
 #menu-mobile {
   display: none;
   position: fixed;
@@ -317,6 +318,7 @@ nav.top {
       position: relative;
       float: left;
       width: 44px;
+      font-size: 25px;
       height: 47px;
       text-align: center;
       border-left: 1px solid #d6d6d6;
@@ -397,10 +399,11 @@ nav.main {
           background: #444;
           cursor: pointer;
           .transition(all,.25s,ease-out);
-          .fa-search{
+          .icon-search{
             color: #fff;
             position: absolute;
-            top: 30%;
+            font-size: 28px;
+            top: 35%;
             left: 30%;
             text-align: center;
           }
@@ -720,8 +723,9 @@ nav.filters {
 	}  
 	.tool-icon{
 		color: #000;
+        font-size: 25px;
 		text-align: center;
-		line-height: 58px
+		line-height: 60px
 	}
 	
   }
@@ -995,7 +999,7 @@ nav.filters {
             }
           }
           a.ugoira-thumbnail:before {
-            background: url("images/playable.png") no-repeat scroll center center / 20px auto rgba(153, 153, 153, 0.5);
+            background: url("../images/playable.png") no-repeat scroll center center / 20px auto rgba(153, 153, 153, 0.5);
             border-radius: 3px;
             content: "";
             height: 26px;
@@ -1130,17 +1134,19 @@ nav.filters {
         color:#444444;
         font-size:14px;
         margin-top:25px;
-        margin-bottom:15px;
         padding:15px 10px 15px 10px;
+        & > div {
+          margin-bottom: 10px;
+          &:last-child {
+            margin-bottom:  0;
+          }
+        }
         a{
           color:#666666;
           &:hover{
             color:#ba89b6;
             text-decoration:underline;
           }
-        }
-        .category {
-          margin-bottom:10px;
         }
       }
       .WPSNS_main{
@@ -1620,7 +1626,7 @@ nav.filters {
             height: 46px;
             width: 46px;
             .front {
-              background-image: url("images/icons_rika.png");
+              background-image: url("../images/icons_rika.png");
               width: 100%;
               height: 100%;
               display: inline-block;
@@ -1992,12 +1998,20 @@ nav.filters {
       overflow:hidden;
       padding-bottom:15px;
       width: 100%;
+      .ajax-notice {
+        a {
+          color: #986794;
+          text-decoration: underline;
+        }
+      }
       .comment-body {
         width:100%;
         font-size:14px;
         padding:15px 0;
         border-top:1px solid #cccccc;
         position:relative;
+        height: auto;
+        overflow: hidden;
         .comment-avatar {
           box-shadow:0px 1px 1px rgba(255,255,255,0.75);
           position:relative;

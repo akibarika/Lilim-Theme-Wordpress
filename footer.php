@@ -7,7 +7,6 @@
             <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/jquery.min.js?ver=1.11.1"></script>
             <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/imagesloaded.pkgd.min.js?ver=3.1.8"></script>
             <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/all.js?ver=1.1"></script>
-            <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/comments-ajax.js"></script>
 <!--            Google Analytics-->
             <script>
                 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

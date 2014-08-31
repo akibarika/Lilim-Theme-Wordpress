@@ -13,8 +13,7 @@
 		<!-- style file -->
 		<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/style.css">
 		<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/hint.min.css">
-		<link rel="stylesheet/less" type="text/css" href="<?php bloginfo('template_directory'); ?>/main_styling.less">
-		<link href="<?php bloginfo('template_directory'); ?>/css/font-awesome.css" rel="stylesheet">
+		<link rel="stylesheet/less" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/styles.less">
         <script src="<?php bloginfo('template_directory'); ?>/js/less.min.js?ver=1.7.4" type="text/javascript"></script>
 		<link rel="Shortcut Icon" href="<?php bloginfo('template_directory'); ?>/favicon.ico">
 		<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php bloginfo('rss2_url'); ?>" />
@@ -28,22 +27,22 @@
 			<div class="wrapper-menu">
 				<ul class="menu right">
 					<li>
-						<a href="http://moe.akibarika.org/"><i class="fa-home fa-2x"></i><span>Home</span></a>
+						<a href="http://moe.akibarika.org/"><i class="icon-screen"></i><span>Home</span></a>
 					</li>				
 					<li>
-						<a href="/about"><i class="fa-user fa-2x"></i><span>About</span></a>
+						<a href="/about"><i class="icon-user"></i><span>About</span></a>
 					</li>
 					<li>
-						<a href="/links"><i class="fa-link fa-2x"></i><span>Links</span></a>
+						<a href="/links"><i class="icon-link"></i><span>Links</span></a>
 					</li>
                     <li>
-                        <a href="/works/"><i class="fa-code fa-2x"></i><span>My Works</span></a>
+                        <a href="/works/"><i class="icon-code"></i><span>My Works</span></a>
                     </li>
 					<li>
-						<a href="/pixiv-daily-ranking/"><i class="fa-bookmark fa-2x"></i><span>Pixiv Ranking</span></a>
+						<a href="/pixiv-daily-ranking/"><i class="icon-bookmark"></i><span>Pixiv Ranking</span></a>
 					</li>
                     <li>
-						<a href="#"><i class="fa-comment fa-2x"></i><span>Contact</span></a>
+						<a href="#"><i class="icon-mail"></i><span>Contact</span></a>
 					</li>
 				</ul>
 				<div class="search-text">
@@ -71,12 +70,12 @@
 						?>	
 					</li>			
 					<li class="social">
-						<a href="https://twitter.com/Akiba_Rika" target="_blank"><i class="fa-twitter fa-2x"></i></a>
-						<a href="http://weibo.com/rikatan" target="_blank"><i class="fa-weibo fa-2x"></i></a>
-						<a href="http://www.flickr.com/photos/akibarika/" target="_blank"><i class="fa-flickr fa-2x"></i></a>
-						<a href="https://plus.google.com/u/0/103659577793041448146" target="_blank"><i class="fa-google-plus-square fa-2x"></i></a>
-						<a href="http://instagram.com/akibarika" target="_blank"><i class="fa-instagram fa-2x"></i></a>
-						<a href="https://foursquare.com/akiba_rika" target="_blank"><i class="fa-foursquare fa-2x"></i></a>						
+						<a href="https://twitter.com/Akiba_Rika" target="_blank"><i class="icon-twitter"></i></a>
+						<a href="http://weibo.com/rikatan" target="_blank"><i class="icon-weibo"></i></a>
+						<a href="http://www.flickr.com/photos/akibarika/" target="_blank"><i class="icon-flickr"></i></a>
+						<a href="https://plus.google.com/u/0/103659577793041448146" target="_blank"><i class="icon-googleplus"></i></a>
+						<a href="http://instagram.com/akibarika" target="_blank"><i class="icon-instagram"></i></a>
+						<a href="https://foursquare.com/akiba_rika" target="_blank"><i class="icon-foursquare"></i></a>
 					</li>
 				</ul>
 			</nav>
@@ -101,7 +100,7 @@
 						<a href="/pixiv-daily-ranking/"><span>Pixiv Ranking</span></a>
 					</li>
 					<li class="search">
-			            <span class="bt-search"><i class="fa-search fa-2x"></i></span>
+			            <span class="bt-search"><i class="icon-search"></i></span>
 			        </li>			
 				</ul>
 			</nav>

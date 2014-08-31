@@ -59,7 +59,7 @@
                                         <img src="<?php echo $pic_url; ?>" >
                                     </div>
                                     <div class="caption">
-                                        <a class="button theme" href="<?php echo $link_url; ?>" target="_blank" ><span>private</span></a>
+                                        <a class="button theme" href="<?php echo $link_url; ?>" target="_blank" ><span>View</span></a>
                                     </div>
                                 </div>
                                 <div class="work-info">

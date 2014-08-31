@@ -175,11 +175,11 @@ $(document).ready(function(){
         event.stopPropagation();
         arrivedAtBottom = $(window).scrollTop() >= $(document).height() - $(window).height();
         if(arrivedAtBottom){
-            $('.tool-goto').removeClass("tool-down fa-angle-down");
-            $('.tool-goto').addClass("tool-up fa-angle-up");
+            $('.tool-goto').removeClass("tool-down icon-angle-down");
+            $('.tool-goto').addClass("tool-up icon-angle-up");
         }else{
-            $('.tool-goto').removeClass("tool-up fa-angle-up");
-            $('.tool-goto').addClass("tool-down fa-angle-down");
+            $('.tool-goto').removeClass("tool-up icon-angle-up");
+            $('.tool-goto').addClass("tool-down icon-angle-down");
         }
     });
     jQuery(document).on("click",".right-toolbar .tool-up",function(){
@@ -188,10 +188,10 @@ $(document).ready(function(){
     jQuery(document).on("click",".right-toolbar .tool-down",function(){
         $('html, body').animate({scrollTop: $('#page-wrap').height()},500);
     });
-    jQuery(document).on("click",".right-toolbar .fa-comment-o",function(){
+    jQuery(document).on("click",".right-toolbar .icon-bubbles",function(){
         $('html, body').animate({scrollTop:$('#respond').position().top}, 500);
     });
-    jQuery(document).on("click",".right-toolbar .fa-share-alt",function(){
+    jQuery(document).on("click",".right-toolbar .icon-share",function(){
         $('html, body').animate({scrollTop:$('.WPSNS_main').position().top}, 500);
     });
 

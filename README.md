@@ -6,10 +6,23 @@ This is AkibaRika.org Blog Theme.
 
 There still are serval issues and bugs that need to be solved.
 
-You may **COPY** this theme for your own purpose, but please remind yourself of following the CC BY-NC-SA 3.0.
+You may **COPY** this theme for your own purpose, but please remind yourself of following the CC BY-NC-SA 4.0.
+
+View a demo of [Lilim][1]
+
+Download [Lilim][2]
 
 ChangeLog
 ---
+
+Version 2.8
+
+*31-Aug-2014*
+
+ - Used icomoon instead of fontawesome
+ - Added CC license
+ - Fixed the ajax comment issue
+ - Added new post type styles
 
 Version 2.7
 
@@ -49,4 +62,7 @@ Version 2.0
 *don't remember*
  - Changing index.php from block layout to grid layout
  - Masonry in use
- - Code Optimization  
+ - Code Optimization
+
+[1]:http://moe.akibarika.org/
+[2]:https://github.com/akibarika/Lilim-Theme-Version-2/archive/master.zip
