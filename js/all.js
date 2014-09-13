@@ -35,6 +35,7 @@ $(document).ready(function(){
         stop(items);
         tag();
         adjustColumnHeights(items);
+        adjustMenu('ul#menu-cat-menu li');
     }
 
     initial($('#post .item'));
@@ -70,6 +71,14 @@ $(document).ready(function(){
             $(this).removeClass('show');
         });
     }
+    //add post img class v0.1
+    $(".post-detail p a[href]").filter("[href$='png'], [href$='jpg']").addClass("img");
+    //Adjust menu width
+    function adjustMenu(menuList) {
+        var count = $(menuList).size();
+        var hentai = 100 / count;
+        $(menuList).css('width', hentai +'%');
+    }
     //Place the right tool-bar
     function placeToolbar(wrap,a,b) {
         var loli = parseInt((jQuery(window).width() - wrap +1) / 2 - a - b);
@@ -81,9 +90,6 @@ $(document).ready(function(){
             opacity:1
         });
         $('.wrapper-menu').css('height', $(window).height() + 'px');
-        var count = $("ul#1st-menu li").size();
-        var hentai = 100 / count;
-        $("ul#1st-menu li").css('width', hentai +'%');
     }
 
     var currentState = window.location.href;

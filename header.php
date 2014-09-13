@@ -12,9 +12,7 @@
 		<meta name="author" content="Rika Akiba">
 		<!-- style file -->
 		<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/style.css">
-		<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/hint.min.css">
-		<link rel="stylesheet/less" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/styles.less">
-        <script src="<?php bloginfo('template_directory'); ?>/js/less.min.js?ver=1.7.4" type="text/javascript"></script>
+        <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/styles.css">
 		<link rel="Shortcut Icon" href="<?php bloginfo('template_directory'); ?>/favicon.ico">
 		<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php bloginfo('rss2_url'); ?>" />
 		<link rel="alternate" type="application/rss+xml" title="RSS 1.0" href="<?php bloginfo('rss_url'); ?>" />
@@ -25,26 +23,7 @@
 		<section id="menu-mobile">
 			<span class="bt-menu">Menu</span>
 			<div class="wrapper-menu">
-				<ul class="menu right">
-					<li>
-						<a href="http://moe.akibarika.org/"><i class="icon-screen"></i><span>Home</span></a>
-					</li>				
-					<li>
-						<a href="/about"><i class="icon-user"></i><span>About</span></a>
-					</li>
-					<li>
-						<a href="/links"><i class="icon-link"></i><span>Links</span></a>
-					</li>
-                    <li>
-                        <a href="/works/"><i class="icon-code"></i><span>My Works</span></a>
-                    </li>
-					<li>
-						<a href="/pixiv-daily-ranking/"><i class="icon-bookmark"></i><span>Pixiv Ranking</span></a>
-					</li>
-                    <li>
-						<a href="#"><i class="icon-mail"></i><span>Contact</span></a>
-					</li>
-				</ul>
+                <?php  wp_nav_menu( array( 'theme_location' => 'page-menu' ,'container'=>'','menu_class'=>'menu right') ); ?>
 				<div class="search-text">
 		            <span>SEARCH</span>
 		            <?php get_search_form(); ?>
@@ -83,26 +62,7 @@
 		        <a id="logo" href="http://moe.akibarika.org">
 					Akiba<span>Rika</span>
 				</a>
-				<ul class="menu right">
-					<li>
-						<a href="http://moe.akibarika.org/"><span>Home</span></a>
-					</li>				
-					<li>
-						<a href="/about"><span>About</span></a>
-					</li>
-					<li>
-						<a href="/links"><span>Links</span></a>
-					</li>
-                    <li>
-                        <a href="/works/"><span>Works</span></a>
-                    </li>
-					<li>
-						<a href="/pixiv-daily-ranking/"><span>Pixiv Ranking</span></a>
-					</li>
-					<li class="search">
-			            <span class="bt-search"><i class="icon-search"></i></span>
-			        </li>			
-				</ul>
+                <?php  wp_nav_menu( array( 'theme_location' => 'page-menu' ,'container'=>'','menu_class'=>'menu right','items_wrap' => '<ul id="%1$s" class="%2$s">%3$s<li class="search"><span class="bt-search"><i class="icon-search"></i></span></li></ul>') ); ?>
 			</nav>
 			<nav class="search">
 				<div class="right">
@@ -125,7 +85,7 @@
 			<nav class="filters">
 				<div class="inner">
 					<div class="filter list-tags categories">
-						<?php  wp_nav_menu( array( 'theme_location' => 'menu' ,'container'=>'','menu_id'=>'1st-menu') ); ?>
+						<?php  wp_nav_menu( array( 'theme_location' => 'cat-menu' ,'container'=>'') ); ?>
 					</div>
 					<div class="filter list-tags tags">
 						<?php wp_tag_cloud('smallest=13&largest=13&number=50&format=list&unit=px');?>

@@ -4,8 +4,8 @@
 <?php get_header(); ?>		
 			<div id="page-wrap">
 				<div class="right-toolbar">
-                    <span class="hint--left" data-hint="分享"><div class="tool-icon icon-share"></div></span>
-                    <span class="hint--left" data-hint="滚动"><div class="tool-icon tool-goto tool-down icon-angle-down"></div></span>
+                    <span class="tooltip-left" data-tooltip="分享"><div class="tool-icon icon-share"></div></span>
+                    <span class="tooltip-left" data-tooltip="滚动"><div class="tool-icon tool-goto tool-down icon-angle-down"></div></span>
 				</div>			
 				<section id="single" class="wrap-pixiv page">
 					<div id="pixiv">
