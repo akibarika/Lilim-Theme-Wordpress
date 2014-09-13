@@ -78,6 +78,8 @@ $(document).ready(function(){
         var count = $(menuList).size();
         var hentai = 100 / count;
         $(menuList).css('width', hentai +'%');
+
+        $('.wrapper-menu').css('height', $(window).height() + 'px');
     }
     //Place the right tool-bar
     function placeToolbar(wrap,a,b) {
@@ -89,7 +91,6 @@ $(document).ready(function(){
             right:loli,
             opacity:1
         });
-        $('.wrapper-menu').css('height', $(window).height() + 'px');
     }
 
     var currentState = window.location.href;

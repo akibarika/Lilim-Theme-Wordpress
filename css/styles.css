@@ -404,6 +404,9 @@ pre {
 #header nav.main ul.menu li a:hover {
   background-color: #d6d6d6 !important;
 }
+#header nav.main ul.menu li.current_page_item a {
+  background-color: #d6d6d6;
+}
 #header nav.main ul.menu li.search {
   display: block;
 }
