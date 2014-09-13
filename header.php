@@ -12,7 +12,8 @@
 		<meta name="author" content="Rika Akiba">
 		<!-- style file -->
 		<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/style.css">
-        <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/styles.css">
+		<link rel="stylesheet/less" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/styles.less">
+        <script src="<?php bloginfo('template_directory'); ?>/js/less.min.js?ver=1.7.4" type="text/javascript"></script>
 		<link rel="Shortcut Icon" href="<?php bloginfo('template_directory'); ?>/favicon.ico">
 		<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php bloginfo('rss2_url'); ?>" />
 		<link rel="alternate" type="application/rss+xml" title="RSS 1.0" href="<?php bloginfo('rss_url'); ?>" />
