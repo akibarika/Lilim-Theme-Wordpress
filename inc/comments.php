@@ -74,12 +74,6 @@ function otakism_comment($comment, $args, $depth) {
     </li>
 <?php }
 
-//载入jquery库
-//wp_enqueue_script( 'jquerylib', get_template_directory_uri() . '/js/jquery-1.10.2.min.js' , array(), '1.10.2', false);
-wp_enqueue_script( 'base', get_template_directory_uri() . '/js/comments-ajax.js', array(), '1.00', true);
-wp_localize_script('base', 'ajax', array(
-    'ajax_url' => admin_url('admin-ajax.php'),
-));
 /*ajax comment submit*/
 add_action('wp_ajax_nopriv_ajax_comment', 'ajax_comment');
 add_action('wp_ajax_ajax_comment', 'ajax_comment');

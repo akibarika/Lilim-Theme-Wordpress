@@ -2,22 +2,19 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title><?php if ( is_tag() ) { echo wp_title('Tag:');if($paged > 1) printf(' - 第%s页',$paged);echo ' | '; bloginfo( 'name' );} elseif ( is_archive() ) {echo wp_title('');  if($paged > 1) printf(' - 第%s页',$paged);    echo ' | ';    bloginfo( 'name' );} elseif ( is_search() ) {echo '&quot;'.wp_specialchars($s).'&quot;的搜索结果 | '; bloginfo( 'name' );} elseif ( is_home() ) {bloginfo( 'name' );$paged = get_query_var('paged'); if($paged > 1) printf(' - 第%s页',$paged);}  elseif ( is_404() ) {echo '页面不存在！ | '; bloginfo( 'name' );} else {echo wp_title( ' | ', false, right )  ; bloginfo( 'name' );} ?></title>
+        <title><?php wp_title( '|', true, 'right' ); ?></title>
 		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"> 
 		<!--[if lt IE 9]>  
 		    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>  
-		<![endif]--> 		
-		<meta name="description" content="这里是里香奇奇怪怪的部落格">
-		<meta name="keywords" content="奥克兰,新西兰,动漫,秋庭里香,AkibaRika,扫图">
+		<![endif]-->
 		<meta name="author" content="Rika Akiba">
+        <link rel="profile" href="http://gmpg.org/xfn/11" />
+        <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 		<!-- style file -->
 		<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/style.css">
 		<link rel="stylesheet/less" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/styles.less">
-        <script src="<?php bloginfo('template_directory'); ?>/js/less.min.js?ver=1.7.4" type="text/javascript"></script>
+        <script src="<?php bloginfo('template_directory'); ?>/js/less.min.js?ver=1.7.5" type="text/javascript"></script>
 		<link rel="Shortcut Icon" href="<?php bloginfo('template_directory'); ?>/favicon.ico">
-		<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php bloginfo('rss2_url'); ?>" />
-		<link rel="alternate" type="application/rss+xml" title="RSS 1.0" href="<?php bloginfo('rss_url'); ?>" />
-		<link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="<?php bloginfo('atom_url'); ?>" />
 		<?php wp_head(); ?> 
 	</head>
 	<body>
@@ -30,7 +27,6 @@
 		            <?php get_search_form(); ?>
 		        </div>
 		        <li class="others dropdown">
-	
 		        </li>
 			</div>
 		</section>
