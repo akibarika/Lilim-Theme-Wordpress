@@ -105,5 +105,17 @@ function lilim_wp_title( $title, $sep ) {
 }
 add_filter( 'wp_title', 'lilim_wp_title', 10, 2 );
 
+//Insert Images within Figure Element
+function html5_insert_image($html, $id, $caption, $title, $align, $url, $size, $alt) {
+    $src  = wp_get_attachment_image_src( $id, $size, false );
+    $html5 = "<figure class='align$align'>";
+    $html5 .= "<img src='$src[0]' alt='$alt' />";
+    if ($caption) {
+        $html5 .= "<figcaption>$caption</figcaption>";
+    }
+    $html5 .= "</figure>";
+    return $html5;
+}
+add_filter( 'image_send_to_editor', 'html5_insert_image', 10, 9 );
 
 

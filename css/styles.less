@@ -4,7 +4,7 @@ Theme URI: http://moe.akibarika.org
 Author: Rika Akiba
 Author URI: http://moe.akibarika.org
 Description: AkibaRika site theme.
-Version: 2.8.1
+Version: 2.8.2
 License: CC BY-NC-SA 4.0
 */
 .transition (@val,@time,@pro) {
@@ -1166,6 +1166,9 @@ pre {
         text-align:center;
       }
       .post-detail {
+        height: auto;
+        overflow: hidden;
+        position: relative;
         a:not(.img) {
           color:#ba89b6;
           display: inline-block;
@@ -1244,11 +1247,31 @@ pre {
           line-height:180%;
           padding:0;
         }
+        figure {
+          display: block;
+          position: relative;
+          &.alignleft {
+            float: left;
+            clear: left;
+            margin-bottom: 10px;
+            margin-right: 30px;
+            margin-top: 10px;
+          }
+          &.alignright {
+            float: right;
+            clear: right;
+            margin-bottom: 10px;
+            margin-left: 30px;
+            margin-top: 10px;
+          }
+          &.aligncenter {
+            margin: 10px auto;
+            text-align: center;
+          }
+        }
         img {
           border:1px solid #dddddd;
           border-radius:4px;
-          display:block;
-          margin:0 auto;
           height: auto;
           padding:4px;
           max-width:750px;
