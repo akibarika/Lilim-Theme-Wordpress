@@ -1,0 +1,13 @@
+# IDE project files            #
+################################
+.cache/
+.viminfo
+/nbproject
+/.project
+/.sass-cache
+/.idea
+/cgi-bin
+*.sublime-project
+*.sublime-workspace
+maintenance.flag
+/atlassian-ide-plugin.xml
