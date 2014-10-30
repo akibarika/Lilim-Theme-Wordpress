@@ -13,7 +13,7 @@
 		<!-- style file -->
 		<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/style.css">
 		<link rel="stylesheet/less" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/styles.less">
-        <script src="<?php bloginfo('template_directory'); ?>/js/less.min.js?ver=1.7.5" type="text/javascript"></script>
+        <script src="<?php bloginfo('template_directory'); ?>/js/less.min.js?ver=2.0.0" type="text/javascript"></script>
 		<link rel="Shortcut Icon" href="<?php bloginfo('template_directory'); ?>/favicon.ico">
 		<?php wp_head(); ?> 
 	</head>

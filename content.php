@@ -39,10 +39,10 @@
             </div>
             <div class="post-meta">
                 <div class="post-comment">
-                    <?php comments_popup_link( ' 0', ' 1', ' %', 'icon-redo'); ?>
+	                <?php comments_popup_link( '0 回复', '1 回复', '% 回复'); ?>
                 </div>
                 <div class="post-read">
-                    <a class="read-more icon-plus" href="<?php the_permalink(); ?>" title="继续阅读：<?php the_title(); ?>"> <span>更多</span></a>
+                    <a class="read-more" href="<?php the_permalink(); ?>" title="继续阅读：<?php the_title(); ?>"> <span>更多</span></a>
                 </div>
             </div>
         </div>
@@ -80,10 +80,10 @@
             </div>
             <div class="post-meta">
                 <div class="post-comment">
-                    <?php comments_popup_link( ' 0', ' 1', ' %', 'icon-redo'); ?>
+	                <?php comments_popup_link( '0 回复', '1 回复', '% 回复'); ?>
                 </div>
                 <div class="post-read">
-                    <a class="read-more icon-plus" href="<?php the_permalink(); ?>" title="继续阅读：<?php the_title(); ?>"> <span>更多</span></a>
+                    <a class="read-more" href="<?php the_permalink(); ?>" title="继续阅读：<?php the_title(); ?>"> <span>更多</span></a>
                 </div>
             </div>
         </div>
@@ -129,16 +129,16 @@
             </div>
             <div class="post-meta">
                 <div class="post-comment">
-                    <?php comments_popup_link( ' 0', ' 1', ' %', 'icon-redo'); ?>
+	                <?php comments_popup_link( '0 回复', '1 回复', '% 回复'); ?>
                 </div>
                 <div class="post-read">
-                    <a class="read-more icon-plus" href="<?php the_permalink(); ?>" title="继续阅读：<?php the_title(); ?>"> <span>更多</span></a>
+                    <a class="read-more" href="<?php the_permalink(); ?>" title="继续阅读：<?php the_title(); ?>"> <span>更多</span></a>
                 </div>
                 <div class="post-cat">
-                    <i class="icon-folder-open"></i> <?php the_category(' '); ?>
+                    <?php the_category(' '); ?>
                 </div>
                 <div class="post-link">
-                    <a href="<?php echo $url ?>"class="icon-link" target="_blank" title="<?php the_title(); ?>的下载链接"> 下载</a>
+                    <a href="<?php echo $url ?>" target="_blank" title="<?php the_title(); ?>的下载链接"> 下载</a>
                 </div>
             </div>
         </div>
@@ -184,16 +184,16 @@
             </div>
             <div class="post-meta">
                 <div class="post-comment">
-                    <?php comments_popup_link( ' 0', ' 1', ' %', 'icon-redo'); ?>
+	                <?php comments_popup_link( '0 回复', '1 回复', '% 回复'); ?>
                 </div>
                 <div class="post-read">
-                    <a class="read-more icon-plus" href="<?php the_permalink(); ?>" title="继续阅读：<?php the_title(); ?>"> <span>更多</span></a>
+                    <a class="read-more" href="<?php the_permalink(); ?>" title="继续阅读：<?php the_title(); ?>"> <span>更多</span></a>
                 </div>
                 <div class="post-cat">
-                    <i class="icon-folder-open"></i> <?php the_category(' '); ?>
+                    <?php the_category(' '); ?>
                 </div>
                 <div class="post-link">
-                    <a href="<?php echo $url ?>"class="icon-link" target="_blank" title="<?php the_title(); ?>的外部链接"> 外部链接</a>
+                    <a href="<?php echo $url ?>" target="_blank" title="<?php the_title(); ?>的外部链接"> 外部链接</a>
                 </div>
             </div>
         </div>
@@ -237,13 +237,13 @@
             </div>
             <div class="post-meta">
                 <div class="post-comment">
-                    <?php comments_popup_link( ' 0', ' 1', ' %', 'icon-redo'); ?>
+                    <?php comments_popup_link( '0 回复', '1 回复', '% 回复'); ?>
                 </div>
                 <div class="post-read">
-                    <a class="read-more icon-plus" href="<?php the_permalink(); ?>" title="继续阅读：<?php the_title(); ?>"> <span>更多</span></a>
+                    <a class="read-more" href="<?php the_permalink(); ?>" title="继续阅读：<?php the_title(); ?>"> <span>更多</span></a>
                 </div>
                 <div class="post-cat">
-                    <i class="icon-folder-open"></i> <?php the_category(' '); ?>
+                    <?php the_category(' '); ?>
                 </div>
             </div>
         </div>
@@ -288,13 +288,13 @@
             </div>
             <div class="post-meta">
                 <div class="post-comment">
-                    <?php comments_popup_link( ' 0', ' 1', ' %', 'icon-redo'); ?>
+	                <?php comments_popup_link( '0 回复', '1 回复', '% 回复'); ?>
                 </div>
                 <div class="post-read">
-                    <a class="read-more icon-plus" href="<?php the_permalink(); ?>" title="继续阅读：<?php the_title(); ?>"> <span>更多</span></a>
+                    <a class="read-more" href="<?php the_permalink(); ?>" title="继续阅读：<?php the_title(); ?>"> <span>更多</span></a>
                 </div>
                 <div class="post-cat">
-                    <i class="icon-folder-open"></i> <?php the_category(' '); ?>
+                    <?php the_category(' '); ?>
                 </div>
             </div>
         </div>

@@ -10,7 +10,7 @@
 				<section id="single" class="wrap-pixiv page">
 					<div id="pixiv">
 					<?php
-					    $rss = simplexml_load_file('http://paid.feed43.com/pixiv_daily.xml');
+					    $rss = simplexml_load_file('http://feed43.com/pixiv_daily.xml');
 					?>
 					<h1 class="ribbon">
 						<strong class="ribbon-content"><?php echo $rss->channel->title; ?></strong>
@@ -37,4 +37,3 @@
 			</div>
 	      
 <?php get_footer(); ?>		
-			

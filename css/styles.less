@@ -4,7 +4,7 @@ Theme URI: http://moe.akibarika.org
 Author: Rika Akiba
 Author URI: http://moe.akibarika.org
 Description: AkibaRika site theme.
-Version: 2.8.2
+Version: 2.8.3
 License: CC BY-NC-SA 4.0
 */
 .transition (@val,@time,@pro) {
@@ -1546,6 +1546,11 @@ pre {
               }
             }
           }
+          .post-meta {
+            & > div {
+              width: 50%;
+            }
+          }
         }
         &.format-gallery {
           .heading {
@@ -1591,6 +1596,11 @@ pre {
               }
             }
           }
+          .post-meta {
+            & > div {
+              width: 25%;
+            }
+          }
         }
         &.format-aside {
           .heading {
@@ -1634,6 +1644,11 @@ pre {
                   }
                 }
               }
+            }
+          }
+          .post-meta {
+            & > div {
+              width: 50%;
             }
           }
         }
@@ -1683,6 +1698,11 @@ pre {
           }
           .post-thumb {
             border-top: 1px solid #e5e5e5;
+          }
+          .post-meta {
+            & > div {
+              width: 25%;
+            }
           }
         }
         &.format-quote {
@@ -1759,6 +1779,11 @@ pre {
                   text-decoration: underline;
                 }
               }
+            }
+          }
+          .post-meta {
+            & > div {
+              width: 33.333%;
             }
           }
         }
@@ -2000,54 +2025,31 @@ pre {
           }
         }
         .post-meta {
+          border-top: 1px solid #f2f2f5;
           height: auto;
           overflow: hidden;
-          margin: 20px 0 0 0;
-          padding: 0 0 20px 12px;
-          .post-link {
-            float: right;
-            margin-right: 8px;
-          }
-          .post-comment,
-          .post-read,
-          .post-cat {
+          margin: 5px 0 0 0;
+          padding: 5px 0 5px 0;
+          & > div {
+            border-right: 1px solid #d9d9d9;
             float: left;
-          }
-          .post-comment,
-          .post-read,
-          .post-cat,
-          .post-link{
-            -webkit-border-radius: 3px;
-            border-radius: 3px;
-            -webkit-box-shadow: 0 1px 0 rgba(0,0,0,.05);
-            box-shadow: 0 1px 0 rgba(0,0,0,.05);
-            .transition(all,.3s,ease);
-            -webkit-user-select: none;
-            background-color: #fff;
-            border: 1px solid #d9d9d9;
-            cursor: pointer;
-            height: 28px;
-            line-height: 28px;
-            margin-left: 8px;
-            padding: 0 10px 0 10px;
-            outline: none;
-            width: auto;
-            background-image: none;
-            -webkit-appearance: none;
-            i {
-              color: #262626;
-            }
-            &:hover {
-              -webkit-box-shadow:0 2px 0 rgba(0,0,0,.1);
-              box-shadow:0 2px 0 rgba(0,0,0,.1);
-              border-color: #bfbfbf;
+            margin: 7px 0;
+            text-align: center;
+            width: 33.333%;
+            &:last-child {
+              border-right: none;
             }
             a {
               color: #262626;
-              display: inline-block;
+              display: block;
               font-size: 14px;
               font-weight: bold;
               opacity: .7;
+              .transition(all,.3s,ease);
+              &:hover {
+                color: #986794;
+                opacity: 1;
+              }
               span {
                 font-family: "Raleway","Helvetica Neue",Helvetica,"Hiragino Sans GB","Hiragino Sans GB W3","Microsoft YaHei",sans-serif;
               }
@@ -2057,10 +2059,6 @@ pre {
       }
     }
   }
-}
-.item:last-child {
-  padding-bottom:10px !important;
-  margin-bottom:0px !important;
 }
 .i-404{
   background: none repeat scroll 0 0 #FCFCFC;
@@ -2814,9 +2812,6 @@ footer {
         margin: 0 0 20px;
         width: 300px;
         .wrap-content {
-          .post-cat {
-            display: none;
-          }
           .heading {
             .post-title {
               .title-wrap {
