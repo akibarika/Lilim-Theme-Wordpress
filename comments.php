@@ -35,8 +35,8 @@
             <div class="cancel_comment_reply right">
 				<?php
 					if ( is_singular() )
-							wp_enqueue_script( "comment-reply" ); 
-					cancel_comment_reply_link() 
+						wp_enqueue_script( "comment-reply" );
+						cancel_comment_reply_link()
 				?>
 			</div>
             </div>
@@ -80,8 +80,8 @@
             <div class="cancel_comment_reply right">
 				<?php
 					if ( is_singular() )
-							wp_enqueue_script( "comment-reply" ); 
-					cancel_comment_reply_link() 
+					    wp_enqueue_script( "comment-reply" );
+						cancel_comment_reply_link()
 				?>
 			</div>
             </div>
