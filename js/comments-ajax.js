@@ -4,7 +4,7 @@ var commentform=$('#commentform');
     var statusdiv=$('#comment-status');
 	var list ;
     $('a.comment-reply-link').click(function(){
-        list = $(this).parent().parent().parent().parent().attr('id');
+        list = $(this).parent().parent().parent().parent().parent().attr('id');
     });
 	 
     commentform.submit(function(){
@@ -27,7 +27,7 @@ var commentform=$('#commentform');
                     
                     if($("#comments").has("ol.commentlist").length > 0){
                         if(list != null){
-                            $('div.rounded').prepend(data);
+                            $('#'+list).prepend(data);
                         } else{
                             $('ol.commentlist').append(data);
                         }

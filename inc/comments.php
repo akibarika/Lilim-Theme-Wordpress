@@ -40,7 +40,7 @@ function otakism_comment($comment, $args, $depth) {
     }
     ?>
     <li <?php comment_class(); ?><?php if( $depth > 1){ echo ' style="margin-left:35px;"';} ?> id="comment-<?php comment_ID() ?>" >
-        <div id="comment-<?php comment_ID(); ?>" class="comment-body clearfix">
+        <div class="comment-body clearfix">
             <div class="comment-avatar left"><a href="<?php comment_author_url(); ?>"><?php echo get_avatar( $comment, $size = '50'); ?></a></div>
             <div class="comment-content">
                 <div class="comment-name"><?php printf(__('%s'), get_comment_author_link()) ?></div>
@@ -84,10 +84,9 @@ function ajaxify_comments_jaya($comment_ID, $comment_status) {
                 $post = &get_post($commentdata['comment_post_ID']);
                 $permaurl = get_permalink( $post->ID );
                 $url = str_replace('http://', '/', $permaurl);
-
                 if($commentdata['comment_parent'] == 0){
                     $output = '<li id="comment-' . $commentdata['comment_ID'] . '" >
-                        <div id="comment-'. $commentdata['comment_ID'] .'" class="comment-body clearfix">
+                        <div class="comment-body clearfix">
                             <div class="comment-avatar left">'. get_avatar($commentdata['comment_author_email'],$size = '50').'</div>
                                 <div class="comment-content">
                                 <div class="comment-name">' . $commentdata['comment_author'] . '</div>
@@ -101,21 +100,7 @@ function ajaxify_comments_jaya($comment_ID, $comment_status) {
                     </li>';
                     echo $output;
 			   } else {
-                    $output = '<ul class="children">
-                                    <li id="comment-' . $commentdata['comment_ID'] . '">
-                                    <div id="comment-'. $commentdata['comment_ID'] .'" class="comment-body clearfix">
-                                    <div class="comment-avatar left">'. get_avatar($commentdata['comment_author_email'],$size = '50').'</div>
-                                        <div class="comment-content">
-                                        <div class="comment-name">' . $commentdata['comment_author'] . '</div>
-                                        <div class="comment-entry">' . $commentdata['comment_content'] . '</div>
-                                        <div class="comment-meta clearfix">
-                                            <div class="comment-date left">' .get_comment_date( 'F j, Y', $commentdata['comment_ID']) .'</div>
-                                            <div class="comment-reply left"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>';
+                    $output = '<ul class="children"><li id="comment-' . $commentdata['comment_ID'] . '"><div class="comment-body clearfix"><div class="comment-avatar left">'. get_avatar($commentdata['comment_author_email'],$size = '50').'</div><div class="comment-content"><div class="comment-name">' . $commentdata['comment_author'] . '</div><div class="comment-entry">' . $commentdata['comment_content'] . '</div><div class="comment-meta clearfix"><div class="comment-date left">' .get_comment_date( 'F j, Y', $commentdata['comment_ID']) .'</div><div class="comment-reply left"></div></div></div></div></li></ul>';
                     echo $output;
 			   }
                 wp_notify_postauthor($comment_ID, $commentdata['comment_type']);

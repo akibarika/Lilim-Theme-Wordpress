@@ -15,7 +15,7 @@ function comment_mail_notify($comment_id) {
     $parent_id = $comment->comment_parent ? $comment->comment_parent : '';
     $spam_confirmed = $comment->comment_approved;
     if (($parent_id != '') && ($spam_confirmed != 'spam')) {
-        $wp_email = 'rika-is-baka@' . preg_replace('#^www\.#', '', strtolower($_SERVER['SERVER_NAME'])); //e-mail 发出點, no-reply 可改為可用的 e-mail.
+        $wp_email = 'rika-is-baka@akibarika.org';
         $to = trim(get_comment($parent_id)->comment_author_email);
         $subject = '您在 [' . get_option("blogname") . '] 的留言有了回應';
         $message = '
