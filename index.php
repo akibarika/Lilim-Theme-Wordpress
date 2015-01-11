@@ -2,7 +2,10 @@
 	<div class="container">
 		<section id="post">
 			<div class="pageload-overlay"></div>
-<!--			<div class="coloumn--null">-->
+			<div class="column--one column--post show--up"></div>
+			<div class="column--two column--post show--up"></div>
+			<div class="column--three column--post show--up"></div>
+			<div class="column--none">
 				<?php if (have_posts()) :
 				while ( have_posts() ) :
 					the_post();
@@ -15,7 +18,7 @@
 				<?php
 				endwhile;
 				?>
-<!--			</div>-->
+			</div>
 			<?php
 			else : ?>
 				<article class="item i-404">

@@ -1580,10 +1580,15 @@ pre {
 .container #post {
   display: block;
   margin: 0 auto;
-  width: 960px;
+  width: 1420px;
   height: auto;
   overflow: hidden;
   z-index: 10;
+}
+@media only screen and (min-width: 960px) and (max-width: 1419px) {
+  .container #post {
+    width: 960px;
+  }
 }
 @media only screen and (min-width: 768px) and (max-width: 959px) {
   .container #post {
@@ -1660,7 +1665,7 @@ pre {
     transform: translateX(-40px);
   }
 }
-.container #post .item {
+.container #post .post--item {
   -moz-border-bottom-colors: none;
   -moz-border-left-colors: none;
   -moz-border-right-colors: none;
@@ -1684,52 +1689,31 @@ pre {
   transition: opacity 0.3s ease-in-out;
 }
 @media only screen and (min-width: 768px) and (max-width: 959px) {
-  .container #post .item {
+  .container #post .post--item {
     margin: 0 4px 20px;
     width: 360px;
   }
 }
 @media only screen and (min-width: 480px) and (max-width: 767px) {
-  .container #post .item {
+  .container #post .post--item {
     margin: 0 0 20px;
     width: 440px;
   }
 }
 @media only screen and (max-width: 480px) {
-  .container #post .item {
+  .container #post .post--item {
     margin: 0 0 20px;
     width: 300px;
   }
 }
-.container #post .item.right {
+.container #post .post--item.right {
   clear: right;
   float: right;
 }
-.container #post .item::after {
+.container #post .post--item::after {
   clear: both;
 }
-.container #post .item.show-up {
-  opacity: 0;
-  -webkit-transform: translateY(70px);
-  -moz-transform: translateY(70px);
-  -ms-transform: translateY(70px);
-  -o-transform: translateY(70px);
-  transform: translateY(70px);
-  transition: transform 0.7s ease 0s, opacity 0.7s ease 0s;
-  -webkit-transition: -webkit-transform 0.7s ease 0s, opacity 0.7s ease 0s;
-}
-.container #post .item.show-up.stop {
-  opacity: 1;
-  -webkit-transform: translateY(0);
-  -moz-transform: translateY(0);
-  -ms-transform: translateY(0);
-  -o-transform: translateY(0);
-  transform: translateY(0);
-}
-.container #post .item.show-up.stop.fading {
-  opacity: 0.1;
-}
-.container #post .item.kanban {
+.container #post .post--item.kanban {
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   color: #666;
@@ -1738,24 +1722,24 @@ pre {
   padding: 40px;
   text-transform: uppercase;
 }
-.container #post .item.kanban:hover::before {
+.container #post .post--item.kanban:hover::before {
   opacity: 1;
   -webkit-transform: scale(1);
   transform: scale(1);
 }
-.container #post .item.kanban:hover::after {
+.container #post .post--item.kanban:hover::after {
   opacity: 1;
   -webkit-transform: scale(1);
   transform: scale(1);
 }
-.container #post .item.kanban:hover h2,
-.container #post .item.kanban:hover p {
+.container #post .post--item.kanban:hover h2,
+.container #post .post--item.kanban:hover p {
   opacity: 1;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
-.container #post .item.kanban::before,
-.container #post .item.kanban::after {
+.container #post .post--item.kanban::before,
+.container #post .post--item.kanban::after {
   position: absolute;
   top: 30px;
   right: 30px;
@@ -1767,19 +1751,19 @@ pre {
   transition: opacity 0.35s, transform 0.35s;
   pointer-events: none;
 }
-.container #post .item.kanban::before {
+.container #post .post--item.kanban::before {
   border-top: 1px solid #666;
   border-bottom: 1px solid #666;
   -webkit-transform: scale(0, 1);
   transform: scale(0, 1);
 }
-.container #post .item.kanban::after {
+.container #post .post--item.kanban::after {
   border-right: 1px solid #666;
   border-left: 1px solid #666;
   -webkit-transform: scale(1, 0);
   transform: scale(1, 0);
 }
-.container #post .item.kanban h2 {
+.container #post .post--item.kanban h2 {
   font-weight: 300;
   padding-top: 10%;
   -webkit-transition: -webkit-transform 0.35s;
@@ -1788,10 +1772,10 @@ pre {
   transform: translate3d(0, -20px, 0);
   text-align: center;
 }
-.container #post .item.kanban h2 span {
+.container #post .post--item.kanban h2 span {
   font-weight: 800;
 }
-.container #post .item.kanban p {
+.container #post .post--item.kanban p {
   color: #808285;
   font-size: 68.5%;
   letter-spacing: 1px;
@@ -1803,135 +1787,135 @@ pre {
   transform: translate3d(0, 20px, 0);
   text-align: center;
 }
-.container #post .item .wrap-content {
+.container #post .post--item .wrap-content {
   height: auto;
   z-index: 10;
 }
-.container #post .item .wrap-content.format-status .heading .avatar-icon .status {
+.container #post .post--item .wrap-content.format-status .heading .avatar-icon .status {
   background-position: 0 -138px;
 }
-.container #post .item .wrap-content.format-status .heading .avatar-icon .back a {
+.container #post .post--item .wrap-content.format-status .heading .avatar-icon .back a {
   background-color: #f4606c;
 }
-.container #post .item .wrap-content.format-status .heading .tag ul.show li:hover {
+.container #post .post--item .wrap-content.format-status .heading .tag ul.show li:hover {
   background-color: #742e34;
 }
-.container #post .item .wrap-content.format-status .heading .tag ul.show li:hover .tag-bar {
+.container #post .post--item .wrap-content.format-status .heading .tag ul.show li:hover .tag-bar {
   background-color: #742e34;
 }
-.container #post .item .wrap-content.format-status .heading .tag ul li:nth-child(even) .tag-bar {
+.container #post .post--item .wrap-content.format-status .heading .tag ul li:nth-child(even) .tag-bar {
   background-color: #da5661;
 }
-.container #post .item .wrap-content.format-status .heading .tag ul li:nth-child(odd) .tag-bar {
+.container #post .post--item .wrap-content.format-status .heading .tag ul li:nth-child(odd) .tag-bar {
   background-color: #ff6471;
 }
-.container #post .item .wrap-content.format-status .heading .tag ul li:first-child .tag-bar {
+.container #post .post--item .wrap-content.format-status .heading .tag ul li:first-child .tag-bar {
   background-color: #742e34 !important;
 }
-.container #post .item .wrap-content.format-status .post-meta > div {
+.container #post .post--item .wrap-content.format-status .post-meta > div {
   width: 50%;
 }
-.container #post .item .wrap-content.format-gallery .heading .avatar-icon .gallery {
+.container #post .post--item .wrap-content.format-gallery .heading .avatar-icon .gallery {
   background-position: 0 -184px;
 }
-.container #post .item .wrap-content.format-gallery .heading .avatar-icon .back a {
+.container #post .post--item .wrap-content.format-gallery .heading .avatar-icon .back a {
   background-color: #a0eee1;
 }
-.container #post .item .wrap-content.format-gallery .heading .tag ul.show li:hover {
+.container #post .post--item .wrap-content.format-gallery .heading .tag ul.show li:hover {
   background-color: #4a6e68;
 }
-.container #post .item .wrap-content.format-gallery .heading .tag ul.show li:hover .tag-bar {
+.container #post .post--item .wrap-content.format-gallery .heading .tag ul.show li:hover .tag-bar {
   background-color: #4a6e68;
 }
-.container #post .item .wrap-content.format-gallery .heading .tag ul li:nth-child(even) .tag-bar {
+.container #post .post--item .wrap-content.format-gallery .heading .tag ul li:nth-child(even) .tag-bar {
   background-color: #8fd4c9;
 }
-.container #post .item .wrap-content.format-gallery .heading .tag ul li:nth-child(odd) .tag-bar {
+.container #post .post--item .wrap-content.format-gallery .heading .tag ul li:nth-child(odd) .tag-bar {
   background-color: #a9fbed;
 }
-.container #post .item .wrap-content.format-gallery .heading .tag ul li:first-child .tag-bar {
+.container #post .post--item .wrap-content.format-gallery .heading .tag ul li:first-child .tag-bar {
   background-color: #4a6e68 !important;
 }
-.container #post .item .wrap-content.format-gallery .post-meta > div {
+.container #post .post--item .wrap-content.format-gallery .post-meta > div {
   width: 25%;
 }
-.container #post .item .wrap-content.format-aside .heading .avatar-icon .aside {
+.container #post .post--item .wrap-content.format-aside .heading .avatar-icon .aside {
   background-position: 0 -276px;
 }
-.container #post .item .wrap-content.format-aside .heading .avatar-icon .back a {
+.container #post .post--item .wrap-content.format-aside .heading .avatar-icon .back a {
   background-color: #dcad9e;
 }
-.container #post .item .wrap-content.format-aside .heading .post-title a::before {
+.container #post .post--item .wrap-content.format-aside .heading .post-title a::before {
   display: inline-block;
   content: '@';
 }
-.container #post .item .wrap-content.format-aside .heading .tag ul.show li:hover {
+.container #post .post--item .wrap-content.format-aside .heading .tag ul.show li:hover {
   background-color: #5c4942;
 }
-.container #post .item .wrap-content.format-aside .heading .tag ul.show li:hover .tag-bar {
+.container #post .post--item .wrap-content.format-aside .heading .tag ul.show li:hover .tag-bar {
   background-color: #5c4942;
 }
-.container #post .item .wrap-content.format-aside .heading .tag ul li:nth-child(even) .tag-bar {
+.container #post .post--item .wrap-content.format-aside .heading .tag ul li:nth-child(even) .tag-bar {
   background-color: #c2998c;
 }
-.container #post .item .wrap-content.format-aside .heading .tag ul li:nth-child(odd) .tag-bar {
+.container #post .post--item .wrap-content.format-aside .heading .tag ul li:nth-child(odd) .tag-bar {
   background-color: #e9b7a7;
 }
-.container #post .item .wrap-content.format-aside .heading .tag ul li:first-child .tag-bar {
+.container #post .post--item .wrap-content.format-aside .heading .tag ul li:first-child .tag-bar {
   background-color: #5c4942 !important;
 }
-.container #post .item .wrap-content.format-aside .post-meta > div {
+.container #post .post--item .wrap-content.format-aside .post-meta > div {
   width: 50%;
 }
-.container #post .item .wrap-content.format-link .heading .avatar-icon .link {
+.container #post .post--item .wrap-content.format-link .heading .avatar-icon .link {
   background-position: 0 -92px;
 }
-.container #post .item .wrap-content.format-link .heading .avatar-icon .back a {
+.container #post .post--item .wrap-content.format-link .heading .avatar-icon .back a {
   background-color: #d1ba74;
 }
-.container #post .item .wrap-content.format-link .heading .tag ul.show li:hover {
+.container #post .post--item .wrap-content.format-link .heading .tag ul.show li:hover {
   background-color: #51492d;
 }
-.container #post .item .wrap-content.format-link .heading .tag ul.show li:hover .tag-bar {
+.container #post .post--item .wrap-content.format-link .heading .tag ul.show li:hover .tag-bar {
   background-color: #51492d;
 }
-.container #post .item .wrap-content.format-link .heading .tag ul li:nth-child(even) .tag-bar {
+.container #post .post--item .wrap-content.format-link .heading .tag ul li:nth-child(even) .tag-bar {
   background-color: #b7a366;
 }
-.container #post .item .wrap-content.format-link .heading .tag ul li:nth-child(odd) .tag-bar {
+.container #post .post--item .wrap-content.format-link .heading .tag ul li:nth-child(odd) .tag-bar {
   background-color: #dec57b;
 }
-.container #post .item .wrap-content.format-link .heading .tag ul li:first-child .tag-bar {
+.container #post .post--item .wrap-content.format-link .heading .tag ul li:first-child .tag-bar {
   background-color: #51492d !important;
 }
-.container #post .item .wrap-content.format-link .post-thumb {
+.container #post .post--item .wrap-content.format-link .post-thumb {
   border-top: 1px solid #e5e5e5;
 }
-.container #post .item .wrap-content.format-link .post-meta > div {
+.container #post .post--item .wrap-content.format-link .post-meta > div {
   width: 25%;
 }
-.container #post .item .wrap-content.format-quote .heading .avatar-icon .quote {
+.container #post .post--item .wrap-content.format-quote .heading .avatar-icon .quote {
   background-position: 0 -46px;
 }
-.container #post .item .wrap-content.format-quote .heading .avatar-icon .back a {
+.container #post .post--item .wrap-content.format-quote .heading .avatar-icon .back a {
   background-color: #19caad;
 }
-.container #post .item .wrap-content.format-quote .heading .tag ul.show li:hover {
+.container #post .post--item .wrap-content.format-quote .heading .tag ul.show li:hover {
   background-color: #094a40;
 }
-.container #post .item .wrap-content.format-quote .heading .tag ul.show li:hover .tag-bar {
+.container #post .post--item .wrap-content.format-quote .heading .tag ul.show li:hover .tag-bar {
   background-color: #094a40;
 }
-.container #post .item .wrap-content.format-quote .heading .tag ul li:nth-child(even) .tag-bar {
+.container #post .post--item .wrap-content.format-quote .heading .tag ul li:nth-child(even) .tag-bar {
   background-color: #16b097;
 }
-.container #post .item .wrap-content.format-quote .heading .tag ul li:nth-child(odd) .tag-bar {
+.container #post .post--item .wrap-content.format-quote .heading .tag ul li:nth-child(odd) .tag-bar {
   background-color: #1bd7b8;
 }
-.container #post .item .wrap-content.format-quote .heading .tag ul li:first-child .tag-bar {
+.container #post .post--item .wrap-content.format-quote .heading .tag ul li:first-child .tag-bar {
   background-color: #094a40 !important;
 }
-.container #post .item .wrap-content.format-quote .post-quote {
+.container #post .post--item .wrap-content.format-quote .post-quote {
   border: 1px solid rgba(0, 0, 0, 0.05);
   margin: 0 5px 15px;
   padding: 0 15px 0 15px;
@@ -1939,18 +1923,18 @@ pre {
   text-overflow: ellipsis;
   z-index: 11;
 }
-.container #post .item .wrap-content.format-quote .post-quote p {
+.container #post .post--item .wrap-content.format-quote .post-quote p {
   font-size: 15px;
   margin-bottom: 0px;
   max-height: 157px;
 }
-.container #post .item .wrap-content.format-quote .post-quote span {
+.container #post .post--item .wrap-content.format-quote .post-quote span {
   display: block;
   text-align: right;
   padding-top: 9px;
   margin-bottom: 16px;
 }
-.container #post .item .wrap-content.format-quote .post-quote span a {
+.container #post .post--item .wrap-content.format-quote .post-quote span a {
   color: #999;
   display: block;
   font-size: 12px;
@@ -1960,23 +1944,23 @@ pre {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.container #post .item .wrap-content.format-quote .post-quote span a:hover {
+.container #post .post--item .wrap-content.format-quote .post-quote span a:hover {
   text-decoration: underline;
 }
-.container #post .item .wrap-content.format-quote .post-meta > div {
+.container #post .post--item .wrap-content.format-quote .post-meta > div {
   width: 33.333%;
 }
-.container #post .item .wrap-content p {
+.container #post .post--item .wrap-content p {
   display: block;
   margin: 1em 0;
   padding: 0;
 }
-.container #post .item .wrap-content .heading {
+.container #post .post--item .wrap-content .heading {
   margin-bottom: 20px;
   padding: 0 20px;
   position: relative;
 }
-.container #post .item .wrap-content .heading .avatar-icon {
+.container #post .post--item .wrap-content .heading .avatar-icon {
   position: relative;
   float: left;
   margin: 20px 15px 0 0;
@@ -1984,7 +1968,7 @@ pre {
   height: 46px;
   width: 46px;
 }
-.container #post .item .wrap-content .heading .avatar-icon .front {
+.container #post .post--item .wrap-content .heading .avatar-icon .front {
   background-image: url("../images/icons_rika.png");
   width: 100%;
   height: 100%;
@@ -1996,29 +1980,29 @@ pre {
   -o-transition: all 0.8s ease-in-out;
   transition: all 0.8s ease-in-out;
 }
-.container #post .item .wrap-content .heading .avatar-icon:hover .back {
+.container #post .post--item .wrap-content .heading .avatar-icon:hover .back {
   -moz-transform: rotateY(0deg);
   -webkit-transform: rotateY(0deg);
   -o-transform: rotateY(0deg);
   transform: rotateY(0deg);
 }
-.container #post .item .wrap-content .heading .avatar-icon:hover .avatar,
-.container #post .item .wrap-content .heading .avatar-icon:hover .front {
+.container #post .post--item .wrap-content .heading .avatar-icon:hover .avatar,
+.container #post .post--item .wrap-content .heading .avatar-icon:hover .front {
   -moz-transform: rotateY(180deg);
   -webkit-transform: rotateY(180deg);
   -o-transform: rotateY(180deg);
   transform: rotateY(180deg);
 }
-.container #post .item .wrap-content .heading .avatar-icon .avatar,
-.container #post .item .wrap-content .heading .avatar-icon .front,
-.container #post .item .wrap-content .heading .avatar-icon .back {
+.container #post .post--item .wrap-content .heading .avatar-icon .avatar,
+.container #post .post--item .wrap-content .heading .avatar-icon .front,
+.container #post .post--item .wrap-content .heading .avatar-icon .back {
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   position: absolute;
   top: 0;
   left: 0;
 }
-.container #post .item .wrap-content .heading .avatar-icon .back {
+.container #post .post--item .wrap-content .heading .avatar-icon .back {
   width: 100%;
   height: 100%;
   -moz-transform: rotateY(180deg);
@@ -2031,7 +2015,7 @@ pre {
   -o-transition: all 0.8s ease-in-out;
   transition: all 0.8s ease-in-out;
 }
-.container #post .item .wrap-content .heading .avatar-icon .back a {
+.container #post .post--item .wrap-content .heading .avatar-icon .back a {
   background-color: #986794;
   border-radius: 50%;
   color: #fff;
@@ -2048,7 +2032,7 @@ pre {
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-.container #post .item .wrap-content .heading .avatar-icon .avatar {
+.container #post .post--item .wrap-content .heading .avatar-icon .avatar {
   border-radius: 50%;
   -moz-transition: all 0.8s ease-in-out;
   -ms-transition: all 0.8s ease-in-out;
@@ -2056,12 +2040,12 @@ pre {
   -o-transition: all 0.8s ease-in-out;
   transition: all 0.8s ease-in-out;
 }
-.container #post .item .wrap-content .heading .post-title {
+.container #post .post--item .wrap-content .heading .post-title {
   margin: 0 0 15px 61px;
   padding: 23px 0 0;
   text-overflow: ellipsis;
 }
-.container #post .item .wrap-content .heading .post-title .title-wrap .title {
+.container #post .post--item .wrap-content .heading .post-title .title-wrap .title {
   border: 0 none;
   font-size: 16px;
   font-weight: normal;
@@ -2069,26 +2053,26 @@ pre {
   unicode-bidi: normal;
 }
 @media only screen and (max-width: 959px) {
-  .container #post .item .wrap-content .heading .post-title .title-wrap .title {
+  .container #post .post--item .wrap-content .heading .post-title .title-wrap .title {
     font-size: 15px;
   }
 }
-.container #post .item .wrap-content .heading .post-title .title-wrap .title a {
+.container #post .post--item .wrap-content .heading .post-title .title-wrap .title a {
   -moz-transition: all 0.2s ease-in-out;
   -ms-transition: all 0.2s ease-in-out;
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-.container #post .item .wrap-content .heading .post-title .title-wrap .title a:hover {
+.container #post .post--item .wrap-content .heading .post-title .title-wrap .title a:hover {
   color: #ba89b6;
 }
-.container #post .item .wrap-content .heading .post-title .title-wrap time {
+.container #post .post--item .wrap-content .heading .post-title .title-wrap time {
   color: #999;
   display: inline-block;
   font-size: 12px;
 }
-.container #post .item .wrap-content .heading .tag ul {
+.container #post .post--item .wrap-content .heading .tag ul {
   -webkit-transition: box-shadow 0.218s ease, background-color 0.218s ease, max-width 0.218s step-end;
   transition: box-shadow 0.218s ease, background-color 0.218s ease, max-width 0.218s step-end;
   font-size: 12px;
@@ -2098,13 +2082,13 @@ pre {
   right: 0;
   top: 0;
 }
-.container #post .item .wrap-content .heading .tag ul.show {
+.container #post .post--item .wrap-content .heading .tag ul.show {
   z-index: 12;
 }
-.container #post .item .wrap-content .heading .tag ul.show li {
+.container #post .post--item .wrap-content .heading .tag ul.show li {
   background-color: #f5f5f5;
 }
-.container #post .item .wrap-content .heading .tag ul.show li:hover {
+.container #post .post--item .wrap-content .heading .tag ul.show li:hover {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   background-color: #404040;
   max-width: 360px;
@@ -2112,28 +2096,28 @@ pre {
   display: block;
   white-space: nowrap;
 }
-.container #post .item .wrap-content .heading .tag ul.show li:hover .tag-bar {
+.container #post .post--item .wrap-content .heading .tag ul.show li:hover .tag-bar {
   background-color: #404040;
 }
-.container #post .item .wrap-content .heading .tag ul.show li a {
+.container #post .post--item .wrap-content .heading .tag ul.show li a {
   color: #999;
   opacity: 1;
   visibility: visible;
 }
-.container #post .item .wrap-content .heading .tag ul.show li:first-child:hover a {
+.container #post .post--item .wrap-content .heading .tag ul.show li:first-child:hover a {
   color: #fff;
 }
-.container #post .item .wrap-content .heading .tag ul.show li:nth-child(odd):hover a {
-  color: #fff;
-  opacity: 1;
-  visibility: visible;
-}
-.container #post .item .wrap-content .heading .tag ul.show li:nth-child(even):hover a {
+.container #post .post--item .wrap-content .heading .tag ul.show li:nth-child(odd):hover a {
   color: #fff;
   opacity: 1;
   visibility: visible;
 }
-.container #post .item .wrap-content .heading .tag ul li {
+.container #post .post--item .wrap-content .heading .tag ul.show li:nth-child(even):hover a {
+  color: #fff;
+  opacity: 1;
+  visibility: visible;
+}
+.container #post .post--item .wrap-content .heading .tag ul li {
   clear: both;
   height: 26px;
   line-height: 26px;
@@ -2144,14 +2128,14 @@ pre {
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-.container #post .item .wrap-content .heading .tag ul li .tag-bar {
+.container #post .post--item .wrap-content .heading .tag ul li .tag-bar {
   float: right;
   height: 26px;
   margin-right: -4px;
   padding-right: 4px;
   width: 0;
 }
-.container #post .item .wrap-content .heading .tag ul li a {
+.container #post .post--item .wrap-content .heading .tag ul li a {
   color: #999;
   display: block;
   float: right;
@@ -2168,89 +2152,89 @@ pre {
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
-.container #post .item .wrap-content .heading .tag ul li:first-child {
+.container #post .post--item .wrap-content .heading .tag ul li:first-child {
   background-color: #f5f5f5;
   float: right;
   max-width: 360px;
 }
-.container #post .item .wrap-content .heading .tag ul li:first-child .tag-bar {
+.container #post .post--item .wrap-content .heading .tag ul li:first-child .tag-bar {
   background-color: #404040 !important;
 }
-.container #post .item .wrap-content .heading .tag ul li:first-child a {
+.container #post .post--item .wrap-content .heading .tag ul li:first-child a {
   opacity: 1;
   visibility: visible;
 }
-.container #post .item .wrap-content .heading .tag ul li:nth-child(even) .tag-bar {
+.container #post .post--item .wrap-content .heading .tag ul li:nth-child(even) .tag-bar {
   background-color: #aaa;
 }
-.container #post .item .wrap-content .heading .tag ul li:nth-child(odd) .tag-bar {
+.container #post .post--item .wrap-content .heading .tag ul li:nth-child(odd) .tag-bar {
   background-color: #737373;
 }
-.container #post .item .wrap-content .post-content {
+.container #post .post--item .wrap-content .post-content {
   margin: 0;
   padding: 0 20px 15px;
   position: relative;
   text-overflow: ellipsis;
   z-index: 11;
 }
-.container #post .item .wrap-content .post-content .excerpt {
+.container #post .post--item .wrap-content .post-content .excerpt {
   color: #808285;
   font-size: 13px;
   line-height: 150%;
 }
-.container #post .item .wrap-content .post-content .excerpt a:hover {
+.container #post .post--item .wrap-content .post-content .excerpt a:hover {
   color: #ba89b6;
   text-decoration: underline;
 }
-.container #post .item .wrap-content .post-thumb {
+.container #post .post--item .wrap-content .post-thumb {
   margin: 5px auto 15px;
   overflow: hidden;
   width: 430px;
 }
 @media only screen and (min-width: 768px) and (max-width: 959px) {
-  .container #post .item .wrap-content .post-thumb {
+  .container #post .post--item .wrap-content .post-thumb {
     width: 350px;
   }
 }
 @media only screen and (max-width: 480px) {
-  .container #post .item .wrap-content .post-thumb {
+  .container #post .post--item .wrap-content .post-thumb {
     width: 290px;
   }
 }
-.container #post .item .wrap-content .post-thumb img {
+.container #post .post--item .wrap-content .post-thumb img {
   display: block;
   height: auto;
   opacity: .9;
   width: 430px;
 }
 @media only screen and (min-width: 768px) and (max-width: 959px) {
-  .container #post .item .wrap-content .post-thumb img {
+  .container #post .post--item .wrap-content .post-thumb img {
     width: 350px;
   }
 }
 @media only screen and (max-width: 480px) {
-  .container #post .item .wrap-content .post-thumb img {
+  .container #post .post--item .wrap-content .post-thumb img {
     width: 290px;
   }
 }
-.container #post .item .wrap-content .post-meta {
+.container #post .post--item .wrap-content .post-meta {
   border-top: 1px solid #f2f2f5;
   height: auto;
   overflow: hidden;
   margin: 5px 0 0 0;
   padding: 5px 0 5px 0;
 }
-.container #post .item .wrap-content .post-meta > div {
+.container #post .post--item .wrap-content .post-meta > div {
   border-right: 1px solid #d9d9d9;
   float: left;
   margin: 7px 0;
   text-align: center;
   width: 33.333%;
 }
-.container #post .item .wrap-content .post-meta > div:last-child {
+.container #post .post--item .wrap-content .post-meta > div:last-child {
   border-right: none;
 }
-.container #post .item .wrap-content .post-meta > div a {
+.container #post .post--item .wrap-content .post-meta > div a {
   color: #262626;
   display: block;
   font-size: 14px;
@@ -2262,11 +2246,11 @@ pre {
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-.container #post .item .wrap-content .post-meta > div a:hover {
+.container #post .post--item .wrap-content .post-meta > div a:hover {
   color: #986794;
   opacity: 1;
 }
-.container #post .item .wrap-content .post-meta > div a span {
+.container #post .post--item .wrap-content .post-meta > div a span {
   font-family: "Raleway", "Helvetica Neue", Helvetica, "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei", sans-serif;
 }
 .i-404 {
@@ -2681,7 +2665,12 @@ pre {
   height: 60px;
   margin: 20px auto 20px;
   position: relative;
-  width: 960px;
+  width: 1420px;
+}
+@media only screen and (min-width: 960px) and (max-width: 1419px) {
+  .navigation {
+    width: 960px;
+  }
 }
 @media only screen and (max-width: 767px) {
   .navigation {
@@ -2796,8 +2785,13 @@ pre {
 }
 footer {
   margin: 20px auto;
-  width: 960px;
+  width: 1420px;
   position: relative;
+}
+@media only screen and (min-width: 960px) and (max-width: 1419px) {
+  footer {
+    width: 960px;
+  }
 }
 @media only screen and (max-width: 767px) {
   footer {
@@ -2844,6 +2838,70 @@ footer {
 #footer p span:hover {
   cursor: default;
   text-decoration: underline;
+}
+.column--post {
+  vertical-align: top;
+  width: 460px;
+  margin-left: 10px;
+}
+.column--post.column--one,
+.column--post.column--two,
+.column--post.column--three {
+  display: inline-block;
+}
+.column--post.show--up {
+  opacity: 0;
+  transition: transform 0.7s ease 0s, opacity 0.7s ease 0s;
+  -webkit-transition: -webkit-transform 0.7s ease 0s, opacity 0.7s ease 0s;
+  -webkit-transform: translateY(70px);
+  -moz-transform: translateY(70px);
+  -ms-transform: translateY(70px);
+  -o-transform: translateY(70px);
+  transform: translateY(70px);
+}
+.column--post.show--up.stop--sliding {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+  transform: translateY(0);
+}
+.column--post.show--up.stop--sliding.fading {
+  opacity: 0.1;
+}
+.column--post.column--one {
+  margin-left: 0;
+}
+@media only screen and (max-width: 1419px) {
+  .column--post.column--three {
+    display: none;
+  }
+}
+@media only screen and (max-width: 959px) {
+  .column--post {
+    margin-left: 0;
+    width: 368px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .column--post {
+    width: 440px;
+  }
+  .column--post.column--two {
+    display: none;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .column--post {
+    width: 300px;
+  }
+}
+.column--none {
+  display: none;
+}
+.column--none.column--show {
+  display: block;
 }
 @media only screen and (max-width: 959px) {
   .wp-smiley {

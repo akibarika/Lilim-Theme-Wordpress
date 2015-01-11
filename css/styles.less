@@ -1464,10 +1464,13 @@ pre {
   #post {
     display  : block;
     margin   : 0 auto;
-    width    : 960px;
+    width    : 1420px;
     height   : auto;
     overflow : hidden;
     z-index  : 10;
+    @media only screen and (min-width : 960px) and (max-width : 1419px) {
+      width : 960px;
+    }
     @media only screen and (min-width : 768px) and (max-width : 959px) {
       width : 740px;
     }
@@ -1534,7 +1537,7 @@ pre {
         transform : translateX(-40px);
       }
     }
-    .item {
+    .post--item {
       -moz-border-bottom-colors : none;
       -moz-border-left-colors   : none;
       -moz-border-right-colors  : none;
@@ -1570,20 +1573,6 @@ pre {
       }
       &::after {
         clear : both;
-      }
-      &.show-up {
-        opacity            : 0;
-        .upanddown(70px);
-        transition         : transform 0.7s ease 0s, opacity 0.7s ease 0s;
-        -webkit-transition : -webkit-transform 0.7s ease 0s, opacity 0.7s ease 0s;
-        &.stop {
-          opacity : 1;
-          .upanddown(0);
-          &.fading {
-            opacity : 0.1;
-          }
-
-        }
       }
       &.kanban {
         backface-visibility         : hidden;
@@ -2630,7 +2619,10 @@ pre {
   height                    : 60px;
   margin                    : 20px auto 20px;
   position                  : relative;
-  width                     : 960px;
+  width                     : 1420px;
+  @media only screen and (min-width : 960px) and (max-width : 1419px) {
+    width : 960px;
+  }
   @media only screen and (max-width : 767px) {
     width : 100%;
   }
@@ -2742,8 +2734,11 @@ pre {
 
 footer {
   margin   : 20px auto;
-  width    : 960px;
+  width    : 1420px;
   position : relative;
+  @media only screen and (min-width : 960px) and (max-width : 1419px) {
+    width : 960px;
+  }
   @media only screen and (max-width : 767px) {
     width : 100%;
   }
@@ -2788,6 +2783,59 @@ footer {
     }
   }
 }
+
+.column--post {
+  vertical-align : top;
+  width          : 460px;
+  margin-left    : 10px;
+  &.column--one,
+  &.column--two,
+  &.column--three {
+    display : inline-block;;
+  }
+  &.show--up {
+    opacity            : 0;
+    transition         : transform 0.7s ease 0s, opacity 0.7s ease 0s;
+    -webkit-transition : -webkit-transform 0.7s ease 0s, opacity 0.7s ease 0s;
+    .upanddown(70px);
+    &.stop--sliding {
+      opacity : 1;
+      .upanddown(0);
+      &.fading {
+        opacity : 0.1;
+      }
+    }
+  }
+  &.column--one {
+    margin-left : 0;
+  }
+  @media only screen and (max-width : 1419px) {
+    &.column--three {
+      display : none;
+    }
+  }
+  @media only screen and (max-width : 959px) {
+    margin-left : 0;
+    width       : 368px;
+  }
+  @media only screen and (max-width : 767px) {
+    width : 440px;
+    &.column--two {
+      display : none;
+    }
+  }
+  @media only screen and (max-width : 480px) {
+    width : 300px;
+  }
+}
+
+.column--none {
+  display : none;
+  &.column--show {
+    display : block;
+  }
+}
+
 @media only screen and (max-width : 959px) {
   .wp-smiley {
     width : 37px !important;
