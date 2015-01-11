@@ -349,25 +349,6 @@ pre {
           text-decoration : underline;
         }
       }
-      li.social {
-        display : block;
-        @media only screen and (max-width : 767px) {
-          display : none;
-        }
-        a {
-          color            : #666;
-          position         : relative;
-          float            : left;
-          width            : 44px;
-          font-size        : 25px;
-          height           : 47px;
-          text-align       : center;
-          border-left      : 1px solid #d6d6d6;
-          background-color : transparent;
-          overflow         : hidden;
-          padding-top      : 3px;
-        }
-      }
     }
   }
   nav.main {
@@ -1454,6 +1435,64 @@ pre {
   font-size : 26px;
   height    : 32px;
   width     : 100% !important;
+}
+
+.column--post {
+  vertical-align : top;
+  width          : 460px;
+  margin-left    : 10px;
+  &.column--one,
+  &.column--two,
+  &.column--three {
+    display : inline-block;;
+  }
+  &.show--up {
+    opacity            : 0;
+    transition         : transform 0.7s ease 0s, opacity 0.7s ease 0s;
+    -webkit-transition : -webkit-transform 0.7s ease 0s, opacity 0.7s ease 0s;
+    .upanddown(70px);
+    &.stop--sliding {
+      opacity : 1;
+      .upanddown(0);
+      &.fading {
+        opacity : 0.1;
+      }
+    }
+  }
+  &.column--one {
+    margin-left : 0;
+  }
+  @media only screen and (max-width : 1419px) {
+    &.column--three {
+      display : none;
+    }
+  }
+  @media only screen and (max-width : 959px) {
+    margin-left : 0;
+    width       : 368px;
+  }
+  @media only screen and (max-width : 767px) {
+    width : 440px;
+    &.column--two {
+      display : none;
+    }
+  }
+  @media only screen and (max-width : 480px) {
+    width : 300px;
+  }
+}
+
+.column--none {
+  display : none;
+  &.column--show {
+    display : block;
+  }
+}
+
+@media only screen and (max-width : 959px) {
+  .wp-smiley {
+    width : 37px !important;
+  }
 }
 
 .container {
@@ -2733,28 +2772,18 @@ pre {
 }
 
 footer {
+  background-color : #fff;
   margin   : 20px auto;
-  width    : 1420px;
+  width    : 100%;
   position : relative;
-  @media only screen and (min-width : 960px) and (max-width : 1419px) {
-    width : 960px;
-  }
-  @media only screen and (max-width : 767px) {
-    width : 100%;
-  }
 }
 
 #footer {
-  background-color : #fafafa;
-  border-bottom    : 1px solid #ddd;
-  border-top       : 1px solid #ddd;
-  height           : 60px;
+  height           : auto;
   margin           : 0 auto;
   overflow         : hidden;
   position         : relative;
-  @media only screen and (max-width : 767px) {
-    height : auto;
-  }
+  text-align       : center;
   p {
     color          : #999;
     font-size      : 14px;
@@ -2784,60 +2813,119 @@ footer {
   }
 }
 
-.column--post {
-  vertical-align : top;
-  width          : 460px;
-  margin-left    : 10px;
-  &.column--one,
-  &.column--two,
-  &.column--three {
-    display : inline-block;;
-  }
-  &.show--up {
-    opacity            : 0;
-    transition         : transform 0.7s ease 0s, opacity 0.7s ease 0s;
-    -webkit-transition : -webkit-transform 0.7s ease 0s, opacity 0.7s ease 0s;
-    .upanddown(70px);
-    &.stop--sliding {
-      opacity : 1;
-      .upanddown(0);
-      &.fading {
-        opacity : 0.1;
+.box-social {
+  padding          : 35px 0;
+  .list-follow {
+    width  : 285px;
+    margin : 0 auto;
+    &::after {
+      content : '';
+      display : block;
+      clear   : both;
+    }
+    li {
+      position     : relative;
+      list-style   : none;
+      float        : left;
+      margin-right : 10px;
+      height       : 31px;
+      overflow     : hidden;
+      a {
+        width  : 34px;
+        height : 31px;
+        color  : #202121;
+        .transition(all, .3s, ease-out);
+        i:before {
+          font-size   : 32px;
+          line-height : 31px;
+        }
+      }
+      &:last-child {
+        margin-right : 0;
+      }
+      &.heart {
+        position          : relative;
+        width             : 34px;
+        overflow          : inherit;
+        -webkit-animation : heartbeat 2.5s infinite;
+        animation         : heartbeat 2.5s infinite;
+        &::before,
+        &::after {
+          position                 : absolute;
+          content                  : '';
+          top                      : 0;
+          left                     : 17px;
+          width                    : 17px;
+          height                   : 27px;
+          background               : #e16b8c;
+          border-radius            : 50px 50px 0 0;
+          -webkit-transform        : rotate(-45deg) translateZ(0);
+          transform                : rotate(-45deg) translateZ(0);
+          -webkit-transform-origin : 0 100%;
+          transform-origin         : 0 100%;
+        }
+        &::after {
+          left                     : 0;
+          -webkit-transform        : rotate(45deg) translateZ(0);
+          transform                : rotate(45deg) translateZ(0);
+          -webkit-transform-origin : 100% 100%;
+          transform-origin         : 100% 100%;
+        }
       }
     }
   }
-  &.column--one {
-    margin-left : 0;
+}
+
+@-webkit-keyframes heartbeat {
+  0% {
+    -webkit-transform : scale(0.9);
   }
-  @media only screen and (max-width : 1419px) {
-    &.column--three {
-      display : none;
-    }
+  9% {
+    -webkit-transform : scale(1.2);
   }
-  @media only screen and (max-width : 959px) {
-    margin-left : 0;
-    width       : 368px;
+  18% {
+    -webkit-transform : scale(0.9);
   }
-  @media only screen and (max-width : 767px) {
-    width : 440px;
-    &.column--two {
-      display : none;
-    }
+  25% {
+    -webkit-transform : scale(1);
   }
-  @media only screen and (max-width : 480px) {
-    width : 300px;
+  100% {
+    -webkit-transform : scale(1);
   }
 }
 
-.column--none {
-  display : none;
-  &.column--show {
-    display : block;
+@-ms-keyframes heartbeat {
+  0% {
+    -ms-transform : scale(0.9);
+  }
+  9% {
+    -ms-transform : scale(1.2);
+  }
+  18% {
+    -ms-transform : scale(0.9);
+  }
+  25% {
+    -ms-transform : scale(1);
+  }
+  100% {
+    -ms-transform : scale(1);
   }
 }
 
-@media only screen and (max-width : 959px) {
-  .wp-smiley {
-    width : 37px !important;
+@keyframes heartbeat {
+  0% {
+    transform : scale(0.9);
+  }
+  9% {
+    transform : scale(1.2);
+  }
+  18% {
+    transform : scale(0.9);
+  }
+  25% {
+    transform : scale(1);
+  }
+  100% {
+    transform : scale(1);
   }
 }

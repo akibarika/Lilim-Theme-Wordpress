@@ -44,14 +44,6 @@
 						    ?><a href="<?php echo wp_login_url(); ?>" title="Login">Login</a><?php
 						}
 						?>	
-					</li>			
-					<li class="social">
-						<a href="https://twitter.com/Akiba_Rika" target="_blank"><i class="icon-twitter"></i></a>
-						<a href="http://weibo.com/rikatan" target="_blank"><i class="icon-weibo"></i></a>
-						<a href="http://www.flickr.com/photos/akibarika/" target="_blank"><i class="icon-flickr"></i></a>
-						<a href="https://plus.google.com/u/0/103659577793041448146" target="_blank"><i class="icon-googleplus"></i></a>
-						<a href="http://instagram.com/akibarika" target="_blank"><i class="icon-instagram"></i></a>
-						<a href="https://foursquare.com/akiba_rika" target="_blank"><i class="icon-foursquare"></i></a>
 					</li>
 				</ul>
 			</nav>
