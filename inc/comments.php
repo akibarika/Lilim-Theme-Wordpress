@@ -71,8 +71,6 @@ function otakism_comment($comment, $args, $depth) {
     </li>
 <?php }
 
-add_action('init', 'ajaxcomments_load_js');
-
 function ajaxify_comments_jaya($comment_ID, $comment_status) {
     if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
         //If AJAX Request Then

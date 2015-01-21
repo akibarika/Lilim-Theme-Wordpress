@@ -1,0 +1,33 @@
+.transition (@val,@time,@pro) {
+  -moz-transition    : @val @time @pro;
+  -ms-transition     : @val @time @pro;
+  -webkit-transition : @val @time @pro;
+  -o-transition      : @val @time @pro;
+  transition         : @val @time @pro;
+}
+
+.upanddown (@val) {
+  -webkit-transform : translateY(@val);
+  -moz-transform    : translateY(@val);
+  -ms-transform     : translateY(@val);
+  -o-transform      : translateY(@val);
+  transform         : translateY(@val);
+}
+
+.leftandright (@val) {
+  -webkit-transform : translateX(@val);
+  -moz-transform    : translateX(@val);
+  -ms-transform     : translateX(@val);
+  transform         : translateX(@val);
+}
+
+.clearfix() {
+  &:before,
+  &:after {
+    content : " "; // 1
+    display : table; // 2
+  }
+  &:after {
+    clear : both;
+  }
+}

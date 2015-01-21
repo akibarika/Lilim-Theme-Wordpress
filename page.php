@@ -18,7 +18,7 @@
                 </div>
                 <div class="single-meta">
                     <div class="meta">
-                        <span><i class="icon-info"></i> This work is licensed under a <a class="cc" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">cc by-nc-sa 4.0</a>. </span>
+                        <span><i class="icon-cc"></i> This work is licensed under a <a class="cc" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">cc by-nc-sa 4.0</a>. </span>
                     </div>
                 </div>
 <!--                --><?php //echo wp_sns_share();?>

@@ -2,23 +2,26 @@
 	<div class="container">
 		<section id="post">
 			<div class="pageload-overlay"></div>
-			<div class="column--one column--post show--up"></div>
-			<div class="column--two column--post show--up"></div>
-			<div class="column--three column--post show--up"></div>
-			<div class="column--none">
-				<?php if (have_posts()) :
-				while ( have_posts() ) :
-					the_post();
-					?>
+
+			<?php if ( have_posts() ) :
+				?>
+				<div class="column--one column--post show--up"></div>
+				<div class="column--two column--post show--up"></div>
+				<div class="column--three column--post show--up"></div>
+				<div class="column--none">
+					<?php
+					while ( have_posts() ) :
+						the_post();
+						?>
+
+						<?php
+						get_template_part( 'content' );
+						?>
 
 					<?php
-					get_template_part( 'content' );
+					endwhile;
 					?>
-
-				<?php
-				endwhile;
-				?>
-			</div>
+				</div>
 			<?php
 			else : ?>
 				<article class="item i-404">
