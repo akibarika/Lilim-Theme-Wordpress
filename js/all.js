@@ -29,15 +29,7 @@ jQuery(document).ready(function (jQuery) {
                 },
                 responsiveColumn: function (items) {
                     jQuery(window).resize({viewModel: o}, function (o) {
-                        var e = o.data.viewModel, getViewportWidth = function () {
-                            return Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-                        }, gridLagerBreakpoint = 1420, gridSmallBreakpoint = 767;
-                        if (getViewportWidth() == gridSmallBreakpoint) {
-                            e.adjustColumnHeights(items.clone());
-                        }
-                        if (getViewportWidth() == gridLagerBreakpoint) {
-                            e.adjustColumnHeights(items.clone());
-                        }
+                        var e = o.data.viewModel;
                         e.adjustColumnHeights(items.clone());
                     });
                 },
@@ -50,12 +42,12 @@ jQuery(document).ready(function (jQuery) {
                         return Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
                     };
                     var gridLagerBreakpoint = 1420;
-                    var gridSmallBreakpoint = 767;
+                    var gridSmallBreakpoint = 768;
                     columns.push(jQuery('.column--one'));
-                    if (getViewportWidth() > gridSmallBreakpoint) {
+                    if (getViewportWidth() >= gridSmallBreakpoint) {
                         columns.push(jQuery('.column--two'));
                     }
-                    if (getViewportWidth() > gridLagerBreakpoint) {
+                    if (getViewportWidth() >= gridLagerBreakpoint) {
                         columns.push(jQuery('.column--three'));
                     }
                     for (var i = 0; i < items.length; i++) {
