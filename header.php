@@ -21,10 +21,10 @@
 <body>
 <header id="header">
 	<nav class="top">
-		<h1 class="hitokoto">
+		<h2 class="hitokoto">
 			<script src="http://api.hitokoto.us/rand?encode=js&charset=utf-8"></script>
 			<script>hitokoto()</script>
-		</h1>
+		</h2>
 		<ul class="right">
 			<li class="login">
 				<?php
@@ -42,7 +42,11 @@
 	</nav>
 	<nav class="main">
 		<a id="logo" href="http://moe.akibarika.org">
+			<?php if(is_home()): ?>
+			<h1>Akiba<span>Rika</span></h1>
+			<?php else: ?>
 			Akiba<span>Rika</span>
+			<?php endif ?>
 		</a>
 		<?php wp_nav_menu( array(
 			'theme_location' => 'page-menu',

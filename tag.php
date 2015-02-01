@@ -13,7 +13,7 @@ get_header(); ?>
 			<div class="column--one column--post show--up"></div>
 			<div class="column--two column--post show--up"></div>
 			<div class="column--three column--post show--up"></div>
-			<div class="column--none">
+			<div class="column--invisible">
 				<article id="tag-" class="item show-up kanban hiding--post">
 					<div class="in-tag">
 						<h2>Tag:<span> <?php single_tag_title(); ?></span></h2>

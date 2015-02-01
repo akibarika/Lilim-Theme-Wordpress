@@ -332,12 +332,17 @@ pre {
     line-height : 66px;
     font-size   : 14px;
     a#logo {
+      display        : inline-block;
       font-family    : 'Dosis', sans-serif;
       letter-spacing : -1px;
       color          : #a09f9f;
       font-size      : 45px;
       margin         : 0 0 0 20px;
       padding        : 0;
+      h1 {
+        font-size   : 45px;
+        font-weight : normal;
+      }
       span {
         color : #000;
       }
@@ -1402,7 +1407,7 @@ pre {
         height   : auto;
         overflow : hidden;
         position : relative;
-        a:not(.img) {
+        p > a {
           color              : #ba89b6;
           display            : inline-block;
           position           : relative;
@@ -1612,7 +1617,7 @@ pre {
   }
 }
 
-.column--none {
+.column--invisible {
   display : none;
   &.column--show {
     display : block;

@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 	<div class="container">
-		<section id="post">
+		<section id="post" class="grid--view">
 			<div class="pageload-overlay"></div>
 
 			<?php if ( have_posts() ) :
@@ -8,7 +8,7 @@
 				<div class="column--one column--post show--up"></div>
 				<div class="column--two column--post show--up"></div>
 				<div class="column--three column--post show--up"></div>
-				<div class="column--none">
+				<div class="column--invisible">
 					<?php
 					while ( have_posts() ) :
 						the_post();

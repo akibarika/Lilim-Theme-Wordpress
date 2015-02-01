@@ -7,8 +7,9 @@ jQuery(document).ready(function (jQuery) {
     },
             RikaSite.prototype = {
                 init: function () {
-                    var o = this, postContent = jQuery('#post .column--none .hiding--post');
-                    o.hoverSearchText(), o.initial(postContent), o.placeToolbar(960, 60, 20), o.ajaxPostLoading(), o.responsiveColumn(postContent), o.addImageType(), o.navDropDownClick(), o.navFilterClick(), o.menuScroll(), o.upperDownClick(), o.toolBarPlace(), o.dispalyMoblieMenu(), o.tagPost(), o.ScrollMenuMobile(), o.searchClick();
+                    var o = this,
+                            postContent = jQuery('#post .column--invisible .hiding--post');
+                    o.hoverSearchText(), o.initial(postContent), o.placeToolbar(960, 60, 20), o.ajaxPostLoading(), o.responsiveColumn(postContent), o.navDropDownClick(), o.navFilterClick(), o.menuScroll(), o.upperDownClick(), o.toolBarPlace(), o.dispalyMoblieMenu(), o.tagPost(), o.ScrollMenuMobile(), o.searchClick();
                 },
                 hoverSearchText: function () {
                     jQuery('.search-text .text').focus(function () {
@@ -28,7 +29,15 @@ jQuery(document).ready(function (jQuery) {
                 },
                 responsiveColumn: function (items) {
                     jQuery(window).resize({viewModel: o}, function (o) {
-                        var e = o.data.viewModel;
+                        var e = o.data.viewModel, getViewportWidth = function () {
+                            return Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+                        }, gridLagerBreakpoint = 1420, gridSmallBreakpoint = 767;
+                        if (getViewportWidth() == gridSmallBreakpoint) {
+                            e.adjustColumnHeights(items.clone());
+                        }
+                        if (getViewportWidth() == gridLagerBreakpoint) {
+                            e.adjustColumnHeights(items.clone());
+                        }
                         e.adjustColumnHeights(items.clone());
                     });
                 },
@@ -90,10 +99,6 @@ jQuery(document).ready(function (jQuery) {
                         opacity: 1
                     });
                 },
-
-                addImageType: function () {
-                    jQuery(".post-detail p a[href]").filter("[href$='png'], [href$='jpg']").addClass("img");
-                },
                 ajaxPostLoading: function () {
                     var currentState = window.location.href;
                     jQuery(document).on("click", ".navigation a", {viewModel: o},
@@ -116,8 +121,6 @@ jQuery(document).ready(function (jQuery) {
                             currentState = _currentUrl;
                         }
                     });
-
-
                 },
                 turnpage: function (pageurl) {
                     jQuery('.pageload-overlay').addClass('show');
@@ -129,10 +132,9 @@ jQuery(document).ready(function (jQuery) {
                         var html = jQuery.parseHTML(o);
                         jQuery("#post").html(jQuery("#post", html).html());
                         jQuery(".navigation").html(jQuery(".navigation", html).html());
-                        //var imgload = imagesLoaded(jQuery('#post'));
-                        //imgload.on('always', {viewModel: o}, function (o) {
                         jQuery('.wp-post-image').load(function (o) {
-                            RikaSite.prototype.initial(jQuery('#post .column--none .hiding--post'));
+                            RikaSite.prototype.initial(jQuery('#post .column--invisible .hiding--post'));
+                            RikaSite.prototype.responsiveColumn(jQuery('#post .column--invisible .hiding--post'));
                         });
                     });
                 },
