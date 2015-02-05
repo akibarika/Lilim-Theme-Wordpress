@@ -30,6 +30,9 @@
 		<p>Since 2008 <a href="http://moe.akibarika.org/">AkibaRika/Himeka</a>. Made with <span
 				class="heart">&#60;3</span> in Theme <span>Lilim</span>.</p>
 	</section>
+	<div class="none">
+		<div class="ripple-effect"></div>
+	</div>
 </footer>
 <!--            Google Analytics-->
 <script>

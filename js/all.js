@@ -8,8 +8,8 @@ jQuery(document).ready(function (jQuery) {
             RikaSite.prototype = {
                 init: function () {
                     var o = this,
-                            postContent = jQuery('#post .column--invisible .hiding--post');
-                    o.hoverSearchText(), o.initial(postContent), o.placeToolbar(960, 60, 20), o.ajaxPostLoading(), o.responsiveColumn(postContent), o.navDropDownClick(), o.navFilterClick(), o.menuScroll(), o.upperDownClick(), o.toolBarPlace(), o.dispalyMoblieMenu(), o.tagPost(), o.ScrollMenuMobile(), o.searchClick();
+                            postContent = jQuery('#post .column--invisible .list--post');
+                    o.hoverSearchText(), o.initial(postContent), o.placeToolbar(960, 60, 20), o.ajaxPostLoading(),o.responsiveColumn(postContent), o.navDropDownClick(), o.navFilterClick(), o.menuScroll(), o.upperDownClick(), o.toolBarPlace(), o.dispalyMoblieMenu(), o.tagPost(), o.ScrollMenuMobile(), o.searchClick(), o.layoutSwitchClick();
                 },
                 hoverSearchText: function () {
                     jQuery('.search-text .text').focus(function () {
@@ -22,7 +22,6 @@ jQuery(document).ready(function (jQuery) {
                         }
                     })
                 },
-
                 initial: function (items) {
                     this.adjustColumnHeights(items.clone());
                     this.stopSliding(jQuery('.column--post'));
@@ -31,6 +30,29 @@ jQuery(document).ready(function (jQuery) {
                     jQuery(window).resize({viewModel: o}, function (o) {
                         var e = o.data.viewModel;
                         e.adjustColumnHeights(items.clone());
+                    });
+                },
+                layoutSwitchClick: function (o) {
+                    jQuery('.view-list .icon-th').on("click", {viewModel: o}, function (o) {
+                        if (!jQuery(this).hasClass('active')) {
+                            jQuery('#post').removeClass('list--view').addClass('grid--view')
+                            void RikaSite.prototype.setCookie("layout", 1)
+                            jQuery(this).siblings('.icon-th-list').removeClass('active');
+                            jQuery(this).addClass('active');
+                            jQuery('.column--post.column--invisible').removeClass('column--invisible');
+                            jQuery('.column--invisible').removeClass('column--show');
+                        }
+                    }),
+                    jQuery('.view-list .icon-th-list').on("click", {viewModel: o}, function (o) {
+                        if (!jQuery(this).hasClass('active')) {
+                            jQuery('#post').removeClass('grid--view').addClass('list--view');
+                            void RikaSite.prototype.setCookie("layout", 2)
+                            jQuery(this).siblings('.icon-th').removeClass('active');
+                            jQuery(this).addClass('active');
+
+                            jQuery('.column--invisible').addClass('column--show');
+                            jQuery('.column--post ').addClass('column--invisible');
+                        }
                     });
                 },
                 adjustColumnHeights: function (items) {
@@ -51,7 +73,7 @@ jQuery(document).ready(function (jQuery) {
                         columns.push(jQuery('.column--three'));
                     }
                     for (var i = 0; i < items.length; i++) {
-                        this.getTargetColumn(columns).append(items.eq(i).addClass('post--item').removeClass('hiding--post'));
+                        this.getTargetColumn(columns).append(items.eq(i).addClass('post--item').removeClass('list--post'));
                     }
                 },
                 stopSliding: function (items) {
@@ -125,8 +147,8 @@ jQuery(document).ready(function (jQuery) {
                         jQuery("#post").html(jQuery("#post", html).html());
                         jQuery(".navigation").html(jQuery(".navigation", html).html());
                         jQuery('.wp-post-image').load(function (o) {
-                            RikaSite.prototype.initial(jQuery('#post .column--invisible .hiding--post'));
-                            RikaSite.prototype.responsiveColumn(jQuery('#post .column--invisible .hiding--post'));
+                            RikaSite.prototype.initial(jQuery('#post .column--invisible .list--post'));
+                            RikaSite.prototype.responsiveColumn(jQuery('#post .column--invisible .list--post'));
                         });
                     });
                 },
@@ -233,6 +255,10 @@ jQuery(document).ready(function (jQuery) {
                             jQuery(".wrapper-nav").css("height", jQuery(window).height() + "px")
                         }, 500)
                     });
+                },
+                setCookie: function (o, e) {
+                    var i = new Date;
+                    i.setTime(i.getTime() + 31536e6), document.cookie = o + "=" + e + ";path=/;expires=" + i.toUTCString()
                 }
             };
 

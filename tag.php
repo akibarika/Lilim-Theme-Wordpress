@@ -8,12 +8,12 @@
  */
 get_header(); ?>
 	<div class="container">
-		<section id="post">
+		<section id="post" class="<?php echo $_COOKIE['layout'] == 1 ? 'grid--view':'list--view' ?>">
 			<div class="pageload-overlay"></div>
-			<div class="column--one column--post show--up"></div>
-			<div class="column--two column--post show--up"></div>
-			<div class="column--three column--post show--up"></div>
-			<div class="column--invisible">
+			<div class="column--one column--post show--up <?php echo $_COOKIE['layout'] == 1 ? '':'column--invisible' ?>"></div>
+			<div class="column--two column--post show--up <?php echo $_COOKIE['layout'] == 1 ? '':'column--invisible' ?>"></div>
+			<div class="column--three column--post show--up <?php echo $_COOKIE['layout'] == 1 ? '':'column--invisible' ?>"></div>
+			<div class="column--invisible <?php echo $_COOKIE['layout'] == 1 ? '':'column--show' ?>">
 				<article id="tag-" class="item show-up kanban hiding--post">
 					<div class="in-tag">
 						<h2>Tag:<span> <?php single_tag_title(); ?></span></h2>

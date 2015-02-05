@@ -160,8 +160,8 @@ add_filter( 'wp_title', 'lilim_wp_title', 10, 2 );
 //Insert Images within Figure Element
 function html5_insert_image( $html, $id, $caption, $title, $align, $url, $size, $alt ) {
 	$image_tag = get_image_tag( $id, '', $title, $align, $size );
-	$linkptrn = "/<a[^>]*>/";
-	$found    = preg_match( $linkptrn, $html, $a_elem );
+	$linkptrn  = "/<a[^>]*>/";
+	$found     = preg_match( $linkptrn, $html, $a_elem );
 	if ( $found > 0 ) {
 		$a_elem = $a_elem[0];
 
@@ -188,10 +188,28 @@ function html5_insert_image( $html, $id, $caption, $title, $align, $url, $size, 
 		$output .= '<figcaption class="caption wp-caption-text">' . $caption . '</figcaption>';
 	}
 	$output .= '</figure>';
+
 	return $output;
 }
 
 add_filter( 'image_send_to_editor', 'html5_insert_image', 10, 9 );
 add_filter( 'disable_captions', create_function( '$a', 'return true;' ) );
+
+add_filter( 'nav_menu_link_attributes', 'my_nav_menu_attribs', 10, 3 );
+function my_nav_menu_attribs( $atts, $item, $args ) {
+	// The ID of the target menu item
+	$menu_targets = [ 137, 138, 139, 140, 192 ];
+
+	// inspect $item
+	foreach ( $menu_targets as $menu_target ) {
+		if ( $item->ID == $menu_target ) {
+			$atts['data-content'] = $item->title;
+		}
+
+
+	}
+
+	return $atts;
+}
 
 
