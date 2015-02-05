@@ -32,24 +32,24 @@ jQuery(document).ready(function (jQuery) {
                         e.adjustColumnHeights(items.clone());
                     });
                 },
-                layoutSwitchClick: function (o) {
-                    jQuery('.view-list .icon-th').on("click", {viewModel: o}, function (o) {
+                layoutSwitchClick: function () {
+                    jQuery('.view-list .icon-th').on("click", function () {
                         if (!jQuery(this).hasClass('active')) {
-                            jQuery('#post').removeClass('list--view').addClass('grid--view')
-                            void RikaSite.prototype.setCookie("layout", 1)
+                            jQuery('#post').removeClass('list--view').addClass('grid--view');
+                            void RikaSite.prototype.setCookie("layout", 1);
                             jQuery(this).siblings('.icon-th-list').removeClass('active');
                             jQuery(this).addClass('active');
                             jQuery('.column--post.column--invisible').removeClass('column--invisible');
+                            RikaSite.prototype.adjustColumnHeights(jQuery('#post .column--invisible .list--post').clone());
                             jQuery('.column--invisible').removeClass('column--show');
                         }
                     }),
-                    jQuery('.view-list .icon-th-list').on("click", {viewModel: o}, function (o) {
+                    jQuery('.view-list .icon-th-list').on("click", function () {
                         if (!jQuery(this).hasClass('active')) {
                             jQuery('#post').removeClass('grid--view').addClass('list--view');
-                            void RikaSite.prototype.setCookie("layout", 2)
+                            void RikaSite.prototype.setCookie("layout", 2);
                             jQuery(this).siblings('.icon-th').removeClass('active');
                             jQuery(this).addClass('active');
-
                             jQuery('.column--invisible').addClass('column--show');
                             jQuery('.column--post ').addClass('column--invisible');
                         }
