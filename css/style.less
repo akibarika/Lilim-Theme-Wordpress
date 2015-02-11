@@ -21,6 +21,10 @@
   -webkit-box-sizing : content-box;
 }
 
+.fading {
+  opacity : 0.1 !important;
+}
+
 ::selection {
   background : @primary-color;
   color      : @white-color;
@@ -1607,9 +1611,6 @@ pre {
     &.stop--sliding {
       opacity : 1;
       .upanddown(0);
-      &.fading {
-        opacity : 0.1;
-      }
     }
   }
   &.column--one {
@@ -1727,6 +1728,11 @@ pre {
     @keyframes moveLeft {
       to {
         transform : translateX(-40px);
+      }
+    }
+    &.list--view {
+      img {
+        display : none;
       }
     }
     &.grid--view {

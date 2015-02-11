@@ -9,7 +9,7 @@ jQuery(document).ready(function (jQuery) {
                 init: function () {
                     var o = this,
                             postContent = jQuery('#post .column--invisible .list--post');
-                    o.hoverSearchText(), o.initial(postContent), o.placeToolbar(960, 60, 20), o.ajaxPostLoading(),o.responsiveColumn(postContent), o.navDropDownClick(), o.navFilterClick(), o.menuScroll(), o.upperDownClick(), o.toolBarPlace(), o.dispalyMoblieMenu(), o.tagPost(), o.ScrollMenuMobile(), o.searchClick(), o.layoutSwitchClick();
+                    o.hoverSearchText(), o.initial(postContent), o.placeToolbar(960, 60, 20), o.ajaxPostLoading(), o.responsiveColumn(postContent), o.navDropDownClick(), o.navFilterClick(), o.menuScroll(), o.upperDownClick(), o.toolBarPlace(), o.dispalyMoblieMenu(), o.tagPost(), o.ScrollMenuMobile(), o.searchClick(), o.layoutSwitchClick();
                 },
                 hoverSearchText: function () {
                     jQuery('.search-text .text').focus(function () {
@@ -24,7 +24,7 @@ jQuery(document).ready(function (jQuery) {
                 },
                 initial: function (items) {
                     this.adjustColumnHeights(items.clone());
-                    this.stopSliding(jQuery('.column--post'));
+                    jQuery('.column--post').addClass('stop--sliding');
                 },
                 responsiveColumn: function (items) {
                     jQuery(window).resize({viewModel: o}, function (o) {
@@ -33,27 +33,30 @@ jQuery(document).ready(function (jQuery) {
                     });
                 },
                 layoutSwitchClick: function () {
-                    jQuery('.view-list .icon-th').on("click", function () {
-                        if (!jQuery(this).hasClass('active')) {
+                    jQuery('i.icon-layout').on('click', function () {
+                        var iSwitch = jQuery(this),
+                                gridView = iSwitch.hasClass('icon-th'),
+                                listView = iSwitch.hasClass('icon-th-list');
+
+                        if (gridView && !iSwitch.hasClass('active')) {
                             jQuery('#post').removeClass('list--view').addClass('grid--view');
-                            void RikaSite.prototype.setCookie("layout", 1);
-                            jQuery(this).siblings('.icon-th-list').removeClass('active');
-                            jQuery(this).addClass('active');
+                            void RikaSite.prototype.setCookie('layout', 1);
+                            iSwitch.siblings('.icon-th-list').removeClass('active');
+                            iSwitch.addClass('active');
                             jQuery('.column--post.column--invisible').removeClass('column--invisible');
                             RikaSite.prototype.adjustColumnHeights(jQuery('#post .column--invisible .list--post').clone());
                             jQuery('.column--invisible').removeClass('column--show');
-                        }
-                    }),
-                    jQuery('.view-list .icon-th-list').on("click", function () {
-                        if (!jQuery(this).hasClass('active')) {
+
+                        } else if (listView && !iSwitch.hasClass('active')) {
                             jQuery('#post').removeClass('grid--view').addClass('list--view');
-                            void RikaSite.prototype.setCookie("layout", 2);
-                            jQuery(this).siblings('.icon-th').removeClass('active');
-                            jQuery(this).addClass('active');
+                            void RikaSite.prototype.setCookie('layout', 2);
+                            iSwitch.siblings('.icon-th').removeClass('active');
+                            iSwitch.addClass('active');
                             jQuery('.column--invisible').addClass('column--show');
                             jQuery('.column--post ').addClass('column--invisible');
+
                         }
-                    });
+                    })
                 },
                 adjustColumnHeights: function (items) {
                     jQuery('.column--one').empty();
@@ -75,9 +78,6 @@ jQuery(document).ready(function (jQuery) {
                     for (var i = 0; i < items.length; i++) {
                         this.getTargetColumn(columns).append(items.eq(i).addClass('post--item').removeClass('list--post'));
                     }
-                },
-                stopSliding: function (items) {
-                    items.addClass('stop--sliding');
                 },
                 getTargetColumn: function (columnList) {
                     var currentBestHeight = Number.MAX_VALUE;
@@ -108,25 +108,24 @@ jQuery(document).ready(function (jQuery) {
                     if (loli < 20) {
                         loli = 20;
                     }
-                    jQuery(".right-toolbar").css({
+                    jQuery('.right-toolbar').css({
                         right: loli,
                         opacity: 1
                     });
                 },
                 ajaxPostLoading: function () {
                     var currentState = window.location.href;
-                    jQuery(document).on("click", ".navigation a", {viewModel: o},
+                    jQuery(document).on('click', '.navigation a', {viewModel: o},
                             function (o) {
                                 o.preventDefault();
                                 var e = o.data.viewModel;
-                                var currentLink = jQuery(this).attr("href");
+                                var currentLink = jQuery(this).attr('href');
                                 e.turnpage(currentLink);
                                 history.pushState(null, document.title, currentLink);
                                 currentState = window.location.href;
                             }
                     )
                     ;
-
                     window.addEventListener('popstate', {viewModel: o}, function (o) {
                         var _currentUrl = window.location.href;
                         var e = o.data.viewModel;
@@ -140,12 +139,13 @@ jQuery(document).ready(function (jQuery) {
                     jQuery('.pageload-overlay').addClass('show');
                     jQuery('html,body').animate({scrollTop: 0}, 300);
                     jQuery('.column--post').addClass('fading');
+                    jQuery('.column--invisible').addClass('fading');
                     jQuery.ajax({
                         url: pageurl
                     }).always(function (o) {
                         var html = jQuery.parseHTML(o);
-                        jQuery("#post").html(jQuery("#post", html).html());
-                        jQuery(".navigation").html(jQuery(".navigation", html).html());
+                        jQuery('#post').html(jQuery('#post', html).html());
+                        jQuery('.navigation').html(jQuery('.navigation', html).html());
                         jQuery('.wp-post-image').load(function (o) {
                             RikaSite.prototype.initial(jQuery('#post .column--invisible .list--post'));
                             RikaSite.prototype.responsiveColumn(jQuery('#post .column--invisible .list--post'));
@@ -155,40 +155,40 @@ jQuery(document).ready(function (jQuery) {
                 navDropDownClick: function () {
                     jQuery(document).on('click', '.open-nav', function (o) {
                         o.stopPropagation();
-                        jQuery("#nav-filters").toggleClass("open");
-                        jQuery(".box-overlay").addClass("open")
+                        jQuery('#nav-filters').toggleClass('open');
+                        jQuery('.box-overlay').addClass('open')
                     });
 
                     jQuery(document).on('click', '.close-nav', function () {
-                        jQuery(".nav-sidebar").removeClass("open");
-                        jQuery(".box-overlay").removeClass("open")
+                        jQuery('.nav-sidebar').removeClass('open');
+                        jQuery('.box-overlay').removeClass('open')
                     });
                 },
                 navFilterClick: function () {
-                    jQuery(document).on("click", ".wrapper-dropdown", function () {
-                        jQuery(this).toggleClass("active");
+                    jQuery(document).on('click', '.wrapper-dropdown', function () {
+                        jQuery(this).toggleClass('active');
                         jQuery.stopPropagation()
                     });
                     jQuery(document).on('click', '.nav-sidebar', function (o) {
                         o.stopPropagation()
                     });
-                    jQuery(document).on("click", function () {
-                        jQuery(".nav-sidebar").removeClass("open");
-                        jQuery(".box-overlay").removeClass("open")
+                    jQuery(document).on('click', function () {
+                        jQuery('.nav-sidebar').removeClass('open');
+                        jQuery('.box-overlay').removeClass('open')
                     });
                 },
                 searchClick: function () {
-                    jQuery(document).on("click", ".bt-search", function () {
+                    jQuery(document).on('click', '.bt-search', function () {
                         if (jQuery('.search-text').hasClass('visible')) {
-                            jQuery(".search-text").removeClass("visible");
+                            jQuery('.search-text').removeClass('visible');
                         } else {
-                            jQuery(".search-text").addClass("visible");
+                            jQuery('.search-text').addClass('visible');
                         }
                         setTimeout(function () {
-                            jQuery(".search-text .text").trigger("focus")
+                            jQuery('.search-text .text').trigger('focus')
                         }, 200);
                         setTimeout(function () {
-                            jQuery(".search-text").removeClass("visible")
+                            jQuery('.search-text').removeClass('visible')
                         }, 10000)
                     })
                 },
@@ -210,11 +210,11 @@ jQuery(document).ready(function (jQuery) {
                     })
                 },
                 dispalyMoblieMenu: function () {
-                    jQuery(document).on("click", "#menu-mobile .bt-menu", {viewModel: o}, function () {
-                        if (jQuery("#menu-mobile").hasClass('open')) {
-                            jQuery("#menu-mobile").removeClass('open');
+                    jQuery(document).on('click', '#menu-mobile .bt-menu', {viewModel: o}, function () {
+                        if (jQuery('#menu-mobile').hasClass('open')) {
+                            jQuery('#menu-mobile').removeClass('open');
                         } else {
-                            jQuery("#menu-mobile").addClass('open');
+                            jQuery('#menu-mobile').addClass('open');
                         }
                     })
                 },
@@ -224,41 +224,41 @@ jQuery(document).ready(function (jQuery) {
                         event.stopPropagation();
                         arrivedAtBottom = jQuery(window).scrollTop() >= jQuery(document).height() - jQuery(window).height();
                         if (arrivedAtBottom) {
-                            jQuery('.tool-goto').removeClass("tool-down icon-angle-down");
-                            jQuery('.tool-goto').addClass("tool-up icon-angle-up");
+                            jQuery('.tool-goto').removeClass('tool-down icon-angle-down');
+                            jQuery('.tool-goto').addClass('tool-up icon-angle-up');
                         } else {
-                            jQuery('.tool-goto').removeClass("tool-up icon-angle-up");
-                            jQuery('.tool-goto').addClass("tool-down icon-angle-down");
+                            jQuery('.tool-goto').removeClass('tool-up icon-angle-up');
+                            jQuery('.tool-goto').addClass('tool-down icon-angle-down');
                         }
                     })
                 },
                 upperDownClick: function () {
-                    jQuery(document).on("click", ".right-toolbar .tool-up", function () {
+                    jQuery(document).on('click', '.right-toolbar .tool-up', function () {
                         jQuery('html, body').animate({scrollTop: 0}, 500);
                     });
-                    jQuery(document).on("click", ".right-toolbar .tool-down", function () {
+                    jQuery(document).on('click', '.right-toolbar .tool-down', function () {
                         jQuery('html, body').animate({scrollTop: jQuery('#page-wrap').height()}, 500);
                     });
-                    jQuery(document).on("click", ".right-toolbar .icon-bubbles", function () {
+                    jQuery(document).on('click', '.right-toolbar .icon-bubbles', function () {
                         jQuery('html, body').animate({scrollTop: jQuery('#respond').position().top}, 500);
                     });
-                    jQuery(document).on("click", ".right-toolbar .icon-share", function () {
+                    jQuery(document).on('click', '.right-toolbar .icon-share', function () {
                         jQuery('html, body').animate({scrollTop: jQuery('.WPSNS_main').position().top}, 500);
                     });
                 },
                 ScrollMenuMobile: function () {
                     setTimeout(function () {
-                        jQuery(".wrapper-nav").css("height", jQuery(window).height() + "px")
+                        jQuery('.wrapper-nav').css('height', jQuery(window).height() + 'px')
                     }, 500)
                     jQuery(window).resize(function () {
                         setTimeout(function () {
-                            jQuery(".wrapper-nav").css("height", jQuery(window).height() + "px")
+                            jQuery('.wrapper-nav').css('height', jQuery(window).height() + 'px')
                         }, 500)
                     });
                 },
                 setCookie: function (o, e) {
                     var i = new Date;
-                    i.setTime(i.getTime() + 31536e6), document.cookie = o + "=" + e + ";path=/;expires=" + i.toUTCString()
+                    i.setTime(i.getTime() + 31536e6), document.cookie = o + '=' + e + ';path=/;expires=' + i.toUTCString()
                 }
             };
 

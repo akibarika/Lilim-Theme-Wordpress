@@ -83,8 +83,8 @@
 		<div class="right">
 			<ul class="menu2">
 				<li class="view-list">
-					<i class="icon-th <?php echo $_COOKIE['layout'] == 1 ? 'active':'' ?>">Grid</i>
-					<i class="icon-th-list <?php echo $_COOKIE['layout'] == 2 ? 'active':'' ?>">List</i>
+					<i class="icon-layout icon-th <?php echo $_COOKIE['layout'] == 1 ? 'active':'' ?>">Grid</i>
+					<i class="icon-layout icon-th-list <?php echo $_COOKIE['layout'] == 2 ? 'active':'' ?>">List</i>
 				</li>
 				<li class="bt-filters open-nav icon-inbox"><span>filter sites by topic</span></li>
 			</ul>
