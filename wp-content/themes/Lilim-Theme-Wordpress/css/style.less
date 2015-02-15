@@ -149,7 +149,7 @@ pre {
 }
 
 #menu-mobile {
-  display     : none;
+  .none;
   position    : fixed;
   top         : 47px;
   right       : -250px;
@@ -321,7 +321,7 @@ pre {
       font-weight : normal;
       line-height : 47px;
       @media only screen and (max-width : 959px) {
-        display : none
+        .none;
       }
       a {
         color : #aaa;
@@ -375,7 +375,7 @@ pre {
       right    : 0;
       top      : 0;
       @media only screen and (max-width : 959px) {
-        display : none;
+        .none;
       }
       & > li {
         &:first-child {
@@ -395,7 +395,7 @@ pre {
           background-color : #f6f6f6;
           .transition(all, .25s, ease-out);
           i {
-            display : none;
+            .none;
           }
           &:hover {
             background-color : #f4f4f4;
@@ -426,7 +426,7 @@ pre {
           }
         }
         &.search {
-          border  : none;
+          .none;
           display : block;
           span {
             position   : relative;
@@ -471,7 +471,7 @@ pre {
         opacity    : 1;
       }
       @media only screen and (min-width : 768px) and (max-width : 959px) {
-        display : none;
+        .none;
       }
       .text {
         width              : 100%;
@@ -926,7 +926,7 @@ pre {
     width    : 62px;
     z-index  : 90;
     @media only screen and (max-width : 767px) {
-      display : none;
+      .none;
     }
     .tooltip-left, [data-tooltip] {
       position : relative;
@@ -1618,7 +1618,7 @@ pre {
   }
   @media only screen and (max-width : 1419px) {
     &.column--three {
-      display : none;
+      .none;
     }
   }
   @media only screen and (max-width : 959px) {
@@ -1628,7 +1628,7 @@ pre {
   @media only screen and (max-width : 767px) {
     width : 440px;
     &.column--two {
-      display : none;
+      .none;
     }
   }
   @media only screen and (max-width : 480px) {
@@ -1732,7 +1732,13 @@ pre {
     }
     &.list--view {
       img {
-        display : none;
+        .none;
+      }
+      .list--post {
+        .post-content,
+        .post-meta {
+          .none;
+        }
       }
     }
     &.grid--view {
