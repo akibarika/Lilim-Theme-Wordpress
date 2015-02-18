@@ -47,7 +47,7 @@ gulp.task('watch', function () {
     //var server = livereload();
     livereload.listen();
     // Watch any files in , reload on change
-    gulp.watch(['css/style.css']).on('change', livereload.changed);
+    gulp.watch(['css/styles.css']).on('change', livereload.changed);
 });
 
 // Default task
