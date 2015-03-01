@@ -14,7 +14,7 @@ get_header(); ?>
 			<div class="column--two column--post show--up <?php echo $_COOKIE['layout'] == 1 ? '':'column--invisible' ?>"></div>
 			<div class="column--three column--post show--up <?php echo $_COOKIE['layout'] == 1 ? '':'column--invisible' ?>"></div>
 			<div class="column--invisible <?php echo $_COOKIE['layout'] == 1 ? '':'column--show' ?>">
-				<article id="tag-" class="item show-up kanban hiding--post">
+				<article id="tag-" class="item show-up kanban list--post">
 					<div class="in-tag">
 						<h2>Tag:<span> <?php single_tag_title(); ?></span></h2>
 						<?php echo tag_description( $tag_id ); ?>

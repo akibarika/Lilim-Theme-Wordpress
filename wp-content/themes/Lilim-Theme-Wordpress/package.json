@@ -1,6 +1,6 @@
 {
   "devDependencies": {
-    "gulp": "~3",
+    "gulp": "~3.8.10",
     "gulp-bless": "~1.0",
     "gulp-cache": "^0.2.0",
     "gulp-concat": "^2.3.3",
