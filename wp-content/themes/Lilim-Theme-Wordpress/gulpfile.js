@@ -5,7 +5,8 @@ var gulp = require('gulp'),
         plumber = require('gulp-plumber'),
         notify = require('gulp-notify'),
         sourcemaps = require('gulp-sourcemaps'),
-        livereload = require('gulp-livereload');
+        livereload = require('gulp-livereload'),
+        autoprefixer = require('gulp-autoprefixer');
 
 
 var config = {
@@ -13,29 +14,25 @@ var config = {
 }
 
 // CSS
+
 gulp.task('css', function () {
     var stream = gulp
             .src('css/styles.less')
-            .pipe(plumber({
-                errorHandler: notify.onError(function (error) {
-                    return 'Error compiling LESS: ' + error.message;
-                })
-            }))
-            //.pipe(sourcemaps.init())
-            //.pipe(less({sourceMap: true}))
-            .pipe(less())
-            //.pipe(sourcemaps.write('maps', {sourceRoot: 'css'}));
+            .pipe(sourcemaps.init())
+            .pipe(less().on('error', notify.onError(function (error) {
+                return 'Error compiling LESS: ' + error.message;
+            })))
+            .pipe(autoprefixer());
 
     if (config.minifyCss === true) {
         stream.pipe(minifycss());
     }
 
     return stream
+            .pipe(sourcemaps.write('.'))
             .pipe(gulp.dest('css'))
             .pipe(notify({message: 'Successfully compiled LESS'}));
 });
-
-
 // Watch
 gulp.task('watch', function () {
 
