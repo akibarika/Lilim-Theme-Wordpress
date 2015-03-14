@@ -1,10 +1,13 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Akiba
- * Date: 14-9-1
- * Time: 下午8:52
- */
+
+function lilim_css_url( $css_url ) {
+	return LILIM_URL . "/css/{$css_url}.css";
+}
+
+function lilim_js_url( $js_url ) {
+	return LILIM_URL . "/js/{$js_url}.js";
+}
+
 // 中文截断文字
 function cut_str( $string, $sublen, $start = 0, $code = 'UTF-8' ) {
 	if ( $code == 'UTF-8' ) {
@@ -75,16 +78,31 @@ add_action( 'comment_post', 'comment_mail_notify' );
 
 //Scripts
 function lilim_scripts_styles() {
-	wp_enqueue_script( 'comments-ajax', get_template_directory_uri() . '/js/comments-ajax.js', array(), '1.00', true );
-	wp_enqueue_script( 'jquerylib', get_template_directory_uri() . '/js/jquery.min.js', array(), '1.11.1', true );
-	wp_enqueue_script( 'imagesloaded', get_template_directory_uri() . '/js/imagesloaded.pkgd.min.js', array( 'jquery' ), '3.1.8', true );
-	wp_enqueue_script( 'all', get_template_directory_uri() . '/js/all.js', array( 'jquery' ), '1.1', true );
-	wp_localize_script( 'base', 'ajax', array(
-		'ajax_url' => admin_url( 'admin-ajax.php' ),
-	) );
+	wp_enqueue_script( 'comments-ajax', lilim_js_url( 'comments-ajax' ), array(), LILIM_VERSION, true );
+	wp_enqueue_script( 'jquerylib', lilim_js_url( 'jquery.min' ), array(), '1.11.1', true );
+	wp_enqueue_script( 'imagesloaded', lilim_js_url( 'imagesloaded.pkgd.min' ), array( 'jquery' ), '3.1.8', true );
+	wp_enqueue_script( 'lilim', lilim_js_url( 'all' ), array( 'jquery' ), LILIM_VERSION, true );
+
+	//music script
+	wp_enqueue_script( 'fx', lilim_js_url( 'fx' ), array(), LILIM_VERSION, true );
+
+	if ( is_page( 'music' ) ) {
+		wp_enqueue_script( 'search', lilim_js_url( 'post' ), array(), LILIM_VERSION, true );
+
+		wp_localize_script( 'lilim', 'lilim-ajax', array(
+			'ajax_url'   => admin_url( 'admin-ajax.php' ),
+			'jplayerurl' => lilim_js_url( 'jquery.jplayer.min' ),
+			'nonce'      => wp_create_nonce( 'akibarika' )
+		) );
+	}
+	else {
+		wp_localize_script( 'lilim', 'lilim-ajax', array(
+			'ajax_url' => admin_url( 'admin-ajax.php' )
+		) );
+	}
 }
 
-add_action( 'wp_enqueue_scripts', 'lilim_scripts_styles' );
+add_action( 'wp_enqueue_scripts', 'lilim_scripts_styles', 20, 1 );
 
 function lilim( $e ) {
 	$option = get_option( 'lilim_config' );

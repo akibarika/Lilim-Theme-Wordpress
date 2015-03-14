@@ -1,8 +1,13 @@
 <?php
-require get_template_directory() . '/inc/post_type.php';
-require get_template_directory() . '/inc/comments.php';
-require get_template_directory() . '/inc/pagenav.php';
-require get_template_directory() . '/inc/commons.php';
+define('LILIM_VERSION', '3.0');
+define('LILIM_URL', get_template_directory_uri());
+define('LILIM_PATH', get_template_directory());
+
+require LILIM_PATH . '/inc/post_type.php';
+require LILIM_PATH . '/inc/comments.php';
+require LILIM_PATH . '/inc/pagenav.php';
+require LILIM_PATH . '/inc/commons.php';
+require LILIM_PATH . '/inc/music.php';
 
 
 //WordPress setting goes here
