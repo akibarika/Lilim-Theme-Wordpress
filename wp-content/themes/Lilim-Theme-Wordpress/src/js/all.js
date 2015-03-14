@@ -243,7 +243,7 @@ jQuery(document).ready(function (jQuery) {
                         jQuery('html, body').animate({scrollTop: jQuery('#respond').position().top}, 500);
                     });
                     jQuery(document).on('click', '.right-toolbar .icon-share', function () {
-                        jQuery('html, body').animate({scrollTop: jQuery('.WPSNS_main').position().top}, 500);
+                        jQuery('html, body').animate({scrollTop: jQuery('.share').position().top}, 500);
                     });
                 },
                 ScrollMenuMobile: function () {

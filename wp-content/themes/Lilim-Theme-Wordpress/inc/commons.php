@@ -79,9 +79,11 @@ add_action( 'comment_post', 'comment_mail_notify' );
 //Scripts
 function lilim_scripts_styles() {
 	wp_enqueue_script( 'vendor', lilim_js_url( 'vendor' ), array(), LILIM_VERSION, true );
-	wp_enqueue_script( 'lilim', lilim_js_url( 'app' ), array( 'jquery' ), LILIM_VERSION, true );
-
-	wp_localize_script( 'lilim', 'lilim-ajax', array(
+	wp_enqueue_script( 'lilim', lilim_js_url( 'app' ), array(), LILIM_VERSION, true );
+	if ( is_single() ) {
+		wp_enqueue_script( 'post', lilim_js_url( 'post' ), array(), LILIM_VERSION, true );
+	}
+	wp_localize_script( 'lilim', 'lilimajax', array(
 		'ajax_url'   => admin_url( 'admin-ajax.php' ),
 		'jplayerurl' => lilim_js_url( 'jquery.jplayer.min' ),
 		'nonce'      => wp_create_nonce( 'akibarika' )
@@ -202,7 +204,7 @@ add_filter( 'disable_captions', create_function( '$a', 'return true;' ) );
 add_filter( 'nav_menu_link_attributes', 'my_nav_menu_attribs', 10, 3 );
 function my_nav_menu_attribs( $atts, $item, $args ) {
 	// The ID of the target menu item
-	$menu_targets = [ 137, 138, 139, 140, 192 ];
+	$menu_targets = array( 137, 138, 139, 140, 192 );
 
 	// inspect $item
 	foreach ( $menu_targets as $menu_target ) {

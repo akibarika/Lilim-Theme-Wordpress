@@ -1,12 +1,56 @@
-.transition (@val,@time,@pro) {
-  -moz-transition    : @val @time @pro;
-  -ms-transition     : @val @time @pro;
-  -webkit-transition : @val @time @pro;
-  -o-transition      : @val @time @pro;
-  transition         : @val @time @pro;
+.scale(@ratio) {
+  -webkit-transform : scale(@ratio);
+  -ms-transform     : scale(@ratio);
+  -o-transform      : scale(@ratio);
+  transform         : scale(@ratio);
 }
 
-.upanddown (@val) {
+.scale(@ratioX; @ratioY) {
+  -webkit-transform : scale(@ratioX, @ratioY);
+  -ms-transform     : scale(@ratioX, @ratioY);
+  -o-transform      : scale(@ratioX, @ratioY);
+  transform         : scale(@ratioX, @ratioY);
+}
+
+.transition(@transition) {
+  -webkit-transition : @transition;
+  -o-transition      : @transition;
+  transition         : @transition;
+}
+
+.transition-property(@transition-property) {
+  -webkit-transition-property : @transition-property;
+  transition-property         : @transition-property;
+}
+
+.transition-delay(@transition-delay) {
+  -webkit-transition-delay : @transition-delay;
+  transition-delay         : @transition-delay;
+}
+
+.transition-duration(@transition-duration) {
+  -webkit-transition-duration : @transition-duration;
+  transition-duration         : @transition-duration;
+}
+
+.transition-timing-function(@timing-function) {
+  -webkit-transition-timing-function : @timing-function;
+  transition-timing-function         : @timing-function;
+}
+
+.transition-transform(@transition) {
+  -webkit-transition : -webkit-transform @transition;
+  -moz-transition    : -moz-transform @transition;
+  -o-transition      : -o-transform @transition;
+  transition         : transform @transition;
+}
+
+.translate3d(@x; @y; @z) {
+  -webkit-transform : translate3d(@x, @y, @z);
+  transform         : translate3d(@x, @y, @z);
+}
+
+.translateY (@val) {
   -webkit-transform : translateY(@val);
   -moz-transform    : translateY(@val);
   -ms-transform     : translateY(@val);
@@ -14,25 +58,32 @@
   transform         : translateY(@val);
 }
 
-.leftandright (@val) {
+.translateX (@val) {
   -webkit-transform : translateX(@val);
   -moz-transform    : translateX(@val);
   -ms-transform     : translateX(@val);
   transform         : translateX(@val);
 }
 
-.rotateY(@val) {
-  -moz-transform    : rotateY(@val);
-  -webkit-transform : rotateY(@val);
-  -o-transform      : rotateY(@val);
-  transform         : rotateY(@val);
+.rotate(@degrees) {
+  -webkit-transform : rotate(@degrees);
+  -ms-transform     : rotate(@degrees);
+  -o-transform      : rotate(@degrees);
+  transform         : rotate(@degrees);
 }
 
-.rotateX(@val) {
-  -moz-transform    : rotateX(@val);
-  -webkit-transform : rotateX(@val);
-  -o-transform      : rotateX(@val);
-  transform         : rotateX(@val);
+.rotateX(@degrees) {
+  -webkit-transform : rotateX(@degrees);
+  -ms-transform     : rotateX(@degrees);
+  -o-transform      : rotateX(@degrees);
+  transform         : rotateX(@degrees);
+}
+
+.rotateY(@degrees) {
+  -webkit-transform : rotateY(@degrees);
+  -ms-transform     : rotateY(@degrees);
+  -o-transform      : rotateY(@degrees);
+  transform         : rotateY(@degrees);
 }
 
 .clearfix() {
@@ -53,7 +104,7 @@
 .sprite-position(@sprite) {
   @sprite-offset-x: extract(@sprite, 1);
   @sprite-offset-y: extract(@sprite, 2);
-  background-position: @sprite-offset-x  @sprite-offset-y;
+  background-position : @sprite-offset-x  @sprite-offset-y;
 }
 
 .grid-icon(@sprite,@color) {
@@ -64,7 +115,7 @@
       }
       .back {
         a {
-          background-color : lighten(@color,32%);
+          background-color : lighten(@color, 32%);
         }
       }
     }
@@ -83,12 +134,12 @@
         li {
           &:nth-child(even) {
             .tag-bar {
-              background-color : lighten(@color,42%);
+              background-color : lighten(@color, 42%);
             }
           }
           &:nth-child(odd) {
             .tag-bar {
-              background-color : lighten(@color,22%);
+              background-color : lighten(@color, 22%);
             }
           }
           &:first-child {

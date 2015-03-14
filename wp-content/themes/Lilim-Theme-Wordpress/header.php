@@ -40,7 +40,7 @@
 		</ul>
 	</nav>
 	<nav class="main">
-		<a id="logo" href="http://moe.akibarika.org">
+		<a id="logo" href="<?php echo home_url() ?>">
 			<?php if(is_home()): ?>
 			<h1>Akiba<span>Rika</span></h1>
 			<?php else: ?>

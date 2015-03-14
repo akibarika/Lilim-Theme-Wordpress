@@ -14,7 +14,7 @@ var gulp = require('gulp'),
 var config = {
 
     // Should CSS & JS be compressed?
-    minifyCss: true,
+    minifyCss: false,
     uglifyJS: true
 }
 
@@ -43,7 +43,7 @@ gulp.task('appjs', function () {
     var stream = gulp.src([
         'src/js/all.js',
         'src/js/fx.js',
-        'src/js/post.js'
+        'src/js/post.js',
 
     ]).pipe(sourcemaps.init())
             .pipe(concat('app.js'));
@@ -62,7 +62,8 @@ gulp.task('vendorjs', function () {
     var scripts = [
         'src/js/jquery.min.js',
         'src/js/imagesloaded.pkgd.min.js',
-        'src/js/comments-ajax.js'
+        'src/js/comments-ajax.js',
+
     ];
 
     var stream = gulp
@@ -80,6 +81,26 @@ gulp.task('vendorjs', function () {
             .pipe(notify({message: 'Successfully compiled vendor js'}));
 });
 
+gulp.task('postjs', function () {
+    var scripts = [
+        'src/js/TweenMax.min.js',
+        'src/js/share.js'
+    ];
+
+    var stream = gulp
+            .src(scripts)
+            .pipe(sourcemaps.init())
+            .pipe(concat('post.js'));
+
+    if (config.uglifyJS === true) {
+        stream.pipe(uglify());
+    }
+
+    return stream
+            .pipe(sourcemaps.write('.'))
+            .pipe(gulp.dest('js'))
+            .pipe(notify({message: 'Successfully compiled vendor js'}));
+});
 // Rimraf
 gulp.task('rimraf', function () {
     return gulp
@@ -89,7 +110,7 @@ gulp.task('rimraf', function () {
 
 // Default task
 gulp.task('default', ['rimraf'], function () {
-    gulp.start('css', 'vendorjs', 'appjs');
+    gulp.start('css', 'vendorjs', 'appjs', 'postjs');
 });
 
 // Watch
