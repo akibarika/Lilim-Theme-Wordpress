@@ -78,28 +78,14 @@ add_action( 'comment_post', 'comment_mail_notify' );
 
 //Scripts
 function lilim_scripts_styles() {
-	wp_enqueue_script( 'comments-ajax', lilim_js_url( 'comments-ajax' ), array(), LILIM_VERSION, true );
-	wp_enqueue_script( 'jquerylib', lilim_js_url( 'jquery.min' ), array(), '1.11.1', true );
-	wp_enqueue_script( 'imagesloaded', lilim_js_url( 'imagesloaded.pkgd.min' ), array( 'jquery' ), '3.1.8', true );
-	wp_enqueue_script( 'lilim', lilim_js_url( 'all' ), array( 'jquery' ), LILIM_VERSION, true );
+	wp_enqueue_script( 'vendor', lilim_js_url( 'vendor' ), array(), LILIM_VERSION, true );
+	wp_enqueue_script( 'lilim', lilim_js_url( 'app' ), array( 'jquery' ), LILIM_VERSION, true );
 
-	//music script
-	wp_enqueue_script( 'fx', lilim_js_url( 'fx' ), array(), LILIM_VERSION, true );
-
-	if ( is_page( 'music' ) ) {
-		wp_enqueue_script( 'search', lilim_js_url( 'post' ), array(), LILIM_VERSION, true );
-
-		wp_localize_script( 'lilim', 'lilim-ajax', array(
-			'ajax_url'   => admin_url( 'admin-ajax.php' ),
-			'jplayerurl' => lilim_js_url( 'jquery.jplayer.min' ),
-			'nonce'      => wp_create_nonce( 'akibarika' )
-		) );
-	}
-	else {
-		wp_localize_script( 'lilim', 'lilim-ajax', array(
-			'ajax_url' => admin_url( 'admin-ajax.php' )
-		) );
-	}
+	wp_localize_script( 'lilim', 'lilim-ajax', array(
+		'ajax_url'   => admin_url( 'admin-ajax.php' ),
+		'jplayerurl' => lilim_js_url( 'jquery.jplayer.min' ),
+		'nonce'      => wp_create_nonce( 'akibarika' )
+	) );
 }
 
 add_action( 'wp_enqueue_scripts', 'lilim_scripts_styles', 20, 1 );
