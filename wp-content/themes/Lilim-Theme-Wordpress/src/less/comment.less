@@ -125,6 +125,7 @@
     .commenter {
       position : relative;
       .author_info {
+        .clearfix();
         .user_logged {
           margin : 15px 0;
           a {
@@ -140,16 +141,14 @@
           }
         }
         input[type='text'] {
-          background-color : @light-color;
-          border           : 1px solid #ffebe1;
+          background-color : lighten(@brand-primary,48%);
+          border           : 1px solid lighten(@brand-primary,30%);
           outline          : medium none;
           padding          : 0 20px;
           vertical-align   : middle;
-          &:focus {
-            background-color : @white-color;
-          }
         }
         p {
+          .clearfix();
           margin : 15px 0;
           #author {
             float       : left;
@@ -178,12 +177,9 @@
       width          : 100%;
     }
     textarea {
-      background-color : @light-color;
-      border           : 1px solid #ffebe1;
+      background-color : lighten(@brand-primary,48%);
+      border           : 1px solid lighten(@brand-primary,30%);
       outline          : medium none;
-      &:focus {
-        background-color : @white-color;
-      }
     }
     #submit {
       background-color : @brand-primary;

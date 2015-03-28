@@ -776,23 +776,42 @@ a.share-button {
   display: inline-block;
   content: '@';
 }
-.list--view img {
-  display: none;
-}
 .list--view .list--post {
   border-left: 2px solid transparent;
   border-bottom: 1px solid #ddd;
   line-height: 1.71428571;
-  padding: 10px 0;
 }
 .list--view .list--post:last-child {
   border-bottom: 0;
 }
 .list--view .list--post .wrap-content {
   font-size: 16px;
+  -webkit-transition: background 0.25s ease-in-out;
+  transition: background 0.25s ease-in-out;
+}
+.list--view .list--post .wrap-content:hover {
+  background: #eae1ea;
 }
 .list--view .list--post .wrap-content .grid {
   display: none;
+}
+.list--view .list--post .wrap-content.format-aside:hover {
+  background: #ece6e4;
+}
+.list--view .list--post .wrap-content.format-gallery:hover {
+  background: #d5e2e0;
+}
+.list--view .list--post .wrap-content.format-link:hover {
+  background: #e3decd;
+}
+.list--view .list--post .wrap-content.format-quote:hover {
+  background: #d7faf5;
+}
+.list--view .list--post .wrap-content.format-status:hover {
+  background: #f3e1e2;
+}
+.list--view .list {
+  padding: 10px 0;
 }
 .list--view a.link {
   cursor: pointer;
@@ -816,12 +835,27 @@ a.share-button {
   content: "|";
   margin-right: 10px;
 }
+.wrap-content:before,
+.wrap-content:after {
+  content: " ";
+  display: table;
+}
+.wrap-content:after {
+  clear: both;
+}
+.wrap-content:before,
+.wrap-content:after {
+  content: " ";
+  display: table;
+}
+.wrap-content:after {
+  clear: both;
+}
 .grid--view .post--item {
   background: none repeat scroll 0 0 #fcfcfc;
   -webkit-border-image: none;
        -o-border-image: none;
           border-image: none;
-  border: 1px solid #999999;
   float: left;
   margin: 0px 10px 30px;
   width: 440px;
@@ -1601,6 +1635,22 @@ a.share-button {
 #comments #respond .commenter {
   position: relative;
 }
+#comments #respond .commenter .author_info:before,
+#comments #respond .commenter .author_info:after {
+  content: " ";
+  display: table;
+}
+#comments #respond .commenter .author_info:after {
+  clear: both;
+}
+#comments #respond .commenter .author_info:before,
+#comments #respond .commenter .author_info:after {
+  content: " ";
+  display: table;
+}
+#comments #respond .commenter .author_info:after {
+  clear: both;
+}
 #comments #respond .commenter .author_info .user_logged {
   margin: 15px 0;
 }
@@ -1616,17 +1666,30 @@ a.share-button {
   float: right;
 }
 #comments #respond .commenter .author_info input[type='text'] {
-  background-color: #fafafa;
-  border: 1px solid #ffebe1;
+  background-color: #fbf9fb;
+  border: 1px solid #d6c2d4;
   outline: medium none;
   padding: 0 20px;
   vertical-align: middle;
 }
-#comments #respond .commenter .author_info input[type='text']:focus {
-  background-color: #ffffff;
-}
 #comments #respond .commenter .author_info p {
   margin: 15px 0;
+}
+#comments #respond .commenter .author_info p:before,
+#comments #respond .commenter .author_info p:after {
+  content: " ";
+  display: table;
+}
+#comments #respond .commenter .author_info p:after {
+  clear: both;
+}
+#comments #respond .commenter .author_info p:before,
+#comments #respond .commenter .author_info p:after {
+  content: " ";
+  display: table;
+}
+#comments #respond .commenter .author_info p:after {
+  clear: both;
 }
 #comments #respond .commenter .author_info p #author {
   float: left;
@@ -1652,12 +1715,9 @@ a.share-button {
   width: 100%;
 }
 #comments #respond textarea {
-  background-color: #fafafa;
-  border: 1px solid #ffebe1;
+  background-color: #fbf9fb;
+  border: 1px solid #d6c2d4;
   outline: medium none;
-}
-#comments #respond textarea:focus {
-  background-color: #ffffff;
 }
 #comments #respond #submit {
   background-color: #986794;
@@ -3239,9 +3299,6 @@ a.share-button {
 }
 .navigation {
   background: none repeat scroll 0 0 #ffffff;
-  border-color: #999999;
-  border-style: solid;
-  border-width: 1px 0 1px;
   display: block;
   height: 60px;
   margin: 20px auto 20px;
@@ -3270,8 +3327,8 @@ a.share-button {
   width: 60px;
 }
 .navigation li a {
-  border-right: 1px solid #999999;
-  border-bottom: 1px solid #999999;
+  border-right: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
 }
 .navigation li a:hover {
   background: none repeat scroll 0 0 #f2f2f2;

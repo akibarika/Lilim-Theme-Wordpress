@@ -8,7 +8,7 @@
 ?>
 <?php if ( has_post_format( 'aside' ) ) { ?>
 	<article id="post-<?php the_ID(); ?>" class="list--post">
-		<div class="wrap-content format-aside clearfix">
+		<div class="wrap-content format-aside">
 			<div class="grid">
 				<div class="heading">
 					<div class="avatar-icon">
@@ -60,7 +60,7 @@
 <?php }
 elseif ( has_post_format( 'status' ) ) { ?>
 	<article id="post-<?php the_ID(); ?>" class="list--post">
-		<div class="wrap-content format-status clearfix">
+		<div class="wrap-content format-status">
 			<div class="grid">
 				<div class="heading">
 					<div class="avatar-icon">
@@ -115,7 +115,7 @@ elseif ( has_post_format( 'status' ) ) { ?>
 elseif ( has_post_format( 'gallery' ) ) { ?>
 	<article id="post-<?php the_ID(); ?>" class="list--post">
 		<?php $url = get_post_meta( $post->ID, 'format-gallery', true ); ?>
-		<div class="wrap-content format-gallery clearfix">
+		<div class="wrap-content format-gallery">
 			<div class="grid">
 				<div class="heading">
 					<div class="avatar-icon">
@@ -186,7 +186,7 @@ elseif ( has_post_format( 'gallery' ) ) { ?>
 elseif ( has_post_format( 'link' ) ) { ?>
 	<article id="post-<?php the_ID(); ?>" class="list--post">
 		<?php $url = get_post_meta( $post->ID, 'format-link', true ); ?>
-		<div class="wrap-content format-link clearfix">
+		<div class="wrap-content format-link">
 			<div class="grid">
 				<div class="heading">
 					<div class="avatar-icon">
@@ -258,7 +258,7 @@ elseif ( has_post_format( 'quote' ) ) { ?>
 	<article id="post-<?php the_ID(); ?>" class="list--post">
 		<?php $quote = get_post_meta( $post->ID, 'format-quote', true ); ?>
 		<?php $source = get_post_meta( $post->ID, 'quote-source', true ); ?>
-		<div class="wrap-content format-quote clearfix">
+		<div class="wrap-content format-quote">
 			<div class="grid">
 				<div class="heading">
 					<div class="avatar-icon">
@@ -319,7 +319,7 @@ elseif ( has_post_format( 'quote' ) ) { ?>
 <?php }
 else { ?>
 	<article id="post-<?php the_ID(); ?>" class="list--post">
-		<div class="wrap-content clearfix">
+		<div class="wrap-content">
 			<div class="grid">
 				<div class="heading">
 					<div class="avatar-icon">

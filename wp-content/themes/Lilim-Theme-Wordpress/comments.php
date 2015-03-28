@@ -23,8 +23,8 @@ if ( post_password_required() ) : ?>
                         <?php cancel_comment_reply_link('取消回复') ?>
                     </div>
                     <div class="commenter">
-                    <div id="author_info" class="author_info cf" >
-                        <div class="user_logged cf">
+                    <div id="author_info" class="author_info" >
+                        <div class="user_logged">
                             <span>欢迎回来</span> <?php	printf(__(' <a href="%1$s">%2$s</a> '), get_option('siteurl') . '/wp-admin/profile.php', $user_identity); ?>
                             <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="<?php _e('Log out of this account'); ?>" class="user_logout"><?php _e('不是你吗？'); ?></a>
                         </div>
@@ -40,8 +40,8 @@ if ( post_password_required() ) : ?>
                             <?php cancel_comment_reply_link('取消回复') ?>
                         </div>
                         <div class="commenter">
-                            <div id="author_info" class="author_info cf">
-                                <p class="cf">
+                            <div id="author_info" class="author_info">
+                                <p>
                                     <label class="author"><input placeholder="昵称" type="text" name="author" id="author" value="" tabindex="1"></label>
                                     <label class="email"><input placeholder="电子邮箱" type="text" name="email" id="email" value="" tabindex="2"></label>
                                 </p>

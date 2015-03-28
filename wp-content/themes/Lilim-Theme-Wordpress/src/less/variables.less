@@ -51,6 +51,11 @@
 @f-normal-size : 14px;
 @f-large-size: 16px;
 
+//** Unit-less `line-height` for use in components like buttons.
+@line-height-base: 1.428571429;
+
+@line-height-computed: floor((@f-normal-size * @line-height-base));
+
 /*
 LESS variables are information about icon's compiled state, stored under its original file name
 
@@ -67,3 +72,10 @@ The large array-like variables contain all information about a single icon
 @i-grid-icon-4: 0, -184px;
 @i-grid-icon-5: 0, -276px;
 @i-grid-icon-1: 0, -46px;
+
+//== Grid system
+//
+//## Define your custom responsive grid.
+
+//** Padding between columns. Gets divided in half for the left and right.
+@grid-gutter-width: 20px;

@@ -41,23 +41,51 @@
 }
 
 .list--view {
-  img {
-    display : none;
-  }
   .list--post {
     border-left   : 2px solid transparent;
     border-bottom : 1px solid #ddd;
     line-height   : 1.71428571;
-    padding       : 10px 0;
     &:last-child {
       border-bottom : 0;
     }
     .wrap-content {
       font-size : @f-large-size;
+      .transition(background .25s ease-in-out);
+      &:hover {
+        background: lighten(@brand-primary,40%);
+      }
       .grid {
         display : none;
       }
+      &.format-aside {
+        &:hover {
+          background: lighten(@format-aside-color,60%);
+        }
+      }
+      &.format-gallery {
+        &:hover {
+          background: lighten(@format-gallery-color,50%);
+        }
+      }
+      &.format-link {
+        &:hover {
+          background: lighten(@format-link-color,60%);
+        }
+      }
+      &.format-quote {
+        &:hover {
+          background: lighten(@format-quote-color,75%);
+        }
+      }
+      &.format-status {
+        &:hover {
+          background: lighten(@format-status-color,60%);
+        }
+      }
     }
+  }
+  .list{
+    padding: 10px 0;
   }
   a.link {
     cursor    : pointer;
@@ -83,12 +111,14 @@
     }
   }
 }
+.wrap-content {
+  .clearfix();
+}
 
 .grid--view {
   .post--item {
     background   : none repeat scroll 0 0 #fcfcfc;
     border-image : none;
-    border       : 1px solid @gray-light;
     float        : left;
     margin       : 0px 10px 30px;
     width        : 440px;
@@ -110,7 +140,7 @@
       height  : auto;
       z-index : 10;
       &.format-status {
-        .grid-icon(@i-grid-icon-3, #742e34);
+        .grid-icon(@i-grid-icon-3, @format-status-color);
         .post-meta {
           & > div {
             width : 50%;
@@ -118,7 +148,7 @@
         }
       }
       &.format-gallery {
-        .grid-icon(@i-grid-icon-4, #4a6e68);
+        .grid-icon(@i-grid-icon-4, @format-gallery-color);
         .post-meta {
           & > div {
             width : 25%;
@@ -126,7 +156,7 @@
         }
       }
       &.format-aside {
-        .grid-icon(@i-grid-icon-5, #5c4942);
+        .grid-icon(@i-grid-icon-5, @format-aside-color);
         .post-meta {
           & > div {
             width : 50%;
@@ -134,7 +164,7 @@
         }
       }
       &.format-link {
-        .grid-icon(@i-grid-icon-2, #51492d);
+        .grid-icon(@i-grid-icon-2, @format-link-color);
         .post-thumb {
           border-top : 1px solid #e5e5e5;
         }
@@ -145,7 +175,7 @@
         }
       }
       &.format-quote {
-        .grid-icon(@i-grid-icon-1, #094a40);
+        .grid-icon(@i-grid-icon-1, @format-quote-color);
         .post-quote {
           border        : 1px solid rgba(0, 0, 0, 0.05);
           margin        : 0 5px 15px;
