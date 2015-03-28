@@ -1,77 +1,42 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Akiba
- * Date: 14-9-1
- * Time: 下午8:47
- */
-//评论表情
-if ( !isset( $wpsmiliestrans ) ) {
-    $wpsmiliestrans = array(
-        ':em01:' => '01.gif',
-        ':em02:' => '02.gif',
-        ':em03:' => '03.gif',
-        ':em04:' => '04.gif',
-        ':em05:' => '05.gif',
-        ':em06:' => '06.gif',
-        ':em07:' => '07.gif',
-        ':em08:' => '08.gif',
-        ':em09:' => '09.gif',
-        ':em10:' => '10.gif',
-    );
-}
-function custom_smilies_src($src, $img)
-{
-    return get_bloginfo('template_directory').'/smilies/' . $img;
-}
-add_filter('smilies_src', 'custom_smilies_src', 10, 2);
-
-function otakism_comment($comment, $args, $depth) {
+function lilim_comment($comment, $args, $depth) {
     $GLOBALS['comment'] = $comment;
-    global $commentcount,$comment_depth;
-    $otakism_comment_depth = $comment_depth-1;
-    if(!$otakism_comment_depth){
-        $otakism_comment_depth = '&nbsp;&nbsp';
-    }
+    global $commentcount;
     if(!$commentcount) {
         $page = ( !empty($in_comment_loop) ) ? get_query_var('cpage')-1 : get_page_of_comment( $comment->comment_ID, $args )-1;
         $cpp=get_option('comments_per_page');
         $commentcount = $cpp * $page;
     }
     ?>
-    <li <?php comment_class(); ?><?php if( $depth > 1){ echo ' style="margin-left:35px;"';} ?> id="comment-<?php comment_ID() ?>" >
-        <div class="comment-body clearfix">
-            <div class="comment-avatar left"><a href="<?php comment_author_url(); ?>"><?php echo get_avatar( $comment, $size = '50'); ?></a></div>
-            <div class="comment-content">
-                <div class="comment-name"><?php printf(__('%s'), get_comment_author_link()) ?></div>
-                <div class="comment-entry"><?php comment_text() ?></div>
-                <div class="comment-meta clearfix">
-                    <div class="comment-date left"><?php echo get_comment_date('F j, Y') ?></div>
-                    <div class="comment-reply left"><?php comment_reply_link(array_merge( $args, array('reply_text' => '回复','depth' => $depth, 'max_depth' => $args['max_depth']))) ?></div>
+    <li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>" <?php if( $depth > 1){ echo 'style="margin-left:65px;"';} ?>>
+        <div id="comment-<?php comment_ID(); ?>" class="comment-body">
+            <div class="comment-author">
+                <?php echo get_avatar( $comment, $size = '60'); ?>
+                <div class="comment-reply">
+                    <?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth'], 'reply_text' => __('回复')))) ?>
                 </div>
             </div>
-            <div class="comment-floor right">
-                <?php
-                if(get_option('default_comments_page')=='newest'){
-                    if(!$parent_id = $comment->comment_parent ){
-                        ++$commentcount;
-                    }
-                    echo '<span>#'.$commentcount.'<strong>'.$otakism_comment_depth .'</strong></span>';
-                }else{
-
-                    if(!$parent_id = $comment->comment_parent ){
-                        --$commentcount;
-                    }
-                    echo '<span>#'.$commentcount.'<strong>'.$otakism_comment_depth .'</strong></span>';
-
-                }
-                ?>
+            <div class="comment-wrapper">
+                <div class="comment-head">
+                    <span class="name"><?php comment_author_link(); ?>: </span>
+                    <span class="comment-text"><?php comment_text() ?>
+                        <?php if ($comment->comment_approved == '0') : ?>
+                            <em><?php _e('Your comment is awaiting moderation.') ?></em>
+                            <br />
+                        <?php endif; ?>
+                    </span>
+                </div>
+                <div class="comment-time">
+                    <div class="date"><?php echo get_comment_date('F j, Y') ?></div>
+                </div>
             </div>
         </div>
     </li>
 <?php }
 
-function ajaxify_comments_jaya($comment_ID, $comment_status) {
+
+
+function ajaxify_comments($comment_ID, $comment_status) {
     if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
         //If AJAX Request Then
         switch ($comment_status) {
@@ -83,15 +48,24 @@ function ajaxify_comments_jaya($comment_ID, $comment_status) {
                 $permaurl = get_permalink( $post->ID );
                 $url = str_replace('http://', '/', $permaurl);
                 if($commentdata['comment_parent'] == 0){
-                    $output = '<li id="comment-' . $commentdata['comment_ID'] . '" >
-                        <div class="comment-body clearfix">
-                            <div class="comment-avatar left">'. get_avatar($commentdata['comment_author_email'],$size = '50').'</div>
-                                <div class="comment-content">
-                                <div class="comment-name">' . $commentdata['comment_author'] . '</div>
-                                <div class="comment-entry">' . $commentdata['comment_content'] . '</div>
-                                <div class="comment-meta clearfix">
-                                    <div class="comment-date left">' .get_comment_date( 'F j, Y', $commentdata['comment_ID']) .'</div>
-                                    <div class="comment-reply left"></div>
+                    $output = '
+                    <li id="comment-' . $commentdata['comment_ID'] . '" >
+                        <div id="comment-'.$commentdata['comment_ID'].'" class="comment-body">
+                            <div class="comment-author">
+                                '. get_avatar($commentdata['comment_author_email'],$size = '60').'
+                            </div>
+							<div class="comment-wrapper">
+								<div class="comment-head">
+									<span class="name">
+									    '.$commentdata['comment_author'].':
+									</span>
+								<span class="comment-text">
+								'. $commentdata['comment_content'] .'
+								</span>
+							</div>
+                            <div class="comment-time">
+                                <div class="date">
+                                    ' .get_comment_date( 'F j, Y', $commentdata['comment_ID']) .'
                                 </div>
                             </div>
                         </div>
@@ -110,7 +84,7 @@ function ajaxify_comments_jaya($comment_ID, $comment_status) {
     }
 }
 
-add_action('comment_post', 'ajaxify_comments_jaya', 25, 2);
+add_action('comment_post', 'ajaxify_comments', 25, 2);
 
 
 function ajax_comment_err($a) {

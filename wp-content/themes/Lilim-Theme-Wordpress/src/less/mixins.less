@@ -1,3 +1,10 @@
+//////////////////// Mixin ////////////////////
+//
+
+@import "mixins/clearfix.less";
+@import "mixins/grid-icon.less";
+@import "mixins/sprites.less";
+
 .scale(@ratio) {
   -webkit-transform : scale(@ratio);
   -ms-transform     : scale(@ratio);
@@ -86,69 +93,12 @@
   transform         : rotateY(@degrees);
 }
 
-.clearfix() {
-  &:before,
-  &:after {
-    content : " "; // 1
-    display : table; // 2
-  }
-  &:after {
-    clear : both;
-  }
-}
+
 
 .display(@var) {
   display : @var;
 }
 
-.sprite-position(@sprite) {
-  @sprite-offset-x: extract(@sprite, 1);
-  @sprite-offset-y: extract(@sprite, 2);
-  background-position : @sprite-offset-x  @sprite-offset-y;
-}
 
-.grid-icon(@sprite,@color) {
-  .heading {
-    .avatar-icon {
-      .front {
-        .sprite-position(@sprite);
-      }
-      .back {
-        a {
-          background-color : lighten(@color, 32%);
-        }
-      }
-    }
-    .tag {
-      ul {
-        &.show {
-          li {
-            &:hover {
-              background-color : @color;
-              .tag-bar {
-                background-color : @color;
-              }
-            }
-          }
-        }
-        li {
-          &:nth-child(even) {
-            .tag-bar {
-              background-color : lighten(@color, 42%);
-            }
-          }
-          &:nth-child(odd) {
-            .tag-bar {
-              background-color : lighten(@color, 22%);
-            }
-          }
-          &:first-child {
-            .tag-bar {
-              background-color : @color !important;
-            }
-          }
-        }
-      }
-    }
-  }
-}
+
+

@@ -2,21 +2,44 @@
 // Variables
 // --------------------------------------------------
 
-//== Colors
-//
-//## Gray and brand colors
+// Global values
+// --------------------------------------------------
 
-@primary-color: #986794;
-@gray-light: #d8d8d8;
+// Grays
+// -------------------------
+
+@gray-darker: lighten(#000, 13.5%);
+// #222
+@gray-dark: lighten(#000, 20%);
+// #333
+@gray: lighten(#000, 33.5%);
+// #555
+@gray-light: lighten(#000, 60%);
+// #999
+@gray-lighter: lighten(#000, 93.5%);
+// #eee
+
+// // Brand colors
+// // -------------------------
+
+@brand-primary: #986794;
+@brand-second: lighten(@brand-primary, 90%);
+@brand-success: #5cb85c;
+@brand-warning: #f0ad4e;
+@brand-danger: #d9534f;
+@brand-info: #5bc0de;
+
+// // Scaffolding
+// // -------------------------
+
 @white-color: #fff;
+@light-color: #fafafa;
 
-
-@format-status-color:#742e34;
-@format-aside-color:#5c4942;
-@format-gallery-color:#4a6e68;
-@format-link-color:#51492d;
-@format-quote-color:#094a40;
-
+@format-status-color : #742e34;
+@format-aside-color: #5c4942;
+@format-gallery-color: #4a6e68;
+@format-link-color: #51492d;
+@format-quote-color: #094a40;
 
 //== Typography
 //

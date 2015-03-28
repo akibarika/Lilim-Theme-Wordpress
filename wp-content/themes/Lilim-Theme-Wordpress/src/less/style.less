@@ -265,7 +265,7 @@
             font-family      : 'Clicker Script', cursive;
             font-size        : 2em;
             padding          : 0;
-            background-color : @primary-color;
+            background-color : @brand-primary;
             text-align       : center;
             color            : @white-color;
             line-height      : 65px;
@@ -335,7 +335,7 @@
       }
       .bt-search {
         position   : absolute;
-        top        : 2px;
+        top        : 1px;
         right      : 0;
         display    : block;
         font-size  : 18px;
@@ -1181,7 +1181,7 @@
               padding       : 4px;
               width         : auto;
               &:hover {
-                border : 1px solid @primary-color;
+                border : 1px solid @brand-primary;
               }
             }
           }
@@ -1223,7 +1223,7 @@
               margin         : 0 0 5px 5px;
               vertical-align : middle;
               font-size      : 15px;
-              color          : @primary-color;
+              color          : @brand-primary;
               .transition(all .3s ease-in-out);
             }
             &:hover {
@@ -1329,7 +1329,7 @@
             position     : relative;
           }
           li:hover::before {
-            border-color : transparent @primary-color;
+            border-color : transparent @brand-primary;
           }
         }
         p {
@@ -1378,7 +1378,7 @@
             max-width : 258px;
           }
           &:hover {
-            border : 1px solid @primary-color;
+            border : 1px solid @brand-primary;
           }
         }
       }
@@ -1479,308 +1479,6 @@
   }
 }
 
-#comments {
-  width    : 100%;
-  padding  : 20px 0 0 0;
-  height   : auto;
-  overflow : hidden;
-  .pagination {
-    display  : block;
-    height   : 40px;
-    margin   : 50px 0 20px;
-    position : relative;
-    a,
-    span {
-      -moz-user-select : none;
-      user-select      : none;
-      background-color : @white-color;
-      border           : 1px solid #ddd;
-      border-radius    : 9px;
-      color            : #666;
-      cursor           : pointer;
-      display          : block;
-      float            : left;
-      font-size        : @f-small-size;
-      height           : 36px;
-      line-height      : 36px;
-      margin-right     : 10px;
-      padding          : 0 15px;
-      vertical-align   : middle;
-      width            : auto;
-      .transition(all .2s ease);
-      &.dots {
-        cursor : default;
-      }
-      &.current {
-        border-color : @primary-color;
-      }
-      &:hover {
-        border-color : @primary-color;
-      }
-    }
-  }
-  .commentscount h3 {
-    font-size : 20px;
-    span {
-      color : @primary-color;
-    }
-  }
-  .nocomments {
-    font-size  : @f-normal-size;
-    width      : 100%;
-    border-top : 1px solid #ccc;
-    margin-top : 5px;
-    padding    : 15px;
-  }
-  .commentclosed {
-    font-size  : @f-normal-size;
-    margin-top : 5px;
-    padding    : 15px;
-  }
-  .commentlist {
-    margin : 10px 0 10px 0;
-    li {
-      list-style     : none;
-      height         : auto;
-      overflow       : hidden;
-      padding-bottom : 15px;
-      .ajax-notice {
-        a {
-          color           : @primary-color;
-          text-decoration : underline;
-        }
-      }
-      .comment-body {
-        width      : 100%;
-        font-size  : @f-normal-size;
-        padding    : 15px 0;
-        border-top : 1px solid #ccc;
-        position   : relative;
-        height     : auto;
-        overflow   : hidden;
-        .comment-avatar {
-          box-shadow            : 0px 1px 1px rgba(255, 255, 255, 0.75);
-          position              : relative;
-          -webkit-border-radius : 65px;
-          -moz-border-radius    : 65px;
-          border-radius         : 65px;
-          background-color      : white;
-          width                 : 50px;
-          height                : 50px;
-          img {
-            display               : block;
-            box-shadow            : 0 1px 5px rgba(0, 0, 0, 0.22);
-            -webkit-border-radius : 65px;
-            -moz-border-radius    : 65px;
-            border-radius         : 65px;
-            width                 : 50px;
-            height                : 50px;
-            .transition(all .8s ease-in-out);
-            &:hover {
-              .rotateY(180deg);
-            }
-          }
-        }
-      }
-    }
-    .children {
-      @media only screen and (min-width : 480px) and (max-width : 767px) {
-        .comment-content {
-          max-width : 230px;
-        }
-      }
-      .comment-avatar {
-        img {
-          width  : 32px;
-          height : 32px;
-        }
-      }
-    }
-    .comment-content {
-      padding-left : 60px;
-      max-width    : 550px;
-      z-index      : 10;
-      @media only screen and (min-width : 480px) and (max-width : 767px) {
-        max-width : 260px;
-      }
-      @media only screen and (max-width : 479px) {
-        width : 100%;
-      }
-      .comment-name {
-        a {
-          color : #ba89b6;
-          &:hover {
-            text-shadow : 0 0 2px #ba89b6;
-          }
-        }
-      }
-      .comment-entry {
-        font-size   : @f-normal-size;
-        line-height : 150%;
-        margin-top  : 3px;
-        color       : #666;
-        @media only screen and (max-width : 959px) {
-          img {
-            width : 37px;
-          }
-        }
-      }
-      .comment-meta {
-        font-size  : @f-small-size;
-        color      : #999;
-        margin-top : 3px;
-        height     : auto;
-        overflow   : hidden;
-        a {
-          color : #666;
-        }
-        a:hover {
-          color : #ba89b6;
-        }
-        .comment-reply {
-          margin-left : 20px;
-        }
-        .comment-date {
-          text-transform : uppercase;
-        }
-        .useragent {
-          margin-left : 20px;
-          margin-top  : -2px;
-          span {
-            font-size : @f-small-size;
-          }
-        }
-      }
-    }
-    .comment-floor {
-      color    : #ddd;
-      height   : 60px;
-      position : absolute;
-      right    : 0;
-      top      : 5px;
-      z-index  : 5;
-      span {
-        font-size  : 60px;
-        font-style : italic;
-        @media only screen and (min-width : 480px) and (max-width : 767px) {
-          font-size : 34px;
-        }
-      }
-      strong {
-        font-size : @f-large-size;
-      }
-      @media only screen and (max-width : 479px) {
-        display : none;
-      }
-    }
-  }
-  #respond {
-    margin      : 20px auto 40px;
-    padding-top : 20px;
-    width       : 100%;
-    @media only screen and (max-width : 479px) {
-      margin-bottom : 60px;
-    }
-    #commentform {
-      line-height : 0;
-      .user_logged {
-        font-size      : @f-small-size;
-        height         : 29px;
-        line-height    : 29px;
-        vertical-align : middle;
-        padding-left   : 32px;
-        text-shadow    : none;
-      }
-      .user_logout {
-        font-size : @f-small-size;
-      }
-    }
-    .comtool {
-      height           : 35px;
-      background-color : #e9e9e9;
-      border           : 1px solid #e9e9e9;
-      @media only screen and (max-width : 767px) {
-        .display-none;
-      }
-      .smiley {
-        padding : 10px 0 5px 15px;
-        a {
-          margin-right : 15px;
-        }
-      }
-      .cancel_comment_reply a {
-        display     : block;
-        padding     : 10px 5px 5px 0;
-        line-height : normal;
-      }
-    }
-    .author_info {
-      height           : auto;
-      background-color : #eaeaea;
-      input {
-        font-size   : @f-small-size;
-        height      : 29px;
-        color       : #555;
-        font-weight : 400;
-        width       : 155px;
-        border      : none;
-        padding     : 0 10px 0 30px;
-        margin      : 0;
-        @media only screen and (max-width : 767px) {
-          width : 100%;
-        }
-      }
-      #author {
-        background-position               : 4px 4px;
-        -moz-border-radius-bottomleft     : 5px;
-        -webkit-border-bottom-left-radius : 5px;
-        border-bottom-left-radius         : 5px;
-      }
-      #email {
-        background-position : 0px -47px;
-      }
-      #url {
-        background-position : 0px -22px;
-      }
-      #submit {
-        font-size   : @f-small-size;
-        font-weight : 700;
-        float       : right;
-        background  : #ccc;
-        width       : 140px;
-        cursor      : pointer;
-        color       : #555;
-        border      : none;
-        margin      : 0;
-        padding     : 0;
-        height      : 29px;
-      }
-      #submit:hover {
-        background : #3f3f3f;
-        color      : @white-color;
-      }
-    }
-  }
-  textarea#comment {
-    padding          : 5px;
-    height           : 150px;
-    min-height       : 130px;
-    color            : #111;
-    width            : 100%;
-    border           : 1px solid #e9e9e9;
-    resize           : vertical;
-    font-size        : 13px;
-    margin           : 0;
-    overflow         : auto;
-    background-color : #f7f7f7;
-  }
-  textarea#comment:hover {
-    border-color : #ccc;
-  }
-  textarea#comment:focus {
-    background-color : @white-color;
-  }
-}
 
 .navigation {
   background   : none repeat scroll 0 0 @white-color;
@@ -1839,11 +1537,11 @@
   padding    : 1em 2em;
   margin     : 2em auto 3em;
   ::selection {
-    color      : @primary-color;
+    color      : @brand-primary;
     background : @white-color;
   }
   ::-moz-selection {
-    color      : @primary-color;
+    color      : @brand-primary;
     background : @white-color;
   }
   .ribbon-content::before {
@@ -1871,7 +1569,7 @@
     position           : absolute;
     display            : block;
     bottom             : -1em;
-    border             : 1.5em solid @primary-color;
+    border             : 1.5em solid @brand-primary;
     z-index            : -1;
     left               : -2em;
     border-right-width : 1.5em;
@@ -1882,7 +1580,7 @@
     position           : absolute;
     display            : block;
     bottom             : -1em;
-    border             : 1.5em solid @primary-color;
+    border             : 1.5em solid @brand-primary;
     z-index            : -1;
     right              : -2em;
     border-left-width  : 1.5em;
