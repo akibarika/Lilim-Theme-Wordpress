@@ -7,11 +7,11 @@ if ( post_password_required() ) : ?>
     <div class="comt">
         <?php if ( have_comments() ) : ?>
             <ol class="commentlist">
-                <?php wp_list_comments('type=comment&callback=lilim_comment&max_depth=4'); ?>
+                <?php wp_list_comments('type=comment&callback=lilim_comment&max_depth=100'); ?>
             </ol>
             <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
                 <div class="navigation">
-                    <div class="cf"><?php paginate_comments_links( array('prev_text' => '&laquo;', 'next_text' => '&raquo;') ); ?></div>
+                    <?php paginate_comments_links( array('prev_text' => '&laquo;', 'next_text' => '&raquo;') ); ?>
                 </div>
             <?php endif; ?>
         <?php endif; ?>

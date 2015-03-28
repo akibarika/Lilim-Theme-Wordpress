@@ -226,7 +226,7 @@ function ajax_comment() {
 	}
 	$GLOBALS['comment'] = $comment;
 	?>
-<li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>" <?php if ( $depth > 1 ) {
+<li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>" <?php if ( $comment_depth > 1 ) {
 	echo 'style="margin-left:65px;"';
 } ?>>
 	<div id="comment-<?php comment_ID(); ?>" class="comment-body cf">

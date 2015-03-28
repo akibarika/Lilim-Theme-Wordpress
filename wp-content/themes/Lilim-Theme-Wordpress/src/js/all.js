@@ -115,7 +115,7 @@ jQuery(document).ready(function (jQuery) {
                 },
                 ajaxPostLoading: function () {
                     var currentState = window.location.href;
-                    jQuery(document).on('click', '.navigation a', {viewModel: o},
+                    jQuery(document).on('click', '.container > .navigation a', {viewModel: o},
                             function (o) {
                                 o.preventDefault();
                                 var e = o.data.viewModel;
