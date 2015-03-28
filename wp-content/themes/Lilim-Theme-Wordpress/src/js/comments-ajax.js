@@ -27,7 +27,7 @@ jQuery(document).ready(function(jQuery) {
 				if (parent != '0') {
 					jQuery('#respond').before('<ul class="children">' + data + '</ul>');
 				} else {
-					jQuery('.comment-list').append(data);// your comments wrapper
+					jQuery('.commentlist').append(data);// your comments wrapper
 				}
 				t.createButterbar("提交成功");
 				cancel.style.display = 'none';
