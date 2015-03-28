@@ -76,14 +76,14 @@
     }
   }
   .navigation {
+    border   : none;
     display  : block;
     height   : 40px;
     margin   : 50px 0 20px;
     position : relative;
+    width    : 100%;
     a,
     span {
-      -moz-user-select : none;
-      user-select      : none;
       background-color : @white-color;
       border           : 1px solid #ddd;
       border-radius    : 9px;
@@ -98,6 +98,7 @@
       padding          : 0 15px;
       vertical-align   : middle;
       width            : auto;
+      .user-select(none);
       .transition(all .2s ease);
       &.dots {
         cursor : default;
@@ -139,7 +140,7 @@
           }
         }
         input[type='text'] {
-          background-color : #fafafa;
+          background-color : @light-color;
           border           : 1px solid #ffebe1;
           outline          : medium none;
           padding          : 0 20px;
@@ -185,27 +186,23 @@
       }
     }
     #submit {
-      -moz-border-bottom-colors : none;
-      -moz-border-left-colors   : none;
-      -moz-border-right-colors  : none;
-      -moz-border-top-colors    : none;
-      background-color          : @brand-primary;
-      border-bottom             : 2px solid rgba(58, 29, 16, 0.5);
-      border-image              : none;
-      border-left               : medium none;
-      border-right              : medium none;
-      border-top                : medium none;
-      color                     : @white-color;
-      cursor                    : pointer;
-      font-size                 : 16px;
-      font-weight               : 600;
-      height                    : 62px;
-      letter-spacing            : 1px;
-      margin                    : 0;
-      overflow                  : hidden;
-      width                     : 100%;
+      background-color : @brand-primary;
+      border-bottom    : 2px solid darken(@brand-primary, 20%);
+      border-left      : none;
+      border-right     : none;
+      border-top       : none;
+      color            : @white-color;
+      cursor           : pointer;
+      font-size        : 16px;
+      font-weight      : 600;
+      height           : 62px;
+      letter-spacing   : 1px;
+      margin           : 0;
+      overflow         : hidden;
+      width            : 100%;
+      .transition(all .25s ease);
       &:hover {
-        background-color : #60311b;
+        background-color : darken(@brand-primary, 20%);
       }
     }
   }

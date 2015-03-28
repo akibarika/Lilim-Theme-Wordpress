@@ -1532,7 +1532,7 @@ a.share-button {
   color: #424242;
 }
 #comments .commentlist li .comment-body .comment-wrapper .comment-head span.name a:hover {
-  color: #ffffff;
+  color: #ad85a9;
 }
 #comments .commentlist li .comment-body .comment-wrapper .comment-head span.comment-text p {
   color: #444;
@@ -1546,17 +1546,15 @@ a.share-button {
   text-transform: uppercase;
 }
 #comments .navigation {
+  border: none;
   display: block;
   height: 40px;
   margin: 50px 0 20px;
   position: relative;
+  width: 100%;
 }
 #comments .navigation a,
 #comments .navigation span {
-  -moz-user-select: none;
-  -webkit-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
   background-color: #ffffff;
   border: 1px solid #ddd;
   border-radius: 9px;
@@ -1571,6 +1569,10 @@ a.share-button {
   padding: 0 15px;
   vertical-align: middle;
   width: auto;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
@@ -1584,7 +1586,7 @@ a.share-button {
 }
 #comments .navigation a:hover,
 #comments .navigation span:hover {
-  border-color: #ffffff;
+  border-color: #ad85a9;
 }
 #comments #respond {
   margin-bottom: 60px;
@@ -1594,7 +1596,7 @@ a.share-button {
   margin-bottom: 10px;
 }
 #comments #respond .cancel_comment_reply a:hover {
-  color: #ffffff;
+  color: #ad85a9;
 }
 #comments #respond .commenter {
   position: relative;
@@ -1607,8 +1609,8 @@ a.share-button {
   border-bottom: 1px dotted #424242;
 }
 #comments #respond .commenter .author_info .user_logged a:hover {
-  color: #ffffff;
-  border-bottom-color: #ffffff;
+  color: #ad85a9;
+  border-bottom-color: #ad85a9;
 }
 #comments #respond .commenter .author_info .user_logged a.user_logout {
   float: right;
@@ -1658,18 +1660,11 @@ a.share-button {
   background-color: #ffffff;
 }
 #comments #respond #submit {
-  -moz-border-bottom-colors: none;
-  -moz-border-left-colors: none;
-  -moz-border-right-colors: none;
-  -moz-border-top-colors: none;
   background-color: #986794;
-  border-bottom: 2px solid rgba(58, 29, 16, 0.5);
-  -webkit-border-image: none;
-       -o-border-image: none;
-          border-image: none;
-  border-left: medium none;
-  border-right: medium none;
-  border-top: medium none;
+  border-bottom: 2px solid #5b3e59;
+  border-left: none;
+  border-right: none;
+  border-top: none;
   color: #ffffff;
   cursor: pointer;
   font-size: 16px;
@@ -1679,9 +1674,11 @@ a.share-button {
   margin: 0;
   overflow: hidden;
   width: 100%;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
 }
 #comments #respond #submit:hover {
-  background-color: #60311b;
+  background-color: #5b3e59;
 }
 #menu-mobile {
   display: none;

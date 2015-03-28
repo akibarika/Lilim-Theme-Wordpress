@@ -77,19 +77,27 @@ add_action( 'comment_post', 'comment_mail_notify' );
 
 //Scripts
 function lilim_scripts_styles() {
-	wp_enqueue_script( 'vendor', lilim_js_url( 'vendor' ), array(), LILIM_VERSION, true );
+	wp_enqueue_script( 'lilim_vendor', lilim_js_url( 'vendor' ), array(), LILIM_VERSION, true );
 	wp_enqueue_script( 'lilim', lilim_js_url( 'app' ), array(), LILIM_VERSION, true );
 	if ( is_single() ) {
-		wp_enqueue_script( 'post', lilim_js_url( 'post' ), array(), LILIM_VERSION, true );
+		wp_enqueue_script( 'lilim_post', lilim_js_url( 'post' ), array(), LILIM_VERSION, true );
 	}
 	wp_localize_script( 'lilim', 'lilimajax', array(
-		'ajax_url'   => admin_url( 'admin-ajax.php' ),
+		'ajax_url'   => admin_url('admin-ajax.php'),
 		'jplayerurl' => lilim_js_url( 'jquery.jplayer.min' ),
 		'nonce'      => wp_create_nonce( 'akibarika' )
 	) );
+
+	wp_enqueue_script( 'lilim_comment', lilim_js_url( 'comment' ), array(), LILIM_VERSION, true );
+    wp_localize_script( 'lilim_comment', 'ajaxcomment', array(
+        'ajax_url'   => admin_url('admin-ajax.php')
+    ) );
 }
 
-add_action( 'wp_enqueue_scripts', 'lilim_scripts_styles', 20, 1 );
+add_action( 'wp_enqueue_scripts', 'lilim_scripts_styles');
+
+
+
 
 function lilim( $e ) {
 	$option = get_option( 'lilim_config' );

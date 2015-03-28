@@ -1,99 +1,10 @@
 //////////////////// Mixin ////////////////////
 //
-
 @import "mixins/clearfix.less";
 @import "mixins/grid-icon.less";
 @import "mixins/sprites.less";
-
-.scale(@ratio) {
-  -webkit-transform : scale(@ratio);
-  -ms-transform     : scale(@ratio);
-  -o-transform      : scale(@ratio);
-  transform         : scale(@ratio);
-}
-
-.scale(@ratioX; @ratioY) {
-  -webkit-transform : scale(@ratioX, @ratioY);
-  -ms-transform     : scale(@ratioX, @ratioY);
-  -o-transform      : scale(@ratioX, @ratioY);
-  transform         : scale(@ratioX, @ratioY);
-}
-
-.transition(@transition) {
-  -webkit-transition : @transition;
-  -o-transition      : @transition;
-  transition         : @transition;
-}
-
-.transition-property(@transition-property) {
-  -webkit-transition-property : @transition-property;
-  transition-property         : @transition-property;
-}
-
-.transition-delay(@transition-delay) {
-  -webkit-transition-delay : @transition-delay;
-  transition-delay         : @transition-delay;
-}
-
-.transition-duration(@transition-duration) {
-  -webkit-transition-duration : @transition-duration;
-  transition-duration         : @transition-duration;
-}
-
-.transition-timing-function(@timing-function) {
-  -webkit-transition-timing-function : @timing-function;
-  transition-timing-function         : @timing-function;
-}
-
-.transition-transform(@transition) {
-  -webkit-transition : -webkit-transform @transition;
-  -moz-transition    : -moz-transform @transition;
-  -o-transition      : -o-transform @transition;
-  transition         : transform @transition;
-}
-
-.translate3d(@x; @y; @z) {
-  -webkit-transform : translate3d(@x, @y, @z);
-  transform         : translate3d(@x, @y, @z);
-}
-
-.translateY (@val) {
-  -webkit-transform : translateY(@val);
-  -moz-transform    : translateY(@val);
-  -ms-transform     : translateY(@val);
-  -o-transform      : translateY(@val);
-  transform         : translateY(@val);
-}
-
-.translateX (@val) {
-  -webkit-transform : translateX(@val);
-  -moz-transform    : translateX(@val);
-  -ms-transform     : translateX(@val);
-  transform         : translateX(@val);
-}
-
-.rotate(@degrees) {
-  -webkit-transform : rotate(@degrees);
-  -ms-transform     : rotate(@degrees);
-  -o-transform      : rotate(@degrees);
-  transform         : rotate(@degrees);
-}
-
-.rotateX(@degrees) {
-  -webkit-transform : rotateX(@degrees);
-  -ms-transform     : rotateX(@degrees);
-  -o-transform      : rotateX(@degrees);
-  transform         : rotateX(@degrees);
-}
-
-.rotateY(@degrees) {
-  -webkit-transform : rotateY(@degrees);
-  -ms-transform     : rotateY(@degrees);
-  -o-transform      : rotateY(@degrees);
-  transform         : rotateY(@degrees);
-}
-
-
+@import "mixins/vendor-prefixes.less";
+@import "mixins/trangles.less";
 
 .display(@var) {
   display : @var;

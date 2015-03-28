@@ -39,11 +39,13 @@ gulp.task('css', function () {
             .pipe(notify({message: 'Successfully compiled LESS'}));
 });
 
+gulp.task('js',['appjs','vendorjs','commentjs','postjs']);
+
 gulp.task('appjs', function () {
     var stream = gulp.src([
         'src/js/all.js',
         'src/js/fx.js',
-        'src/js/post.js',
+        'src/js/post.js'
 
     ]).pipe(sourcemaps.init())
             .pipe(concat('app.js'));
@@ -61,8 +63,7 @@ gulp.task('appjs', function () {
 gulp.task('vendorjs', function () {
     var scripts = [
         'src/js/jquery.min.js',
-        'src/js/imagesloaded.pkgd.min.js',
-        'src/js/comments-ajax.js'
+        'src/js/imagesloaded.pkgd.min.js'
     ];
 
     var stream = gulp
@@ -100,6 +101,27 @@ gulp.task('postjs', function () {
             .pipe(gulp.dest('js'))
             .pipe(notify({message: 'Successfully compiled vendor js'}));
 });
+
+gulp.task('commentjs', function () {
+    var scripts = [
+        'src/js/comments-ajax.js'
+    ];
+
+    var stream = gulp
+            .src(scripts)
+            .pipe(sourcemaps.init())
+            .pipe(concat('comment.js'));
+
+    if (config.uglifyJS === true) {
+        stream.pipe(uglify());
+    }
+
+    return stream
+            .pipe(sourcemaps.write('.'))
+            .pipe(gulp.dest('js'))
+            .pipe(notify({message: 'Successfully compiled vendor js'}));
+});
+
 // Rimraf
 gulp.task('rimraf', function () {
     return gulp
@@ -119,7 +141,7 @@ gulp.task('watch', function () {
     gulp.watch('src/less/**/*.less', ['css']);
 
     // Watch .js files
-    gulp.watch('src/js/**/*.js', ['appjs','vendorjs']);
+    gulp.watch('src/js/**/*.js', ['appjs','vendorjs','commentjs','postjs']);
 
     // Create LiveReload server
     //var server = livereload();
