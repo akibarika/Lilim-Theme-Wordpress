@@ -7,7 +7,7 @@ if ( post_password_required() ) : ?>
     <div class="comt">
         <?php if ( have_comments() ) : ?>
             <ol class="commentlist">
-                <?php wp_list_comments('type=comment&callback=lilim_comment&max_depth=3'); ?>
+                <?php wp_list_comments('type=comment&callback=lilim_comment&max_depth=4'); ?>
             </ol>
             <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
                 <div class="navigation">
@@ -19,7 +19,7 @@ if ( post_password_required() ) : ?>
             <div id="respond">
                 <form id="commentform" action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" >
                 <?php if ( $user_ID ) : ?>
-                    <div class="comtool cf">
+                    <div class="comtool">
                         <?php cancel_comment_reply_link('取消回复') ?>
                     </div>
                     <div class="commenter">

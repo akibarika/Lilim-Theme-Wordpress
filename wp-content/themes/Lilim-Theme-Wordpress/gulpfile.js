@@ -62,8 +62,7 @@ gulp.task('vendorjs', function () {
     var scripts = [
         'src/js/jquery.min.js',
         'src/js/imagesloaded.pkgd.min.js',
-        'src/js/comments-ajax.js',
-
+        'src/js/comments-ajax.js'
     ];
 
     var stream = gulp
@@ -120,7 +119,7 @@ gulp.task('watch', function () {
     gulp.watch('src/less/**/*.less', ['css']);
 
     // Watch .js files
-    gulp.watch('src/js/**/*.js', ['appjs']);
+    gulp.watch('src/js/**/*.js', ['appjs','vendorjs']);
 
     // Create LiveReload server
     //var server = livereload();

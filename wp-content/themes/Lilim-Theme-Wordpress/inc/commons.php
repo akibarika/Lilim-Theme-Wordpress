@@ -69,7 +69,6 @@ function comment_mail_notify( $comment_id ) {
 		$from     = "From: \"" . get_option( 'blogname' ) . "\" <$wp_email>";
 		$headers  = "$from\nContent-Type: text/html; charset=" . get_option( 'blog_charset' ) . "\n";
 		wp_mail( $to, $subject, $message, $headers );
-		//echo 'mail to ', $to, '<br/> ' , $subject, $message; // for testing
 	}
 }
 
@@ -211,10 +210,7 @@ function my_nav_menu_attribs( $atts, $item, $args ) {
 		if ( $item->ID == $menu_target ) {
 			$atts['data-content'] = $item->title;
 		}
-
-
 	}
-
 	return $atts;
 }
 
