@@ -6,12 +6,12 @@ var commentform=$('#commentform');
     $('a.comment-reply-link').click(function(){
         list = $(this).parent().parent().parent().parent().parent().attr('id');
     });
-	 
+
     commentform.submit(function(){
         var formdata=commentform.serialize();
         statusdiv.html('<p>发布中.</p>');
         var formurl=commentform.attr('action');
-        
+
         $.ajax({
             type: 'post',
             url: formurl,
@@ -23,8 +23,8 @@ var commentform=$('#commentform');
             success: function(data, textStatus){
                 if(data == "success" || textStatus == "success"){
                     statusdiv.html('<p class="ajax-success" >感谢吐槽...</p>');
-                    //alert(data); 
-                    
+                    //alert(data);
+
                     if($("#comments").has("ol.commentlist").length > 0){
                         if(list != null){
                             $('#'+list).prepend(data);
