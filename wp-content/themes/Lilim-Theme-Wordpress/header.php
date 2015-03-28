@@ -101,18 +101,6 @@
 				<span>By Tag</span>
 				<?php wp_tag_cloud('smallest=13&largest=13&number=50&format=list&unit=px');?>
 			</div>
-			<ul class="list-colors">
-				<li class="red"><a href="/websites/red">Blue websites</a></li>
-				<li class="orange"><a href="/websites/orange">orange websites</a></li>
-				<li class="yellow"><a href="/websites/yellow">yellow websites</a></li>
-				<li class="brown"><a href="/websites/brown">brown websites</a></li>
-				<li class="blue"><a href="/websites/blue">blue websites</a></li>
-				<li class="green"><a href="/websites/green">green websites</a></li>
-				<li class="pink"><a href="/websites/pink">pink websites</a></li>
-				<li class="silver"><a href="/websites/silver">silver websites</a></li>
-				<li class="white"><a href="/websites/white">white websites</a></li>
-				<li class="black"><a href="/websites/black">black websites</a></li>
-			</ul>
 		</div>
 		<div class="bt-close close-nav"></div>
 	</nav>

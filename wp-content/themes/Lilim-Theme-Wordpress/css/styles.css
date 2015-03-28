@@ -1740,6 +1740,27 @@ a.share-button {
 #comments #respond #submit:hover {
   background-color: #5b3e59;
 }
+.butterBar {
+  margin-left: 36%;
+  max-width: 640px;
+  position: fixed;
+  text-align: center;
+  top: 50%;
+  width: 58%;
+  z-index: 800;
+}
+.butterBar--center {
+  left: 50%;
+  margin-left: -320px;
+}
+.butterBar-message {
+  background: #ffffff;
+  border: 1px solid #999999;
+  display: inline-block;
+  font-size: 14px;
+  margin-bottom: 0;
+  padding: 12px 25px;
+}
 #menu-mobile {
   display: none;
   position: fixed;
