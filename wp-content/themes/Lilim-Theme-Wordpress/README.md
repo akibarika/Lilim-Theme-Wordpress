@@ -14,6 +14,12 @@ Download [Lilim][2]
 ChangeLog
 ---
 
+Version 3.0
+
+*28-Mar-2015*
+
+   - Kinda new
+
 Version 2.8
 
 *31-Aug-2014*
