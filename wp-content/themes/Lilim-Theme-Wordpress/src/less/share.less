@@ -1,0 +1,64 @@
+.share {
+  display        : none;
+  max-width      : 600px;
+  height         : 100px;
+  margin         : 0 auto;
+  -webkit-filter : url("#goo");
+  position       : relative;
+  @media (min-width : 480px) {
+    display : block;
+  }
+  i:hover {
+    color: inherit;
+  }
+}
+
+.share-button,
+.share-toggle-button {
+  position      : absolute;
+  background  : lighten(@brand-primary, 15.5%);
+  display       : inline-block;
+  left          : 50%;
+  top           : 50%;
+  border-radius : 50%;
+  width         : 80px;
+  height        : 80px;
+  line-height   : 80px;
+  margin-left   : -40px;
+  margin-top    : -40px;
+  text-align    : center;
+  color         : @white-color;
+  border        : none;
+  outline       : none;
+  .transition(background .25s ease);
+  &:hover {
+    background  : lighten(@brand-primary, 9.5%);
+  }
+}
+
+.share-button {
+  font-size   : 20px;
+  color       : @white-color;
+  .scale(0.95; 0.95);
+
+}
+
+a.share-button {
+  color : @white-color;
+}
+
+.share-toggle-button {
+  z-index     : 9;
+  font-size   : 30px;
+  line-height : 30px;
+}
+
+.share-items {
+  list-style-type : none;
+  padding         : 0;
+  margin          : 0;
+}
+
+.share-item {
+  display : inline-block;
+}
