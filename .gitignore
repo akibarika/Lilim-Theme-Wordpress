@@ -63,6 +63,9 @@ Thumbs.db
 *.rar
 *.tar
 *.zip
+
+# ignore map files
+*.map
  
 # ignore everything in the "wp-content" directory, except:
 # "mu-plugins" directory
@@ -101,4 +104,4 @@ index.php
 
 
 # ignore Theme src folder
-wp-content/themes/*/src
+wp-content/themes/**/*/src
