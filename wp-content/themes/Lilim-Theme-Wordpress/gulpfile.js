@@ -131,7 +131,7 @@ gulp.task('rimraf', function () {
 
 // Default task
 gulp.task('default', ['rimraf'], function () {
-    gulp.start('css', 'vendorjs', 'appjs', 'postjs');
+    gulp.start('css','js');
 });
 
 // Watch

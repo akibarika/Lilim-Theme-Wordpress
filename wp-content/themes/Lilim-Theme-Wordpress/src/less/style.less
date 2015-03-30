@@ -74,7 +74,7 @@
           padding-left : 30px;
           position     : relative;
           &::before {
-            left     : 30px;
+            left     : 50px;
             position : absolute;
             top      : 0;
             clip     : rect(0, 0, 100px, 0);
@@ -84,9 +84,12 @@
             zoom     : 1;
             width    : 100%;
             .transition(clip .4s cubic-bezier(0.645, .045, .355, 1));
+            z-index: 999;
           }
           span {
-            padding-left : 5px;
+            position : absolute;
+            left     : 50px;
+
           }
         }
       }
@@ -1479,14 +1482,13 @@
   }
 }
 
-
 .navigation {
-  background   : none repeat scroll 0 0 @white-color;
-  display      : block;
-  height       : 60px;
-  margin       : 20px auto 20px;
-  position     : relative;
-  width        : 1420px;
+  background : none repeat scroll 0 0 @white-color;
+  display    : block;
+  height     : 60px;
+  margin     : 20px auto 20px;
+  position   : relative;
+  width      : 1420px;
   @media only screen and (min-width : 960px) and (max-width : 1419px) {
     width : 960px;
   }

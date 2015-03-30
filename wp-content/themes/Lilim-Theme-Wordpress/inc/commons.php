@@ -211,12 +211,12 @@ add_filter( 'disable_captions', create_function( '$a', 'return true;' ) );
 add_filter( 'nav_menu_link_attributes', 'my_nav_menu_attribs', 10, 3 );
 function my_nav_menu_attribs( $atts, $item, $args ) {
 	// The ID of the target menu item
-	$menu_targets = array( 137, 138, 139, 140, 192 );
+	$menu_targets = array( 258, 257, 256, 254, 255 );
 
 	// inspect $item
 	foreach ( $menu_targets as $menu_target ) {
 		if ( $item->ID == $menu_target ) {
-			$atts['data-content'] = $item->title;
+			$atts['data-content'] = strip_tags($item->title);
 		}
 	}
 	return $atts;
