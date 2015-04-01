@@ -1,14 +1,14 @@
 <?php get_header(); ?>
 	<div class="container">
-		<section id="post" class="<?php echo $_COOKIE['layout'] == '1' ? 'grid--view':'list--view' ?>">
+		<section id="post" class="<?php echo $_COOKIE['layout'] == '2' ? 'list--view':'grid--view' ?>">
 			<div class="pageload-overlay"></div>
 
 			<?php if ( have_posts() ) :
 				?>
-				<div class="column--one column--post show--up <?php echo $_COOKIE['layout'] == '1' ? '':'column--invisible' ?>"></div>
-				<div class="column--two column--post show--up <?php echo $_COOKIE['layout'] == '1' ? '':'column--invisible' ?>"></div>
-				<div class="column--three column--post show--up <?php echo $_COOKIE['layout'] == '1' ? '':'column--invisible' ?>"></div>
-				<div class="column--invisible <?php echo $_COOKIE['layout'] == '1' ? '':'column--show' ?>">
+				<div class="column--one column--post show--up <?php echo $_COOKIE['layout'] == '2' ? 'column--invisible':'' ?>"></div>
+				<div class="column--two column--post show--up <?php echo $_COOKIE['layout'] == '2' ? 'column--invisible':'' ?>"></div>
+				<div class="column--three column--post show--up <?php echo $_COOKIE['layout'] == '2' ? 'column--invisible':'' ?>"></div>
+				<div class="column--invisible <?php echo $_COOKIE['layout'] == '2' ? 'column--show':'' ?>">
 					<?php
 					while ( have_posts() ) :
 						the_post();
