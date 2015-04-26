@@ -13,7 +13,7 @@ function lilim_comment( $comment, $args, $depth ) {
 	} ?>>
 		<div id="comment-<?php comment_ID(); ?>" class="comment-body">
 			<div class="comment-author">
-				<?php echo get_avatar( $comment, $size = '60' ); ?>
+				<?php echo get_avatar( $comment, $size = '30' ); ?>
 				<div class="comment-reply">
 					<?php comment_reply_link( array_merge( $args, array(
 						'reply_text' => '回复',
@@ -57,7 +57,7 @@ function ajaxify_comments( $comment_ID, $comment_status ) {
                     <li id="comment-' . $commentdata['comment_ID'] . ' " >
                         <div id="comment-' . $commentdata['comment_ID'] . '" class="comment-body">
                             <div class="comment-author">
-                                ' . get_avatar( $commentdata['comment_author_email'], $size = '60' ) . '
+                                ' . get_avatar( $commentdata['comment_author_email'], $size = '30' ) . '
                             </div>
 							<div class="comment-wrapper">
 								<div class="comment-head">
@@ -82,7 +82,7 @@ function ajaxify_comments( $comment_ID, $comment_status ) {
                     <li id="comment-' . $commentdata['comment_ID'] . '" style="margin-left:65px;" >
                         <div id="comment-' . $commentdata['comment_ID'] . '" class="comment-body">
                             <div class="comment-author">
-                                ' . get_avatar( $commentdata['comment_author_email'], $size = '60' ) . '
+                                ' . get_avatar( $commentdata['comment_author_email'], $size = '30' ) . '
                             </div>
 							<div class="comment-wrapper">
 								<div class="comment-head">
@@ -231,7 +231,7 @@ function ajax_comment() {
 } ?>>
 	<div id="comment-<?php comment_ID(); ?>" class="comment-body cf">
 		<div class="comment-author">
-			<?php echo get_avatar( $comment, $size = '60' ); ?>
+			<?php echo get_avatar( $comment, $size = '30' ); ?>
 			<div class="comment-reply">
 
 			</div>
