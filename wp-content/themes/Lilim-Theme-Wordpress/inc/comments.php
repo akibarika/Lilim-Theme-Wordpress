@@ -13,7 +13,7 @@ function lilim_comment( $comment, $args, $depth ) {
 	} ?>>
 		<div id="comment-<?php comment_ID(); ?>" class="comment-body">
 			<div class="comment-author">
-				<?php echo get_avatar( $comment, $size = '30' ); ?>
+				<?php echo get_avatar( $comment, $size = '60' ); ?>
 				<div class="comment-reply">
 					<?php comment_reply_link( array_merge( $args, array(
 						'reply_text' => '回复',
@@ -57,7 +57,7 @@ function ajaxify_comments( $comment_ID, $comment_status ) {
                     <li id="comment-' . $commentdata['comment_ID'] . ' " >
                         <div id="comment-' . $commentdata['comment_ID'] . '" class="comment-body">
                             <div class="comment-author">
-                                ' . get_avatar( $commentdata['comment_author_email'], $size = '30' ) . '
+                                ' . get_avatar( $commentdata['comment_author_email'], $size = '60' ) . '
                             </div>
 							<div class="comment-wrapper">
 								<div class="comment-head">
@@ -82,7 +82,7 @@ function ajaxify_comments( $comment_ID, $comment_status ) {
                     <li id="comment-' . $commentdata['comment_ID'] . '" style="margin-left:65px;" >
                         <div id="comment-' . $commentdata['comment_ID'] . '" class="comment-body">
                             <div class="comment-author">
-                                ' . get_avatar( $commentdata['comment_author_email'], $size = '30' ) . '
+                                ' . get_avatar( $commentdata['comment_author_email'], $size = '60' ) . '
                             </div>
 							<div class="comment-wrapper">
 								<div class="comment-head">
@@ -231,7 +231,7 @@ function ajax_comment() {
 } ?>>
 	<div id="comment-<?php comment_ID(); ?>" class="comment-body cf">
 		<div class="comment-author">
-			<?php echo get_avatar( $comment, $size = '30' ); ?>
+			<?php echo get_avatar( $comment, $size = '60' ); ?>
 			<div class="comment-reply">
 
 			</div>
@@ -278,12 +278,8 @@ function ihacklog_user_can_edit_comment( $new_cmt_data, $comment_ID = 0 ) {
 	return $rs;
 }
 
-function get_ssl_avatar( $avatar ) {
-	$avatar = preg_replace( '/.*\/avatar\/(.*)\?s=([\d]+)&.*/', '<img src="https://secure.gravatar.com/avatar/$1?s=$2"
-	                                                                  class="avatar avatar-$2" height="$2" width="$2">',
-		$avatar );
-
+function get_ssl_avatar($avatar) {
+	$avatar = str_replace(array("www.gravatar.com", "0.gravatar.com", "1.gravatar.com", "2.gravatar.com"), "secure.gravatar.com", $avatar);
 	return $avatar;
 }
-
-add_filter( 'get_avatar', 'get_ssl_avatar' );
+add_filter('get_avatar', 'get_ssl_avatar');
