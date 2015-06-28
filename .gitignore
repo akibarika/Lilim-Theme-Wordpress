@@ -1,8 +1,10 @@
-# ignore everything in the root except the "wp-content" directory.
+# ignore everything in the root except the "wp-content" directory, gulpfile.js and package.json.
 /*
 /index.php
 !wp-content/
- 
+!gulpfile.js
+!package.json
+
 # ignore all files starting with .
 .*
  

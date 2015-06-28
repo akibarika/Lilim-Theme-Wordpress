@@ -1,0 +1,18 @@
+{
+  "vendor.js": [
+    "wp-content/themes/Lilim-Theme-Wordpress/src/js/jquery.min.js",
+    "wp-content/themes/Lilim-Theme-Wordpress/src/js/imagesloaded.pkgd.min.js"
+  ],
+  "app.js": [
+    "wp-content/themes/Lilim-Theme-Wordpress/src/js/all.js",
+    "wp-content/themes/Lilim-Theme-Wordpress/src/js/fx.js",
+    "wp-content/themes/Lilim-Theme-Wordpress/src/js/post.js"
+  ],
+  "comment.js": [
+    "wp-content/themes/Lilim-Theme-Wordpress/src/js/comments-ajax.js"
+  ],
+  "post.js": [
+    "wp-content/themes/Lilim-Theme-Wordpress/src/js/TweenMax.min.js",
+    "wp-content/themes/Lilim-Theme-Wordpress/src/js/share.js"
+  ]
+}
