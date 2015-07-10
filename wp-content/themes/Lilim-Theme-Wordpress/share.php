@@ -1,5 +1,5 @@
 <?php
-	$_description  = get_the_title() . ' - 作者: ' . the_author() . ',首发于' . get_bloginfo('name');
+	$_description  = get_the_title() . ' - 作者: ' . get_the_author() . ',首发于' . get_bloginfo('name');
 ?>
 <div class="share">
 	<button class="share-toggle-button">
