@@ -118,7 +118,6 @@
 .grid--view {
   .post--item {
     background   : none repeat scroll 0 0 #fcfcfc;
-    border-image : none;
     float        : left;
     margin       : 0px 10px 30px;
     width        : 440px;
@@ -139,8 +138,16 @@
     .wrap-content {
       height  : auto;
       z-index : 10;
+      border : 1px solid transparent;
+      .transition(all .3s ease-in-out);
+      &:hover {
+        border-color: lighten(@brand-primary,35%);
+      }
       &.format-status {
         .grid-icon(@i-grid-icon-3, @format-status-color);
+        &:hover {
+          border-color: lighten(@format-status-color,35%);
+        }
         .post-meta {
           & > div {
             width : 50%;
@@ -149,6 +156,9 @@
       }
       &.format-gallery {
         .grid-icon(@i-grid-icon-4, @format-gallery-color);
+        &:hover {
+          border-color: lighten(@format-gallery-color,35%);
+        }
         .post-meta {
           & > div {
             width : 25%;
@@ -157,6 +167,9 @@
       }
       &.format-aside {
         .grid-icon(@i-grid-icon-5, @format-aside-color);
+        &:hover {
+          border-color: lighten(@format-aside-color,35%);
+        }
         .post-meta {
           & > div {
             width : 50%;
@@ -165,6 +178,9 @@
       }
       &.format-link {
         .grid-icon(@i-grid-icon-2, @format-link-color);
+        &:hover {
+          border-color: lighten(@format-link-color,35%);
+        }
         .post-thumb {
           border-top : 1px solid #e5e5e5;
         }
@@ -176,6 +192,9 @@
       }
       &.format-quote {
         .grid-icon(@i-grid-icon-1, @format-quote-color);
+        &:hover {
+          border-color: lighten(@format-quote-color,35%);
+        }
         .post-quote {
           border        : 1px solid rgba(0, 0, 0, 0.05);
           margin        : 0 5px 15px;
