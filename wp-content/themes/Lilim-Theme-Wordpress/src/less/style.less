@@ -84,7 +84,7 @@
             zoom     : 1;
             width    : 100%;
             .transition(clip .4s cubic-bezier(0.645, .045, .355, 1));
-            z-index: 999;
+            z-index  : 999;
           }
           span {
             position : absolute;
@@ -906,15 +906,19 @@
           clear : both;
         }
         h2 {
-          color                : #a09f9f;
-          font-size            : 32px;
-          word-wrap            : break-word;
-          vertical-align       : middle;
-          writing-mode         : vertical-lr;
-          -webkit-writing-mode : vertical-lr;
-          @media only screen and (min-width : 480px) and (max-width : 767px) {
-            writing-mode         : horizontal-tb;
-            -webkit-writing-mode : horizontal-tb;
+          color      : #a09f9f;
+          font-size  : 32px;
+          position   : relative;
+          text-align : center;
+          width      : 300px;
+          margin     : 150px auto;
+          left       : -132px;
+          .rotate(90deg);
+          @media only screen and (max-width : 767px) {
+            .rotate(0deg);
+            left   : 0;
+            margin : 0 auto;
+            width  : auto;
           }
         }
       }
