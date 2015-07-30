@@ -1,0 +1,400 @@
+.nm-playselected:before {
+  content : "\e604"
+}
+
+.nm-next:before {
+  content : "\e600"
+}
+
+.nm-pause:before {
+  content : "\e601"
+}
+
+.nm-play:before, .paused .nm-pause:before {
+  content : "\e602"
+}
+
+.nm-nm-pause:before {
+  content : "\e605"
+}
+
+.nm-note:before {
+  content : "\e606"
+}
+
+.nm-previous:before {
+  content : "\e603"
+}
+
+.song-time {
+  float : right
+}
+
+.fxfont {
+  font-family               : "fx" !important;
+  font-size                 : 16px;
+  font-style                : normal;
+  -webkit-font-smoothing    : antialiased;
+  -webkit-text-stroke-width : 0.2px;
+  -moz-osx-font-smoothing   : grayscale
+}
+
+.album--wrapper {
+  padding          : 20px;
+  background-color : #f2f4f6;
+  position         : relative;
+  margin           : 20px 0
+}
+
+.nmplaylist {
+  letter-spacing : -1em;
+  padding        : 5px
+}
+
+.nmplaylist li {
+  letter-spacing     : 0;
+  position           : relative;
+  font-size          : 12px;
+  border-radius      : 3px;
+  padding            : 2px 10px !important;
+  vertical-align     : top;
+  overflow           : hidden;
+  list-style         : none !important;
+  margin             : 0 !important;
+  box-sizing         : border-box;
+  -webkit-box-sizing : border-box
+}
+
+.nmplaylist li a {
+  color : inherit !important
+}
+
+.nmplaylist.tworow li {
+  display : inline-block;
+  width   : 50%;
+}
+
+.album-play-timer {
+  position : absolute;
+  right    : 10px
+}
+
+.nmplaylist-item {
+  position : relative
+}
+
+.jp-progress {
+  position : fixed;
+  bottom   : 0;
+  left     : 0;
+  right    : 0;
+  height   : 3px
+}
+
+.nmplaylist li.nmplaylist-current .jp-play-bar {
+  position         : absolute;
+  bottom           : 0;
+  left             : 0;
+  top              : 0;
+  background-color : #ee4d50
+}
+
+.nmplaylist li.nmplaylist-current, .nmplaylist li:hover {
+  background-color : #888;
+  color            : #fff
+}
+
+.album--nice {
+  display        : inline-block;
+  width          : auto;
+  text-align     : center;
+  vertical-align : top;
+  padding        : 0 10px 0;
+  position       : relative;
+  margin-bottom  : 40px;
+  @media only screen and (min-width : 480px) {
+    width : 306px;
+  }
+  img {
+    vertical-align : top;
+    border         : 1px solid #333;
+    width          : 100%;
+    height         : auto;
+  }
+  &.is-active {
+    .fxfont::before {
+      content : "\e605";
+      color   : #ee4d50
+    }
+  }
+  .fxfont {
+    display           : none;
+    font-size         : 50px;
+    opacity           : 0.8;
+    position          : absolute;
+    text-align        : center;
+    margin            : auto;
+    text-transform    : lowercase;
+    top               : 50%;
+    left              : 50%;
+    -webkit-transform : translate(-50%, -50%);
+    -ms-transform     : translate(-50%, -50%);
+    transform         : translate(-50%, -50%);
+    .transition(opacity .25s ease-in-out);
+    &::before {
+      content : "\e604"
+    }
+  }
+}
+
+.small-cover .album--nice {
+  width   : 150px;
+  padding : 0
+}
+
+.music-info {
+  color         : #333;
+  display       : block;
+  font-size     : 12px;
+  line-height   : 1.5;
+  padding       : 3px 0;
+  text-overflow : ellipsis;
+  overflow      : hidden;
+  white-space   : nowrap
+}
+
+.album--nice:hover .fxfont, .album--nice.is-active .fxfont {
+  display : block
+}
+
+.album--nice.is-active.paused .fxfont:before {
+  content : "\e604"
+}
+
+.album-list {
+  margin : 0 auto
+}
+
+.content-with-thumb {
+  padding-right      : 240px;
+  position           : relative;
+  min-height         : 240px;
+  max-width          : 1000px;
+  margin             : 0 auto;
+  box-sizing         : border-box;
+  -webkit-box-sizing : border-box
+}
+
+.play-thumb {
+  width      : 240px;
+  position   : absolute;
+  top        : 0;
+  right      : 0;
+  box-shadow : 0 0 25px rgba(0, 0, 0, 0.15)
+}
+
+.album--title {
+  padding-bottom : 5px;
+  border-bottom  : 1px #ddd solid;
+  margin-bottom  : 5px;
+  max-width      : 1000px;
+  margin         : 0 auto 15px
+}
+
+.music-page-navi {
+  text-align : center;
+  margin     : 20px 0
+}
+
+.music-page-navi .page-numbers {
+  display          : inline-block;
+  padding          : 0 15px;
+  background-color : #eee;
+  color            : #555
+}
+
+.music-page-navi .page-numbers.current {
+  background-color : #ee4d50;
+  color            : #fff
+}
+
+.album--nice.is-active:after {
+  border       : medium solid rgba(0, 0, 0, 0);
+  bottom       : -30px;
+  content      : "";
+  left         : 50%;
+  margin-left  : -13px;
+  position     : absolute;
+  width        : 0;
+  z-index      : 9;
+  border-color : rgba(255, 255, 255, 0) rgba(255, 255, 255, 0) #f2f4f6;
+  border-width : 13px
+}
+
+.nmplaybar.appear {
+  bottom : 0
+}
+
+.nmplaybar {
+  position           : fixed;
+  bottom             : -60px;
+  left               : 0;
+  right              : 0;
+  background-color   : rgba(0, 0, 0, 0.95);
+  color              : #fff;
+  z-index            : 999;
+  height             : 60px;
+  transition         : 0.5s;
+  -webkit-transition : 0.5s
+}
+
+.nmplayer-wrap {
+  max-width : 1000px;
+  margin    : 0 auto;
+  overflow  : hidden
+}
+
+.nmplayer-prosess {
+  background : #ee4d50;
+  height     : 3px;
+  width      : 0
+}
+
+.nmplayer-control {
+  float : right
+}
+
+.nmplayer-info, .nmplayer-control {
+  font-size   : 13px;
+  line-height : 30px;
+  padding     : 15px 0
+}
+
+.nmplayer-control ul li {
+  display      : inline-block;
+  font-size    : 16px;
+  padding-left : 20px
+}
+
+.nmplayer-info {
+  color : #fff;
+  float : left
+}
+
+.nmplayer-title, .nmplayer-time {
+  margin-right : 5px
+}
+
+.nmsingle-audio {
+  border-radius    : 2px;
+  display          : inline-block;
+  height           : 100px;
+  overflow         : hidden;
+  width            : 316px;
+  position         : relative;
+  margin           : 20px 0;
+  background-color : #f4f6f8;
+  max-width        : 100%
+}
+
+.nmsingle-audio .xiami-cover {
+  position            : absolute;
+  height              : 100px;
+  overflow            : hidden;
+  position            : absolute;
+  text-align          : center;
+  width               : 100px;
+  background-position : center center;
+  background-repeat   : no-repeat;
+  background-size     : cover;
+  background-color    : rgba(0, 0, 0, 0.6);
+  left                : 0;
+  top                 : 0;
+  line-height         : 100px;
+  z-index             : 9
+}
+
+.nmsingle-audio .play-prosess {
+  position : absolute;
+  height   : 3px;
+  bottom   : 0;
+  left     : 0;
+  width    : 100%;
+  cursor   : pointer;
+  z-index  : 10
+}
+
+.nmsingle-audio .play-prosess-bar {
+  height           : 3px;
+  background-color : #ee4d50;
+  width            : 0%
+}
+
+.nmsingle-audio .play-timer {
+  position         : absolute;
+  right            : 5px;
+  bottom           : 5px;
+  background-color : #ee4d50;
+  color            : #fff;
+  font-size        : 12px;
+  font-family      : bigfa;
+  border-radius    : 2px;
+  padding          : 0 5px
+}
+
+.nmsingle-audio .audio-player {
+  padding-left : 110px;
+  height       : 100px;
+  font-size    : bigfa;
+  font-size    : 12px
+}
+
+.nmsingle-audio .audio-name {
+  color   : #ee4d50;
+  padding : 5px 0
+}
+
+.nmsingle-audio .audio-author {
+}
+
+.nmsingle-audio .play-button {
+  cursor : pointer
+}
+
+.nmsingle-audio .play-button .fxfont {
+  font-size : 48px;
+  color     : rgba(255, 255, 255, 0.95)
+}
+
+.nmsingle-audio .play-button:hover .fxfont {
+  color : #ee4d50
+}
+
+.nmsingle-audio .play-button .fxfont:before {
+  content : "\e604"
+}
+
+.nmsingle-audio .play-button.playing .fxfont:before {
+  content : "\e605"
+}
+
+.nm-copyright {
+  max-width  : 1000px;
+  text-align : right;
+  font-size  : 12px;
+  margin     : 0 auto;
+  padding    : 5px 10px
+}
+
+.nm-copyright i {
+  font-size : 14px
+}
+
+.nm-loadmore {
+  display       : inline-block;
+  border        : 1px #ee4d50 solid;
+  padding       : 3px 13px;
+  border-radius : 3px;
+  font-size     : 14px;
+  color         : #ee4d50
+}

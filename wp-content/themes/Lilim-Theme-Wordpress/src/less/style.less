@@ -869,9 +869,12 @@
 
   }
   #single {
-    margin   : 20px 0 0 0;
-    position : relative;
-    width    : 960px;
+    background : @white-color;
+    margin     : 20px 0 0 0;
+    position   : relative;
+    width      : 960px;
+    overflow   : hidden;
+    z-index    : 1;
     @media only screen and (min-width : 768px) and (max-width : 959px) {
       width : 740px;
     }
@@ -881,7 +884,7 @@
     @media only screen and (max-width : 479px) {
       width : 300px;
     }
-    &.wrap-work {
+    &.work-wrapper {
       height   : auto;
       overflow : hidden;
       .title {
@@ -1122,12 +1125,19 @@
         }
       }
     }
-    &.wrap-pixiv {
-      background : @white-color;
-      overflow   : hidden;
-      padding    : 25px 15px 75px;
-      position   : relative;
-      z-index    : 1;
+    &.music-wrapper {
+      padding  : 25px 15px 75px;
+      @media only screen and (min-width : 480px) and (max-width : 767px) {
+        width   : 440px;
+        padding : 25px 65px 75px;
+      }
+      @media only screen and (min-width : 768px) and (max-width : 959px) {
+        width   : 740px;
+        padding : 25px 45px 75px;
+      }
+    }
+    &.pixiv-wrapper {
+      padding  : 25px 15px 75px;
       @media only screen and (min-width : 768px) and (max-width : 959px) {
         width   : 740px;
         padding : 25px 45px 75px;
@@ -1248,11 +1258,7 @@
       }
     }
     &.wrap-single {
-      background : @white-color;
-      overflow   : hidden;
-      padding    : 25px 100px 75px;
-      position   : relative;
-      z-index    : 1;
+      padding : 25px 100px 75px;
       @media only screen and (min-width : 768px) and (max-width : 959px) {
         padding : 30px 50px 35px;
       }
