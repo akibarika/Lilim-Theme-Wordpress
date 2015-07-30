@@ -3,7 +3,7 @@
 	  */ ?>
 <?php get_header(); ?>
     <div id="page-wrap">
-        <section id="single" class="wrap-work page">
+        <section id="single" class="work-wrapper page">
             <div class="title left"><h2>#MY WORKS</h2></div>
             <div class="work-content right">
                 <div class="work-container">

@@ -7,7 +7,7 @@
                     <span class="tooltip-left" data-tooltip="分享"><div class="tool-icon icon-share"></div></span>
                     <span class="tooltip-left" data-tooltip="滚动"><div class="tool-icon tool-goto tool-down icon-angle-down"></div></span>
 				</div>			
-				<section id="single" class="wrap-pixiv page">
+				<section id="single" class="pixiv-wrapper page">
 					<div id="pixiv">
 					<?php
 					    $rss = simplexml_load_file('http://paid.feed43.com/pixiv_daily.xml');
