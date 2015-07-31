@@ -4,6 +4,7 @@
 !wp-content/
 !gulpfile.js
 !package.json
+!README.md
 
 # ignore all files starting with .
 .*

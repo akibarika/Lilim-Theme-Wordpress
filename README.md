@@ -14,11 +14,20 @@ Download [Lilim][2]
 ChangeLog
 ---
 
+Version 3.0.2
+
+*31-Jul-2015*
+
+   - Optimised the Javascript
+   - New Page: My Music launched
+
 Version 3.0
 
 *28-Mar-2015*
 
-   - Kinda new
+   - New Design of the Header and footer
+   - Two differnet styles post layout
+   - Responsive column layout
 
 Version 2.8
 
