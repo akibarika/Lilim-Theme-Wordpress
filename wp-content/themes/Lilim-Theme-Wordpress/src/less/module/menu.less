@@ -1,0 +1,149 @@
+#menu-mobile {
+  .display-none;
+  position    : fixed;
+  top         : 47px;
+  right       : -250px;
+  width       : 250px;
+  min-height  : 100%;
+  background  : #2d2d2d;
+  font-size   : 15px;
+  line-height : 36px;
+  color       : #aaa;
+  z-index     : 1000;
+  @media only screen and (max-width : 959px) {
+    display : block;
+  }
+  .transition(all .25s ease-out);
+  .bt-menu {
+    position    : absolute;
+    top         : 0;
+    left        : -66px;
+    width       : 66px;
+    height      : 65px;
+    background  : #2d2d2d;
+    text-indent : -23em;
+    overflow    : hidden;
+    cursor      : pointer;
+    .transition(all .25s ease-out);
+    &:before, &:after {
+      -moz-box-sizing    : content-box;
+      -webkit-box-sizing : content-box;
+      box-sizing         : content-box;
+      position           : absolute;
+      top                : 22px;
+      left               : 22px;
+      content            : '';
+      display            : block;
+      width              : 22px;
+      height             : 5px;
+      border-top         : 4px solid #888;
+      border-bottom      : 4px solid #888;
+    }
+    &:after {
+      top           : 40px;
+      left          : 22px;
+      border-top    : 4px solid #888;
+      border-bottom : 0;
+    }
+  }
+  .wrapper-menu {
+    overflow   : hidden;
+    overflow-y : auto;
+    ul {
+      float       : none;
+      width       : 100%;
+      padding-top : 18px;
+      & > li {
+        text-transform : uppercase;
+        cursor         : pointer;
+      }
+      li {
+        position   : relative;
+        list-style : none;
+        &:hover {
+          a::before {
+            clip : rect(0, 200px, 100px, 0);
+          }
+        }
+        a {
+          color        : #aaa;
+          height       : 35px;
+          display      : block;
+          line-height  : 36px;
+          padding-left : 30px;
+          position     : relative;
+          &::before {
+            left     : 50px;
+            position : absolute;
+            top      : 0;
+            clip     : rect(0, 0, 100px, 0);
+            content  : attr(data-content);
+            color    : #fff;
+            display  : inline-block;
+            zoom     : 1;
+            width    : 100%;
+            .transition(clip .4s cubic-bezier(0.645, .045, .355, 1));
+            z-index  : 999;
+          }
+          span {
+            position : absolute;
+            left     : 50px;
+
+          }
+        }
+      }
+      li:first-child {
+      }
+    }
+  }
+  .search-text {
+    display       : block;
+    clear         : both;
+    margin        : 10px 0;
+    padding       : 20px 0 20px 30px;
+    border-top    : 1px solid #343434;
+    border-bottom : 1px solid #343434;
+    overflow      : hidden;
+    span {
+      margin-bottom : 7px;
+      line-height   : normal;
+    }
+    .text {
+      float         : left;
+      width         : 130px;
+      height        : 30px;
+      padding       : 0 10px;
+      background    : #aaa;
+      border        : 0;
+      border-radius : 0;
+    }
+    .bt-search {
+      float         : left;
+      width         : 38px;
+      height        : 30px;
+      padding       : 0 5px;
+      line-height   : 31px;
+      background    : #888;
+      text-align    : center;
+      color         : #313131;
+      border        : 0;
+      border-radius : 0;
+      cursor        : pointer;
+      .transition(all .25s ease-out);
+    }
+  }
+  .others {
+    padding-bottom : 10px;
+    list-style     : none;
+    a {
+      display      : block;
+      height       : 35px;
+      padding-left : 30px;
+      font-size    : 15px;
+    }
+  }
+  &.open {
+    right : 0;
+  }
+
+}

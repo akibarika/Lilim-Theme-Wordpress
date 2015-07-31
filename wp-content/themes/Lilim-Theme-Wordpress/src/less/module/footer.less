@@ -1,0 +1,41 @@
+footer {
+  background-color : @white-color;
+  margin           : 20px auto 0;
+  width            : 100%;
+  position         : relative;
+}
+
+#footer {
+  height     : auto;
+  margin     : 0 auto;
+  overflow   : hidden;
+  position   : relative;
+  text-align : center;
+  p {
+    color          : #999;
+    font-size      : @f-normal-size;
+    line-height    : 60px;
+    padding        : 0 20px;
+    vertical-align : middle;
+    a {
+      color : #777;
+      &:hover {
+        color : #333;
+      }
+    }
+    span {
+      &.heart {
+        color : #e16b8c;
+        &:hover {
+          cursor          : default;
+          text-decoration : none;
+        }
+      }
+      color : #ba89b6;
+      &:hover {
+        cursor          : default;
+        text-decoration : underline;
+      }
+    }
+  }
+}
