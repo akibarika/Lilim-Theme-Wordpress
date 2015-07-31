@@ -1,4 +1,5 @@
 <?php
+$nmjson = new nmjson();
 
 function netease_music() {
 	echo netease_music_output();
@@ -17,11 +18,10 @@ function netease_music_output() {
 }
 
 function get_netease_music( $paged = null ) {
-	global $nmjson;
 	$index    = 0;
 	$userid   = nm_get_setting( 'id' ) ? nm_get_setting( 'id' ) : 30829298;
 	$row      = nm_get_setting( 'number' ) ? nm_get_setting( 'number' ) : 4;
-	$contents = $nmjson->netease_user( $userid );
+	$contents = nmjson::get_instance()->netease_user( $userid );
 	array_shift( $contents );
 	$per_page = nm_get_setting( 'perpage' ) ? nm_get_setting( 'perpage' ) : 16;
 	$count    = count( $contents );
