@@ -18,5 +18,42 @@
     "merge-stream": ">=0.1.7",
     "bower": "~1.3.5",
     "grunt": "~0.4.5"
-  }
+  },
+  "name": "akibarika",
+  "description": "Lilim Theme ========",
+  "version": "1.0.0",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "grunt": "^0.4.5",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp": "^3.9.0",
+    "gulp-bless": "^1.0.3",
+    "gulp-concat": "^2.6.0",
+    "gulp-cache": "^0.2.10",
+    "gulp-less": "^1.3.9",
+    "gulp-livereload": "^2.1.1",
+    "gulp-minify-css": "^0.3.13",
+    "bower": "^1.3.12",
+    "gulp-rimraf": "^0.1.1",
+    "gulp-plumber": "^0.6.6",
+    "gulp-jshint": "^1.11.0",
+    "gulp-notify": "^1.8.0",
+    "gulp-sourcemaps": "^1.2.8",
+    "gulp-uglify": "^0.3.2",
+    "gulp-util": "^3.0.6",
+    "merge-stream": "^0.1.7"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akibarika/Lilim-Theme-Version-2.git"
+  },
+  "author": "Akiba Rika <lxclxc89816@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/akibarika/Lilim-Theme-Version-2/issues"
+  },
+  "homepage": "https://github.com/akibarika/Lilim-Theme-Version-2#readme"
 }
