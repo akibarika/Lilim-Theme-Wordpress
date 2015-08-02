@@ -9,7 +9,7 @@ jQuery(document).ready(function (jQuery) {
                 init: function () {
                     var o = this,
                             postContent = jQuery('#post .column--invisible .list--post');
-                    o.hoverSearchText(), o.initial(postContent), o.placeToolbar(960, 60, 20), o.ajaxPostLoading(), o.responsiveColumn(postContent), o.navDropDownClick(), o.navFilterClick(), o.menuScroll(), o.upperDownClick(), o.toolBarPlace(), o.dispalyMoblieMenu(), o.tagPost(), o.ScrollMenuMobile(), o.searchClick(), o.layoutSwitchClick();
+                    o.hoverSearchText(), o.initial(postContent), o.placeToolbar(960, 60, 20), o.ajaxPostLoading(), o.responsiveColumn(postContent), o.navDropDownClick(), o.navFilterClick(), o.menuScroll(), o.upperDownClick(), o.toolBarPlace(), o.dispalyMoblieMenu(), o.tagPost(), o.ScrollMenuMobile(), o.searchClick(), o.layoutSwitchClick(), o.rippleEffect(), o.filledField();
                 },
                 hoverSearchText: function () {
                     jQuery('.search-text .text').focus(function () {
@@ -259,6 +259,46 @@ jQuery(document).ready(function (jQuery) {
                 setCookie: function (o, e) {
                     var i = new Date;
                     i.setTime(i.getTime() + 31536e6), document.cookie = o + '=' + e + ';path=/;expires=' + i.toUTCString()
+                },
+                rippleEffect: function () {
+                    var $ripple = jQuery('.rika-ripple');
+
+                    $ripple.on('click.ui.ripple', function (e) {
+
+                        var $this = jQuery(this);
+                        var $offset = $this.parent().offset();
+                        var $circle = $this.find('.c-ripple__circle');
+
+                        var x = e.pageX - $offset.left;
+                        var y = e.pageY - $offset.top;
+
+                        $circle.css({
+                            top: y + 'px',
+                            left: x + 'px'
+                        });
+
+                        $this.addClass('is-active');
+
+                    });
+
+                    $ripple.on('animationend webkitAnimationEnd oanimationend MSAnimationEnd', function (e) {
+                        jQuery(this).removeClass('is-active');
+                    });
+                },
+                filledField: function () {
+                    var $field = jQuery('.rika-textfield');
+
+                    $field.on('change', function (e) {
+                        if (jQuery(this).children('input').val()) {
+                            if (!jQuery(this).children('input').hasClass('is-filled')) {
+                                jQuery(this).children('input').addClass('is-filled');
+                            }
+                        } else {
+                            if (jQuery(this).children('input').hasClass('is-filled')) {
+                                jQuery(this).children('input').removeClass('is-filled');
+                            }
+                        }
+                    });
                 }
             };
 

@@ -1,0 +1,38 @@
+button {
+  -webkit-appearance : none;
+  position           : relative;
+  display            : inline-block;
+  padding            : 12px 24px;
+  margin             : 0;
+  vertical-align     : middle;
+  overflow           : visible;
+  color              : #fff;
+  font               : inherit;
+  font-size          : 14px;
+  line-height        : 20px;
+  font-weight        : 400;
+  text-align         : center;
+  letter-spacing     : 1px;
+  background         : transparent;
+  border             : 0;
+  user-select        : none;
+  width              : 100%;
+  .transition(all 0.2s ease);
+  &:hover,
+  &:focus {
+    outline         : 0;
+    text-decoration : none;
+  }
+}
+
+.button-modifier(@color, @class) {
+  .rika-button--@{class} {
+    background  : @color;
+    text-shadow : 2px 2px 0 darken(@color, 10%);
+    &:hover {
+      background : darken(@color, 5%);
+    }
+  }
+}
+
+.button-modifier(@brand-primary, primary);

@@ -28,13 +28,16 @@
   }
 }
 
-@keyframes ripple-animation {
-  from {
-    opacity : 0.4;
-    .scale(1);
-  }
-  to {
+@keyframes a-ripple {
+  0% {
     opacity : 0;
-    .scale(100);
+  }
+  25% {
+    opacity : 1;
+  }
+  100% {
+    width          : 200%;
+    padding-bottom : 200%;
+    opacity        : 0;
   }
 }

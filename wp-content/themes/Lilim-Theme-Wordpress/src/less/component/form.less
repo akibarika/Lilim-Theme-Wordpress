@@ -1,0 +1,83 @@
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline : none;
+}
+
+.rika-textfield {
+  position  : relative;
+  font-size : 16px;
+  width     : 100%;
+  margin    : 0;
+  padding   : 20px 0;
+  input {
+    border        : none;
+    border-bottom : 1px solid rgba(0, 0, 0, .12);
+    display       : inline-block;
+    font-size     : 16px;
+    margin        : 0;
+    padding       : 4px 0;
+    width         : 100%;
+    background    : 16px;
+    text-align    : left;
+    color         : inherit;
+    &.is-filled {
+      & + label {
+        opacity    : 0;
+        visibility : hidden;
+      }
+    }
+    &:focus,
+    &:active {
+      outline : none;
+      & + label.comment-label {
+        top        : 4px;
+        font-size  : 12px;
+        color      : @brand-primary;
+        visibility : visible;
+        opacity    : 1;
+        &:after {
+          visibility : visible;
+          left       : 0;
+          width      : 100%;
+        }
+      }
+    }
+  }
+  label.comment-label {
+    bottom         : 0;
+    color          : rgba(0, 0, 0, .26);
+    font-size      : 15px;
+    left           : 0;
+    right          : 0;
+    pointer-events : none;
+    position       : absolute;
+    top            : 24px;
+    width          : 100%;
+    overflow       : hidden;
+    white-space    : nowrap;
+    text-align     : left;
+    .transition(top .2s ease-in-out);
+    &::after {
+      background-color : @brand-primary;
+      bottom           : 20px;
+      content          : '';
+      height           : 2px;
+      left             : 45%;
+      position         : absolute;
+      visibility       : hidden;
+      width            : 10px;
+      .transition(all .2s ease-in-out);
+    }
+  }
+  textarea {
+    &:extend(.rika-textfield input all);
+    height : 50px;
+    .transition(height .2s ease-in-out);
+    &:focus,
+    &:active {
+      height : 150px;
+    }
+  }
+}
