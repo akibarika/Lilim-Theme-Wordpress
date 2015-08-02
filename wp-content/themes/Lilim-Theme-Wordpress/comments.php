@@ -31,9 +31,8 @@ if ( post_password_required() ) : ?>
                     </div>
                     </div>
                     <div class="comment-text rika-textfield">
-                        <textarea name="comment" id="comment" cols="100%" tabindex="4" onkeydown="if(event.ctrlKey&&event.keyCode==13){document.getElementById('submit').click();return false};"></textarea>
+                        <textarea placeholder="<?php echo _e('说些什么吧？'); ?>" name="comment" id="comment" cols="100%" tabindex="4" onkeydown="if(event.ctrlKey&&event.keyCode==13){document.getElementById('submit').click();return false};"></textarea>
                         <label class="comment-label text-area-label">
-                            <?php echo _e('说些什么吧？'); ?>
 						</label>
 					</div>
                     <button type="submit" name="submit" id="submit" class="rika-button--primary">
@@ -72,9 +71,8 @@ if ( post_password_required() ) : ?>
                             </div>
                         </div>
                         <div class="comment-text rika-textfield">
-                            <textarea name="comment" id="comment" cols="100%" tabindex="4" onkeydown="if(event.ctrlKey&&event.keyCode==13){document.getElementById('submit').click();return false};"></textarea>
+                            <textarea placeholder="<?php echo _e('说些什么吧？'); ?>" name="comment" id="comment" cols="100%" tabindex="4" onkeydown="if(event.ctrlKey&&event.keyCode==13){document.getElementById('submit').click();return false};"></textarea>
                             <label class="comment-label text-area-label">
-                                <?php echo _e('说些什么吧？'); ?>
 							</label>
 						</div>
 	                    <button type="submit" name="submit" id="submit" class="rika-button--primary">
