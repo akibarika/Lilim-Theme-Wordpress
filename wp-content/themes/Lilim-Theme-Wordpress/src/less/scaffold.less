@@ -15,6 +15,15 @@
   }
 }
 
+h3, h4 {
+  margin : 1.5em 0 .5em;
+}
+
+h3 {
+  font-size   : 1.5em;
+  line-height : 1.3;
+}
+
 svg {
   display : none;
 }
@@ -71,8 +80,22 @@ blockquote {
   background-color : #f3e077;
   position         : relative;
   color            : #484019;
-  padding          : 40px 25px 30px 60px;
+  padding          : 40px 20px 30px;
   margin-bottom    : 20px;
+  margin-left      : -20px;
+  margin-right     : -20px;
+  @media only screen and (min-width : 768px) and (max-width : 959px) {
+    padding-left  : 50px;
+    padding-right : 50px;
+    margin-left   : -50px;
+    margin-right  : -50px;
+  }
+  @media only screen and (min-width : 959px) {
+    padding-left  : 100px;
+    padding-right : 100px;
+    margin-left   : -100px;
+    margin-right  : -100px;
+  }
   p {
     display : inline;
   }
@@ -149,26 +172,26 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
 }
 
 .c-ripple {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  background: transparent;
+  position   : absolute;
+  top        : 0;
+  left       : 0;
+  width      : 100%;
+  height     : 100%;
+  overflow   : hidden;
+  background : transparent;
 }
 
 .c-ripple__circle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, .25);
+  position      : absolute;
+  top           : 50%;
+  left          : 50%;
+  transform     : translate(-50%, -50%);
+  opacity       : 0;
+  width         : 0;
+  height        : 0;
+  border-radius : 50%;
+  background    : rgba(255, 255, 255, .25);
   .c-ripple.is-active & {
-    animation: a-ripple .4s ease-in;
+    animation : a-ripple .4s ease-in;
   }
 }
