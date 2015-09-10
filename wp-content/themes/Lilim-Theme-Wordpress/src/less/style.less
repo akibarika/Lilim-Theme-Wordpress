@@ -27,41 +27,6 @@
   @media only screen and (max-width : 479px) {
     width : 300px;
   }
-  .bookmarks {
-    display       : block;
-    background    : none repeat scroll 0 0 #fafafa;
-    border-left   : 1px solid @gray-light;
-    border-right  : 1px solid @gray-light;
-    border-bottom : 2px solid @gray-light;
-    margin        : 20px auto 20px;
-    position      : relative;
-    overflow      : hidden;
-    width         : 960px;
-    a {
-      background     : none repeat scroll 0 0 #fafafa;
-      border-right   : 1px solid #ddd;
-      border-top     : 1px solid #ddd;
-      color          : #5b6064;
-      display        : block;
-      float          : left;
-      font-size      : @f-normal-size;
-      font-weight    : 300;
-      line-height    : 60px;
-      text-align     : center;
-      vertical-align : middle;
-      width          : 20%;
-      &:first-child, &:nth-child(2), &:nth-child(3), &:nth-child(4), &:nth-child(5) {
-        border-bottom : none;
-      }
-      &:nth-child(5n) {
-        border-right : none;
-      }
-      &:hover {
-        background : none repeat scroll 0 0 #5b6064;
-        color      : @white-color;
-      }
-    }
-  }
   .right-toolbar {
     bottom   : 20px;
     display  : block;
@@ -189,8 +154,9 @@
       width : 300px;
     }
     &.work-wrapper {
-      height   : auto;
-      overflow : hidden;
+      height           : auto;
+      overflow         : hidden;
+      background-color : transparent;
       .title {
         background-color : #fafafa;
         border           : 1px solid #ddd;

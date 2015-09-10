@@ -83,20 +83,18 @@ function lilim_scripts_styles() {
 		wp_enqueue_script( 'lilim_post', lilim_js_url( 'post' ), array(), LILIM_VERSION, true );
 	}
 	wp_localize_script( 'lilim', 'lilimajax', array(
-		'ajax_url'   => admin_url('admin-ajax.php'),
+		'ajax_url'   => admin_url( 'admin-ajax.php' ),
 		'jplayerurl' => lilim_js_url( 'jquery.jplayer.min' ),
 		'nonce'      => wp_create_nonce( 'akibarika' )
 	) );
 
 	wp_enqueue_script( 'lilim_comment', lilim_js_url( 'comment' ), array(), LILIM_VERSION, true );
-    wp_localize_script( 'lilim_comment', 'ajaxcomment', array(
-        'ajax_url'   => admin_url('admin-ajax.php')
-    ) );
+	wp_localize_script( 'lilim_comment', 'ajaxcomment', array(
+		'ajax_url' => admin_url( 'admin-ajax.php' )
+	) );
 }
 
-add_action( 'wp_enqueue_scripts', 'lilim_scripts_styles');
-
-
+add_action( 'wp_enqueue_scripts', 'lilim_scripts_styles' );
 
 
 function lilim( $e ) {
@@ -216,10 +214,42 @@ function my_nav_menu_attribs( $atts, $item, $args ) {
 	// inspect $item
 	foreach ( $menu_targets as $menu_target ) {
 		if ( $item->ID == $menu_target ) {
-			$atts['data-content'] = strip_tags($item->title);
+			$atts['data-content'] = strip_tags( $item->title );
 		}
 	}
+
 	return $atts;
 }
 
+function get_the_link_items( $id = null ) {
+	$bookmarks = get_bookmarks( 'orderby=date&category=' . $id );
+	$output    = '';
+	if ( ! empty( $bookmarks ) ) {
+		$output .= '<ul class="link-items">';
+		foreach ( $bookmarks as $bookmark ) {
+			$output .= '<li class="link-item"><a class="link-item-inner effect-apollo" href="' . $bookmark->link_url . '" title="' . $bookmark->link_description . '" target="_blank" >' . get_avatar( $bookmark->link_notes, 64 ) . '<span class="sitename">' . $bookmark->link_name . '</span></a></li>';
+		}
+		$output .= '</ul>';
+	}
 
+	return $output;
+}
+
+function get_link_items() {
+	$linkcats = get_terms( 'link_category' );
+	$result   = '';
+	if ( ! empty( $linkcats ) ) {
+		foreach ( $linkcats as $linkcat ) {
+			$result .= '<h3 class="link-title">' . $linkcat->name . '</h3>';
+			if ( $linkcat->description ) {
+				$result .= '<div class="link-description">' . $linkcat->description . '</div>';
+			}
+			$result .= get_the_link_items( $linkcat->term_id );
+		}
+	}
+	else {
+		$result = get_the_link_items();
+	}
+
+	return $result;
+}
