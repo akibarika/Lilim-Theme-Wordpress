@@ -271,7 +271,6 @@
           .front,
           .back {
             backface-visibility         : hidden;
-            -webkit-backface-visibility : hidden;
             position                    : absolute;
             top                         : 0;
             left                        : 0;
@@ -515,7 +514,6 @@
 
 .kanban {
   backface-visibility         : hidden;
-  -webkit-backface-visibility : hidden;
   color                       : #666;
   cursor                      : pointer;
   font-size                   : 20px;
@@ -650,13 +648,11 @@
   }
   &::after {
     background        : #6cc88a;
-    -webkit-animation : moveRight 0.8s linear infinite alternate;
     animation         : moveRight 0.8s linear infinite alternate;
     .translateX(-40px);
   }
   &::before {
     background        : #4fc3f7;
-    -webkit-animation : moveLeft 0.8s linear infinite alternate;
     animation         : moveLeft 0.8s linear infinite alternate;
     .translateX(40px);
   }
@@ -673,42 +669,14 @@
     position      : relative;
     margin-bottom : 20px;
   }
-  a:not([href$='.png']) {
-    color              : #ba89b6;
-    display            : inline-block;
-    position           : relative;
-    font-weight        : 500;
-    -webkit-transition : -webkit-transform 0.3s;
-    transition         : transform 0.3s;
-    .translateX(0);
-    &:hover, &::after {
-      .translateX(-16px);
-    }
-    &:hover,
-    &:focus {
-      &::after {
-        .translateX(0);
-      }
-    }
-    &::before,
-    &::after {
-      position : absolute;
-      height   : 100%;
-      content  : '';
-    }
-    &::before {
-      left       : 0;
-      z-index    : -1;
-      width      : 100%;
-      background : @white-color;
-    }
-    &::after {
-      left            : 100%;
-      z-index         : -2;
-      width           : 16px;
-      background      : #ba89b6 url(../fonts/arrow_right.svg) no-repeat 50% 50%;
-      background-size : 60% auto;
-      .transition(transform .3s);
+  a {
+    color       : #ba89b6;
+    display     : inline-block;
+    position    : relative;
+    font-weight : 500;
+    transition  : transform 0.3s;
+    &:hover {
+      text-decoration : underline;
     }
   }
   ul, ol {
@@ -718,8 +686,6 @@
     color                 : #fff;
     margin-bottom         : 20px;
     position              : relative;
-    -webkit-border-radius : 1px;
-    -moz-border-radius    : 1px;
     border-radius         : 1px;
     margin-left           : -20px;
     margin-right          : -20px;
@@ -744,8 +710,6 @@
       color                 : #fafafa;
       font-size             : 15px;
       background            : rgba(0, 0, 0, 0.2);
-      -webkit-border-radius : 1px 0 1px 0;
-      -moz-border-radius    : 1px 0 1px 0;
       border-radius         : 1px 0 1px 0;
     }
   }
