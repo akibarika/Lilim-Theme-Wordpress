@@ -89,9 +89,6 @@ function lilim_scripts_styles() {
 	) );
 
 	wp_enqueue_script( 'lilim_comment', lilim_js_url( 'comment' ), array(), LILIM_VERSION, true );
-	wp_localize_script( 'lilim_comment', 'ajaxcomment', array(
-		'ajax_url' => admin_url( 'admin-ajax.php' )
-	) );
 }
 
 add_action( 'wp_enqueue_scripts', 'lilim_scripts_styles' );

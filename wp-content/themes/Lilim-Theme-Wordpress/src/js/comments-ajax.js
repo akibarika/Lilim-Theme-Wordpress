@@ -6,7 +6,7 @@ jQuery(document).ready(function(jQuery) {
 	jQuery(document).on("submit", "#commentform",
 	function() {
 		jQuery.ajax({
-			url: ajaxcomment.ajax_url,
+			url: lilimajax.ajax_url,
 			data: jQuery(this).serialize() + "&action=ajax_comment",
 			type: jQuery(this).attr('method'),
 			beforeSend:addComment.createButterbar("提交中...."),
