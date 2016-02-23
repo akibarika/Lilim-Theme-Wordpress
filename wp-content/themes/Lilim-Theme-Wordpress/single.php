@@ -1,10 +1,10 @@
 <?php get_header(); ?>
 	<div id="page-wrap">
 		<div class="right-toolbar">
-			<span class="tooltip-left" data-tooltip="分享"><div class="tool-icon icon-share"></div></span>
-			<span class="tooltip-left" data-tooltip="回复"><div class="tool-icon icon-bubbles"></div></span>
-			<span class="tooltip-left" data-tooltip="滚动"><div
-					class="tool-icon tool-goto tool-down icon-angle-down"></div></span>
+			<span class="tooltip-left" data-tooltip="分享"><i class="tool-icon icon-share"></i></span>
+			<span class="tooltip-left" data-tooltip="回复"><i class="tool-icon icon-bubbles"></i></span>
+			<span class="tooltip-left" data-tooltip="滚动"><i
+					class="tool-icon tool-goto tool-down icon-angle-down"></i></span>
 		</div>
 		<section id="single" class="wrap-single">
 			<?php while ( have_posts() ) : the_post(); ?>
