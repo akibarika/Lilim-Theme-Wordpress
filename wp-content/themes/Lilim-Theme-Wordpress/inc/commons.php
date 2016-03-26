@@ -184,7 +184,7 @@ function html5_insert_image( $html, $id, $caption, $title, $align, $url, $size, 
 		$a_elem = "";
 	}
 	$attributes = ( ! empty( $id ) ? ' id="attachment_' . esc_attr( $id ) . '"' : '' );
-	$attributes .= ' class="thumbnail wp-caption ' . 'align' . esc_attr( $align ) . '"';
+	$attributes .= ' class="thumbnail wp-caption';
 	$output = '<figure' . $attributes . '>';
 	$output .= $a_elem;
 	$output .= $image_tag;

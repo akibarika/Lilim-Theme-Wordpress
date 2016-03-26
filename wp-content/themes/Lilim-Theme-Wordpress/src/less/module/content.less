@@ -270,10 +270,10 @@
           .avatar,
           .front,
           .back {
-            backface-visibility         : hidden;
-            position                    : absolute;
-            top                         : 0;
-            left                        : 0;
+            backface-visibility : hidden;
+            position            : absolute;
+            top                 : 0;
+            left                : 0;
           }
           .back {
             width  : 100%;
@@ -513,13 +513,13 @@
 }
 
 .kanban {
-  backface-visibility         : hidden;
-  color                       : #666;
-  cursor                      : pointer;
-  font-size                   : 20px;
-  padding                     : 40px;
-  text-transform              : uppercase;
-  position                    : relative;
+  backface-visibility : hidden;
+  color               : #666;
+  cursor              : pointer;
+  font-size           : 20px;
+  padding             : 40px;
+  text-transform      : uppercase;
+  position            : relative;
   &:hover {
     &::before {
       opacity : 1;
@@ -647,13 +647,13 @@
     z-index       : 1000;
   }
   &::after {
-    background        : #6cc88a;
-    animation         : moveRight 0.8s linear infinite alternate;
+    background : #6cc88a;
+    animation  : moveRight 0.8s linear infinite alternate;
     .translateX(-40px);
   }
   &::before {
-    background        : #4fc3f7;
-    animation         : moveLeft 0.8s linear infinite alternate;
+    background : #4fc3f7;
+    animation  : moveLeft 0.8s linear infinite alternate;
     .translateX(40px);
   }
 }
@@ -662,12 +662,16 @@
   height   : auto;
   position : relative;
   h3 {
-    color         : rgba(0, 0, 0, 0.44);
-    font-size     : 20px;
-    font-weight   : normal;
-    margin-top    : 40px;
-    position      : relative;
-    margin-bottom : 20px;
+    color          : rgba(0, 0, 0, 0.44);
+    font-size      : 20px;
+    font-weight    : normal;
+    padding-top    : 1.5em;
+    position       : relative;
+    padding-bottom : 0.75em;
+    padding-left   : 28px;
+    margin-left    : -28px;
+    border-left    : 3px solid @gray-dark;
+
   }
   a {
     color       : #ba89b6;
@@ -680,37 +684,25 @@
     }
   }
   ul, ol {
-    padding               : 40px 50px 30px;
-    font-size             : @f-normal-size;
-    background-color      : #65adc9;
-    color                 : #fff;
-    margin-bottom         : 20px;
-    position              : relative;
-    border-radius         : 1px;
-    margin-left           : -20px;
-    margin-right          : -20px;
-    @media only screen and (min-width : 768px) and (max-width : 959px) {
-      padding-left  : 50px;
-      padding-right : 50px;
-      margin-left   : -50px;
-      margin-right  : -50px;
-    }
-    @media only screen and (min-width : 959px) {
-      padding-left  : 100px;
-      padding-right : 100px;
-      margin-left   : -100px;
-      margin-right  : -100px;
-    }
+    padding          : 40px 50px 30px;
+    font-size        : @f-normal-size;
+    background-color : #65adc9;
+    color            : #fff;
+    margin-bottom    : 20px;
+    position         : relative;
+    border-radius    : 1px;
+    margin-left      : -25px;
+    margin-right     : -25px;
     &::before {
-      position              : absolute;
-      content               : 'List :';
-      left                  : 0;
-      top                   : 0;
-      padding               : 3px 10px;
-      color                 : #fafafa;
-      font-size             : 15px;
-      background            : rgba(0, 0, 0, 0.2);
-      border-radius         : 1px 0 1px 0;
+      position      : absolute;
+      content       : 'List :';
+      left          : 0;
+      top           : 0;
+      padding       : 3px 10px;
+      color         : #fafafa;
+      font-size     : 15px;
+      background    : rgba(0, 0, 0, 0.2);
+      border-radius : 1px 0 1px 0;
     }
   }
   ol {
@@ -743,44 +735,37 @@
     padding     : 0;
   }
   figure {
+    &.img--overflow {
+      display : block;
+      @media only screen and (min-width : 480px) {
+        box-shadow : 0 1px 3px rgba(0, 0, 0, .15), 0 1px 2px rgba(0, 0, 0, .3);
+        margin     : 20px -12%;
+        width      : 124%;
+        background : #fff;
+        padding    : 5px;
+      }
+    }
     display  : block;
     position : relative;
-    &.alignleft {
-      float         : left;
-      clear         : left;
-      margin-bottom : 10px;
-      margin-right  : 30px;
-      margin-top    : 10px;
-    }
-    &.alignright {
-      float         : right;
-      clear         : right;
-      margin-bottom : 10px;
-      margin-left   : 30px;
-      margin-top    : 10px;
-    }
-    &.aligncenter {
-      margin     : 10px auto;
-      text-align : center;
+    margin   : 1.5em -25px;
+    .wp-caption-text.caption {
+      font-family    : Georgia, serif;
+      letter-spacing : .01rem;
+      font-weight    : 400;
+      font-style     : italic;
+      font-size      : @f-normal-size;
+      color          : rgba(0, 0, 0, .6);
+      position       : relative;
+      width          : 100%;
+      text-align     : center;
+      left           : 0;
+      margin         : 10px 0;
+      padding        : 5px 0;
+      text-transform : capitalize;
     }
   }
   img {
-    border        : 1px solid #ddd;
-    border-radius : 4px;
-    height        : auto;
-    padding       : 4px;
-    max-width     : 750px;
-    @media only screen and (min-width : 768px) and (max-width : 959px) {
-      max-width : 600px;
-    }
-    @media only screen and (min-width : 480px) and (max-width : 767px) {
-      max-width : 398px;
-    }
-    @media only screen and (max-width : 479px) {
-      max-width : 258px;
-    }
-    &:hover {
-      border : 1px solid @brand-primary;
-    }
+    width  : 100%;
+    height : auto;
   }
 }
