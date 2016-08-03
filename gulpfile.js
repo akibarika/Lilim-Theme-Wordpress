@@ -6,6 +6,9 @@ var gulp = require('gulp'),
         rimraf = require('gulp-rimraf'),
         concat = require('gulp-concat'),
         path = require('path'),
+        svgstore = require('gulp-svgstore'),
+        svgmin = require('gulp-svgmin'),
+        rename = require("gulp-rename"),
         notify = require('gulp-notify'),
         sourcemaps = require('gulp-sourcemaps'),
         livereload = require('gulp-livereload'),
@@ -39,12 +42,8 @@ gulp.task('css', function () {
 
             .pipe(sourcemaps.init())
             .pipe(less())
+            .pipe(autoprefixer('last 2 versions'))
             .pipe(minifyCss({keepSpecialComments: 0}))
-            .pipe(autoprefixer({
-                browsers: ['last 2 version', 'IE 9'],
-                cascade: false
-            }))
-
             .pipe(sourcemaps.write('.'))
             .pipe(gulp.dest(paths.dest + 'css'))
             .pipe(notify({message: 'Successfully compiled LESS'}));
@@ -76,6 +75,28 @@ gulp.task('js', function () {
 
     return mergedStream;
 });
+
+// SVG tasks
+gulp.task('svgstore', function () {
+    return gulp
+            .src(paths.src + 'images/svg/*.svg')
+            .pipe(svgmin(function (file) {
+
+                var prefix = path.basename(file.relative, path.extname(file.relative));
+                return {
+                    plugins: [{
+                        cleanupIDs: {
+                            prefix: prefix + '-',
+                            minify: true
+                        }
+                    }]
+                }
+            }))
+            .pipe(svgstore())
+            .pipe(gulp.dest(paths.dest + 'images'))
+            .pipe(notify('Successfully compiled SVG'));
+});
+
 // Rimraf
 gulp.task('rimraf', function () {
     return gulp
@@ -95,7 +116,7 @@ gulp.task('watch', function () {
     gulp.watch(paths.src + 'less/**/*.less', ['css']);
 
     // Watch .js files
-    gulp.watch( paths.src +'js/**/*.js', ['js']);
+    gulp.watch(paths.src + 'js/**/*.js', ['js']);
 
     // Create LiveReload server
     //var server = livereload();
