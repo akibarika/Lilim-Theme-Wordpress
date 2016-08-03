@@ -224,25 +224,25 @@ jQuery(document).ready(function (jQuery) {
                         event.stopPropagation();
                         arrivedAtBottom = jQuery(window).scrollTop() >= jQuery(document).height() - jQuery(window).height();
                         if (arrivedAtBottom) {
-                            jQuery('.tool-goto').removeClass('tool-down icon-angle-down');
-                            jQuery('.tool-goto').addClass('tool-up icon-angle-up');
+                            jQuery('.tooltip-goto').find('.icon-vertical_align_bottom').hide();
+                            jQuery('.tooltip-goto').find('.icon-vertical_align_top').show();
                         } else {
-                            jQuery('.tool-goto').removeClass('tool-up icon-angle-up');
-                            jQuery('.tool-goto').addClass('tool-down icon-angle-down');
+                            jQuery('.tooltip-goto').find('.icon-vertical_align_top').hide();
+                            jQuery('.tooltip-goto').find('.icon-vertical_align_bottom').show();
                         }
                     })
                 },
                 upperDownClick: function () {
-                    jQuery(document).on('click', '.right-toolbar .tool-up', function () {
+                    jQuery(document).on('click', '.right-toolbar .icon-vertical_align_top', function () {
                         jQuery('html, body').animate({scrollTop: 0}, 500);
                     });
-                    jQuery(document).on('click', '.right-toolbar .tool-down', function () {
+                    jQuery(document).on('click', '.right-toolbar .icon-vertical_align_bottom', function () {
                         jQuery('html, body').animate({scrollTop: jQuery('#page-wrap').height()}, 500);
                     });
-                    jQuery(document).on('click', '.right-toolbar .icon-bubbles', function () {
+                    jQuery(document).on('click', '.right-toolbar .icon-question_answer', function () {
                         jQuery('html, body').animate({scrollTop: jQuery('#respond').position().top}, 500);
                     });
-                    jQuery(document).on('click', '.right-toolbar .icon-share', function () {
+                    jQuery(document).on('click', '.right-toolbar .icon-bubble_chart', function () {
                         jQuery('html, body').animate({scrollTop: jQuery('.share').position().top}, 500);
                     });
                 },

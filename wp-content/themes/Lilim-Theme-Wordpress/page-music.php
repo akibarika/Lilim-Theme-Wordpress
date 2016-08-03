@@ -4,9 +4,19 @@
 <?php get_header(); ?>
 	<div id="page-wrap">
 		<div class="right-toolbar">
-			<span class="tooltip-left" data-tooltip="分享"><i class="tool-icon icon-share"></i></span>
-			<span class="tooltip-left" data-tooltip="滚动"><i
-					class="tool-icon tool-goto tool-down icon-angle-down"></i></span>
+			<span class="tooltip-left" data-tooltip="分享">
+				<svg class="icon tool-icon icon-bubble_chart">
+					<use xlink:href="#bubble_chart"></use>
+				</svg>
+			</span>
+			<span class="tooltip-left tooltip-goto" data-tooltip="滚动">
+				<svg class="icon tool-icon icon-vertical_align_bottom">
+					<use xlink:href="#vertical_align_bottom"></use>
+				</svg>
+				<svg class="icon tool-icon icon-vertical_align_top">
+					<use xlink:href="#vertical_align_top"></use>
+				</svg>
+			</span>
 		</div>
 		<?php while ( have_posts() ) : the_post(); ?>
 			<section id="single" class="music-wrapper page">

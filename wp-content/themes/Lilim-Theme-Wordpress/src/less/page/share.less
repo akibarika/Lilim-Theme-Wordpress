@@ -9,14 +9,14 @@
     display : block;
   }
   i:hover {
-    color: inherit;
+    color : inherit;
   }
 }
 
 .share-button,
 .share-toggle-button {
   position      : absolute;
-  background  : lighten(@brand-primary, 15.5%);
+  background    : lighten(@brand-primary, 15.5%);
   display       : inline-block;
   left          : 50%;
   top           : 50%;
@@ -30,15 +30,15 @@
   color         : @white-color;
   border        : none;
   outline       : none;
-  .transition(background .25s ease);
+  transition    : background .25s ease;
   &:hover {
-    background  : lighten(@brand-primary, 9.5%);
+    background : lighten(@brand-primary, 9.5%);
   }
 }
 
 .share-button {
-  font-size   : 20px;
-  color       : @white-color;
+  font-size : 20px;
+  color     : @white-color;
   .scale(0.95; 0.95);
 
 }
@@ -57,8 +57,10 @@ a.share-button {
   list-style-type : none;
   padding         : 0;
   margin          : 0;
-}
-
-.share-item {
-  display : inline-block;
+  .share-item {
+    display : inline-block;
+    svg.icon {
+      height : 16px;
+    }
+  }
 }

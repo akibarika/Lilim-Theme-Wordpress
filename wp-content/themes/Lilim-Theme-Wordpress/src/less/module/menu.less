@@ -13,37 +13,25 @@
   @media only screen and (max-width : 959px) {
     display : block;
   }
-  .transition(all .25s ease-out);
+  transition  : all .25s ease-out;
   .bt-menu {
-    position    : absolute;
-    top         : 0;
-    left        : -66px;
-    width       : 66px;
-    height      : 65px;
-    background  : #2d2d2d;
-    text-indent : -23em;
-    overflow    : hidden;
-    cursor      : pointer;
-    .transition(all .25s ease-out);
-    &:before, &:after {
-      -moz-box-sizing    : content-box;
-      -webkit-box-sizing : content-box;
-      box-sizing         : content-box;
-      position           : absolute;
-      top                : 22px;
-      left               : 22px;
-      content            : '';
-      display            : block;
-      width              : 22px;
-      height             : 5px;
-      border-top         : 4px solid #888;
-      border-bottom      : 4px solid #888;
-    }
-    &:after {
-      top           : 40px;
-      left          : 22px;
-      border-top    : 4px solid #888;
-      border-bottom : 0;
+    position   : absolute;
+    top        : 0;
+    left       : -66px;
+    width      : 66px;
+    height     : 65px;
+    background : #2d2d2d;
+    overflow   : hidden;
+    cursor     : pointer;
+    transition : all .25s ease-out;
+    svg.icon {
+      color    : white;
+      position : absolute;
+      top      : 50%;
+      left     : 50%;
+      width    : 30px;
+      height   : 30px;
+      margin   : -15px 0 0 -15px;
     }
   }
   .wrapper-menu {
@@ -72,18 +60,21 @@
           line-height  : 36px;
           padding-left : 30px;
           position     : relative;
+          svg.icon {
+            width : 15px;
+          }
           &::before {
-            left     : 50px;
-            position : absolute;
-            top      : 0;
-            clip     : rect(0, 0, 100px, 0);
-            content  : attr(data-content);
-            color    : #fff;
-            display  : inline-block;
-            zoom     : 1;
-            width    : 100%;
-            .transition(clip .4s cubic-bezier(0.645, .045, .355, 1));
-            z-index  : 999;
+            left       : 50px;
+            position   : absolute;
+            top        : 0;
+            clip       : rect(0, 0, 100px, 0);
+            content    : attr(data-content);
+            color      : #fff;
+            display    : inline-block;
+            zoom       : 1;
+            width      : 100%;
+            transition : clip .4s cubic-bezier(0.645, .045, .355, 1);
+            z-index    : 999;
           }
           span {
             position : absolute;
@@ -129,7 +120,12 @@
       border        : 0;
       border-radius : 0;
       cursor        : pointer;
-      .transition(all .25s ease-out);
+      transition    : all .25s ease-out;
+      svg.icon {
+        color  : #313131;
+        width  : 15px;
+        height : 30px;
+      }
     }
   }
   .others {

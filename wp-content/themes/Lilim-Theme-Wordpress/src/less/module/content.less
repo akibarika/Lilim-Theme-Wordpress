@@ -49,8 +49,8 @@
       border-bottom : 0;
     }
     .wrap-content {
-      font-size : @f-large-size;
-      .transition(background .25s ease-in-out);
+      font-size  : @f-large-size;
+      transition : background .25s ease-in-out;
       &:hover {
         background : lighten(@brand-primary, 40%);
       }
@@ -88,12 +88,12 @@
     padding : 10px 0;
   }
   a.link {
-    cursor    : pointer;
-    color     : #424242;
-    display   : block;
-    font-size : @f-large-size;
-    padding   : 10px 5px;
-    .transition(all 0.2s ease-in-out);
+    cursor     : pointer;
+    color      : #424242;
+    display    : block;
+    font-size  : @f-large-size;
+    padding    : 10px 5px;
+    transition : all 0.2s ease-in-out;
     &:hover {
       padding-left : 15px;
     }
@@ -123,7 +123,7 @@
     margin     : 0px 10px 30px;
     width      : 440px;
     height     : auto;
-    .transition(opacity .3s ease-in-out);
+    transition : opacity .3s ease-in-out;
     @media only screen and (min-width : 768px) and (max-width : 959px) {
       margin : 0 4px 20px;
       width  : 360px;
@@ -137,10 +137,10 @@
       width  : 300px;
     }
     .wrap-content {
-      height  : auto;
-      z-index : 10;
-      border  : 1px solid transparent;
-      .transition(all .3s ease-in-out);
+      height     : auto;
+      z-index    : 10;
+      border     : 1px solid transparent;
+      transition : all .3s ease-in-out;
       &:hover {
         border-color : lighten(@brand-primary, 35%);
       }
@@ -256,7 +256,7 @@
             height           : 100%;
             display          : inline-block;
             text-indent      : -9999px;
-            .transition(all .8s ease-in-out);
+            transition       : all .8s ease-in-out;
           }
           &:hover {
             .back {
@@ -276,10 +276,10 @@
             left                : 0;
           }
           .back {
-            width  : 100%;
-            height : 100%;
+            width      : 100%;
+            height     : 100%;
             .rotateY(180deg);
-            .transition(all .8s ease-in-out);
+            transition : all .8s ease-in-out;
             a {
               background-color : @brand-primary;
               border-radius    : 50%;
@@ -291,12 +291,12 @@
               text-shadow      : 1px 1px rgba(0, 0, 0, 0.2);
               vertical-align   : middle;
               width            : 100%;
-              .transition(all .3s ease);
+              transition       : all .3s ease;
             }
           }
           .avatar {
             border-radius : 50%;
-            .transition(all .8s ease-in-out);
+            transition    : all .8s ease-in-out;
           }
         }
         .post-title {
@@ -314,7 +314,7 @@
                 font-size : 15px;
               }
               a {
-                .transition(all .2s ease-in-out);
+                transition : all .2s ease-in-out;
                 &:hover {
                   color : #ba89b6;
                 }
@@ -334,7 +334,7 @@
             position   : absolute;
             right      : 0;
             top        : 0;
-            .transition(all .25s ease);
+            transition : all .25s ease;
             &.show {
               z-index : 12;
               li {
@@ -387,7 +387,7 @@
               height      : 26px;
               line-height : 26px;
               word-wrap   : normal;
-              .transition(all .3s ease);
+              transition  : all .3s ease;
               .tag-bar {
                 float         : right;
                 height        : 26px;
@@ -406,7 +406,7 @@
                 white-space   : nowrap;
                 opacity       : 0;
                 visibility    : hidden;
-                .transition(all .3s ease-in-out);
+                transition    : all .3s ease-in-out;
               }
               &:first-child {
                 background-color : #f5f5f5;
@@ -494,7 +494,7 @@
             font-size   : @f-normal-size;
             font-weight : bold;
             opacity     : .7;
-            .transition(all .3s ease);
+            transition  : all .3s ease;
             &:hover {
               color   : @brand-primary;
               opacity : 1;
@@ -544,7 +544,7 @@
     content        : '';
     opacity        : 0;
     pointer-events : none;
-    .transition(all .35s);
+    transition     : all .35s;
   }
   &::before {
     border-top    : 1px solid #666;
@@ -560,7 +560,7 @@
     font-weight : 300;
     padding-top : 10%;
     text-align  : center;
-    .transition(transform 0.35s);
+    transition  : transform 0.35s;
     .translate3d(0, -20px, 0);
     span {
       font-weight : 800;
@@ -573,7 +573,7 @@
     padding        : 20px 34px;
     opacity        : 0;
     text-align     : center;
-    .transition(all 0.35s);
+    transition     : all 0.35s;
     .translate3d(0, 20px, 0);
   }
 }

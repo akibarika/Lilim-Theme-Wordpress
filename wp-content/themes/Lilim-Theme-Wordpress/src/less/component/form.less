@@ -58,7 +58,7 @@ button:focus {
     overflow       : hidden;
     white-space    : nowrap;
     text-align     : left;
-    .transition(top .2s ease-in-out);
+    transition     : top .2s ease-in-out;
     &::after {
       background-color : @brand-primary;
       bottom           : 20px;
@@ -68,13 +68,13 @@ button:focus {
       position         : absolute;
       visibility       : hidden;
       width            : 10px;
-      .transition(all .2s ease-in-out);
+      transition       : all .2s ease-in-out;
     }
   }
   textarea {
     &:extend(.rika-textfield input all);
-    height : 50px;
-    .transition(height .2s ease-in-out);
+    height     : 50px;
+    transition : height .2s ease-in-out;
     .placeholder({ font-size : 15px; color : rgba(0, 0, 0, .26); });
     &:focus,
     &:active {

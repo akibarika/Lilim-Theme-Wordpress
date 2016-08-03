@@ -18,11 +18,13 @@
 	<?php wp_head(); ?>
 </head>
 <body>
+<div style="height: 0; width: 0; position: absolute; visibility: hidden">
+	<?php echo file_get_contents( get_template_directory() . '/images/svg.svg' ); ?>
+</div>
 <header id="header">
 	<nav class="top">
 		<h2 class="hitokoto">
-			<script src="http://api.hitokoto.us/rand?encode=js&charset=utf-8"></script>
-			<script>hitokoto()</script>
+			<?php echo __('レムちゃん、一生愛してる') ?>
 		</h2>
 		<ul class="right">
 			<li class="login">
@@ -41,24 +43,24 @@
 	</nav>
 	<nav class="main">
 		<a id="logo" href="<?php echo home_url() ?>">
-			<?php if(is_home()): ?>
-			<h1>Akiba<span>Rika</span></h1>
+			<?php if ( is_home() ): ?>
+				<h1>Akiba<span>Rika</span></h1>
 			<?php else: ?>
-			Akiba<span>Rika</span>
+				Akiba<span>Rika</span>
 			<?php endif ?>
 		</a>
 		<?php wp_nav_menu( array(
 			'theme_location' => 'page-menu',
 			'container'      => '',
 			'menu_class'     => 'menu right',
-			'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s<li class="rika--mark"><span>Cherish Life</span></li><li class="search"><span class="bt-search"><i class="icon-search"></i></span></li></ul>'
+			'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s<li class="rika--mark"><span>Cherish Life</span></li><li class="search"><span class="bt-search"><svg class="icon icon-magnifying-glass"><use xlink:href="#magnifying-glass"></use></svg></span></li></ul>'
 		) ); ?>
 		<div class="search-text">
 			<?php get_search_form(); ?>
 		</div>
 	</nav>
 	<section id="menu-mobile">
-		<span class="bt-menu">Menu</span>
+		<span class="bt-menu"><svg class="icon icon-dehaze"><use xlink:href="#dehaze"></use></svg></span>
 
 		<div class="wrapper-menu">
 			<?php wp_nav_menu( array(
@@ -82,10 +84,22 @@
 		<div class="right">
 			<ul class="menu2">
 				<li class="view-list">
-					<i class="icon-layout icon-th <?php echo $_COOKIE['layout'] == '2' ? '':'active' ?>">Grid</i>
-					<i class="icon-layout icon-th-list <?php echo $_COOKIE['layout'] == '2' ? 'active':'' ?>">List</i>
+					<i class="icon-layout icon-th <?php echo $_COOKIE['layout'] == '2' ? '' : 'active' ?>">
+						<svg class="icon icon-dashboard">
+							<use xlink:href="#dashboard"></use>
+						</svg>
+					</i>
+					<i class="icon-layout icon-th-list <?php echo $_COOKIE['layout'] == '2' ? 'active' : '' ?>">
+						<svg class="icon icon-list">
+							<use xlink:href="#list"></use>
+						</svg>
+					</i>
 				</li>
-				<li class="bt-filters open-nav icon-inbox"><span>filter sites by topic</span></li>
+				<li class="bt-filters open-nav icon-inbox"><span>filter sites by topic</span>
+					<svg class="icon icon-inbox">
+						<use xlink:href="#inbox"></use>
+					</svg>
+				</li>
 			</ul>
 		</div>
 	</nav>
@@ -99,7 +113,7 @@
 			</div>
 			<div class="wrapper-dropdown" id="lilim-tag">
 				<span>By Tag</span>
-				<?php wp_tag_cloud('smallest=13&largest=13&number=50&format=list&unit=px');?>
+				<?php wp_tag_cloud( 'smallest=13&largest=13&number=50&format=list&unit=px' ); ?>
 			</div>
 		</div>
 		<div class="bt-close close-nav"></div>

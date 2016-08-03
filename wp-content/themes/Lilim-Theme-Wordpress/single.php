@@ -1,10 +1,24 @@
 <?php get_header(); ?>
 	<div id="page-wrap">
 		<div class="right-toolbar">
-			<span class="tooltip-left" data-tooltip="分享"><i class="tool-icon icon-share"></i></span>
-			<span class="tooltip-left" data-tooltip="回复"><i class="tool-icon icon-bubbles"></i></span>
-			<span class="tooltip-left" data-tooltip="滚动"><i
-					class="tool-icon tool-goto tool-down icon-angle-down"></i></span>
+			<span class="tooltip-left" data-tooltip="分享">
+				<svg class="icon tool-icon icon-bubble_chart">
+					<use xlink:href="#bubble_chart"></use>
+				</svg>
+			</span>
+			<span class="tooltip-left" data-tooltip="回复">
+				<svg class="icon tool-icon icon-question_answer">
+					<use xlink:href="#question_answer"></use>
+				</svg>
+			</span>
+			<span class="tooltip-left tooltip-goto" data-tooltip="滚动">
+				<svg class="icon tool-icon icon-vertical_align_bottom">
+					<use xlink:href="#vertical_align_bottom"></use>
+				</svg>
+				<svg class="icon tool-icon icon-vertical_align_top">
+					<use xlink:href="#vertical_align_top"></use>
+				</svg>
+			</span>
 		</div>
 		<section id="single" class="wrap-single">
 			<?php while ( have_posts() ) : the_post(); ?>
@@ -20,15 +34,18 @@
 					</div>
 					<div class="single-meta">
 						<div class="category">
-							<span><i class="icon-folder-open"></i> <?php the_category( '、' ) ?></span>
+							<span><svg class="icon icon-folder_open"><use
+										xlink:href="#folder_open"></use></svg> <?php the_category( '、' ) ?></span>
 						</div>
 						<div class="meta">
-							<span><i class="icon-tags"></i> <?php the_tags( ( ' ' ), ', ' ); ?></span>
+							<span><svg class="icon icon-local_offer"><use
+										xlink:href="#local_offer"></use></svg> <?php the_tags( ( ' ' ), ', ' ); ?></span>
 						</div>
 						<div class="meta">
-							<span><i class="icon-cc"></i> This work is licensed under a <a class="cc"
-							                                                               href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
-							                                                               target="_blank">cc by-nc-sa
+							<span><svg class="icon icon-closed_caption"><use xlink:href="#closed_caption"></use></svg> This work is licensed under a <a
+									class="cc"
+									href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+									target="_blank">cc by-nc-sa
 									4.0</a>. </span>
 						</div>
 					</div>
