@@ -79,7 +79,7 @@ add_action( 'comment_post', 'comment_mail_notify' );
 function lilim_scripts_styles() {
 	wp_enqueue_script( 'lilim_vendor', lilim_js_url( 'vendor' ), array(), LILIM_VERSION, true );
 	wp_enqueue_script( 'lilim', lilim_js_url( 'app' ), array(), LILIM_VERSION, true );
-	if ( is_single() ) {
+	if ( is_single() || is_page() ) {
 		wp_enqueue_script( 'lilim_post', lilim_js_url( 'post' ), array(), LILIM_VERSION, true );
 	}
 	wp_localize_script( 'lilim', 'lilimajax', array(

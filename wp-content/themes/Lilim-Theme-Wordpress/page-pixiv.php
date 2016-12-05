@@ -21,7 +21,7 @@
 	<section id="single" class="pixiv-wrapper page">
 		<div id="pixiv">
 			<?php
-			$rss = simplexml_load_file( 'http://paid.feed43.com/pixiv_daily.xml' );
+			$rss = simplexml_load_file( 'http://feed43.com/pixiv_daily.xml' );
 			?>
 			<h1 class="ribbon">
 				<strong class="ribbon-content"><?php echo $rss->channel->title; ?></strong>
@@ -43,7 +43,7 @@
 				}
 			}
 			?>
-			<?php echo wp_sns_share(); ?>
+			<?php get_template_part( 'share' ); ?>
 		</div>
 	</section>
 </div>

@@ -146,7 +146,7 @@ jQuery(document).ready(function (jQuery) {
                         var html = jQuery.parseHTML(o);
                         jQuery('#post').html(jQuery('#post', html).html());
                         jQuery('.navigation').html(jQuery('.navigation', html).html());
-                        jQuery('.wp-post-image').load(function (o) {
+                        jQuery('.wp-post-image').on('load', function () {
                             RikaSite.prototype.initial(jQuery('#post .column--invisible .list--post'));
                             RikaSite.prototype.responsiveColumn(jQuery('#post .column--invisible .list--post'));
                         });
