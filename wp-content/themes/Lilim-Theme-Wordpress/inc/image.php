@@ -1,6 +1,6 @@
 <?php
 
-function fa_converse_webp_filter( $content ) {
+function rika_converse_webp_filter( $content ) {
 	global $post;
 	if ( preg_match_all( '/\ src=\"([^\"]+)\.(png|jpg|jpeg)/i', $content, $matches ) == false ) {
 		return $this;
@@ -69,5 +69,5 @@ function rika_is_support_webp() {
 }
 
 if ( rika_is_support_webp() ) {
-	add_filter( 'the_content', 'fa_converse_webp_filter' );
+	add_filter( 'the_content', 'rika_converse_webp_filter' );
 }

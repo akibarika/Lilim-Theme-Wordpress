@@ -84,7 +84,6 @@ function lilim_scripts_styles() {
 	}
 	wp_localize_script( 'lilim', 'lilimajax', array(
 		'ajax_url'   => admin_url( 'admin-ajax.php' ),
-		'jplayerurl' => lilim_js_url( 'jquery.jplayer.min' ),
 		'nonce'      => wp_create_nonce( 'akibarika' )
 	) );
 

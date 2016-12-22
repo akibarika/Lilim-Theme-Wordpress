@@ -165,9 +165,9 @@ jQuery(document).ready(function (jQuery) {
                     });
                 },
                 navFilterClick: function () {
-                    jQuery(document).on('click', '.wrapper-dropdown', function () {
+                    jQuery(document).on('click', '.wrapper-dropdown', function (o) {
                         jQuery(this).toggleClass('active');
-                        jQuery.stopPropagation()
+                        o.stopPropagation()
                     });
                     jQuery(document).on('click', '.nav-sidebar', function (o) {
                         o.stopPropagation()

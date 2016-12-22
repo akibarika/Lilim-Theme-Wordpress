@@ -5,7 +5,6 @@
   ],
   "app.js": [
     "wp-content/themes/Lilim-Theme-Wordpress/src/js/all.js",
-    "wp-content/themes/Lilim-Theme-Wordpress/src/js/fx.js",
     "wp-content/themes/Lilim-Theme-Wordpress/src/js/post.js"
   ],
   "comment.js": [

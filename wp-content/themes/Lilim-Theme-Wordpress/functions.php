@@ -7,7 +7,6 @@ require LILIM_PATH . '/inc/post_type.php';
 require LILIM_PATH . '/inc/comments.php';
 require LILIM_PATH . '/inc/pagenav.php';
 require LILIM_PATH . '/inc/commons.php';
-require LILIM_PATH . '/inc/music.php';
 require LILIM_PATH . '/inc/image.php';
 
 
