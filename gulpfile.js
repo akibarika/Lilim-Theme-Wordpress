@@ -42,7 +42,7 @@ gulp.task('css', function () {
 
             .pipe(sourcemaps.init())
             .pipe(less())
-            .pipe(autoprefixer('last 2 versions'))
+            .pipe(autoprefixer())
             .pipe(minifyCss({keepSpecialComments: 0}))
             .pipe(sourcemaps.write('.'))
             .pipe(gulp.dest(paths.dest + 'css'))
