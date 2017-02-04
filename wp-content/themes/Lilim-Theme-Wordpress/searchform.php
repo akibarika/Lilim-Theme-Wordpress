@@ -1,9 +1,9 @@
-<form method="get" action="<?php bloginfo( 'url' ); ?>" role="search">
-	<input type="text" name="s" class="text" value="找东西？" x-webkit-speech/>
-	<button type="submit" class="bt-search icon-search" value="戳">
-		<svg class="icon icon-magnifying-glass">
-			<use xlink:href="#magnifying-glass"></use>
-		</svg>
-	</button>
+<form role="search" method="get" class="search-form" action="<?php echo home_url('/'); ?>">
+    <div class="header__item ico-search">
+        <svg class="icon icon-magnifying-glass">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#magnifying-glass"></use>
+        </svg>
+    </div>
+    <input type="text" id="search-text" placeholder="SEARCH FOR ..." class="search-input js-search-input" name="s"
+           value="<?php echo get_search_query() ?>">
 </form>
-

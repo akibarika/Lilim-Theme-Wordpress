@@ -36,3 +36,23 @@ button {
 }
 
 .button-modifier(@brand-primary, primary);
+
+.bt-close {
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    top: 33px;
+    right: 27px;
+    width: 20px;
+    height: 3px;
+    background: #202121;
+    transform: rotate(45deg);
+    transition: all .3s ease-in-out;
+  }
+  &::after {
+    transform: rotate(-45deg);
+  }
+  &:hover {
+    opacity: .75;
+  }
+}

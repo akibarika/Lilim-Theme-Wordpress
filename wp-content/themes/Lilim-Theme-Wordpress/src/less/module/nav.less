@@ -1,41 +1,133 @@
-.navigation {
-  background : none repeat scroll 0 0 @white-color;
-  display    : block;
-  height     : 60px;
-  margin     : 20px auto 20px;
-  position   : relative;
-  width      : 1420px;
-  @media only screen and (min-width : 960px) and (max-width : 1419px) {
-    width : 960px;
+.nav-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 320px;
+  height: 100vh;
+  background: #f4f7f6;
+  overflow-y: auto;
+  z-index: 301;
+  transform: translateX(-320px);
+  transition: transform .5s ease-in-out, background .3s ease-in-out;
+  &__header {
+    height: 70px;
+    padding: 0 30px;
+    line-height: 70px;
+    font-weight: normal;
+    background-color: #f4f7f6;
+    border-bottom: 1px solid #e6eaea;
+    overflow: hidden;
+    z-index: 1;
+    transition: all .3s ease-in-out;
+    .bt-close {
+      cursor: pointer;
+      padding-right: 30px;
+      color: #202121;
+      overflow: hidden;
+      z-index: 1;
+      transition: all .3s ease-in-out;
+    }
   }
-  @media only screen and (max-width : 767px) {
-    width : 100%;
+  &__menu {
+    display: block;
+    li {
+      position: relative;
+      & > a {
+        position: relative;
+        display: block;
+        padding: 24px 36px;
+        font-size: 17px;
+        font-weight: bold;
+        color: #202121;
+        cursor: pointer;
+        background: #f4f7f6;
+        border-bottom: 1px solid #e6eaea;
+        transition: background .3s ease-in-out, border .3s ease-in-out, color .3s ease-in-out;
+        &:hover {
+          background-color: #fcfcfc;
+        }
+      }
+      &.current-menu-item {
+        a {
+          color: @brand-primary;
+        }
+      }
+      &.menu-item-has-children {
+        &::before, &::after {
+          content: '';
+          position: absolute;
+          right: 28px;
+          width: 18px;
+          z-index: 1;
+        }
+        &::before {
+          top: 27px;
+          height: 8px;
+          border-top: 3px solid #dbe0df;
+          border-bottom: 3px solid #dbe0df;
+        }
+        &::after {
+          top: 37px;
+          height: 3px;
+          border-top: 3px solid #dbe0df;
+        }
+      }
+    }
+  }
+  .sub-menu {
+    display: none;
+    li {
+      a {
+        font-size: 13px;
+        font-weight: normal;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+.navigation {
+  background: none repeat scroll 0 0 @white-color;
+  display: block;
+  height: 60px;
+  margin: 20px auto 20px;
+  position: relative;
+  width: 1420px;
+  @media only screen and (min-width: 960px) and (max-width: 1419px) {
+    width: 960px;
+  }
+  @media only screen and (max-width: 767px) {
+    width: 100%;
   }
   li {
-    background-color : @white-color;
-    display          : block;
-    float            : left;
-    height           : 60px;
-    line-height      : 60px;
-    text-align       : center;
-    vertical-align   : middle;
-    width            : 60px;
+    background-color: @white-color;
+    display: block;
+    float: left;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    vertical-align: middle;
+    width: 60px;
     a {
       &:extend(.navigation  li);
     }
     a:hover {
-      background : #f2f2f2;
-      color      : #ba89b6;
+      background: #f2f2f2;
+      color: #ba89b6;
     }
   }
   li.active a {
-    background-color : #3f3f3f;
-    color            : @white-color;
-    position         : relative;
+    background-color: #3f3f3f;
+    color: @white-color;
+    position: relative;
   }
 }
 
 .prev, .next {
-  padding : 0 10px;
+  padding: 0 10px;
 }
 

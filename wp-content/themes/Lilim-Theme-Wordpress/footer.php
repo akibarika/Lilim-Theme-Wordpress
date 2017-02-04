@@ -57,6 +57,8 @@
 				class="heart">&#60;3</span> in Theme <span>Lilim</span>.</p>
 	</section>
 </footer>
+<div class="overlay-content"></div>
+
 <!--            Google Analytics-->
 <script>
 	(function (i, s, o, g, r, a, m) {
@@ -76,6 +78,7 @@
 
 </script>
 <?php wp_footer(); ?>
+</div>
 </body>
 
 </html>
