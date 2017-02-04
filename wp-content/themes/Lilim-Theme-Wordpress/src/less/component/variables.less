@@ -1,26 +1,12 @@
-//
-// Variables
-// --------------------------------------------------
-
-// Global values
-// --------------------------------------------------
-
-// Grays
-// -------------------------
-
 @gray-darker: lighten(#000, 13.5%);
-// #222
-@gray-dark: lighten(#000, 20%);
-// #333
-@gray: lighten(#000, 33.5%);
-// #555
-@gray-light: lighten(#000, 60%);
-// #999
-@gray-lighter: lighten(#000, 93.5%);
-// #eee
 
-// // Brand colors
-// // -------------------------
+@gray-dark: lighten(#000, 20%);
+
+@gray: lighten(#000, 33.5%);
+
+@gray-light: lighten(#000, 60%);
+
+@gray-lighter: lighten(#000, 93.5%);
 
 @brand-primary: #986794;
 @brand-second: lighten(@brand-primary, 10%);
@@ -29,44 +15,25 @@
 @brand-danger: #d9534f;
 @brand-info: #5bc0de;
 
-// // Scaffolding
-// // -------------------------
-
 @white-color: #fff;
 @light-color: #fafafa;
 @purple-color: #967adc;
 
-@format-status-color : #742e34;
+@format-status-color: #742e34;
 @format-aside-color: #5c4942;
 @format-gallery-color: #4a6e68;
 @format-link-color: #51492d;
 @format-quote-color: #094a40;
 
-//== Typography
-//
-//## Font, line-height, and color for body text, headings, and more.
-
 @main-font: 'Roboto', 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Hiragino Sans GB W3', 'Microsoft YaHei', sans-serif;
 
 @f-small-size: 12px;
-@f-normal-size : 14px;
+@f-normal-size: 14px;
 @f-large-size: 16px;
 
-//** Unit-less `line-height` for use in components like buttons.
 @line-height-base: 1.428571429;
 
 @line-height-computed: floor((@f-normal-size * @line-height-base));
-
-/*
-LESS variables are information about icon's compiled state, stored under its original file name
-
-.icon-home {
-  width: @icon-home-width;
-}
-
-The large array-like variables contain all information about a single icon
-@icon-home: x y offset_x offset_y width height total_width total_height image_path;
-*/
 
 @i-grid-icon-2: 0, -92px;
 @i-grid-icon-3: 0, -138px;
@@ -74,9 +41,20 @@ The large array-like variables contain all information about a single icon
 @i-grid-icon-5: 0, -276px;
 @i-grid-icon-1: 0, -46px;
 
-//== Grid system
-//
-//## Define your custom responsive grid.
-
-//** Padding between columns. Gets divided in half for the left and right.
 @grid-gutter-width: 20px;
+
+@screen-xs: 480px;
+@screen-xs-min: @screen-xs;
+@screen-phone: @screen-xs-min;
+@screen-sm: 768px;
+@screen-sm-min: @screen-sm;
+@screen-tablet: @screen-sm-min;
+@screen-md: 992px;
+@screen-md-min: @screen-md;
+@screen-desktop: @screen-md-min;
+@screen-lg: 1200px;
+@screen-lg-min: @screen-lg;
+@screen-lg-desktop: @screen-lg-min;
+@screen-xs-max: (@screen-sm-min - 1);
+@screen-sm-max: (@screen-md-min - 1);
+@screen-md-max: (@screen-lg-min - 1);
