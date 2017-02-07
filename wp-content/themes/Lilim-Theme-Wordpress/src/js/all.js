@@ -9,7 +9,7 @@ jQuery(document).ready(function (jQuery) {
             init: function () {
                 var o = this,
                     postContent = jQuery('#post .column--invisible .list--post');
-                o.triggerSearch(), o.triggerMenu(), o.triggerSubmenu(), o.initial(postContent), o.placeToolbar(960, 60, 20), o.ajaxPostLoading(), o.responsiveColumn(postContent), o.navDropDownClick(), o.navFilterClick(), o.menuScroll(), o.upperDownClick(), o.toolBarPlace(), o.dispalyMoblieMenu(), o.tagPost(), o.ScrollMenuMobile(), o.searchClick(), o.layoutSwitchClick(), o.rippleEffect(), o.filledField();
+                o.triggerSearch(), o.triggerMenu(), o.triggerSubmenu(), o.initial(postContent), o.placeToolbar(960, 60, 20), o.ajaxPostLoading(), o.responsiveColumn(postContent), o.navDropDownClick(), o.navFilterClick(), o.menuScroll(), o.upperDownClick(), o.toolBarPlace(), o.dispalyMoblieMenu(), o.tagPost(), o.ScrollMenuMobile(), o.searchClick(), o.rippleEffect(), o.filledField();
             },
             triggerSearch: function () {
                 jQuery('.js-search').on('click', function () {
@@ -52,32 +52,6 @@ jQuery(document).ready(function (jQuery) {
                     var e = o.data.viewModel;
                     e.adjustColumnHeights(items.clone());
                 });
-            },
-            layoutSwitchClick: function () {
-                jQuery('i.icon-layout').on('click', function () {
-                    var iSwitch = jQuery(this),
-                        gridView = iSwitch.hasClass('icon-th'),
-                        listView = iSwitch.hasClass('icon-th-list');
-
-                    if (gridView && !iSwitch.hasClass('active')) {
-                        jQuery('#post').removeClass('list--view').addClass('grid--view');
-                        void RikaSite.prototype.setCookie('layout', 1);
-                        iSwitch.siblings('.icon-th-list').removeClass('active');
-                        iSwitch.addClass('active');
-                        jQuery('.column--post.column--invisible').removeClass('column--invisible');
-                        RikaSite.prototype.adjustColumnHeights(jQuery('#post .column--invisible .list--post').clone());
-                        jQuery('.column--invisible').removeClass('column--show');
-
-                    } else if (listView && !iSwitch.hasClass('active')) {
-                        jQuery('#post').removeClass('grid--view').addClass('list--view');
-                        void RikaSite.prototype.setCookie('layout', 2);
-                        iSwitch.siblings('.icon-th').removeClass('active');
-                        iSwitch.addClass('active');
-                        jQuery('.column--invisible').addClass('column--show');
-                        jQuery('.column--post ').addClass('column--invisible');
-
-                    }
-                })
             },
             adjustColumnHeights: function (items) {
                 jQuery('.column--one').empty();
@@ -217,14 +191,10 @@ jQuery(document).ready(function (jQuery) {
                 jQuery(window).scroll(function (event) {
                     event.stopPropagation();
                     var scrollTop = jQuery(window).scrollTop();
-                    if (scrollTop > 48) {
-                        jQuery('nav.search').removeClass('open');
-                        jQuery('.main').addClass('white-bg');
+                    if (scrollTop > 69) {
+                        jQuery('header.header').addClass('header--fixed');
                     } else {
-                        if (jQuery('nav.search').hasClass('visible')) {
-                            jQuery('nav.search').addClass('open');
-                        }
-                        jQuery('.main').removeClass('white-bg');
+                        jQuery('header.header').removeClass('header--fixed');
                     }
                 })
             },

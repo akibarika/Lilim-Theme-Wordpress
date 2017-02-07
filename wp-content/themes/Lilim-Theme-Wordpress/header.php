@@ -51,6 +51,7 @@
                 <svg class="icon icon-magnifying-glass">
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#magnifying-glass"></use>
                 </svg>
+                <span class="text">Looking for Something?</span>
             </div>
             <div class="header__item header__item--login">
                 <?php
@@ -60,6 +61,11 @@
                     ?><a href="<?php echo wp_login_url(); ?>" title="Login"><span>Entrance</span></a><?php
                 }
                 ?>
+                <div class="header__item--login__wrapper">
+                    <svg class="icon icon-dashboard">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#dashboard"></use>
+                    </svg>
+                </div>
             </div>
         </div>
         <div class="header__logo">
