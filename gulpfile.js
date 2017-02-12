@@ -64,7 +64,7 @@ gulp.task('js', function () {
                 .pipe(sourcemaps.init())
 
                 .pipe(concat(filename))
-                .pipe(uglify())
+
 
                 .pipe(sourcemaps.write('.'))
                 .pipe(gulp.dest(paths.dest + 'js'))
