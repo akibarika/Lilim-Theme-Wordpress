@@ -18,10 +18,13 @@
       }
     }
     p {
-      font-size: 16px;
+      font-size: @f-normal-size;
       font-weight: 400;
       margin-bottom: 25px;
       line-height: 170%;
+      @media (min-width: @screen-sm) {
+        font-size: 16px;
+      }
     }
     a {
       font-weight: bold;

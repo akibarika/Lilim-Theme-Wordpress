@@ -1,2 +1,102 @@
-jQuery(document).ready(function(e){var t=(e("#commentform"),e("#comments-title"),e("#cancel-comment-reply-link")),r=t.text();e(document).on("submit","#commentform",function(){return e.ajax({url:lilimajax.ajax_url,data:e(this).serialize()+"&action=ajax_comment",type:e(this).attr("method"),beforeSend:addComment.createButterbar("提交中...."),error:function(e){var t=addComment;t.createButterbar(e.responseText)},success:function(t){e("textarea").each(function(){this.value=""});var r=addComment,n=r.I("cancel-comment-reply-link"),o=r.I("wp-temp-form-div"),a=r.I(r.respondId),m=(r.I("comment_post_ID").value,r.I("comment_parent").value);"0"!=m?e("#respond").before('<ul class="children">'+t+"</ul>"):e(".commentlist").append(t),r.createButterbar("提交成功"),n.style.display="none",n.onclick=null,r.I("comment_parent").value="0",o&&a&&(o.parentNode.insertBefore(a,o),o.parentNode.removeChild(o))}}),!1}),addComment={moveForm:function(n,o,a){{var m,c=this,i=c.I(n),d=c.I(a),l=c.I("cancel-comment-reply-link"),p=c.I("comment_parent");c.I("comment_post_ID")}t.text(r),c.respondId=a,c.I("wp-temp-form-div")||(m=document.createElement("div"),m.id="wp-temp-form-div",m.style.display="none",d.parentNode.insertBefore(m,d)),i?i.parentNode.insertBefore(d,i.nextSibling):(temp=c.I("wp-temp-form-div"),c.I("comment_parent").value="0",temp.parentNode.insertBefore(d,temp),temp.parentNode.removeChild(temp)),e("body").animate({scrollTop:e("#respond").offset().top-180},400),p.value=o,l.style.display="",l.onclick=function(){var e=addComment,t=e.I("wp-temp-form-div"),r=e.I(e.respondId);return e.I("comment_parent").value="0",t&&r&&(t.parentNode.insertBefore(r,t),t.parentNode.removeChild(t)),this.style.display="none",this.onclick=null,!1};try{c.I("comment").focus()}catch(u){}return!1},I:function(e){return document.getElementById(e)},clearButterbar:function(){e(".butterBar").length>0&&e(".butterBar").remove()},createButterbar:function(t){var r=this;r.clearButterbar(),e("body").append('<div class="butterBar butterBar--center"><p class="butterBar-message">'+t+"</p></div>"),setTimeout("jQuery('.butterBar').remove()",3e3)}}});
+jQuery(document).ready(function(jQuery) {
+	var $commentform = jQuery('#commentform'),
+	$comments = jQuery('#comments-title'),
+	$cancel = jQuery('#cancel-comment-reply-link'),
+	cancel_text = $cancel.text();
+	jQuery(document).on("submit", "#commentform",
+	function() {
+		jQuery.ajax({
+			url: lilimajax.ajax_url,
+			data: jQuery(this).serialize() + "&action=ajax_comment",
+			type: jQuery(this).attr('method'),
+			beforeSend:addComment.createButterbar("提交中...."),
+			error: function(request) {
+				var t = addComment;
+				t.createButterbar(request.responseText);
+			},
+			success: function(data) {
+				jQuery('textarea').each(function() {
+					this.value = ''
+				});
+				var t = addComment,
+				cancel = t.I('cancel-comment-reply-link'),
+				temp = t.I('wp-temp-form-div'),
+				respond = t.I(t.respondId),
+				post = t.I('comment_post_ID').value,
+				parent = t.I('comment_parent').value;
+				if (parent != '0') {
+					jQuery('#respond').before('<ul class="children">' + data + '</ul>');
+				} else {
+					jQuery('.commentlist').append(data);// your comments wrapper
+				}
+				t.createButterbar("提交成功");
+				cancel.style.display = 'none';
+				cancel.onclick = null;
+				t.I('comment_parent').value = '0';
+				if (temp && respond) {
+					temp.parentNode.insertBefore(respond, temp);
+					temp.parentNode.removeChild(temp)
+				}
+			}
+		});
+		return false;
+	});
+	addComment = {
+		moveForm: function(commId, parentId, respondId) {
+			var t = this,
+			div,
+			comm = t.I(commId),
+			respond = t.I(respondId),
+			cancel = t.I('cancel-comment-reply-link'),
+			parent = t.I('comment_parent'),
+			post = t.I('comment_post_ID');
+			$cancel.text(cancel_text);
+			t.respondId = respondId;
+			if (!t.I('wp-temp-form-div')) {
+				div = document.createElement('div');
+				div.id = 'wp-temp-form-div';
+				div.style.display = 'none';
+				respond.parentNode.insertBefore(div, respond)
+			} ! comm ? (temp = t.I('wp-temp-form-div'), t.I('comment_parent').value = '0', temp.parentNode.insertBefore(respond, temp), temp.parentNode.removeChild(temp)) : comm.parentNode.insertBefore(respond, comm.nextSibling);
+			jQuery("body").animate({
+				scrollTop: jQuery('#respond').offset().top - 180
+			},
+			400);
+			parent.value = parentId;
+			cancel.style.display = '';
+			cancel.onclick = function() {
+				var t = addComment,
+				temp = t.I('wp-temp-form-div'),
+				respond = t.I(t.respondId);
+				t.I('comment_parent').value = '0';
+				if (temp && respond) {
+					temp.parentNode.insertBefore(respond, temp);
+					temp.parentNode.removeChild(temp);
+				}
+				this.style.display = 'none';
+				this.onclick = null;
+				return false;
+			};
+			try {
+				t.I('comment').focus();
+			}
+			 catch(e) {}
+			return false;
+		},
+		I: function(e) {
+			return document.getElementById(e);
+		},
+		clearButterbar: function(e) {
+			if (jQuery(".butterBar").length > 0) {
+				jQuery(".butterBar").remove();
+			}
+		},
+		createButterbar: function(message) {
+			var t = this;
+			t.clearButterbar();
+			jQuery("body").append('<div class="butterBar butterBar--center"><p class="butterBar-message">' + message + '</p></div>');
+			setTimeout("jQuery('.butterBar').remove()", 3000);
+		}
+	};
+});
 //# sourceMappingURL=comment.js.map

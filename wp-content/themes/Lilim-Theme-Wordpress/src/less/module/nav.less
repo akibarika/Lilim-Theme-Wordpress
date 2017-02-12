@@ -90,44 +90,30 @@
   }
 }
 
-.navigation {
-  background: none repeat scroll 0 0 @white-color;
-  display: block;
-  height: 60px;
-  margin: 20px auto 20px;
-  position: relative;
-  width: 1420px;
-  @media only screen and (min-width: 960px) and (max-width: 1419px) {
-    width: 960px;
-  }
-  @media only screen and (max-width: 767px) {
-    width: 100%;
-  }
-  li {
-    background-color: @white-color;
-    display: block;
-    float: left;
-    height: 60px;
-    line-height: 60px;
-    text-align: center;
-    vertical-align: middle;
-    width: 60px;
-    a {
-      &:extend(.navigation  li);
+.load-more {
+  .button {
+    &--loading,
+    &--load-more {
+      position: relative;
+      clear: both;
+      display: block;
+      width: 180px;
+      margin: 0 auto 35px auto;
+      color: #bdc1c0;
+      background-color: #fcfcfc;
+      font-size: 17px;
+      font-weight: 300;
+      &:hover {
+        background: #fff;
+        color: #dbe0df;
+      }
     }
-    a:hover {
-      background: #f2f2f2;
-      color: #ba89b6;
+    &--loading {
+      &:hover {
+        cursor: not-allowed;
+        background: #fcfcfc;
+        color: #bdc1c0;
+      }
     }
   }
-  li.active a {
-    background-color: #3f3f3f;
-    color: @white-color;
-    position: relative;
-  }
 }
-
-.prev, .next {
-  padding: 0 10px;
-}
-

@@ -1,301 +1,250 @@
-var RikaSite = RikaSite || {};
+jQuery.rika_js = function () {
+    var methods = {
+        init: function () {
+            var postContent = jQuery('#post .column--invisible .post--item');
+            methods.triggerSearch(), methods.triggerMenu(), methods.triggerSubmenu(), methods.initial(postContent), methods.placeToolbar(960, 60, 20), methods.ajaxPostLoading(), methods.responsiveColumn(postContent), methods.menuScroll(), methods.upperDownClick(), methods.toolBarPlace(), methods.tagPost(), methods.ScrollMenuMobile(), methods.rippleEffect(), methods.filledField();
+        },
+        triggerSearch: function () {
+            jQuery('.js-search').on('click', function () {
+                jQuery('.header__search').addClass('show');
+                jQuery('.overlay-content').addClass('show');
+            });
+            jQuery('.header__search__close').on('click', function () {
+                jQuery('.header__search').removeClass('show');
+                jQuery('.overlay-content').removeClass('show');
+            });
+            jQuery('.overlay-content').on('click', function () {
+                jQuery('.header__search').removeClass('show');
+                jQuery('.overlay-content').removeClass('show');
+            });
+        },
+        triggerMenu: function () {
+            jQuery('.wrapper').on('click', function () {
+                jQuery('body').removeClass('nav-sidebar-open');
+            });
+            jQuery('.nav-main').on('click', function (e) {
+                e.stopPropagation();
+            });
+            jQuery('.js-nav-main').on('click', function () {
+                jQuery('body').toggleClass('nav-sidebar-open');
+                return false;
+            });
+        },
+        triggerSubmenu: function () {
+            jQuery('li.menu-item-has-children a').on('click', function (e) {
+                e.stopPropagation();
+                jQuery(this).siblings('.sub-menu').slideToggle();
+            });
+        },
+        initial: function (items) {
+            this.adjustColumnHeights(items);
+            jQuery('.column--post').addClass('stop--sliding');
+            setTimeout(function () {
+                jQuery('.pageload-overlay').removeClass('show');
+                jQuery('.container').removeClass('fading');
+            }, 150);
 
-jQuery(document).ready(function (jQuery) {
-    'use strict';
-    RikaSite = function () {
+        },
+        ajaxPostLoading: function () {
+            jQuery('#post').append('<div class="load-more"><button class="button button--load-more">Load More</button><button class="button button--loading" style="display: none">Loading</button></div>');
+            var button = jQuery('#post .load-more');
+            var page = 2;
 
-    },
-        RikaSite.prototype = {
-            init: function () {
-                var o = this,
-                    postContent = jQuery('#post .column--invisible .list--post');
-                o.triggerSearch(), o.triggerMenu(), o.triggerSubmenu(), o.initial(postContent), o.placeToolbar(960, 60, 20), o.ajaxPostLoading(), o.responsiveColumn(postContent), o.navDropDownClick(), o.navFilterClick(), o.menuScroll(), o.upperDownClick(), o.toolBarPlace(), o.dispalyMoblieMenu(), o.tagPost(), o.ScrollMenuMobile(), o.searchClick(), o.rippleEffect(), o.filledField();
-            },
-            triggerSearch: function () {
-                jQuery('.js-search').on('click', function () {
-                    jQuery('.header__search').addClass('show');
-                    jQuery('.overlay-content').addClass('show');
+            jQuery('.button--load-more').on('click', function () {
+                jQuery.ajax({
+                    url: lilimajax.ajax_url,
+                    type: 'post',
+                    data: {
+                        action: 'ajax_pagination',
+                        query: lilimajax.query,
+                        page: page
+                    },
+                    beforeSend: function () {
+                        jQuery('.load-more .button--load-more').hide();
+                        jQuery('.load-more .button--loading').show();
+                    },
+                    success: function (html) {
+                        jQuery('#post .column--invisible').append(html.data);
+                        jQuery('#post').append(button);
+                        page = page + 1;
+                        methods.adjustColumnHeights(jQuery('#post .column--invisible .post--item'));
+                        methods.responsiveColumn(jQuery('#post .column--invisible .post--item'));
+                        jQuery('.load-more .button--load-more').show();
+                        jQuery('.load-more .button--loading').hide();
+                    }
                 });
-                jQuery('.header__search__close').on('click', function () {
-                    jQuery('.header__search').removeClass('show');
-                    jQuery('.overlay-content').removeClass('show');
-                });
-                jQuery('.overlay-content').on('click', function () {
-                    jQuery('.header__search').removeClass('show');
-                    jQuery('.overlay-content').removeClass('show');
-                });
-            },
-            triggerMenu: function () {
-                jQuery('.wrapper').on('click', function () {
-                    jQuery('body').removeClass('nav-sidebar-open');
-                });
-                jQuery('.nav-main').on('click', function (e) {
-                    e.stopPropagation();
-                });
-                jQuery('.js-nav-main').on('click', function () {
-                    jQuery('body').toggleClass('nav-sidebar-open');
-                    return false;
-                });
-            },
-            triggerSubmenu: function () {
-                jQuery('li.menu-item-has-children a').on('click', function (e) {
-                    e.stopPropagation();
-                    jQuery(this).siblings('.sub-menu').slideToggle();
-                });
-            },
-            initial: function (items) {
-                this.adjustColumnHeights(items.clone());
-                jQuery('.column--post').addClass('stop--sliding');
-            },
-            responsiveColumn: function (items) {
-                jQuery(window).resize({viewModel: o}, function (o) {
-                    var e = o.data.viewModel;
-                    e.adjustColumnHeights(items.clone());
-                });
-            },
-            adjustColumnHeights: function (items) {
+            });
+        },
+        responsiveColumn: function (items) {
+            jQuery(window).resize(function (o) {
+                var resize = true;
+                methods.adjustColumnHeights(items, resize);
+            });
+        },
+        adjustColumnHeights: function (items, flag) {
+            if (!flag || typeof flag === "undefined") {
+                flag = false;
+            }
+            if (flag) {
                 jQuery('.column--one').empty();
                 jQuery('.column--two').empty();
                 jQuery('.column--three').empty();
-                var columns = [];
-                var getViewportWidth = function () {
-                    return Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-                };
-                var gridLagerBreakpoint = 1420;
-                var gridSmallBreakpoint = 768;
-                columns.push(jQuery('.column--one'));
-                if (getViewportWidth() >= gridSmallBreakpoint) {
-                    columns.push(jQuery('.column--two'));
+            }
+            var newItems = items.clone();
+            var columns = [];
+            var getViewportWidth = function () {
+                return Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+            };
+            var gridLagerBreakpoint = 1420;
+            var gridSmallBreakpoint = 768;
+            columns.push(jQuery('.column--one'));
+            if (getViewportWidth() >= gridSmallBreakpoint) {
+                columns.push(jQuery('.column--two'));
+            }
+            if (getViewportWidth() >= gridLagerBreakpoint) {
+                columns.push(jQuery('.column--three'));
+            }
+            for (var i = 0; i < newItems.length; i++) {
+                if (!newItems.eq(i).hasClass('post--added') && !flag) {
+                    items.eq(i).addClass('post--added');
+                    this.getTargetColumn(columns).append(newItems.eq(i).removeClass('post--added'));
+                } else if (flag) {
+                    this.getTargetColumn(columns).append(newItems.eq(i).removeClass('post--added'));
                 }
-                if (getViewportWidth() >= gridLagerBreakpoint) {
-                    columns.push(jQuery('.column--three'));
+            }
+        },
+        getTargetColumn: function (columnList) {
+            var currentBestHeight = Number.MAX_VALUE;
+            for (var i = 0; i < columnList.length; i++) {
+                if (columnList[i].outerHeight() < currentBestHeight) {
+                    var bestColumn = columnList[i];
+                    currentBestHeight = columnList[i].outerHeight();
                 }
-                for (var i = 0; i < items.length; i++) {
-                    this.getTargetColumn(columns).append(items.eq(i).addClass('post--item').removeClass('list--post'));
-                }
-            },
-            getTargetColumn: function (columnList) {
-                var currentBestHeight = Number.MAX_VALUE;
-                for (var i = 0; i < columnList.length; i++) {
-                    if (columnList[i].outerHeight() < currentBestHeight) {
-                        var bestColumn = columnList[i];
-                        currentBestHeight = columnList[i].outerHeight();
-                    }
-                }
-                return bestColumn;
-            },
-            tagPost: function () {
-                jQuery(document).on('mouseenter', '.tag ul > li:first-child', function (event) {
-                    event.stopPropagation();
-                    jQuery(this).parents('ul').addClass('show');
-                });
-                jQuery(document).on('click', '.tag ul > li', function (event) {
-                    event.stopPropagation();
-                });
-                jQuery(document).on('mouseleave', '.tag ul', function (event) {
-                    event.stopPropagation();
-                    jQuery(this).removeClass('show');
-                });
-            },
+            }
+            return bestColumn;
+        },
 
-            placeToolbar: function (wrap, a, b) {
-                var loli = parseInt((jQuery(window).width() - wrap + 1) / 2 - a - b);
-                if (loli < 20) {
-                    loli = 20;
-                }
-                jQuery('.right-toolbar').css({
-                    right: loli,
-                    opacity: 1
-                });
-            },
-            ajaxPostLoading: function () {
-                var currentState = window.location.href;
-                jQuery(document).on('click', '.container > .navigation a', {viewModel: o},
-                    function (o) {
-                        o.preventDefault();
-                        var e = o.data.viewModel;
-                        var currentLink = jQuery(this).attr('href');
-                        e.turnpage(currentLink);
-                        history.pushState(null, document.title, currentLink);
-                        currentState = window.location.href;
-                    }
-                )
-                ;
-                window.addEventListener('popstate', {viewModel: o}, function (o) {
-                    var _currentUrl = window.location.href;
-                    var e = o.data.viewModel;
-                    if (currentState != _currentUrl) {
-                        e.turnpage(_currentUrl);
-                        currentState = _currentUrl;
-                    }
-                });
-            },
-            turnpage: function (pageurl) {
-                jQuery('.pageload-overlay').addClass('show');
-                jQuery('html,body').animate({scrollTop: 0}, 300);
-                jQuery('.column--post').addClass('fading');
-                jQuery('.column--invisible').addClass('fading');
-                jQuery.ajax({
-                    url: pageurl
-                }).always(function (o) {
-                    var html = jQuery.parseHTML(o);
-                    jQuery('#post').html(jQuery('#post', html).html());
-                    jQuery('.navigation').html(jQuery('.navigation', html).html());
-                    jQuery('.wp-post-image').on('load', function () {
-                        RikaSite.prototype.initial(jQuery('#post .column--invisible .list--post'));
-                        RikaSite.prototype.responsiveColumn(jQuery('#post .column--invisible .list--post'));
-                    });
-                });
-            },
-            navDropDownClick: function () {
-                jQuery(document).on('click', '.open-nav', function (o) {
-                    o.stopPropagation();
-                    jQuery('#nav-filters').toggleClass('open');
-                    jQuery('.box-overlay').addClass('open')
-                });
+        tagPost: function () {
+            jQuery(document).on('mouseenter', '.tag ul > li:first-child', function (event) {
+                event.stopPropagation();
+                jQuery(this).parents('ul').addClass('show');
+            });
+            jQuery(document).on('click', '.tag ul > li', function (event) {
+                event.stopPropagation();
+            });
+            jQuery(document).on('mouseleave', '.tag ul', function (event) {
+                event.stopPropagation();
+                jQuery(this).removeClass('show');
+            });
+        },
 
-                jQuery(document).on('click', '.close-nav', function () {
-                    jQuery('.nav-sidebar').removeClass('open');
-                    jQuery('.box-overlay').removeClass('open')
-                });
-            },
-            navFilterClick: function () {
-                jQuery(document).on('click', '.wrapper-dropdown', function () {
-                    jQuery(this).toggleClass('active');
-                    jQuery.stopPropagation()
-                });
-                jQuery(document).on('click', '.nav-sidebar', function (o) {
-                    o.stopPropagation()
-                });
-                jQuery(document).on('click', function () {
-                    jQuery('.nav-sidebar').removeClass('open');
-                    jQuery('.box-overlay').removeClass('open')
-                });
-            },
-            searchClick: function () {
-                jQuery(document).on('click', '.bt-search', function () {
-                    if (jQuery('.search-text').hasClass('visible')) {
-                        jQuery('.search-text').removeClass('visible');
-                    } else {
-                        jQuery('.search-text').addClass('visible');
-                    }
-                    setTimeout(function () {
-                        jQuery('.search-text .text').trigger('focus')
-                    }, 200);
-                    setTimeout(function () {
-                        jQuery('.search-text').removeClass('visible')
-                    }, 10000)
-                })
-            },
-            menuScroll: function () {
-                jQuery(window).scroll(function (event) {
-                    event.stopPropagation();
-                    var scrollTop = jQuery(window).scrollTop();
-                    if (scrollTop > 69) {
-                        jQuery('header.header').addClass('header--fixed');
-                    } else {
-                        jQuery('header.header').removeClass('header--fixed');
-                    }
-                })
-            },
-            dispalyMoblieMenu: function () {
-                jQuery(document).on('click', '#menu-mobile .bt-menu', {viewModel: o}, function () {
-                    if (jQuery('#menu-mobile').hasClass('open')) {
-                        jQuery('#menu-mobile').removeClass('open');
-                    } else {
-                        jQuery('#menu-mobile').addClass('open');
-                    }
-                })
-            },
-            toolBarPlace: function () {
-                var arrivedAtBottom = false;
-                jQuery(window).scroll(function (event) {
-                    event.stopPropagation();
-                    arrivedAtBottom = jQuery(window).scrollTop() >= jQuery(document).height() - jQuery(window).height();
-                    if (arrivedAtBottom) {
-                        jQuery('.tooltip-goto').find('.icon-vertical_align_bottom').hide();
-                        jQuery('.tooltip-goto').find('.icon-vertical_align_top').show();
-                    } else {
-                        jQuery('.tooltip-goto').find('.icon-vertical_align_top').hide();
-                        jQuery('.tooltip-goto').find('.icon-vertical_align_bottom').show();
-                    }
-                })
-            },
-            upperDownClick: function () {
-                jQuery(document).on('click', '.right-toolbar .icon-vertical_align_top', function () {
-                    jQuery('html, body').animate({scrollTop: 0}, 500);
-                });
-                jQuery(document).on('click', '.right-toolbar .icon-vertical_align_bottom', function () {
-                    jQuery('html, body').animate({scrollTop: jQuery('#page-wrap').height()}, 500);
-                });
-                jQuery(document).on('click', '.right-toolbar .icon-question_answer', function () {
-                    jQuery('html, body').animate({scrollTop: jQuery('#respond').position().top}, 500);
-                });
-                jQuery(document).on('click', '.right-toolbar .icon-bubble_chart', function () {
-                    jQuery('html, body').animate({scrollTop: jQuery('.share').position().top}, 500);
-                });
-            },
-            ScrollMenuMobile: function () {
+        placeToolbar: function (wrap, a, b) {
+            var loli = parseInt((jQuery(window).width() - wrap + 1) / 2 - a - b);
+            if (loli < 20) {
+                loli = 20;
+            }
+            jQuery('.right-toolbar').css({
+                right: loli,
+                opacity: 1
+            });
+        },
+        menuScroll: function () {
+            jQuery(window).scroll(function (event) {
+                event.stopPropagation();
+                var scrollTop = jQuery(window).scrollTop();
+                if (scrollTop > 69) {
+                    jQuery('header.header').addClass('header--fixed');
+                } else {
+                    jQuery('header.header').removeClass('header--fixed');
+                }
+            })
+        },
+        toolBarPlace: function () {
+            var arrivedAtBottom = false;
+            jQuery(window).scroll(function (event) {
+                event.stopPropagation();
+                arrivedAtBottom = jQuery(window).scrollTop() >= jQuery(document).height() - jQuery(window).height();
+                if (arrivedAtBottom) {
+                    jQuery('.tooltip-goto').find('.icon-vertical_align_bottom').hide();
+                    jQuery('.tooltip-goto').find('.icon-vertical_align_top').show();
+                } else {
+                    jQuery('.tooltip-goto').find('.icon-vertical_align_top').hide();
+                    jQuery('.tooltip-goto').find('.icon-vertical_align_bottom').show();
+                }
+            })
+        },
+        upperDownClick: function () {
+            jQuery(document).on('click', '.right-toolbar .icon-vertical_align_top', function () {
+                jQuery('html, body').animate({scrollTop: 0}, 500);
+            });
+            jQuery(document).on('click', '.right-toolbar .icon-vertical_align_bottom', function () {
+                jQuery('html, body').animate({scrollTop: jQuery('#page-wrap').height()}, 500);
+            });
+            jQuery(document).on('click', '.right-toolbar .icon-question_answer', function () {
+                jQuery('html, body').animate({scrollTop: jQuery('#respond').position().top}, 500);
+            });
+            jQuery(document).on('click', '.right-toolbar .icon-bubble_chart', function () {
+                jQuery('html, body').animate({scrollTop: jQuery('.share').position().top}, 500);
+            });
+        },
+        ScrollMenuMobile: function () {
+            setTimeout(function () {
+                jQuery('.wrapper-nav').css('height', jQuery(window).height() + 'px')
+            }, 500)
+            jQuery(window).resize(function () {
                 setTimeout(function () {
                     jQuery('.wrapper-nav').css('height', jQuery(window).height() + 'px')
                 }, 500)
-                jQuery(window).resize(function () {
-                    setTimeout(function () {
-                        jQuery('.wrapper-nav').css('height', jQuery(window).height() + 'px')
-                    }, 500)
-                });
-            },
-            setCookie: function (o, e) {
-                var i = new Date;
-                i.setTime(i.getTime() + 31536e6), document.cookie = o + '=' + e + ';path=/;expires=' + i.toUTCString()
-            },
-            rippleEffect: function () {
-                var $ripple = jQuery('.rika-ripple');
+            });
+        },
+        setCookie: function (o, e) {
+            var i = new Date;
+            i.setTime(i.getTime() + 31536e6), document.cookie = o + '=' + e + ';path=/;expires=' + i.toUTCString()
+        },
+        rippleEffect: function () {
+            var jQueryripple = jQuery('.rika-ripple');
 
-                $ripple.on('click.ui.ripple', function (e) {
+            jQueryripple.on('click.ui.ripple', function (e) {
 
-                    var $this = jQuery(this);
-                    var $offset = $this.parent().offset();
-                    var $circle = $this.find('.c-ripple__circle');
+                var jQuerythis = jQuery(this);
+                var jQueryoffset = jQuerythis.parent().offset();
+                var jQuerycircle = jQuerythis.find('.c-ripple__circle');
 
-                    var x = e.pageX - $offset.left;
-                    var y = e.pageY - $offset.top;
+                var x = e.pageX - jQueryoffset.left;
+                var y = e.pageY - jQueryoffset.top;
 
-                    $circle.css({
-                        top: y + 'px',
-                        left: x + 'px'
-                    });
-
-                    $this.addClass('is-active');
-
+                jQuerycircle.css({
+                    top: y + 'px',
+                    left: x + 'px'
                 });
 
-                $ripple.on('animationend webkitAnimationEnd oanimationend MSAnimationEnd', function (e) {
-                    jQuery(this).removeClass('is-active');
-                });
-            },
-            filledField: function () {
-                var $field = jQuery('.rika-textfield');
+                jQuerythis.addClass('is-active');
 
-                $field.on('change', function (e) {
-                    if (jQuery(this).children('input').val()) {
-                        if (!jQuery(this).children('input').hasClass('is-filled')) {
-                            jQuery(this).children('input').addClass('is-filled');
-                        }
-                    } else {
-                        if (jQuery(this).children('input').hasClass('is-filled')) {
-                            jQuery(this).children('input').removeClass('is-filled');
-                        }
+            });
+
+            jQueryripple.on('animationend webkitAnimationEnd oanimationend MSAnimationEnd', function (e) {
+                jQuery(this).removeClass('is-active');
+            });
+        },
+        filledField: function () {
+            var jQueryfield = jQuery('.rika-textfield');
+
+            jQueryfield.on('change', function () {
+                if (jQuery(this).children('input').val()) {
+                    if (!jQuery(this).children('input').hasClass('is-filled')) {
+                        jQuery(this).children('input').addClass('is-filled');
                     }
-                });
-            }
-        };
+                } else {
+                    if (jQuery(this).children('input').hasClass('is-filled')) {
+                        jQuery(this).children('input').removeClass('is-filled');
+                    }
+                }
+            });
+        }
+    };
+    methods.init();
+};
 
-    var o = new RikaSite();
-    o.init();
-
-
-});
 
 function grin(tag) {
     var myField;
@@ -326,4 +275,6 @@ function grin(tag) {
 }
 
 
-
+jQuery(function () {
+    jQuery.rika_js();
+});

@@ -1,7 +1,7 @@
 <?php get_header(); ?>
     <div class="container">
         <section id="post" class="grid--view">
-            <div class="pageload-overlay"></div>
+            <div class="pageload-overlay show"></div>
             <?php if (have_posts()) :
                 ?>
                 <div class="column--one column--post show--up"></div>
@@ -26,6 +26,5 @@
                 </article>
             <?php endif; ?>
         </section>
-        <?php wpbeginner_numeric_posts_nav(); ?>
     </div>
 <?php get_footer(); ?>
