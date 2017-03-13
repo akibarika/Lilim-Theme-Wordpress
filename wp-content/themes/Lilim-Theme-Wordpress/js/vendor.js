@@ -896,4 +896,3 @@ function makeArray( obj ) {
   return ImagesLoaded;
 
 });
-//# sourceMappingURL=vendor.js.map

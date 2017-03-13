@@ -46,9 +46,10 @@ jQuery.rika_js = function () {
 
         },
         ajaxPostLoading: function () {
-            jQuery('#post').append('<div class="load-more"><button class="button button--load-more">Load More</button><button class="button button--loading" style="display: none">Loading</button></div>');
             var button = jQuery('#post .load-more');
             var page = 2;
+            var currentCat = button.data('category');
+            var currentTag = button.data('tag');
 
             jQuery('.button--load-more').on('click', function () {
                 jQuery.ajax({
@@ -57,20 +58,29 @@ jQuery.rika_js = function () {
                     data: {
                         action: 'ajax_pagination',
                         query: lilimajax.query,
-                        page: page
+                        page: page,
+                        currentCat: currentCat,
+                        currentTag: currentTag
                     },
                     beforeSend: function () {
                         jQuery('.load-more .button--load-more').hide();
                         jQuery('.load-more .button--loading').show();
                     },
                     success: function (html) {
-                        jQuery('#post .column--invisible').append(html.data);
-                        jQuery('#post').append(button);
-                        page = page + 1;
-                        methods.adjustColumnHeights(jQuery('#post .column--invisible .post--item'));
-                        methods.responsiveColumn(jQuery('#post .column--invisible .post--item'));
-                        jQuery('.load-more .button--load-more').show();
-                        jQuery('.load-more .button--loading').hide();
+                        if (html.data == '') {
+                            jQuery('.load-more .button--load-more').show();
+                            jQuery('.load-more .button--loading').hide();
+                        } else {
+                            jQuery('#post .column--invisible').append(html.data);
+                            jQuery('#post').append(button);
+                            page = page + 1;
+                            jQuery('.wp-post-image').on('load', function () {
+                                methods.adjustColumnHeights(jQuery('#post .column--invisible .post--item'));
+                                methods.responsiveColumn(jQuery('#post .column--invisible .post--item'));
+                                jQuery('.load-more .button--load-more').show();
+                                jQuery('.load-more .button--loading').hide();
+                            });
+                        }
                     }
                 });
             });

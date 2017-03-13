@@ -18,6 +18,12 @@ $cat = get_the_category();
                     endwhile;
                 endif; ?>
             </div>
+            <div class="load-more" data-category="<?php echo esc_attr(get_query_var('cat')) ?>">
+                <button class="button button--load-more" >
+                    Load More
+                </button>
+                <button class="button button--loading" style="display: none">Loading</button>
+            </div>
         </section>
     </div>
 

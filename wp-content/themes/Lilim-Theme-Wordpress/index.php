@@ -25,6 +25,10 @@
                     </div>
                 </article>
             <?php endif; ?>
+            <div class="load-more">
+                <button class="button button--load-more">Load More</button>
+                <button class="button button--loading" style="display: none">Loading</button>
+            </div>
         </section>
     </div>
 <?php get_footer(); ?>

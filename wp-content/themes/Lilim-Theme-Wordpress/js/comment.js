@@ -99,4 +99,3 @@ jQuery(document).ready(function(jQuery) {
 		}
 	};
 });
-//# sourceMappingURL=comment.js.map

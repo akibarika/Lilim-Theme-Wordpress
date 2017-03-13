@@ -14,6 +14,12 @@ function my_ajax_pagination()
     $args['post_type'] = isset($args['post_type']) ? esc_attr($args['post_type']) : 'post';
     $args['paged'] = esc_attr($_POST['page']);
     $args['post_status'] = 'publish';
+    if ( isset($_POST['currentCat']) && $_POST['currentCat'] ) {
+        $args['cat'] = $_POST['currentCat'];
+    }
+    if ( isset($_POST['currentTag']) && $_POST['currentTag'] ) {
+        $args['tag'] = $_POST['currentTag'];
+    }
     ob_start();
     $loop = new WP_Query($args);
     if ($loop->have_posts()): while ($loop->have_posts()): $loop->the_post();
