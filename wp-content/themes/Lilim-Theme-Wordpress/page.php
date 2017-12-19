@@ -35,7 +35,7 @@
 									4.0</a>. </span>
 						</div>
 					</div>
-					<?php get_template_part( 'share' ); ?>
+<!--					--><?php //get_template_part( 'share' ); ?>
 				</article>
 				<?php comments_template(); ?>
 			<?php endwhile; ?>

@@ -10,7 +10,6 @@ var gulp = require('gulp'),
         svgmin = require('gulp-svgmin'),
         rename = require("gulp-rename"),
         notify = require('gulp-notify'),
-        sourcemaps = require('gulp-sourcemaps'),
         livereload = require('gulp-livereload'),
         autoprefixer = require('gulp-autoprefixer'),
         util = require('gulp-util'),
@@ -40,11 +39,9 @@ gulp.task('css', function () {
                 errorHandler: onError
             }))
 
-            .pipe(sourcemaps.init())
             .pipe(less())
             .pipe(autoprefixer())
             .pipe(minifyCss({keepSpecialComments: 0}))
-            .pipe(sourcemaps.write('.'))
             .pipe(gulp.dest(paths.dest + 'css'))
             .pipe(notify({message: 'Successfully compiled LESS'}));
 });
@@ -60,13 +57,7 @@ gulp.task('js', function () {
                 .pipe(plumber({
                     errorHandler: onError
                 }))
-
-                .pipe(sourcemaps.init())
-
                 .pipe(concat(filename))
-
-
-                .pipe(sourcemaps.write('.'))
                 .pipe(gulp.dest(paths.dest + 'js'))
                 .pipe(notify({message: 'Successfully compiled js'}));
 

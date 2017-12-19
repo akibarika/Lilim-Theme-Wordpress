@@ -11,7 +11,6 @@
     "wp-content/themes/Lilim-Theme-Wordpress/src/js/comments-ajax.js"
   ],
   "post.js": [
-    "wp-content/themes/Lilim-Theme-Wordpress/src/js/TweenMax.min.js",
-    "wp-content/themes/Lilim-Theme-Wordpress/src/js/share.js"
+    "wp-content/themes/Lilim-Theme-Wordpress/src/js/TweenMax.min.js"
   ]
 }

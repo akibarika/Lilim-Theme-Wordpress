@@ -43,7 +43,7 @@
 				}
 			}
 			?>
-			<?php get_template_part( 'share' ); ?>
+<!--			--><?php //get_template_part( 'share' ); ?>
 		</div>
 	</section>
 </div>
