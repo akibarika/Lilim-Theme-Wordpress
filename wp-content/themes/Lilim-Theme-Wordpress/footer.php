@@ -1,7 +1,7 @@
 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__left">
-            <p>Happy New Year 2017! Made with <span class="heart"><3</span> in Theme <span>Lilim</span>.</p>
+            <p>Be Kind & Stay Strong! Made with <span class="heart"><3</span> in Theme <span>Lilim</span>.</p>
             <p>Powered by WordPress</p>
         </div>
         <div class="footer__right">
