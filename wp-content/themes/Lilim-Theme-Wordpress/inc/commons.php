@@ -85,6 +85,9 @@ function lilim_scripts_styles()
     if (is_single() || is_page()) {
         wp_enqueue_script('lilim_post', lilim_js_url('post'), array(), LILIM_VERSION, true);
     }
+    if ( ( ! is_admin() ) && is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+        wp_enqueue_script( 'comment-reply' );
+    }
 
     wp_localize_script('lilim', 'lilimajax', array(
         'ajax_url' => admin_url('admin-ajax.php'),
