@@ -75,14 +75,8 @@ wp-content/plugins/
 #!wp-content/themes/bootstrap-genesis/
  
 # ignore specific themes
-wp-content/themes/twentyten/
-wp-content/themes/twentyeleven/
-wp-content/themes/twentytwelve/
-wp-content/themes/twentythirteen/
-wp-content/themes/twentyfourteen/
-wp-content/themes/twentyfifteen/
-wp-content/themes/lilim/
-wp-content/themes/lilim-v2/
+wp-content/themes/*
+!wp-content/themes/Lilim-Theme-Wordpress/
 
 # ignore node/grunt dependency directories
 node_modules/
