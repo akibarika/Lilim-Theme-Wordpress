@@ -1,7 +1,8 @@
 {
   "vendor.js": [
     "wp-content/themes/Lilim-Theme-Wordpress/src/js/jquery.min.js",
-    "wp-content/themes/Lilim-Theme-Wordpress/src/js/imagesloaded.pkgd.min.js"
+    "wp-content/themes/Lilim-Theme-Wordpress/src/js/imagesloaded.pkgd.min.js",
+    "wp-content/themes/Lilim-Theme-Wordpress/src/js/js.cookie.min.js"
   ],
   "app.js": [
     "wp-content/themes/Lilim-Theme-Wordpress/src/js/all.js",
