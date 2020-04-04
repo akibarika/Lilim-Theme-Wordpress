@@ -37,7 +37,7 @@
         </div>
         <div class="nav-main__bottom">
             <div class="box-version">
-                <span class="box-version-text">Activate white option</span>
+                <span class="box-version-text">Activate light option</span>
                 <div class="input-check-toggle">
                     <input id="version-color" type="checkbox" class="js-dark">
                     <label for="version-color">

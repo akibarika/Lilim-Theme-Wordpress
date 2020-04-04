@@ -259,8 +259,10 @@ $.rika_js = function () {
                 $('body').toggleClass('theme-dark');
                 if (Cookies.get('style_view_page')) {
                     Cookies.remove('style_view_page');
+                    $('.box-version-text').text('Activate dark option');
                 } else {
                     Cookies.set('style_view_page', 'theme-dark');
+                    $('.box-version-text').text('Activate light option');
                 }
             })
         }
