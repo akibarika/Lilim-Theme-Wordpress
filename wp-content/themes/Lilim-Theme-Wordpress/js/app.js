@@ -261,7 +261,7 @@ $.rika_js = function () {
                     Cookies.remove('style_view_page');
                     $('.box-version-text').text('Activate dark option');
                 } else {
-                    Cookies.set('style_view_page', 'theme-dark');
+                    Cookies.set('style_view_page', 'theme-dark', {expires: 365});
                     $('.box-version-text').text('Activate light option');
                 }
             })
