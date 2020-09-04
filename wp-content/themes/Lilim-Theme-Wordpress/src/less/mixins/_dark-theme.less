@@ -1,0 +1,72 @@
+.theme-dark() {
+  color: @text-color-dark;
+
+  input, textarea {
+    .placeholder({
+      color: @text-color-dark;
+    });
+  }
+
+  header.header,
+  .wrapper,
+  .nav-main,
+  .nav-main__header,
+  .nav-main__menu li > a,
+  .header__search,
+  .grid--view .post--item .wrap-content .heading .tag ul li:first-child,
+  .grid--view .post--item .wrap-content .heading .tag ul.show li {
+    background-color: @dark-color;
+  }
+
+  footer.footer,
+  .grid--view .post--item,
+  #page-wrap #single,
+  .load-more .button--load-more,
+  .load-more .button--loading,
+  .i-404 {
+    background-color: @darker-color;
+  }
+
+  .header__menu,
+  .header__search__left input,
+  a,
+  .nav-main__header .bt-close,
+  .grid--view .post--item .wrap-content .post-meta > div a,
+  .post-detail p,
+  #page-wrap #single.wrap-single .single-meta,
+  .post-detail h3,
+  .rika-textfield label.comment-label,
+  #comments #respond .commenter .author_info .user_logged a,
+  #comments .commentlist li .comment-body .comment-wrapper .comment-head span.name a,
+  #comments .commentlist li .comment-body .comment-wrapper .comment-head span.comment-text p {
+    color: @text-color-dark;
+  }
+
+  .header,
+  .header__menu,
+  .header__search,
+  .nav-main__header,
+  .nav-main__menu li > a,
+  .grid--view .post--item .wrap-content .post-meta,
+  .grid--view .post--item .wrap-content .post-meta > div,
+  .i-404 {
+    border-color: @border-color-dark;
+  }
+
+  .bt-close::before,
+  .bt-close::after {
+    background-color: @text-color-dark;
+  }
+
+  .icon {
+    fill: @text-color-dark;
+  }
+
+  //Miscellaneous
+  .rika-textfield input:focus + label.comment-label {
+    color: @brand-primary;
+  }
+  .header__item--login a span {
+    color: @white-color;
+  }
+}

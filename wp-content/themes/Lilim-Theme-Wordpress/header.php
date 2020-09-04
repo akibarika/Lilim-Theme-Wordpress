@@ -17,7 +17,7 @@
     <link rel="Shortcut Icon" href="<?php bloginfo('template_directory'); ?>/favicon.ico">
     <?php wp_head(); ?>
 </head>
-<body>
+<body <?php if (isset($_COOKIE['style_view_page']) && $_COOKIE['style_view_page'] === "theme-dark"): ?> class="theme-dark" <?php endif ?>>
 <div style="height: 0; width: 0; position: absolute; visibility: hidden">
     <?php echo file_get_contents(get_template_directory() . '/images/svg.svg'); ?>
 </div>
@@ -35,7 +35,17 @@
                 'menu_class' => 'nav-main__menu'
             )); ?>
         </div>
-        <div class="nav-main__bottom"></div>
+        <div class="nav-main__bottom">
+            <div class="box-version">
+                <span class="box-version-text">Activate light option</span>
+                <div class="input-check-toggle">
+                    <input id="version-color" type="checkbox" class="js-dark">
+                    <label for="version-color">
+                        <span class="ball"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
     </nav>
     <header class="header">
         <div class="header__left">

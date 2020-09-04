@@ -15,7 +15,7 @@
                     endwhile;
                     ?>
                 </div>
-                <?php
+            <?php
             else : ?>
                 <article class="item i-404">
                     <div class="wrap-content clearfix">
@@ -25,10 +25,12 @@
                     </div>
                 </article>
             <?php endif; ?>
-            <div class="load-more">
-                <button class="button button--load-more">Load More</button>
-                <button class="button button--loading" style="display: none">Loading</button>
-            </div>
+            <?php if (!is_404() && have_posts()): ?>
+                <div class="load-more">
+                    <button class="button button--load-more">Load More</button>
+                    <button class="button button--loading" style="display: none">Loading</button>
+                </div>
+            <?php endif ?>
         </section>
     </div>
 <?php get_footer(); ?>

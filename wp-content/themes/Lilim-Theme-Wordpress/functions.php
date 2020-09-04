@@ -1,5 +1,5 @@
 <?php
-define( 'LILIM_VERSION', '4.0.2' );
+define( 'LILIM_VERSION', '4.1.3' );
 define( 'LILIM_URL', get_template_directory_uri() );
 define( 'LILIM_PATH', get_template_directory() );
 
