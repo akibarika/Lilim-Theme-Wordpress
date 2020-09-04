@@ -12,8 +12,14 @@
             <div class="grid">
                 <div class="heading">
                     <div class="avatar-icon">
-						<span class="front aside"><a href="<?php the_permalink(); ?>"
-                                                     title="永久链接：<?php the_title(); ?>">吐槽</a></span>
+						<span class="front aside">
+                            <a href="<?php the_permalink(); ?>"
+                               title="永久链接：<?php the_title(); ?>">
+                                <svg class="icon">
+					                <use xlink:href="#i_tucao"></use>
+				                </svg>
+                            </a>
+                        </span>
                         <span class="back"><a href="<?php the_permalink() ?>" title="永久链接：<?php the_title(); ?>">吐槽</a></span>
                     </div>
                     <div class="post-title">
@@ -57,10 +63,18 @@
             <div class="grid">
                 <div class="heading">
                     <div class="avatar-icon">
-					<span class="front status"><a href="<?php the_permalink(); ?>"
-                                                  title="永久链接：<?php the_title(); ?>">站内</a></span>
-                        <span class="back"><a href="<?php the_permalink() ?>"
-                                              title="永久链接：<?php the_title(); ?>">站内</a></span>
+                        <span class="front status">
+                            <a href="<?php the_permalink(); ?>"
+                               title="永久链接：<?php the_title(); ?>">
+                                <svg class="icon">
+                                    <use xlink:href="#i_zhannei"></use>
+                                </svg>
+                            </a>
+                        </span>
+                        <span class="back">
+                            <a href="<?php the_permalink() ?>"
+                               title="永久链接：<?php the_title(); ?>">站内</a>
+                        </span>
                     </div>
                     <div class="post-title">
                         <div class="title-wrap">
@@ -105,10 +119,18 @@
             <div class="grid">
                 <div class="heading">
                     <div class="avatar-icon">
-						<span class="front gallery"><a href="<?php the_permalink(); ?>"
-                                                       title="永久链接：<?php the_title(); ?>">下载</a></span>
-                        <span class="back"><a href="<?php the_permalink() ?>"
-                                              title="永久链接：<?php the_title(); ?>">下载</a></span>
+						<span class="front gallery">
+                            <a href="<?php the_permalink(); ?>"
+                               title="永久链接：<?php the_title(); ?>">
+                                <svg class="icon">
+					                <use xlink:href="#i_gallery"></use>
+				                </svg>
+                            </a>
+                        </span>
+                        <span class="back">
+                            <a href="<?php the_permalink() ?>"
+                                              title="永久链接：<?php the_title(); ?>">下载</a>
+                        </span>
                     </div>
                     <div class="post-title">
                         <div class="title-wrap">
@@ -168,10 +190,18 @@
             <div class="grid">
                 <div class="heading">
                     <div class="avatar-icon">
-					<span class="front link"><a href="<?php the_permalink(); ?>"
-                                                title="永久链接：<?php the_title(); ?>">趣链</a></span>
-                        <span class="back"><a href="<?php the_permalink() ?>"
-                                              title="永久链接：<?php the_title(); ?>">趣链</a></span>
+                        <span class="front link">
+                            <a href="<?php the_permalink(); ?>"
+                                                    title="永久链接：<?php the_title(); ?>">
+                                 <svg class="icon">
+                                        <use xlink:href="#i_link"></use>
+                                    </svg>
+                            </a>
+                        </span>
+                        <span class="back">
+                            <a href="<?php the_permalink() ?>"
+                                              title="永久链接：<?php the_title(); ?>">趣链</a>
+                        </span>
                     </div>
                     <div class="post-title">
                         <div class="title-wrap">
@@ -232,10 +262,18 @@
             <div class="grid">
                 <div class="heading">
                     <div class="avatar-icon">
-					<span class="front quote"><a href="<?php the_permalink(); ?>"
-                                                 title="永久链接：<?php the_title(); ?>">趣闻</a></span>
-                        <span class="back"><a href="<?php the_permalink() ?>"
-                                              title="永久链接：<?php the_title(); ?>">趣闻</a></span>
+                        <span class="front quote">
+                            <a href="<?php the_permalink(); ?>"
+                               title="永久链接：<?php the_title(); ?>">
+                                 <svg class="icon">
+                                        <use xlink:href="#i_quwen"></use>
+                                    </svg>
+                            </a>
+                        </span>
+                        <span class="back">
+                            <a href="<?php the_permalink() ?>"
+                               title="永久链接：<?php the_title(); ?>">趣闻</a>
+                        </span>
                     </div>
                     <div class="post-title">
                         <div class="title-wrap">

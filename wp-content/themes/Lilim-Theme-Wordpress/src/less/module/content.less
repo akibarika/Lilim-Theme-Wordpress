@@ -74,7 +74,7 @@
         border-color: lighten(@brand-primary, 35%);
       }
       &.format-status {
-        .grid-icon(@i-grid-icon-3, @format-status-color);
+        .grid-icon(@format-status-color);
         &:hover {
           border-color: lighten(@format-status-color, 35%);
         }
@@ -85,7 +85,7 @@
         }
       }
       &.format-gallery {
-        .grid-icon(@i-grid-icon-4, @format-gallery-color);
+        .grid-icon(@format-gallery-color);
         &:hover {
           border-color: lighten(@format-gallery-color, 35%);
         }
@@ -96,7 +96,7 @@
         }
       }
       &.format-aside {
-        .grid-icon(@i-grid-icon-5, @format-aside-color);
+        .grid-icon(@format-aside-color);
         &:hover {
           border-color: lighten(@format-aside-color, 35%);
         }
@@ -107,7 +107,7 @@
         }
       }
       &.format-link {
-        .grid-icon(@i-grid-icon-2, @format-link-color);
+        .grid-icon(@format-link-color);
         &:hover {
           border-color: lighten(@format-link-color, 35%);
         }
@@ -121,7 +121,7 @@
         }
       }
       &.format-quote {
-        .grid-icon(@i-grid-icon-1, @format-quote-color);
+        .grid-icon(@format-quote-color);
         &:hover {
           border-color: lighten(@format-quote-color, 35%);
         }
@@ -180,12 +180,14 @@
           height: 46px;
           width: 46px;
           .front {
-            background-image: url("../images/icons_rika.png");
             width: 100%;
             height: 100%;
             display: inline-block;
-            text-indent: -9999px;
             transition: all .8s ease-in-out;
+            .icon {
+              width: 46px;
+              height: 46px;
+            }
           }
           &:hover {
             .back {

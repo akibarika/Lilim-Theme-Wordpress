@@ -74,12 +74,10 @@ jQuery.rika_js = function () {
                             jQuery('#post .column--invisible').append(html.data);
                             jQuery('#post').append(button);
                             page = page + 1;
-                            jQuery('.wp-post-image').on('load', function () {
-                                methods.adjustColumnHeights(jQuery('#post .column--invisible .post--item'));
-                                methods.responsiveColumn(jQuery('#post .column--invisible .post--item'));
-                                jQuery('.load-more .button--load-more').show();
-                                jQuery('.load-more .button--loading').hide();
-                            });
+                            methods.adjustColumnHeights(jQuery('#post .column--invisible .post--item'));
+                            methods.responsiveColumn(jQuery('#post .column--invisible .post--item'));
+                            jQuery('.load-more .button--load-more').show();
+                            jQuery('.load-more .button--loading').hide();
                         }
                     }
                 });
